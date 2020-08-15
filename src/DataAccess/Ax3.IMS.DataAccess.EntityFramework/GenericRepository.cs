@@ -1,0 +1,146 @@
+﻿using Ax3.IMS.Domain.Types;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+using Z.EntityFramework.Plus;
+
+namespace Ax3.IMS.DataAccess.EntityFramework
+{
+    public abstract class GenericRepository<TContext, TEntity, TEntityId>
+        where TContext : DbContext
+        where TEntity : class, IEntity<TEntityId>
+    {
+        protected TContext Context { get; }
+
+        protected DbSet<TEntity> DbSet { get; }
+
+        protected GenericRepository(TContext context)
+        {
+            Context = context;
+            DbSet = context.Set<TEntity>();
+            Context.ChangeTracker.AutoDetectChangesEnabled = false;
+        }
+
+        public ICollection<TEntity> GetAll()
+        {
+            return DbSet.ToList();
+        }
+
+        public IQueryable<TEntity> GetAllAsQueryable()
+        {
+            return DbSet.AsQueryable();
+        }
+
+        public IQueryable<TEntity> GetAllAsNoFilterQueryable()
+        {
+            return DbSet.AsNoFilter();
+        }
+
+        public ICollection<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
+        {
+            return DbSet.Where(predicate).ToList();
+        }
+
+        public async Task<ICollection<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await DbSet.Where(predicate).ToListAsync();
+        }
+
+        public async Task<ICollection<TEntity>> FindAsNoFilterAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await DbSet.AsNoFilter().Where(predicate).ToListAsync();
+        }
+
+        public async Task<ICollection<TEntity>> FindAsync(IEnumerable<TEntityId> ids)
+        {
+            return await DbSet.Where(e => ids.Contains(e.Id)).ToListAsync();
+        }
+
+        public async Task<ICollection<TEntity>> FindAsNoFilterAsync(IEnumerable<TEntityId> ids)
+        {
+            return await DbSet.AsNoFilter().Where(e => ids.Contains(e.Id)).ToListAsync();
+        }
+
+        public TEntity Find(TEntityId entityId)
+        {
+            return DbSet.Single(GetByIdPredicate(entityId));
+        }
+
+        public Task<TEntity> FindAsync(TEntityId entityId)
+        {
+            return DbSet.SingleAsync(GetByIdPredicate(entityId));
+        }
+
+        public TEntity FindOrDefault(TEntityId entityId)
+        {
+            return DbSet.SingleOrDefault(GetByIdPredicate(entityId));
+        }
+
+        public Task<TEntity> FindOrDefaultAsync(TEntityId entityId)
+        {
+            return DbSet.SingleOrDefaultAsync(GetByIdPredicate(entityId));
+        }
+
+        public virtual IQueryable<TEntity> FindAsQuerable(Expression<Func<TEntity, bool>> predicate)
+        {
+            return DbSet.Where(predicate).AsQueryable();
+        }
+
+        public virtual TEntity Add(TEntity entity)
+        {
+            return DbSet.Add(entity).Entity;
+        }
+
+        public virtual IEnumerable<TEntity> AddRange(IEnumerable<TEntity> entities)
+        {
+            return entities.Select(entity => DbSet.Add(entity).Entity);
+        }
+
+        public Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return DbSet.AnyAsync(predicate);
+        }
+
+        public virtual TEntity Delete(TEntity entity)
+        {
+            return DbSet.Remove(entity).Entity;
+        }
+
+        public virtual IEnumerable<TEntity> DeleteRange(IEnumerable<TEntity> entities)
+        {
+            return entities.Select(entity => DbSet.Remove(entity).Entity);
+        }
+
+        public Task<int> DeleteQueryAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            return DbSet.Where(predicate).DeleteAsync();
+        }
+
+        public virtual void Update(TEntity entity)
+        {
+            Context.Entry(entity).State = EntityState.Modified;
+        }
+
+        public virtual Task<int> SaveChangesAsync()
+        {
+            return Context.SaveChangesAsync();
+        }
+
+        public virtual int SaveChanges()
+        {
+            return Context.SaveChanges();
+        }
+
+        public IDbContextTransaction BeginTransaction(IsolationLevel isolationLevel)
+        {
+            return Context.Database.BeginTransaction(isolationLevel);
+        }
+
+        private static Expression<Func<TEntity, bool>> GetByIdPredicate(TEntityId entityId) => e => (object)e.Id == (object)entityId;
+    }
+}
