@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="795" height="450" viewBox="0 0 795 450">
+    <defs>
+        <style>
+            .a {
+                opacity: 0.5;
+                fill: url(#a);
+            }
+        </style>
+        <linearGradient id="a" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#0d7533" /><stop offset="0.517" stop-color="#8aab32" /><stop offset="1" stop-color="#fedd31" /></linearGradient>
+    </defs>
+    <path class="a" d="M4,0H795a0,0,0,0,1,0,0V450a0,0,0,0,1,0,0H4a4,4,0,0,1-4-4V4A4,4,0,0,1,4,0Z" />
+</svg>

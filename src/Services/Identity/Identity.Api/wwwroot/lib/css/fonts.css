@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Visby CF';
+    src: url('../fonts/visby/VisbyCF-Bold.eot');
+    src: local('Visby CF Bold'), local('VisbyCF-Bold'), url('../fonts/visby/VisbyCF-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/visby/VisbyCF-Bold.woff2') format('woff2'), url('../fonts/visby/VisbyCF-Bold.woff') format('woff'), url('../fonts/visby/VisbyCF-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('../fonts/visby/VisbyCF-Light.eot');
+    src: local('Visby CF Light'), local('VisbyCF-Light'), url('../fonts/visby/VisbyCF-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/visby/VisbyCF-Light.woff2') format('woff2'), url('../fonts/visby/VisbyCF-Light.woff') format('woff'), url('../fonts/visby/VisbyCF-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('../fonts/visby/VisbyCF-Medium.eot');
+    src: local('Visby CF Medium'), local('VisbyCF-Medium'), url('../fonts/visby/VisbyCF-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/visby/VisbyCF-Medium.woff2') format('woff2'), url('../fonts/visby/VisbyCF-Medium.woff') format('woff'), url('../fonts/visby/VisbyCF-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}

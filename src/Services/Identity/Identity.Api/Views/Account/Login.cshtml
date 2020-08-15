@@ -1,0 +1,43 @@
+﻿@model Identity.Api.Models.AccountViewModels.LoginViewModel
+
+@{
+    Layout = "_Layout2";
+    ViewData["Title"] = "Log in";
+}
+
+<div class="auth-content">
+    <div class="brand-logo">
+        <img src="/lib/assets/logo.png" />
+    </div>
+    <div class="auth-image">
+        <div class="filter"></div>
+    </div>
+    <div class="auth-form">
+        <div class="title">Hoşgeldiniz</div>
+        <div class="description">Lütfen bilgilerinizi girerek giriş yapınız</div>
+        <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+            <input type="hidden" asp-for="ReturnUrl" />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <i class="fal fa-user"></i>
+                <input placeholder="Kullanıcı Adı" asp-for="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <i class="fal fa-lock"></i>
+                <input placeholder="Parolanız" asp-for="Password" class="form-control" />
+            </div>
+            <div class="buttons">
+                <a href="#">
+                    Şifremi Unuttum!
+                </a>
+                <button type="submit" class="btn btn-success float-right">
+                    Giriş Yapın
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

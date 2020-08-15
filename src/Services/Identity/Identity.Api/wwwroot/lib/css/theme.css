@@ -1,0 +1,29 @@
+a {
+    color: #000000;
+}
+
+.btn {
+    font-size: 12px;
+    padding: 10px 32px;
+    background-color: #0D7533;
+    border-color: #0D7533;
+}
+
+.form-control {
+    font-size: 12px;
+    font-weight: 300;
+    height: 40px;
+    line-height: 40px;
+    border-color: #0D7533;
+}
+
+    .form-control:focus {
+        border-color: #0D7533;
+        box-shadow: 0 0 0 0.2rem rgba(13, 117, 51, .25);
+    }
+
+@media screen and (max-width: 768px) {
+    .form-control {
+        font-size: 16px;
+    }
+}

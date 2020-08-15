@@ -9,43 +9,65 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Infrastructure.Core", "Infrastructure\Core\Ax3.IMS.Core\Ax3.IMS.Infrastructure.Core.csproj", "{4F22B865-B85E-4345-92C4-43958D9D6C49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.Infrastructure.Core.Exception", "Infrastructure\Core\Ax3.IMS.Infrastructure.Core.Exception\Ax3.IMS.Infrastructure.Core.Exception.csproj", "{9AB63FAB-3BB3-4D7F-A8B7-4ECDB2029B7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Infrastructure.Core.Exception", "Infrastructure\Core\Ax3.IMS.Infrastructure.Core.Exception\Ax3.IMS.Infrastructure.Core.Exception.csproj", "{9AB63FAB-3BB3-4D7F-A8B7-4ECDB2029B7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.Infrastructure.Core.Http", "Infrastructure\Core\Ax3.IMS.Infrastructure.Core.Http\Ax3.IMS.Infrastructure.Core.Http.csproj", "{578C1CB8-0165-4A49-A039-91534606F348}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Infrastructure.Core.Http", "Infrastructure\Core\Ax3.IMS.Infrastructure.Core.Http\Ax3.IMS.Infrastructure.Core.Http.csproj", "{578C1CB8-0165-4A49-A039-91534606F348}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{77B4EC7B-0419-44A9-BEAB-2912C8BDB6C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.Infrastructure.Configuration", "Infrastructure\Configuration\Ax3.IMS.Infrastructure.Core.Configuration\Ax3.IMS.Infrastructure.Configuration.csproj", "{E2592F30-4A67-483A-89FF-21ECEE41EFE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Infrastructure.Configuration", "Infrastructure\Configuration\Ax3.IMS.Infrastructure.Core.Configuration\Ax3.IMS.Infrastructure.Configuration.csproj", "{E2592F30-4A67-483A-89FF-21ECEE41EFE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.Infrastructure.Configuration.File", "Infrastructure\Configuration\Ax3.IMS.Infrastructure.Core.Configuration.File\Ax3.IMS.Infrastructure.Configuration.File.csproj", "{6EC51338-4EF0-4BF0-A32D-078ECA873391}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Infrastructure.Configuration.File", "Infrastructure\Configuration\Ax3.IMS.Infrastructure.Core.Configuration.File\Ax3.IMS.Infrastructure.Configuration.File.csproj", "{6EC51338-4EF0-4BF0-A32D-078ECA873391}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cache", "Cache", "{A5912D5C-DBB7-466A-A23D-88A1072FA449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.Infrastructure.Cache.Redis", "Infrastructure\Cache\Ax3.IMS.Infrastructure.Cache.Redis\Ax3.IMS.Infrastructure.Cache.Redis.csproj", "{2019DD26-3354-4082-81F8-FC80D07D34C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Infrastructure.Cache.Redis", "Infrastructure\Cache\Ax3.IMS.Infrastructure.Cache.Redis\Ax3.IMS.Infrastructure.Cache.Redis.csproj", "{2019DD26-3354-4082-81F8-FC80D07D34C4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{9577EC12-0343-443E-B5D9-B97D430A8727}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.Domain", "Domain\Ax3.IMS.Domain\Ax3.IMS.Domain.csproj", "{043C7D28-8602-44A2-A491-0D276A2D9604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Domain", "Domain\Ax3.IMS.Domain\Ax3.IMS.Domain.csproj", "{043C7D28-8602-44A2-A491-0D276A2D9604}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{74202316-009D-4C90-A2FA-CC94AEB659C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.DataAccess.EntityFramework", "DataAccess\Ax3.IMS.DataAccess.EntityFramework\Ax3.IMS.DataAccess.EntityFramework.csproj", "{007084AF-8AAE-4848-8302-3759EF6A3A20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.DataAccess.EntityFramework", "DataAccess\Ax3.IMS.DataAccess.EntityFramework\Ax3.IMS.DataAccess.EntityFramework.csproj", "{007084AF-8AAE-4848-8302-3759EF6A3A20}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{6E29D675-ABAD-433A-B08A-57CA41181A67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.Infrastructure.Logging", "Infrastructure\Logging\Ax3.IMS.Infrastructure.Logging\Ax3.IMS.Infrastructure.Logging.csproj", "{0ECA5050-421A-43F7-9537-DFCAC0BE4D46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Infrastructure.Logging", "Infrastructure\Logging\Ax3.IMS.Infrastructure.Logging\Ax3.IMS.Infrastructure.Logging.csproj", "{0ECA5050-421A-43F7-9537-DFCAC0BE4D46}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{992A2FDB-62E9-42F9-A069-637ADF62CAD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.Infrastructure.EventBus", "Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus\Ax3.IMS.Infrastructure.EventBus.csproj", "{4148646D-BBBA-4A30-8109-41C251FB3922}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Infrastructure.EventBus", "Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus\Ax3.IMS.Infrastructure.EventBus.csproj", "{4148646D-BBBA-4A30-8109-41C251FB3922}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.Infrastructure.EventBus.RabbitMQ", "Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus.RabbitMQ\Ax3.IMS.Infrastructure.EventBus.RabbitMQ.csproj", "{5249BA13-F4E4-48C6-92A1-AA3E4B17499B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Infrastructure.EventBus.RabbitMQ", "Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus.RabbitMQ\Ax3.IMS.Infrastructure.EventBus.RabbitMQ.csproj", "{5249BA13-F4E4-48C6-92A1-AA3E4B17499B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.Infrastructure.EventBus.EFEventStore", "Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus.EFEventStore\Ax3.IMS.Infrastructure.EventBus.EFEventStore.csproj", "{96DE2045-C09D-4D34-9462-F4680769C1B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Infrastructure.EventBus.EFEventStore", "Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus.EFEventStore\Ax3.IMS.Infrastructure.EventBus.EFEventStore.csproj", "{96DE2045-C09D-4D34-9462-F4680769C1B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{0BAF6546-A1D5-4EA8-9949-0FD2F9A46CF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ax3.IMS.Infrastructure.Utils", "Infrastructure\Utils\Ax3.IMS.Infrastructure.Utils\Ax3.IMS.Infrastructure.Utils.csproj", "{EF051406-BA3A-4971-A784-DE93DB99D6FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.Infrastructure.Utils", "Infrastructure\Utils\Ax3.IMS.Infrastructure.Utils\Ax3.IMS.Infrastructure.Utils.csproj", "{EF051406-BA3A-4971-A784-DE93DB99D6FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D4F73305-0399-4656-8183-1E17CA36120D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.DataAccess.Core", "DataAccess\Ax3.IMS.DataAccess.Core\Ax3.IMS.DataAccess.Core.csproj", "{214CD9AD-3FDE-4CEE-84C8-47266174F1B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ax3.IMS.DataAccess.Mongo", "DataAccess\Ax3.IMS.DataAccess.Mongo\Ax3.IMS.DataAccess.Mongo.csproj", "{BB26124C-3BD0-439C-899C-736098D3FD56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InvestmentTool", "InvestmentTool", "{630DEF74-BFB7-45FF-8201-74C956C3D5D8}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{04648E82-4F02-4527-9C6C-B11144872F17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IMS", "IMS", "{21E07FBB-D414-4A6A-A3F7-18E8406022CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ims.Api", "Services\IMS\Ims.Api\Ims.Api.csproj", "{AA55D33D-187E-4F84-AB63-1F8B31B30E94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ims.Domain", "Services\IMS\Ims.Domain\Ims.Domain.csproj", "{B81942BB-1851-4083-A184-22FD1223BD37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ims.Infrastructure", "Services\IMS\Ims.Infrastructure\Ims.Infrastructure.csproj", "{BC98E78C-7992-4EB9-AAF3-0E479CF097FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{AE5B41D4-674D-4424-BCF1-B80B44A6CFEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Api", "Services\Identity\Identity.Api\Identity.Api.csproj", "{4F6C0051-DEC5-46E5-A58A-36E2909ED8DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +127,34 @@ Global
 		{EF051406-BA3A-4971-A784-DE93DB99D6FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF051406-BA3A-4971-A784-DE93DB99D6FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF051406-BA3A-4971-A784-DE93DB99D6FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{214CD9AD-3FDE-4CEE-84C8-47266174F1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214CD9AD-3FDE-4CEE-84C8-47266174F1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214CD9AD-3FDE-4CEE-84C8-47266174F1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214CD9AD-3FDE-4CEE-84C8-47266174F1B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB26124C-3BD0-439C-899C-736098D3FD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB26124C-3BD0-439C-899C-736098D3FD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB26124C-3BD0-439C-899C-736098D3FD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB26124C-3BD0-439C-899C-736098D3FD56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04648E82-4F02-4527-9C6C-B11144872F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04648E82-4F02-4527-9C6C-B11144872F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04648E82-4F02-4527-9C6C-B11144872F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04648E82-4F02-4527-9C6C-B11144872F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA55D33D-187E-4F84-AB63-1F8B31B30E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA55D33D-187E-4F84-AB63-1F8B31B30E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA55D33D-187E-4F84-AB63-1F8B31B30E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA55D33D-187E-4F84-AB63-1F8B31B30E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B81942BB-1851-4083-A184-22FD1223BD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B81942BB-1851-4083-A184-22FD1223BD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B81942BB-1851-4083-A184-22FD1223BD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B81942BB-1851-4083-A184-22FD1223BD37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC98E78C-7992-4EB9-AAF3-0E479CF097FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC98E78C-7992-4EB9-AAF3-0E479CF097FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC98E78C-7992-4EB9-AAF3-0E479CF097FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC98E78C-7992-4EB9-AAF3-0E479CF097FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F6C0051-DEC5-46E5-A58A-36E2909ED8DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F6C0051-DEC5-46E5-A58A-36E2909ED8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F6C0051-DEC5-46E5-A58A-36E2909ED8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F6C0051-DEC5-46E5-A58A-36E2909ED8DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,6 +179,15 @@ Global
 		{96DE2045-C09D-4D34-9462-F4680769C1B2} = {992A2FDB-62E9-42F9-A069-637ADF62CAD7}
 		{0BAF6546-A1D5-4EA8-9949-0FD2F9A46CF4} = {AA4554BB-67DE-48A5-B76B-3C999CDFEB9C}
 		{EF051406-BA3A-4971-A784-DE93DB99D6FA} = {0BAF6546-A1D5-4EA8-9949-0FD2F9A46CF4}
+		{214CD9AD-3FDE-4CEE-84C8-47266174F1B8} = {74202316-009D-4C90-A2FA-CC94AEB659C3}
+		{BB26124C-3BD0-439C-899C-736098D3FD56} = {74202316-009D-4C90-A2FA-CC94AEB659C3}
+		{630DEF74-BFB7-45FF-8201-74C956C3D5D8} = {D4F73305-0399-4656-8183-1E17CA36120D}
+		{21E07FBB-D414-4A6A-A3F7-18E8406022CD} = {D4F73305-0399-4656-8183-1E17CA36120D}
+		{AA55D33D-187E-4F84-AB63-1F8B31B30E94} = {21E07FBB-D414-4A6A-A3F7-18E8406022CD}
+		{B81942BB-1851-4083-A184-22FD1223BD37} = {21E07FBB-D414-4A6A-A3F7-18E8406022CD}
+		{BC98E78C-7992-4EB9-AAF3-0E479CF097FD} = {21E07FBB-D414-4A6A-A3F7-18E8406022CD}
+		{AE5B41D4-674D-4424-BCF1-B80B44A6CFEF} = {D4F73305-0399-4656-8183-1E17CA36120D}
+		{4F6C0051-DEC5-46E5-A58A-36E2909ED8DA} = {AE5B41D4-674D-4424-BCF1-B80B44A6CFEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3772DE5D-61C1-4B14-9840-7059F9435E0A}

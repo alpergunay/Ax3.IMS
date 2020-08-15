@@ -5,6 +5,7 @@
   </PropertyGroup>
     <ItemGroup>
     <PackageReference Include="MediatR" Version="8.0.1" />
+    <PackageReference Include="MongoDB.Bson" Version="2.10.2" />
   </ItemGroup>
 
   <ItemGroup>

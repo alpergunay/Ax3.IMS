@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  ax3.ims.services.investmenttool.api:
+    image: ${DOCKER_REGISTRY-}ax3imsservicesinvestmenttoolapi
+    build:
+      context: .
+      dockerfile: Services/InvestmentTools/Ax3.IMS.Services.InvestmentTool.Api/Dockerfile
+  rabbitmq:
+    image: rabbitmq:management
+  postgres.data:
+    image: postgres:latest
+  mongodb:
+    image: mongo:latest

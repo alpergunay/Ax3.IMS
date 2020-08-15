@@ -1,0 +1,52 @@
+version: '3.4'
+
+services:
+  ax3.ims.services.investmenttool.api:
+    container_name: "ims-api"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "80"
+      - "443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  postgres.data:
+    container_name: "ims-postgres"
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "ims"
+      POSTGRES_PASSWORD: "ax32020!"
+      POSTGRES_DB: "ims"
+  rabbitmq:
+    container_name: "ims-rabbitmq"
+    environment:
+      "RABBITMQ_ERLANG_COOKIE": "unique-erlang-cookie"
+    ports:
+      - "15672:15672"  
+      - "5672:5672"
+      - "4369:4369"
+      - "5671:5671"
+      - "25672:25672"
+    volumes:
+      - rabbitmq_volume:/var/lib/rabbitmq
+  mongodb:
+    container_name: "ims-mongodb"
+    environment: 
+      - MONGO_INITDB_DATABASE="ims"
+      - MONGO_INITDB_ROOT_USERNAME="ims"
+      - MONGO_INITDB_ROOT_PASSWORD="ax32020!"
+    volumes: 
+      - ./deploy/mongodb/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - mongo_data:/data/db
+    ports:
+      - '27017-27019:27017-27019'
+volumes:
+  db_volume:    
+  mongo_data: 
+  rabbitmq_volume:
