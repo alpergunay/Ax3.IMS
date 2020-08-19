@@ -8,7 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="9.1.3" />
+    <PackageReference Include="MediatR" Version="8.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus\Ax3.IMS.Infrastructure.EventBus.csproj" />
+    <ProjectReference Include="..\Ims.Domain\Ims.Domain.csproj" />
+    <ProjectReference Include="..\Ims.Infrastructure\Ims.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Modules\Infrastructure\Models\" />
+    <Folder Include="Application\Modules\Infrastructure\Validations\" />
   </ItemGroup>
 
 

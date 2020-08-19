@@ -2,9 +2,6 @@
 
 namespace Ax3.IMS.Domain.Types
 {
-    /// <summary>
-    /// mongo entity interface
-    /// </summary>
     public interface IEntity<TKey>
     {
         /// <summary>
