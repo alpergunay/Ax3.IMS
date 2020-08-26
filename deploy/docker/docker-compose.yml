@@ -12,3 +12,5 @@ services:
     image: postgres:latest
   mongodb:
     image: mongo:latest
+  redis:
+    image: redis:6.0.6-buster

@@ -29,6 +29,15 @@ namespace Ims.Infrastructure.EntityConfigurations
                 .IsRequired();
 
             builder
+                .Property("_familyId")
+                .UsePropertyAccessMode(PropertyAccessMode.Field)
+                .HasColumnName("FamilyId")
+                .IsRequired();
+            builder.HasOne(p => p.Family)
+                .WithMany()
+                .HasForeignKey("_familyId");
+
+            builder
                 .Property<string>("_mobile")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Mobile")

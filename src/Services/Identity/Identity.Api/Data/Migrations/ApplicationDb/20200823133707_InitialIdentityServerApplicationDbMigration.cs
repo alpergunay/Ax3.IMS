@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using System;
 
 namespace Identity.Api.Data.Migrations.ApplicationDb
 {
-    public partial class InitialIdentityServerApplicationDbMigrationGuid : Migration
+    public partial class InitialIdentityServerApplicationDbMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,15 +43,34 @@ namespace Identity.Api.Data.Migrations.ApplicationDb
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: false),
-                    LastName = table.Column<string>(nullable: false),
-                    Street = table.Column<string>(nullable: false),
-                    City = table.Column<string>(nullable: false),
-                    State = table.Column<string>(nullable: false),
-                    Country = table.Column<string>(nullable: false)
+                    SurName = table.Column<string>(nullable: false),
+                    MobilePhoneNumber = table.Column<string>(nullable: false),
+                    LanguageId = table.Column<Guid>(nullable: true),
+                    LastLoginTime = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserLogins",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    UserId = table.Column<Guid>(nullable: false),
+                    LoginTime = table.Column<DateTime>(nullable: false),
+                    LogoffTime = table.Column<DateTime>(nullable: false),
+                    ClientIp = table.Column<string>(nullable: true),
+                    ApplicationName = table.Column<string>(nullable: true),
+                    Browser = table.Column<string>(nullable: true),
+                    Token = table.Column<string>(nullable: true),
+                    StatusId = table.Column<int>(nullable: false),
+                    LastlastTradingTime = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserLogins", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -214,6 +233,9 @@ namespace Identity.Api.Data.Migrations.ApplicationDb
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "UserLogins");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

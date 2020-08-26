@@ -1,25 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Ax3.IMS.Domain.Types;
+using System;
 
 namespace Ims.Domain.DomainModels
 {
-    public class InvestmentToolPrice
+    public class InvestmentToolPrice : Entity
     {
-        public DateTime PriceDate { get; set; }
+        private DateTime _priceDate;
+        private Guid _investmentToolId;
         public InvestmentTool InvestmentTool { get; set; }
-        public double SalesPrice { get; set; }
-        public double BuyingPrice { get; set; }
-
+        private double _salesPrice;
+        private double _buyingPrice;
+        
         public InvestmentToolPrice(DateTime priceDate,
-            InvestmentTool investmentTool,
+            Guid investmentToolId,
             double salesPrice,
             double buyingPrice)
         {
-            PriceDate = priceDate;
-            this.InvestmentTool = investmentTool;
-            SalesPrice = salesPrice;
-            BuyingPrice = buyingPrice;
+            _priceDate = priceDate;
+            _investmentToolId = investmentToolId;
+            _salesPrice = salesPrice;
+            _buyingPrice = buyingPrice;
         }
     }
 }

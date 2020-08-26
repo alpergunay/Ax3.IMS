@@ -1,5 +1,5 @@
-﻿using Europcar.RentoCloud.EventBus.Events;
-using System;
+﻿using System;
+using Ax3.IMS.Infrastructure.EventBus.Events;
 
 namespace Web.API.Application.Modules.Infrastructure.IntegrationEvents.Events
 {

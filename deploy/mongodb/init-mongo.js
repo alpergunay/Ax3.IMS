@@ -1,10 +1,10 @@
 db.createUser({
-    user: "imsuser",
+    user: imsuser,
     pwd: ax32020!,
     roles:[
         {
-            role: "readWrite",
-            db: "ims"
+            role: readWrite,
+            db: ims
         }
     ]
 })

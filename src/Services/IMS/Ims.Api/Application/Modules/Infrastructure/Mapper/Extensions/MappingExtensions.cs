@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using Europcar.RentoCloud.Domain.Types;
+using Ax3.IMS.Domain.Types;
 using System;
 using System.Collections.Generic;
-using Web.API.Application.Modules.Infrastructure.Models;
+using Ims.Api.Application.Modules.Infrastructure.Mapper;
+using Ims.Api.Application.Modules.Infrastructure.Models;
 
-namespace Web.API.Application.Modules.Infrastructure.Mapper.Extensions
+namespace Ims.Api.Application.Modules.Infrastructure.Mapper.Extensions
 {
     public static class MappingExtensions
     {
@@ -12,7 +13,7 @@ namespace Web.API.Application.Modules.Infrastructure.Mapper.Extensions
         {
             var configuration = new MapperConfiguration(cfg =>
             {
-                cfg.AddProfile(typeof(WepApiMapperConfiguration));
+                cfg.AddProfile(typeof(ImsApiMapperConfiguration));
             });
 
             return configuration.CreateMapper().Map<TDestination>(source);
@@ -22,13 +23,13 @@ namespace Web.API.Application.Modules.Infrastructure.Mapper.Extensions
         {
             var configuration = new MapperConfiguration(cfg =>
             {
-                cfg.AddProfile(typeof(WepApiMapperConfiguration));
+                cfg.AddProfile(typeof(ImsApiMapperConfiguration));
             });
 
             return configuration.CreateMapper().Map(source, destination);
         }
 
-        public static TEntity ToEntity<TEntity>(this BaseViewModel model) where TEntity : Entity
+        public static TEntity ToEntity<TEntity>(this BaseEntityRequestModel model) where TEntity : Entity
         {
             if (model == null)
                 throw new ArgumentNullException(nameof(model));
@@ -36,7 +37,7 @@ namespace Web.API.Application.Modules.Infrastructure.Mapper.Extensions
             return model.Map<TEntity>();
         }
 
-        public static TEntity ToEntity<TEntity>(this BaseViewModel model, TEntity entity) where TEntity : Entity
+        public static TEntity ToEntity<TEntity>(this BaseEntityRequestModel model, TEntity entity) where TEntity : Entity
         {
             if (model == null)
                 throw new ArgumentNullException(nameof(model));

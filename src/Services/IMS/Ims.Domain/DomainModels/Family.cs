@@ -8,13 +8,10 @@ namespace Ims.Domain.DomainModels
     public class Family : Entity
     {
         private string _name;
-        private Guid _userId;
-        public User User { get; set; }
 
-        public Family(string name, Guid userId)
+        public Family(string name)
         {
             _name = name;
-            _userId = userId;
         }
     }
 }

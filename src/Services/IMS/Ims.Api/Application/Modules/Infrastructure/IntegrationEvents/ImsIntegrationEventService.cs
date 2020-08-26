@@ -1,34 +1,34 @@
-﻿using Europcar.RentoCloud.EventBus.Abstractions;
-using Europcar.RentoCloud.EventBus.Events;
-using Europcar.RentoCloud.Infrastructure.EventBus.IntegrationEventLogEF;
-using Europcar.RentoCloud.Infrastructure.EventBus.IntegrationEventLogEF.Services;
+﻿using Ax3.IMS.Infrastructure.EventBus.Abstractions;
+using Ax3.IMS.Infrastructure.EventBus.Events;
+using Ax3.IMS.Infrastructure.EventBus.EFEventStore;
+using Ax3.IMS.Infrastructure.EventBus.EFEventStore.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Data.Common;
 using System.Threading.Tasks;
-using Web.Infrastructure;
+using Ims.Infrastructure;
 
-namespace Web.API.Application.Modules.Infrastructure.IntegrationEvents
+namespace Ims.Api.Application.Modules.Infrastructure.IntegrationEvents
 {
-    public class WebIntegrationEventService : IWebIntegrationEventService
+    public class ImsIntegrationEventService : IImsIntegrationEventService
     {
         private readonly Func<DbConnection, IIntegrationEventLogService> _integrationEventLogServiceFactory;
         private readonly IEventBus _eventBus;
-        private readonly RentoCloudContext _testContext;
+        private readonly ImsContext _imsContext;
         private readonly IIntegrationEventLogService _eventLogService;
-        private readonly ILogger<WebIntegrationEventService> _logger;
+        private readonly ILogger<ImsIntegrationEventService> _logger;
 
-        public WebIntegrationEventService(IEventBus eventBus,
-            RentoCloudContext testContext,
+        public ImsIntegrationEventService(IEventBus eventBus,
+            ImsContext imsContexts,
             IntegrationEventLogContext eventLogContext,
             Func<DbConnection, IIntegrationEventLogService> integrationEventLogServiceFactory,
-            ILogger<WebIntegrationEventService> logger)
+            ILogger<ImsIntegrationEventService> logger)
         {
-            _testContext = testContext ?? throw new ArgumentNullException(nameof(testContext));
+            _imsContext = imsContexts ?? throw new ArgumentNullException(nameof(imsContexts));
             _integrationEventLogServiceFactory = integrationEventLogServiceFactory ?? throw new ArgumentNullException(nameof(integrationEventLogServiceFactory));
             _eventBus = eventBus ?? throw new ArgumentNullException(nameof(eventBus));
-            _eventLogService = _integrationEventLogServiceFactory(_testContext.Database.GetDbConnection());
+            _eventLogService = _integrationEventLogServiceFactory(_imsContext.Database.GetDbConnection());
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
@@ -59,7 +59,7 @@ namespace Web.API.Application.Modules.Infrastructure.IntegrationEvents
         {
             _logger.LogInformation("----- Enqueuing integration event {IntegrationEventId} to repository ({@IntegrationEvent})", evt.Id, evt);
 
-            await _eventLogService.SaveEventAsync(evt, _testContext.GetCurrentTransaction());
+            await _eventLogService.SaveEventAsync(evt, _imsContext.GetCurrentTransaction());
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Ax3.IMS.Domain;
 using Z.EntityFramework.Plus;
 
 namespace Ax3.IMS.DataAccess.EntityFramework
@@ -29,6 +30,10 @@ namespace Ax3.IMS.DataAccess.EntityFramework
         public ICollection<TEntity> GetAll()
         {
             return DbSet.ToList();
+        }
+        public async Task<ICollection<TEntity>> GetAllAsync()
+        {
+            return await DbSet.ToListAsync();
         }
 
         public IQueryable<TEntity> GetAllAsQueryable()
@@ -86,7 +91,7 @@ namespace Ax3.IMS.DataAccess.EntityFramework
             return DbSet.SingleOrDefaultAsync(GetByIdPredicate(entityId));
         }
 
-        public virtual IQueryable<TEntity> FindAsQuerable(Expression<Func<TEntity, bool>> predicate)
+        public virtual IQueryable<TEntity> FindAsQueryable(Expression<Func<TEntity, bool>> predicate)
         {
             return DbSet.Where(predicate).AsQueryable();
         }
@@ -140,7 +145,6 @@ namespace Ax3.IMS.DataAccess.EntityFramework
         {
             return Context.Database.BeginTransaction(isolationLevel);
         }
-
         private static Expression<Func<TEntity, bool>> GetByIdPredicate(TEntityId entityId) => e => (object)e.Id == (object)entityId;
     }
 }

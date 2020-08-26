@@ -9,19 +9,16 @@ namespace Ims.Domain.DomainModels
 {
     public class InvestmentTool : Entity
     {
-        public string Code { get; set; }
-        public string Description { get; set; }
+        private string _code;
+        private string _name;
+        private int _investmentToolTypeId;
         public InvestmentToolType InvestmentToolType { get; set; }
 
-        public InvestmentTool(Guid id,
-            Guid creator,
-            string code,
-            string description,
-            InvestmentToolType investmentToolType)
+        public InvestmentTool(string code, string name, int investmentToolTypeId)
         {
-            Code = code;
-            Description = !string.IsNullOrWhiteSpace(description) ? description : throw new ImsDomainException(nameof(description));
-            this.InvestmentToolType = investmentToolType;
+            _code = code;
+            _name = !string.IsNullOrWhiteSpace(name) ? name : throw new ImsDomainException(nameof(name));
+            _investmentToolTypeId = investmentToolTypeId;
         }
     }
 }

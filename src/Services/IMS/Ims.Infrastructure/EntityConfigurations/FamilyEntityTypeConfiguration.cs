@@ -11,7 +11,7 @@ namespace Ims.Infrastructure.EntityConfigurations
     {
         public override void Configure(EntityTypeBuilder<Family> builder)
         {
-            builder.ToTable("users", ImsContext.DEFAULT_SCHEMA);
+            builder.ToTable("families", ImsContext.DEFAULT_SCHEMA);
             base.ConfigureForEntity(builder);
 
             builder
@@ -20,16 +20,6 @@ namespace Ims.Infrastructure.EntityConfigurations
                 .HasColumnName("Name")
                 .HasMaxLength(50)
                 .IsRequired();
-
-            builder
-                .Property("_userId")
-                .UsePropertyAccessMode(PropertyAccessMode.Field)
-                .HasColumnName("UserId")
-                .IsRequired();
-
-            builder.HasOne(p => p.User)
-                .WithMany()
-                .HasForeignKey("_userId");
         }
     }
 }

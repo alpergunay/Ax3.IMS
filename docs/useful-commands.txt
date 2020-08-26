@@ -1,0 +1,47 @@
+Komutları console dan Context in bulunduğu proje dizinine gidip çalıştırıyorsun. 
+dotnet ef --startup-project ../Europcar.RentoCloud.Services.Test/ migrations add Initial -o ../Europcar.RentoCloud.Services.Test/Infrastructure/DatabaseMigrations
+
+dotnet ef --startup-project ../../Services/Test/Europcar.RentoCloud.Services.Test/ migrations add Initial -o ../../Services/Test/Europcar.RentoCloud.Services.Test/Infrastructure/IntegrationEventDbMigrations --context IntegrationEventLogContext
+
+dotnet ef migrations add InitialIdentityServerPersistedGrantDbMigration -c PersistedGrantDbContext -o Data/Migrations/IdentityServer/PersistedGrantDb --verbose
+
+dotnet ef migrations add InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/IdentityServer/ConfigurationDb --verbose
+
+dotnet ef migrations add InitialIdentityServerApplicationDbMigration -c ApplicationDbContext-o Data/Migrations/ApplicationDb --verbose
+
+// Identity migration eklemen için
+// consoledan Identity projesinin konumuna git
+
+cd ..\src\Services\Identity\Identity.API
+dotnet ef migrations add {{migrationName}} -c ApplicationDbContext -o Data/Migrations/ApplicationDb
+
+// Web.Api migration eklemek için 
+//consoledan Web.API projesini açarak aşağıdaki kodu çalıştır.
+
+cd ..\src\Services\Web\Web.API
+dotnet ef migrations add {{migrationName}} -c RentoCloudContext -p ../Web.Infrastructure
+
+//Yeni bir API ekleneceği zaman temizleyip eklemek daha doğru oluyor.
+delete from "ClientClaims"; 
+delete from "ClientCorsOrigins"; 
+delete from "ClientGrantTypes"; 
+delete from "ClientIdPRestrictions"; 
+delete from "ClientProperties";
+delete from "ClientRedirectUris";
+delete from "ClientScopes";
+delete from "ClientSecrets"; 
+delete from "ClientPostLogoutRedirectUris"; 
+delete from "Clients";
+
+
+delete from "IdentityClaims";
+delete from "IdentityProperties";
+delete from "IdentityResources";
+
+delete from "ApiClaims" ;
+delete from "ApiProperties"; 
+delete from "ApiScopeClaims" ;
+delete from "ApiScopes"; 
+delete from "ApiScopes" ;
+delete from "ApiSecrets" ;
+delete from "ApiResources";

@@ -9,13 +9,13 @@ namespace Ims.Domain.DomainModels
     {
         private Guid _accountId;
         public Account Account { get; set; }
-        private int _transactionTypeId;
+        private Guid _transactionTypeId;
         public TransactionType TransactionType { get; set; }
         private DateTime _transactionDate;
         private double _amount;
         private double _rate;
 
-        public AccountTransaction(Guid accountId, int transactionTypeId, DateTime transactionDate, double amount, double rate)
+        public AccountTransaction(Guid accountId, Guid transactionTypeId, DateTime transactionDate, double amount, double rate)
         {
             _accountId = accountId;
             _transactionTypeId = transactionTypeId;

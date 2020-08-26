@@ -12,13 +12,13 @@ namespace Ims.Domain.DomainModels
 
         private Guid _storeBranchId;
         public StoreBranch StoreBranch { get; set; }
-        private Guid _accountTypeId;
+        private int _accountTypeId;
         public AccountType AccountType { get; set; }
         private Guid _investmentToolId;
         public InvestmentTool InvestmentTool { get; set; }
         private string _accountNo;
 
-        public Account(Guid userId, Guid storeBranchId, Guid accountTypeId, Guid investmentToolId, string accountNo)
+        public Account(Guid userId, Guid storeBranchId, int accountTypeId, Guid investmentToolId, string accountNo)
         {
             _userId = userId;
             _storeBranchId = storeBranchId;

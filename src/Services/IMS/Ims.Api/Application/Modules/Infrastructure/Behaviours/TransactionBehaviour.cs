@@ -6,6 +6,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Ax3.IMS.Infrastructure.EventBus.Extensions;
+using Ims.Api.Application.Modules.Infrastructure.IntegrationEvents;
 using Ims.Infrastructure;
 using Web.API.Application.Modules.Infrastructure.IntegrationEvents;
 
@@ -15,14 +16,14 @@ namespace Ims.Api.Application.Modules.Infrastructure.Behaviours
     {
         private readonly ILogger<TransactionBehaviour<TRequest, TResponse>> _logger;
         private readonly ImsContext _dbContext;
-        private readonly IWebIntegrationEventService _testIntegrationEventService;
+        private readonly IImsIntegrationEventService _imsIntegrationEventService;
 
         public TransactionBehaviour(ImsContext dbContext,
-            IWebIntegrationEventService orderingIntegrationEventService,
+            IImsIntegrationEventService orderingIntegrationEventService,
             ILogger<TransactionBehaviour<TRequest, TResponse>> logger)
         {
             _dbContext = dbContext ?? throw new ArgumentException(nameof(ImsContext));
-            _testIntegrationEventService = orderingIntegrationEventService ?? throw new ArgumentException(nameof(orderingIntegrationEventService));
+            _imsIntegrationEventService = orderingIntegrationEventService ?? throw new ArgumentException(nameof(orderingIntegrationEventService));
             _logger = logger ?? throw new ArgumentException(nameof(ILogger));
         }
 
@@ -58,7 +59,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Behaviours
                         transactionId = transaction.TransactionId;
                     }
 
-                    await _testIntegrationEventService.PublishEventsThroughEventBusAsync(transactionId);
+                    await _imsIntegrationEventService.PublishEventsThroughEventBusAsync(transactionId);
                 });
 
                 return response;

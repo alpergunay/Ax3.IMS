@@ -95,24 +95,6 @@ namespace Identity.Api
                     });
             })
             .Services.AddTransient<IProfileService, ProfileService>();
-            services.AddTransient<ITokenCreationService, JweTokenCreationService>();
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy",
-                    builder => builder
-                    .SetIsOriginAllowed((host) => true)
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials());
-            });
-
-            services.AddAuthentication().AddJwtBearer("Bearer", options =>
-             {
-                 options.Authority = AppConfiguration["IdentityUrl"];
-                 options.RequireHttpsMetadata = false;
-                 options.Audience = "imsapi";
-             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -10,11 +10,12 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using Ax3.IMS.Domain;
 using Z.EntityFramework.Plus;
 
 namespace Ax3.IMS.DataAccess.EntityFramework
 {
-    public class BaseDbContext<TContext> : DbContext
+    public abstract class BaseDbContext<TContext> : DbContext, IUnitOfWork
         where TContext : DbContext
     {
         private static bool isAnyFilterInitilized;
@@ -58,6 +59,9 @@ namespace Ax3.IMS.DataAccess.EntityFramework
 
             return result;
         }
+
+        public abstract Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken));
+        
 
         protected static void InitilizeGlobalFilters<T>(Expression<Func<T, bool>> filterExpression)
             where T : class
@@ -145,7 +149,7 @@ namespace Ax3.IMS.DataAccess.EntityFramework
                 DbContext = this,
                 Entries = entries,
                 EntriesByState = entriesByState,
-                UserId = this._userService.GetUserName()
+                UserId = this._userService?.GetUserName()
             };
         }
 
