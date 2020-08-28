@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Ax3.IMS.DataAccess.Core;
 using Ax3.IMS.DataAccess.EntityFramework;
 using Ax3.IMS.Domain;
 using Ims.Domain.DomainModels;

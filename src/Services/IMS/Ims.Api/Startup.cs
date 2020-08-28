@@ -32,6 +32,11 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
+using AutoMapper;
+using HealthChecks.UI.Client;
+using Ims.Api.Application.Modules.Infrastructure.Mapper;
+using Ims.Api.Infrastructure.AutofacModules;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 namespace Ims.Api
 {
@@ -58,24 +63,59 @@ namespace Ims.Api
                 .AddCustomDbContext()
                 .AddCustomIntegrations()
                 .AddEventBus()
-                .AddCustomAuthentication(Configuration);
+                .AddCustomAuthentication(Configuration)
+                .AddAutoMapper();
         }
-
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule(new MediatorModule());
+            builder.RegisterModule(new ApplicationModule(Configuration["ApplicationSettings:Persistence:ConnectionString"]));
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseMiddleware<ApiCallMiddleware>();
+            var pathBase = Configuration["PATH_BASE"];
+            app.UseCors("CorsPolicy");
 
-            app.UseHttpsRedirection();
+            app.UseSwagger()
+                .UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint($"{ (!string.IsNullOrEmpty(pathBase) ? pathBase : string.Empty) }/swagger/v1/swagger.json", "Ims.Api V1");
+                    c.OAuthClientId("imsapiswaggerui");
+                    c.OAuthAppName("API Swagger UI");
+                });
 
             app.UseRouting();
+            ConfigureAuth(app);
 
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
+                endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
+                endpoints.MapHealthChecks("/liveness", new HealthCheckOptions
+                {
+                    Predicate = r => r.Name.Contains("self")
+                });
+            });
+            ConfigureEventBus(app);
+        }
+        private static void ConfigureEventBus(IApplicationBuilder app)
+        {
+            app.ApplicationServices.GetRequiredService<IEventBus>();
+
+            //eventBus.Subscribe<VehicleModelCreatedIntegrationEvent, IIntegrationEventHandler<VehicleModelCreatedIntegrationEvent>>();
+            //Other integration events....
+        }
+        protected virtual void ConfigureAuth(IApplicationBuilder app)
+        {
+            app.UseAuthentication();
             app.UseAuthorization();
-
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 
@@ -319,6 +359,17 @@ namespace Ims.Api
                 options.Audience = "imsapi";
             });
 
+            return services;
+        }
+        public static IServiceCollection AddAutoMapper(this IServiceCollection services)
+        {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new RequestModelMapperConfiguration());
+                cfg.AddProfile(new ResponseModelMapperConfiguration());
+            });
+            mapperConfig.AssertConfigurationIsValid();
+            services.AddSingleton(provider => mapperConfig.CreateMapper());
             return services;
         }
     }

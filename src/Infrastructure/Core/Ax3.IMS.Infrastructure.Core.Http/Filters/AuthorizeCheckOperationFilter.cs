@@ -28,7 +28,7 @@ namespace Ax3.IMS.Infrastructure.Core.Http.Filters
                 {
                     new OpenApiSecurityRequirement
                     {
-                        [ oAuthScheme ] = new [] { "test", "imsapi" }
+                        [ oAuthScheme ] = new [] { "imsapi" }
                     }
                 };
         }
