@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
+using Ax3.IMS.DataAccess.Core;
 using Ims.Api.Application.Modules.Infrastructure.Models.StoreType;
 using Ims.Domain.DomainModels;
 using MediatR;
@@ -32,12 +33,12 @@ namespace Ims.Api.Controllers
             _mediator = mediator;
             _mapper = mapper;
         }
-        [HttpGet]
+        [HttpPost]
         [ProducesResponseType(typeof(ICollection<StoreType>), (int)HttpStatusCode.OK)]
-        public async Task<ICollection<StoreTypeResponseModel>> GetStoreTypesAsync()
+        public async Task<PagedResult<StoreTypeResponseModel>> GetStoreTypesAsync(Paging paging)
         {
-            var rawResult = await _storeTypeRepository.GetAllAsync();
-            return _mapper.Map<ICollection<StoreTypeResponseModel>>(rawResult);
+            var rawResult = await _storeTypeRepository.RetrievePagedResultAsync<StoreType, StoreTypeResponseModel>(null, null,paging);
+            return rawResult;
         }
     }
 }

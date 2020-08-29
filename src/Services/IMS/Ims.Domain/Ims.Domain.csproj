@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\DataAccess\Ax3.IMS.DataAccess.Core\Ax3.IMS.DataAccess.Core.csproj" />
     <ProjectReference Include="..\..\..\Domain\Ax3.IMS.Domain\Ax3.IMS.Domain.csproj" />
     <ProjectReference Include="..\..\..\Infrastructure\Core\Ax3.IMS.Infrastructure.Core.Exception\Ax3.IMS.Infrastructure.Core.Exception.csproj" />
   </ItemGroup>

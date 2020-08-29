@@ -3,12 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using System.Transactions;
+using AutoMapper;
+using Ax3.IMS.DataAccess.Core;
 using Ax3.IMS.Domain;
 using Z.EntityFramework.Plus;
+using IsolationLevel = System.Data.IsolationLevel;
 
 namespace Ax3.IMS.DataAccess.EntityFramework
 {
@@ -19,12 +22,14 @@ namespace Ax3.IMS.DataAccess.EntityFramework
         protected TContext Context { get; }
 
         protected DbSet<TEntity> DbSet { get; }
-
-        protected GenericRepository(TContext context)
+        protected TransactionScope ReadUncommitedTransactionScopeAsync => new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = System.Transactions.IsolationLevel.ReadUncommitted }, TransactionScopeAsyncFlowOption.Enabled);
+        protected IMapper Mapper { get; }
+        protected GenericRepository(TContext context, IMapper mapper)
         {
             Context = context;
             DbSet = context.Set<TEntity>();
             Context.ChangeTracker.AutoDetectChangesEnabled = false;
+            Mapper = mapper;
         }
 
         public ICollection<TEntity> GetAll()
@@ -146,5 +151,25 @@ namespace Ax3.IMS.DataAccess.EntityFramework
             return Context.Database.BeginTransaction(isolationLevel);
         }
         private static Expression<Func<TEntity, bool>> GetByIdPredicate(TEntityId entityId) => e => (object)e.Id == (object)entityId;
+
+        public virtual async Task<PagedResult<TD>> RetrievePagedResultAsync<TS, TD>(Expression<Func<TS, bool>> predicate, List<OrderBy> orderBy = null, Paging paging = null, params Expression<Func<TS, object>>[] includeExpressions) where TS : class
+        {
+            return await RetrieveAsQueryable<TS>(predicate, orderBy, includeExpressions).PaginateAsync<TS, TD>(paging, Mapper);
+        }
+        protected virtual IQueryable<T> RetrieveAsQueryable<T>(Expression<Func<T, bool>> predicate, List<OrderBy> orderBy = null, params Expression<Func<T, object>>[] includeExpressions) where T : class
+        {
+            var query = Context.Set<T>().AsQueryable<T>();
+
+            if (includeExpressions?.Any() ?? false)
+                query = includeExpressions.Aggregate(query, (current, expression) => current.Include(expression));
+
+            if (predicate != null)
+                query = query.Where(predicate);
+
+            if (orderBy != null)
+                query = query.OrderBy(orderBy);
+
+            return query;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,11 +11,11 @@ namespace Ax3.IMS.DataAccess.EntityFramework
 {
     public static class Pagination
     {
-        public static async Task<PagedResult<TS>> PaginateAsync<TS>(this IQueryable<TS> collection, PagedQueryBase query)
-            => await collection.PaginateAsync(query.Page, query.Results);
+        public static async Task<PagedResult<TD>> PaginateAsync<TS, TD>(this IQueryable<TS> collection, Paging query, IMapper mapper)
+            => await collection.PaginateAsync<TS, TD>(mapper, query.Page, query.PageSize);
 
-        public static async Task<PagedResult<TS>> PaginateAsync<TS>(this IQueryable<TS> collection,
-            int page = 1, int resultsPerPage = 10)
+        public static async Task<PagedResult<TD>> PaginateAsync<TS, TD>(this IQueryable<TS> collection, IMapper mapper,
+            int page = 1, int resultsPerPage = 10 )
         {
             if (page <= 0)
             {
@@ -27,7 +28,7 @@ namespace Ax3.IMS.DataAccess.EntityFramework
             var isEmpty = await collection.AnyAsync() == false;
             if (isEmpty)
             {
-                return PagedResult<TS>.Empty;
+                return PagedResult<TD>.Empty;
             }
             var totalResults = await collection.CountAsync();
             var totalPages = (int)Math.Ceiling((decimal)totalResults / resultsPerPage);
@@ -35,14 +36,14 @@ namespace Ax3.IMS.DataAccess.EntityFramework
             //TODO:Datayı burada project edip bu şekilde dönebilirsin....AutoMapper'ın ProjectTo methodu kullanılabilir.
 
             var data = await collection.Limit(page, resultsPerPage)
-                .ProjectTo<TS>
+                .ProjectTo<TD>(mapper.ConfigurationProvider)
                 .ToListAsync();
 
-            return PagedResult<TS>.Create(data, page, resultsPerPage, totalPages, totalResults);
+            return PagedResult<TD>.Create(data, page, resultsPerPage, totalPages, totalResults);
         }
 
-        public static IQueryable<TS> Limit<TS>(this IQueryable<TS> collection, PagedQueryBase query)
-            => collection.Limit(query.Page, query.Results);
+        public static IQueryable<TS> Limit<TS>(this IQueryable<TS> collection, Paging query)
+            => collection.Limit(query.Page, query.PageSize);
 
         public static IQueryable<TS> Limit<TS>(this IQueryable<TS> collection,
             int page = 1, int resultsPerPage = 10)
