@@ -4,7 +4,7 @@
 
 using IdentityServer4.Models;
 
-namespace Identity.Api.Models
+namespace Identity.Api.Controllers.Home
 {
     public class ErrorViewModel
     {

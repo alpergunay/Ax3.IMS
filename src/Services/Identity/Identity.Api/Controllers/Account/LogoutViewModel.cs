@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-namespace Identity.Api.Models
+namespace Identity.Api.Controllers.Account
 {
-    public class DeviceAuthorizationInputModel : ConsentInputModel
+    public class LogoutViewModel : LogoutInputModel
     {
-        public string UserCode { get; set; }
+        public bool ShowLogoutPrompt { get; set; } = true;
     }
 }
