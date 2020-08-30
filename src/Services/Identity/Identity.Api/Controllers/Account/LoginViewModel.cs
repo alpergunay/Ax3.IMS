@@ -4,15 +4,12 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace Identity.Api.Models.AccountViewModels
+namespace Identity.Api.Controllers.Account
 {
     public class LoginViewModel : LoginInputModel
     {
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
         public bool AllowRememberLogin { get; set; } = true;
         public bool EnableLocalLogin { get; set; } = true;
 

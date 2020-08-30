@@ -4,15 +4,15 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace Identity.Api.Models.AccountViewModels
+namespace Identity.Api.Controllers.Account
 {
     public class LoginInputModel
     {
         [Required]
-        public string UserName { get; set; }
+        public string Username { get; set; }
         [Required]
         public string Password { get; set; }
-        public bool RememberMe { get; set; }
+        public bool RememberLogin { get; set; }
         public string ReturnUrl { get; set; }
     }
 }

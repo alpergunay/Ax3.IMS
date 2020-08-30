@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,7 +19,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Logging;
 using System;
 using System.Reflection;
+using HealthChecks.UI.Client;
 using Identity.Api.Configuration;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace Identity.Api
 {
@@ -41,8 +46,11 @@ namespace Identity.Api
             IdentityModelEventSource.ShowPII = true;
 
             _settings = new ApplicationSettings();
-            AppConfiguration.GetSection(typeof(ApplicationSettings).Name).Bind(_settings);
-
+            AppConfiguration.GetSection(nameof(ApplicationSettings)).Bind(_settings);
+            //services.Configure<CookiePolicyOptions>(opt =>
+            //{
+            //    opt.MinimumSameSitePolicy = SameSiteMode.None;
+            //});
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
              options.UseNpgsql(_settings.Persistence.ConnectionString,
@@ -60,22 +68,16 @@ namespace Identity.Api
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Latest);
 
-            services.AddTransient<ILoginService<ApplicationUser>, EFLoginService>();
-            services.AddTransient<IRedirectService, RedirectService>();
-
             var connectionString = _settings.Persistence.ConnectionString;
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
             // Adds IdentityServer
-            services.AddIdentityServer(x =>
-            {
-                x.IssuerUri = "null";
-                x.Authentication.CookieLifetime = TimeSpan.FromHours(2);
-                x.Events.RaiseErrorEvents = true;
-                x.Events.RaiseInformationEvents = true;
-                x.Events.RaiseFailureEvents = true;
-                x.Events.RaiseSuccessEvents = true;
-            })
+            // Adds IdentityServer
+          services.AddIdentityServer(x =>
+                {
+                    x.IssuerUri = "null";
+                    x.Authentication.CookieLifetime = TimeSpan.FromDays(365);
+                })
             .AddDevspacesIfNeeded(AppConfiguration.GetValue("EnableDevspaces", false))
             .AddSigningCredential(Certificate.Get())
             .AddAspNetIdentity<ApplicationUser>()
@@ -102,13 +104,18 @@ namespace Identity.Api
             .AddInMemoryApiScopes(Config.GetApiScopes())
             .AddInMemoryClients(Config.GetClients(Config.GetApiClients(AppConfiguration)))
             .Services.AddTransient<IProfileService, ProfileService>();
+
+            services.AddHealthChecks()
+                .AddCheck("self", () => HealthCheckResult.Healthy())
+                .AddNpgSql(AppConfiguration["ConnectionString"],
+                    name: "IdentityDB-check",
+                    tags: new string[] { "IdentityDB" });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             this.AutofacContainer = app.ApplicationServices.GetAutofacRoot();
-            app.UseCors("CorsPolicy");
 
             if (env.IsDevelopment())
             {
@@ -124,29 +131,30 @@ namespace Identity.Api
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            if (env.IsDevelopment())
+            app.Use(async (context, next) =>
             {
-                // Make work identity server redirections in Edge and lastest versions of browers. WARN: Not valid in a production environment.
-                app.Use(async (context, next) =>
-                {
-                    //context.Response.Headers.Add("Content-Security-Policy", "script-src 'unsafe-inline'");
-                    await next().ConfigureAwait(false);
-                });
-            }
-
-            app.UseRouting();
+                context.Response.Headers.Add("Content-Security-Policy", "script-src 'unsafe-inline'");
+                await next();
+            });
 
             app.UseForwardedHeaders();
-
             app.UseIdentityServer();
-            app.UseAuthentication();
-            app.UseAuthorization();
+            app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Lax });
+            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
+                endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
+                endpoints.MapHealthChecks("/liveness", new HealthCheckOptions
+                {
+                    Predicate = r => r.Name.Contains("self")
+                });
             });
         }
     }

@@ -3,7 +3,7 @@
 
 
 
-namespace Identity.Api.Models.AccountViewModels
+namespace Identity.Api.Controllers.Account
 {
     public class RedirectViewModel
     {
