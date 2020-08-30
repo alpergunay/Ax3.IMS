@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Identity.Api.Models
+namespace Identity.Api.Controllers.Grants
 {
     public class GrantsViewModel
     {

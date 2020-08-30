@@ -1,4 +1,4 @@
-@model Identity.Api.Models.AccountViewModels.LoginViewModel
+@model Identity.Api.Controllers.Account.LoginViewModel
 
 <div class="login-page">
     <div class="lead">
@@ -23,8 +23,8 @@
                             <input type="hidden" asp-for="ReturnUrl" />
 
                             <div class="form-group">
-                                <label asp-for="UserName"></label>
-                                <input class="form-control" placeholder="Username" asp-for="UserName" autofocus>
+                                <label asp-for="Username"></label>
+                                <input class="form-control" placeholder="Username" asp-for="Username" autofocus>
                             </div>
                             <div class="form-group">
                                 <label asp-for="Password"></label>
@@ -34,8 +34,8 @@
                             {
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" asp-for="RememberMe">
-                                        <label class="form-check-label" asp-for="RememberMe">
+                                        <input class="form-check-input" asp-for="RememberLogin">
+                                        <label class="form-check-label" asp-for="RememberLogin">
                                             Remember My Login
                                         </label>
                                     </div>

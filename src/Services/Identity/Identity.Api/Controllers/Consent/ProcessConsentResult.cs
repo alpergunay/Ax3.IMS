@@ -2,10 +2,9 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using Identity.Api.Controllers.Consent;
 using IdentityServer4.Models;
 
-namespace Identity.Api.Models
+namespace Identity.Api.Controllers.Consent
 {
     public class ProcessConsentResult
     {
