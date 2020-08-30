@@ -9,10 +9,10 @@ namespace Ims.Domain.DomainModels
 {
     public interface IStoreTypeRepository
     {
-        Task<ICollection<StoreType>> GetAllAsync();
-
+        Task<ICollection<T>> GetAllAsync<T>() where T : class;
         Task<PagedResult<TD>> RetrievePagedResultAsync<TS, TD>(Expression<Func<TS, bool>> predicate,
             List<OrderBy> orderBy = null, Paging paging = null,
             params Expression<Func<TS, object>>[] includeExpressions) where TS : class;
+
     }
 }

@@ -18,7 +18,7 @@ namespace Identity.Api.Services
 
         public async Task<ApplicationUser> FindByUsername(string user)
         {
-            return await _userManager.FindByEmailAsync(user).ConfigureAwait(false);
+            return await _userManager.FindByNameAsync(user).ConfigureAwait(false);
         }
 
         public async Task<bool> ValidateCredentials(ApplicationUser user, string password)

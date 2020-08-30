@@ -20,6 +20,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using IdentityServer4.Events;
 
 namespace Identity.Api.Controllers
 {
@@ -32,6 +33,7 @@ namespace Identity.Api.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IConfiguration _configuration;
         private readonly ApplicationDbContext _context;
+        private readonly IEventService _events;
 
         public AccountController(
 
@@ -42,7 +44,8 @@ namespace Identity.Api.Controllers
             ILogger<AccountController> logger,
             UserManager<ApplicationUser> userManager,
             IConfiguration configuration,
-            ApplicationDbContext context)
+            ApplicationDbContext context,
+            IEventService events)
         {
             _loginService = loginService;
             _interaction = interaction;
@@ -51,6 +54,7 @@ namespace Identity.Api.Controllers
             _userManager = userManager;
             _configuration = configuration;
             _context = context;
+            _events = events;
         }
 
         /// <summary>
@@ -59,13 +63,13 @@ namespace Identity.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Login(string returnUrl)
         {
-            var context = await _interaction.GetAuthorizationContextAsync(returnUrl).ConfigureAwait(false);
+            var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
             if (context?.IdP != null)
             {
                 throw new NotImplementedException("External login is not implemented!");
             }
 
-            var vm = await BuildLoginViewModelAsync(returnUrl, context).ConfigureAwait(false);
+            var vm = await BuildLoginViewModelAsync(returnUrl, context);
 
             ViewData["ReturnUrl"] = returnUrl;
 
@@ -77,15 +81,46 @@ namespace Identity.Api.Controllers
         /// </summary>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginInputModel model, string button)
         {
+            // check if we are in the context of an authorization request
+            var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
+            if (button != "login")
+            {
+                if (context != null)
+                {
+                    // if the user cancels, send a result back into IdentityServer as if they 
+                    // denied the consent (even if this client does not require consent).
+                    // this will send back an access denied OIDC error response to the client.
+                    await _interaction.DenyAuthorizationAsync(context, AuthorizationError.AccessDenied);
+
+                    // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
+                    if (context.IsNativeClient())
+                    {
+                        // The client is native, so this change in how to
+                        // return the response is for better UX for the end user.
+                        return this.LoadingPage("Redirect", model.ReturnUrl);
+                    }
+
+                    return Redirect(model.ReturnUrl);
+                }
+                else
+                {
+                    // since we don't have a valid context, then we just go back to the home page
+                    return Redirect("~/");
+                }
+            }
+
+
             if (ModelState.IsValid)
             {
-                var user = await _loginService.FindByUsername(model.Email).ConfigureAwait(false);
+                var user = await _loginService.FindByUsername(model.UserName);
 
-                if (await _loginService.ValidateCredentials(user, model.Password).ConfigureAwait(false))
+                if (await _loginService.ValidateCredentials(user, model.Password))
                 {
                     var tokenLifetime = _configuration.GetValue("TokenLifetimeMinutes", 120);
+                    await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.UserName, user.UserName, clientId: context?.Client.ClientId));
+
 
                     var props = new AuthenticationProperties
                     {
@@ -103,7 +138,7 @@ namespace Identity.Api.Controllers
                     }
                     ;
 
-                    await _loginService.SignInAsync(user, props).ConfigureAwait(false);
+                    await _loginService.SignInAsync(user, props);
 
                     // make sure the returnUrl is still valid, and if yes - redirect back to authorize endpoint
                     if (_interaction.IsValidReturnUrl(model.ReturnUrl))
@@ -118,7 +153,7 @@ namespace Identity.Api.Controllers
             }
 
             // something went wrong, show form with error
-            var vm = await BuildLoginViewModelAsync(model).ConfigureAwait(false);
+            var vm = await BuildLoginViewModelAsync(model);
 
             ViewData["ReturnUrl"] = model.ReturnUrl;
 
@@ -127,19 +162,19 @@ namespace Identity.Api.Controllers
 
         private async Task<LoginViewModel> BuildLoginViewModelAsync(string returnUrl, AuthorizationRequest context)
         {
-            if (context?.ClientId != null)
+            if (context?.Client != null)
             {
-                await _clientStore.FindEnabledClientByIdAsync(context.ClientId).ConfigureAwait(false);
+                await _clientStore.FindEnabledClientByIdAsync(context.Client.ClientId);
             }
 
-            return new LoginViewModel { ReturnUrl = returnUrl, Email = context?.LoginHint, };
+            return new LoginViewModel { ReturnUrl = returnUrl, UserName = context?.LoginHint, };
         }
 
-        private async Task<LoginViewModel> BuildLoginViewModelAsync(LoginViewModel model)
+        private async Task<LoginViewModel> BuildLoginViewModelAsync(LoginInputModel model)
         {
-            var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl).ConfigureAwait(false);
-            var vm = await BuildLoginViewModelAsync(model.ReturnUrl, context).ConfigureAwait(false);
-            vm.Email = model.Email;
+            var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
+            var vm = await BuildLoginViewModelAsync(model.ReturnUrl, context);
+            vm.UserName = model.UserName;
             vm.RememberMe = model.RememberMe;
             return vm;
         }
@@ -153,15 +188,15 @@ namespace Identity.Api.Controllers
             if (User.Identity.IsAuthenticated == false)
             {
                 // if the user is not authenticated, then just show logged out page
-                return await Logout(new LogoutViewModel { LogoutId = logoutId }).ConfigureAwait(false);
+                return await Logout(new LogoutViewModel { LogoutId = logoutId });
             }
 
             //Test for Xamarin.
-            var context = await _interaction.GetLogoutContextAsync(logoutId).ConfigureAwait(false);
+            var context = await _interaction.GetLogoutContextAsync(logoutId);
             if (context?.ShowSignoutPrompt == false)
             {
                 //it's safe to automatically sign-out
-                return await Logout(new LogoutViewModel { LogoutId = logoutId }).ConfigureAwait(false);
+                return await Logout(new LogoutViewModel { LogoutId = logoutId });
             }
 
             // show the logout prompt. this prevents attacks where the user
@@ -173,8 +208,8 @@ namespace Identity.Api.Controllers
         [Route("/connect/logout")]
         public async Task<IActionResult> TokenLogout(string redirectUrl)
         {
-            await HttpContext.SignOutAsync().ConfigureAwait(false);
-            await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme).ConfigureAwait(false);
+            await HttpContext.SignOutAsync();
+            await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
 
             UserLogin userLogin = null;
             if (User.Identity.IsAuthenticated)
@@ -238,7 +273,7 @@ namespace Identity.Api.Controllers
                     // if there's no current logout context, we need to create one
                     // this captures necessary info from the current logged in user
                     // before we signout and redirect away to the external IdP for signout
-                    model.LogoutId = await _interaction.CreateLogoutContextAsync().ConfigureAwait(false);
+                    model.LogoutId = await _interaction.CreateLogoutContextAsync();
                 }
 
                 string url = "/Account/Logout?logoutId=" + model.LogoutId;
@@ -246,8 +281,7 @@ namespace Identity.Api.Controllers
                 try
                 {
                     // hack: try/catch to handle social providers that throw
-                    await HttpContext.SignOutAsync(idp, new AuthenticationProperties { RedirectUri = url })
-                        .ConfigureAwait(false);
+                    await HttpContext.SignOutAsync(idp, new AuthenticationProperties { RedirectUri = url });
                 }
                 catch (Exception ex)
                 {
@@ -256,15 +290,15 @@ namespace Identity.Api.Controllers
             }
 
             // delete authentication cookie
-            await HttpContext.SignOutAsync().ConfigureAwait(false);
+            await HttpContext.SignOutAsync();
 
-            await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme).ConfigureAwait(false);
+            await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
 
             // set this so UI rendering sees an anonymous user
             HttpContext.User = new ClaimsPrincipal(new ClaimsIdentity());
 
             // get context information (client name, post logout redirect URI and iframe for federated signout)
-            var logout = await _interaction.GetLogoutContextAsync(model.LogoutId).ConfigureAwait(false);
+            var logout = await _interaction.GetLogoutContextAsync(model.LogoutId);
 
             return Redirect(logout?.PostLogoutRedirectUri);
         }
@@ -272,7 +306,7 @@ namespace Identity.Api.Controllers
         public async Task<IActionResult> DeviceLogOut(string redirectUrl)
         {
             // delete authentication cookie
-            await HttpContext.SignOutAsync().ConfigureAwait(false);
+            await HttpContext.SignOutAsync();
 
             // set this so UI rendering sees an anonymous user
             HttpContext.User = new ClaimsPrincipal(new ClaimsIdentity());
@@ -301,13 +335,13 @@ namespace Identity.Api.Controllers
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.Email,
+                    UserName = model.UserName,
                     Email = model.Email,
                     SurName = model.User.SurName,
                     Name = model.User.Name,
                     PhoneNumber = model.User.PhoneNumber
                 };
-                var result = await _userManager.CreateAsync(user, model.Password).ConfigureAwait(false);
+                var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Errors.Any())
                 {
                     AddErrors(result);
@@ -339,7 +373,7 @@ namespace Identity.Api.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByEmailAsync(model.Email).ConfigureAwait(false);
+                var user = await _userManager.FindByEmailAsync(model.Email);
                 if (user == null)
                 {
                     // Don't reveal that the user does not exist or is not confirmed
@@ -348,7 +382,7 @@ namespace Identity.Api.Controllers
 
                 // For more information on how to enable account confirmation and password reset please
                 // visit https://go.microsoft.com/fwlink/?LinkID=532713
-                var code = await _userManager.GeneratePasswordResetTokenAsync(user).ConfigureAwait(false);
+                var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                 //var callbackUrl = Url.Page("/Account/ResetPassword", values: new { code });
 
@@ -370,13 +404,13 @@ namespace Identity.Api.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = await _userManager.FindByEmailAsync(model.Email).ConfigureAwait(false);
+            var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
                 return BadRequest("Geçersiz mail adresi");
             }
 
-            var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password).ConfigureAwait(false);
+            var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
             if (result.Succeeded)
             {
                 return Ok("Şifreniz başarılı bir şekilde değiştirildi.");

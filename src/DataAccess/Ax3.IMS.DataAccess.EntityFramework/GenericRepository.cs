@@ -8,6 +8,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Transactions;
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Ax3.IMS.DataAccess.Core;
 using Ax3.IMS.Domain;
 using Z.EntityFramework.Plus;
@@ -40,12 +41,15 @@ namespace Ax3.IMS.DataAccess.EntityFramework
         {
             return await DbSet.ToListAsync();
         }
+        public async Task<ICollection<T>> GetAllAsync<T>() where T : class
+        {
+            return await DbSet.AsQueryable().ProjectTo<T>(Mapper.ConfigurationProvider).ToListAsync();
+        }
 
         public IQueryable<TEntity> GetAllAsQueryable()
         {
             return DbSet.AsQueryable();
         }
-
         public IQueryable<TEntity> GetAllAsNoFilterQueryable()
         {
             return DbSet.AsNoFilter();
@@ -171,5 +175,7 @@ namespace Ax3.IMS.DataAccess.EntityFramework
 
             return query;
         }
+
+
     }
 }

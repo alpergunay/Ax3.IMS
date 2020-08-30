@@ -18,6 +18,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Logging;
 using System;
 using System.Reflection;
+using Identity.Api.Configuration;
 
 namespace Identity.Api
 {
@@ -70,6 +71,10 @@ namespace Identity.Api
             {
                 x.IssuerUri = "null";
                 x.Authentication.CookieLifetime = TimeSpan.FromHours(2);
+                x.Events.RaiseErrorEvents = true;
+                x.Events.RaiseInformationEvents = true;
+                x.Events.RaiseFailureEvents = true;
+                x.Events.RaiseSuccessEvents = true;
             })
             .AddDevspacesIfNeeded(AppConfiguration.GetValue("EnableDevspaces", false))
             .AddSigningCredential(Certificate.Get())
@@ -94,6 +99,8 @@ namespace Identity.Api
                         sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorCodesToAdd: null);
                     });
             })
+            .AddInMemoryApiScopes(Config.GetApiScopes())
+            .AddInMemoryClients(Config.GetClients(Config.GetApiClients(AppConfiguration)))
             .Services.AddTransient<IProfileService, ProfileService>();
         }
 

@@ -8,6 +8,7 @@ using Ax3.IMS.DataAccess.Core;
 using Ims.Api.Application.Modules.Infrastructure.Models.StoreType;
 using Ims.Domain.DomainModels;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,6 +16,7 @@ using Microsoft.Extensions.Logging;
 namespace Ims.Api.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class StoreTypeController : ControllerBase
     {
@@ -33,12 +35,19 @@ namespace Ims.Api.Controllers
             _mediator = mediator;
             _mapper = mapper;
         }
+        //TODO:Paging örneği için bırakılmıştır. Gerçek kullanım sonrasında kaldırılacaktır.
         [HttpPost]
         [ProducesResponseType(typeof(ICollection<StoreType>), (int)HttpStatusCode.OK)]
         public async Task<PagedResult<StoreTypeResponseModel>> GetStoreTypesAsync(Paging paging)
         {
             var rawResult = await _storeTypeRepository.RetrievePagedResultAsync<StoreType, StoreTypeResponseModel>(null, null,paging);
             return rawResult;
+        }
+        [HttpGet]
+        [ProducesResponseType(typeof(ICollection<StoreTypeResponseModel>), (int)HttpStatusCode.OK)]
+        public async Task<ICollection<StoreTypeResponseModel>> GetStoreTypesAsync()
+        {
+            return await _storeTypeRepository.GetAllAsync<StoreTypeResponseModel>();
         }
     }
 }

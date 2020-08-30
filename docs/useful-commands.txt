@@ -7,7 +7,7 @@ dotnet ef migrations add InitialIdentityServerPersistedGrantDbMigration -c Persi
 
 dotnet ef migrations add InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/IdentityServer/ConfigurationDb --verbose
 
-dotnet ef migrations add InitialIdentityServerApplicationDbMigration -c ApplicationDbContext-o Data/Migrations/ApplicationDb --verbose
+dotnet ef migrations add InitialIdentityServerApplicationDbMigration -c ApplicationDbContext -o Data/Migrations/ApplicationDb --verbose
 
 // Identity migration eklemen için
 // consoledan Identity projesinin konumuna git

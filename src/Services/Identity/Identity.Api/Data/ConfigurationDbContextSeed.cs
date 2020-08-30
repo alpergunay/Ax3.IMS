@@ -56,6 +56,14 @@ namespace Identity.Api.Data
 
                 await context.SaveChangesAsync();
             }
+            if (!context.ApiScopes.Any())
+            {
+                foreach (var resource in Config.GetApiScopes())
+                {
+                    context.ApiScopes.Add(resource.ToEntity());
+                }
+                await context.SaveChangesAsync();
+            }
         }
     }
 }

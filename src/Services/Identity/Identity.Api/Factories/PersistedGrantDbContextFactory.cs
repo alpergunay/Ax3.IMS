@@ -19,6 +19,7 @@ namespace Identity.Api.Factories
 
             var optionsBuilder = new DbContextOptionsBuilder<PersistedGrantDbContext>();
             var operationOptions = new OperationalStoreOptions();
+            //operationOptions.DefaultSchema = "identity";
 
             optionsBuilder.UseNpgsql(config["ConnectionString"], npgsqlOptionsAction: o => o.MigrationsAssembly("Identity.Api"));
 

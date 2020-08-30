@@ -2,6 +2,7 @@ using IdentityServer4;
 using IdentityServer4.Models;
 using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 
 namespace Identity.Api.Configuration
 {
@@ -12,7 +13,13 @@ namespace Identity.Api.Configuration
         {
             return new List<ApiResource>
             {
-                new ApiResource("imsapi", "IMS API Service"),
+                new ApiResource("imsapi", "IMS Web Api")
+                {
+                    Scopes = new List<string>()
+                    {
+                        "imsapi"
+                    }
+                }
             };
         }
 
@@ -25,6 +32,24 @@ namespace Identity.Api.Configuration
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile()
             };
+        }
+        
+        public static IEnumerable<ApiScope> GetApiScopes()
+        {
+            return new[]
+            {
+                new ApiScope(name: "imsapi",   displayName: "Access API Backend")
+            };
+        }
+
+        public static Dictionary<string, string> GetApiClients(IConfiguration configuration)
+        {
+            var clientUrls = new Dictionary<string, string>();
+
+            clientUrls.Add("ImsApi", configuration.GetValue<string>("ImsApiClient"));
+            clientUrls.Add("Spa", configuration.GetValue<string>("SpaClient"));
+            clientUrls.Add("WebSpa", configuration.GetValue<string>("WebSpaClient"));
+            return clientUrls;
         }
 
         // client want to access resources (aka scopes)
