@@ -1,0 +1,27 @@
+.ant-layout-sider {
+  box-shadow: 2px 0px 8px 0px rgba(29, 35, 41, 0.05);
+
+  .Logo {
+    background-color: @layout-header-background;
+    height: 64px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .ant-menu {
+    border-right: none;
+    max-height: calc(100% - 64px);
+    overflow-y: auto;
+    padding-bottom: 24px;
+
+    .ant-menu-sub {
+      padding-bottom: 0;
+    }
+  }
+}
