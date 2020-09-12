@@ -71,6 +71,8 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "..\deploy
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{131A8014-E824-4F22-B360-1E063ED4C377}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ax3-ims-angular", "WebApps\ax3-ims-angular\ax3-ims-angular.csproj", "{FCF22B1B-70CB-4D78-8568-AE4B7F999DDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -157,6 +159,10 @@ Global
 		{04648E82-4F02-4527-9C6C-B11144872F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04648E82-4F02-4527-9C6C-B11144872F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04648E82-4F02-4527-9C6C-B11144872F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCF22B1B-70CB-4D78-8568-AE4B7F999DDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF22B1B-70CB-4D78-8568-AE4B7F999DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF22B1B-70CB-4D78-8568-AE4B7F999DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF22B1B-70CB-4D78-8568-AE4B7F999DDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -190,6 +196,7 @@ Global
 		{BC98E78C-7992-4EB9-AAF3-0E479CF097FD} = {21E07FBB-D414-4A6A-A3F7-18E8406022CD}
 		{AE5B41D4-674D-4424-BCF1-B80B44A6CFEF} = {D4F73305-0399-4656-8183-1E17CA36120D}
 		{4F6C0051-DEC5-46E5-A58A-36E2909ED8DA} = {AE5B41D4-674D-4424-BCF1-B80B44A6CFEF}
+		{FCF22B1B-70CB-4D78-8568-AE4B7F999DDD} = {131A8014-E824-4F22-B360-1E063ED4C377}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3772DE5D-61C1-4B14-9840-7059F9435E0A}

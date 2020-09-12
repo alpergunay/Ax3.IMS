@@ -101,6 +101,7 @@ namespace Identity.Api
                         sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorCodesToAdd: null);
                     });
             })
+            .AddInMemoryIdentityResources(Config.GetResources())
             .AddInMemoryApiScopes(Config.GetApiScopes())
             .AddInMemoryClients(Config.GetClients(Config.GetApiClients(AppConfiguration)))
             .Services.AddTransient<IProfileService, ProfileService>();

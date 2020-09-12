@@ -33,8 +33,9 @@ export class Identity implements OnInit  {
         this.authenticated = this.service.IsAuthorized;
 
         if (this.authenticated) {
-            if (this.service.UserData)
+            if (this.service.UserData) {
                 this.userName = this.service.UserData.email;
+            }
         }
     }
 
