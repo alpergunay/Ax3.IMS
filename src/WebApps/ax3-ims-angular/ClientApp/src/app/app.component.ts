@@ -16,7 +16,7 @@ import { ConfigurationService } from './shared/services/configuration.service';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   Authenticated: boolean = false;
   subscription: Subscription;
   private unsubscribe: Subscription[] = []; // Read more: => https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
@@ -31,11 +31,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('app on init');
     this.subscription = this.securityService.authenticationChallenge$.subscribe(res => this.Authenticated = res);
-
-    console.log('configuration');
-    this.configurationService.load();   
+    this.configurationService.load();
 
     const routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -54,7 +51,7 @@ export class AppComponent implements OnInit {
     this.unsubscribe.push(routerSubscription);
   }
 
-  //ngOnDestroy() {
-  //  this.unsubscribe.forEach((sb) => sb.unsubscribe());
-  //}
+  ngOnDestroy() {
+    this.unsubscribe.forEach((sb) => sb.unsubscribe());
+  }
 }

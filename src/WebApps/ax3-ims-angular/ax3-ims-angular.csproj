@@ -1975,6 +1975,11 @@
     <None Remove="ClientApp\dist\vendor-es2015.js.map" />
     <None Remove="ClientApp\dist\vendor-es5.js" />
     <None Remove="ClientApp\dist\vendor-es5.js.map" />
+    <None Remove="ClientApp\src\app\modules\accounts\accounts-routing.module.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\modules\accounts\accounts-routing.module.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

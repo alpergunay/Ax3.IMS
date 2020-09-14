@@ -12,7 +12,7 @@ import { DashboardsModule } from 'src/app/_metronic/partials/content/dashboards/
       {
         path: '',
         component: DashboardComponent,
-      },
+      }
     ]),
     DashboardsModule,
   ],

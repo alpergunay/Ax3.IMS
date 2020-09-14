@@ -1,0 +1,43 @@
+<div class="row mb-2">
+  <div class="col">
+    <dx-button icon="la la-plus" hint="Ekle"
+               (onClick)="addClicked()">
+    </dx-button>
+    <dx-button icon="la la-pencil"
+               hint="Düzenle" (onClick)="editClicked()">
+    </dx-button>
+    <dx-button icon="la la-minus-square"
+               hint="Sil" (onClick)="deleteClicked()">
+    </dx-button>
+    <dx-button hint="Önizleme"
+               icon="la la-eye"
+               (onClick)="viewClicked()">
+    </dx-button>
+    <dx-button icon="la la-retweet"
+               hint="Yenile"
+               (onClick)="refreshClicked()">
+    </dx-button>
+    <dx-button icon="la la-filter"
+               hint="Filitrele" (onClick)="filterClicked()">
+    </dx-button>
+    <dx-button icon="la la-download"
+               hint="İndir" (onClick)="downloadClicked()">
+    </dx-button>
+
+    <dx-button icon="la la-expand" hint="Grupları Aç/Kapat"
+               (onClick)="expandAllClicked()">
+    </dx-button>
+    <dx-button icon="la la-clone"
+               hint="Gruplamayı Aç/Kapat"
+               (onClick)="changeOption('groupPanel.visible')">
+    </dx-button>
+    <dx-button icon="la la-search"
+               hint="Liste Üzerinde Filtrelemeyi Aç/Kapat"
+               (onClick)="changeOption('filterRow.visible')">
+    </dx-button>
+    <dx-button icon="la la-columns" hint="Sütun Seçiciyi Aç/Kapat"
+               (onClick)="changeOption('columnChooser.enabled')">
+    </dx-button>
+  </div>
+</div>
+<rep-reporter #reporter></rep-reporter>

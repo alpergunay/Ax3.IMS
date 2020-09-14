@@ -17,6 +17,10 @@ import { Pager } from './components/pager/pager';
 import { Header } from './components/header/header';
 import { Identity } from './components/identity/identity';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
+import { PageTemplateHeaderComponent } from './components/page-template-header/page-template-header.component';
+import { PageTemplateComponent } from './components/page-template/page-template.component';
+import {DxButtonModule, DxDataGridModule} from 'devextreme-angular';
 
 @NgModule({
   imports: [
@@ -27,13 +31,18 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     NgbModule,
     // No need to export as these modules don't expose any components/directive etc'
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    DxButtonModule,
+    DxDataGridModule
   ],
   declarations: [
     Pager,
     Header,
     Identity,
     PageNotFoundComponent,
+    PageHeaderComponent,
+    PageTemplateHeaderComponent,
+    PageTemplateComponent,
   ],
   exports: [
     // Modules

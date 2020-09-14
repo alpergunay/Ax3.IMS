@@ -84,7 +84,7 @@ export class SecurityService {
 
     const authorizationUrl = this.authorityUrl + '/connect/authorize';
     const client_id = 'js';
-    const redirect_uri = location.origin + '/auth/callback';
+    const redirect_uri = location.origin + '/';
     const response_type = 'id_token token';
     const scope = 'openid profile imsapi';
     const nonce = 'N' + Math.random() + '' + Date.now();

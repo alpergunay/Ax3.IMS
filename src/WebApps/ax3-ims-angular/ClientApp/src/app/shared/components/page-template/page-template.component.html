@@ -1,0 +1,73 @@
+<app-page-template-header #filterHeader (add)="addButtonClicked()"
+                       (edit)="editButtonClicked()"
+                       (view)="viewButtonClicked()"
+                       (delete)="deleteButtonClicked()"
+                       (refresh)="refreshButtonClicked()"
+                       (download)="downloadButtonClicked()"
+                       (expandAll)="expandAllButtonClicked()"
+                       (filter)="gridFilterValueChange($event)"
+                       [dataGrid]="grid">
+</app-page-template-header>
+
+<div class="row mb-2" id="mGridContainer">
+    <dx-data-grid id="gridContainer{{ComponentName}}" #grid
+                  [dataSource]="DataSource"
+                  [columns]="Columns"
+                  [filterValue]="gridFilterValue"
+                  [rowAlternationEnabled]="true"
+                  (onSelectionChanged)="SelectionChangeGrid($event)"
+                  (onRowClick)="onClickGridRow($event)"
+                  [remoteOperations]="RemoteOperations.remoteOperations"
+                  (onEditorPreparing)="onEditorPreparing($event)"
+                  (onCellClick)="onCellClick($event)"
+                  (onRowClick)="rowClick($event)"
+                  (onContentReady)="onGridContentReady($event)"
+                  (onRowPrepared)="rowPrepared($event)"
+                  (onInitialized)="onGridInitialized($event)"
+                  [height]="heightSetter"
+                  [columnAutoWidth]="true"
+                  [allowColumnResizing]="true"
+                  [allowColumnReordering]="true"
+                  [showColumnLines]="true"
+                  [showRowLines]="true"
+                  [showBorders]="true"
+                  [columnMinWidth]="90">
+
+      <dxo-summary>
+        <!-- <dxi-total-item [column]="Columns[0].dataField" summaryType="count" alignment ="left"> </dxi-total-item>  -->
+        <dxi-group-item summaryType="count" displayFormat="{0}"></dxi-group-item>
+
+        <ng-container *ngFor="let columnItem of Columns; let i = index">
+          <ng-container *ngIf="columnItem.summary === 'sum'">
+            <dxi-group-item [column]="columnItem.dataField"
+                            summaryType="sum"
+                            displayFormat="{{columnItem.caption}}: {0}"
+                            [showInGroupFooter]="true">
+            </dxi-group-item>
+          </ng-container>
+        </ng-container>
+
+        <ng-container *ngFor="let columnItem of Columns">
+          <ng-container *ngIf="columnItem.summary === 'totalItem'">
+            <dxi-total-item [column]="columnItem.dataField"
+                            summaryType="sum"
+                            displayFormat="{{columnItem.caption}}: {0}"></dxi-total-item>
+          </ng-container>
+        </ng-container>
+      </dxo-summary>
+      <dxo-header-filter [visible]="true" [allowSearch]="true"></dxo-header-filter>
+      <dxo-scrolling mode="standart" showScrollbar="always" useNative="false" rowRenderingMode="standart"></dxo-scrolling>
+      <dxo-grouping #expand [expandMode]="'rowClick'" [allowCollapsing]="true" [autoExpandAll]="manageAutoExpandAll"></dxo-grouping>
+      <dxo-group-panel [visible]="false" emptyPanelText="Gruplama için sütun başlıklarını sürükleyiniz..."></dxo-group-panel>
+      <dxo-filter-row resetOperationText="Temizle" [operationDescriptions]="custOpDescriptions" [visible]="false" [applyFilter]="'auto'"></dxo-filter-row>
+      <dxo-export fileName="{{ExportFileName}}"></dxo-export>
+      <dxo-sorting mode="single"></dxo-sorting>
+      <dxo-load-panel [enabled]="true"></dxo-load-panel>
+      <dxo-column-chooser [enabled]="false" mode="dragAndDrop"></dxo-column-chooser>
+      <dxo-paging [enabled]="true" [pageSize]="userMaxPageRows"></dxo-paging>
+      <dxo-pager [showPageSizeSelector]="false" showNavigationButtons="true" [visible]="true" [showInfo]="true" infoText="Sayfa #{0}. Toplam: {1} ({2} Kayıt)">
+      </dxo-pager>
+    </dx-data-grid>
+</div>
+
+

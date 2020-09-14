@@ -9,7 +9,6 @@ import { InlineSVGModule } from 'ng-inline-svg';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthService } from './modules/auth/_services/auth.service';
 import { FakeAPIService } from './_helpers/fake/fake-api.service';
 import { environment } from 'src/environments/environment';
 // Highlight JS
@@ -22,6 +21,7 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import { SplashScreenModule } from './_metronic/partials/layout/splash-screen/splash-screen.module';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './shared/shared.module';
+import { AuthService } from './modules/auth/_services/auth.service';
 
 function appInitializer(authService: AuthService) {
   return () => {
