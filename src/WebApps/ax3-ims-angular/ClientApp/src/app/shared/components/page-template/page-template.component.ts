@@ -1,4 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {DataGridColumnModel} from './data-grid-column-model';
+import {DxDataGridComponent} from 'devextreme-angular';
 
 @Component({
   selector: 'app-page-template',
@@ -8,6 +10,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class PageTemplateComponent implements OnInit {
   @Input() ComponentName = '';
   @Input() DataSource: any = {};
+  @Input() Columns: DataGridColumnModel[] = [];
   @Output() addButton = new EventEmitter();
   @Output() refreshButton = new EventEmitter();
   @Output() editButton = new EventEmitter();
@@ -25,6 +28,7 @@ export class PageTemplateComponent implements OnInit {
   ModalParameter: { SelectedRowId } = { SelectedRowId: 0 };
   manageAutoExpandAll = false;
   @Input() IsPreview = false;
+  @ViewChild('grid') DataGrid: DxDataGridComponent;
   constructor() { }
 
   ngOnInit(): void {

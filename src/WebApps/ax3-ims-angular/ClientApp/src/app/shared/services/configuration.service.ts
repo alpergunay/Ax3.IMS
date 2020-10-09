@@ -19,10 +19,9 @@ export class ConfigurationService {
     const baseURI = document.baseURI.endsWith('/') ? document.baseURI : `${document.baseURI}/`;
     const url = `${baseURI}Home/Configuration`;
     this.http.get(url).subscribe((response) => {
-      console.log('server settings loaded');
       this.serverSettings = response as IConfiguration;
-      console.log("Server Settings : " + this.serverSettings);
       this.storageService.store('identityUrl', this.serverSettings.identityUrl);
+      this.storageService.store('imsApiClient', this.serverSettings.imsApiClient);
       this.storageService.store('signalrHubUrl', this.serverSettings.signalrHubUrl);
       this.isReady = true;
       this.settingsLoadedSource.next();

@@ -9,11 +9,18 @@ namespace Identity.Api.Configuration
     public static class Config
     {
         // ApiResources define the apis in your system
-        public static IEnumerable<ApiResource> GetApis()
+        public static IEnumerable<ApiResource> GetApiResources()
         {
             return new List<ApiResource>
             {
                 new ApiResource("imsapi", "IMS Web Api")
+                {
+                    Scopes = new List<string>()
+                    {
+                        "imsapi"
+                    }
+                },
+                new ApiResource("api/account-types", "IMS Account Types API")
                 {
                     Scopes = new List<string>()
                     {

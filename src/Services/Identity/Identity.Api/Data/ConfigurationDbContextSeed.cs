@@ -49,7 +49,7 @@ namespace Identity.Api.Data
 
             if (!context.ApiResources.Any())
             {
-                foreach (var api in Config.GetApis())
+                foreach (var api in Config.GetApiResources())
                 {
                     context.ApiResources.Add(api.ToEntity());
                 }

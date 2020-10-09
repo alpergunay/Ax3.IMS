@@ -175,7 +175,5 @@ namespace Ax3.IMS.DataAccess.EntityFramework
 
             return query;
         }
-
-
     }
 }

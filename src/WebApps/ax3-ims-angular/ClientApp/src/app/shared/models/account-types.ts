@@ -1,2 +1,4 @@
-export class AccountTypes {
+export interface IAccountTypes {
+  code: string;
+  description: string;
 }

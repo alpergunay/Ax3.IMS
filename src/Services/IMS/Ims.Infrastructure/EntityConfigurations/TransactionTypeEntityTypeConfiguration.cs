@@ -15,28 +15,28 @@ namespace Ims.Infrastructure.EntityConfigurations
             base.ConfigureForEntity(builder);
 
             builder
-                .Property<string>("_code")
+                .Property<string>("Code")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Code")
                 .HasMaxLength(20)
                 .IsRequired();
 
             builder
-                .Property<string>("_description")
+                .Property<string>("Description")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Description")
                 .HasMaxLength(200)
                 .IsRequired();
 
             builder
-                .Property("_directionTypeId")
+                .Property("DirectionTypeId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("DirectionTypeId")
                 .IsRequired();
 
             builder.HasOne(p => p.DirectionType)
                 .WithMany()
-                .HasForeignKey("_directionTypeId");
+                .HasForeignKey("DirectionTypeId");
         }
     }
 }

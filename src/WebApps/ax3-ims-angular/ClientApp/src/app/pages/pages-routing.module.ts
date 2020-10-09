@@ -18,6 +18,11 @@ const routes: Routes = [
           import('../modules/accounts/accounts.module').then((m) => m.AccountsModule),
       },
       {
+        path: 'account-definitions',
+        loadChildren: () =>
+          import('../modules/account-definitions/account-definitions.module').then((m) => m.AccountDefinitionsModule),
+      },
+      {
         path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full',

@@ -27,12 +27,23 @@ namespace Ims.Api.Infrastructure.AutofacModules
             builder.RegisterType<StoreTypeRepository>()
                 .As<IStoreTypeRepository>()
                 .InstancePerLifetimeScope();
-
+            builder.RegisterType<AccountTypeRepository>()
+                .As<IAccountTypeRepository>()
+                .InstancePerLifetimeScope();
+            builder.RegisterType<DirectionTypeRepository>()
+                .As<IDirectionTypeRepository>()
+                .InstancePerLifetimeScope();
+            builder.RegisterType<InvestmentToolTypeRepository>()
+                .As<IInvestmentToolTypeRepository>()
+                .InstancePerLifetimeScope();
+            builder.RegisterType<TransactionTypeRepository>()
+                .As<ITransactionTypeRepository>()
+                .InstancePerLifetimeScope();
             #endregion
 
             #region Validations
 
-            
+
 
             #endregion
 

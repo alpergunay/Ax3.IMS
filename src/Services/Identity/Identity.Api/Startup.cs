@@ -104,6 +104,7 @@ namespace Identity.Api
             .AddInMemoryIdentityResources(Config.GetResources())
             .AddInMemoryApiScopes(Config.GetApiScopes())
             .AddInMemoryClients(Config.GetClients(Config.GetApiClients(AppConfiguration)))
+            .AddInMemoryApiResources(Config.GetApiResources())
             .Services.AddTransient<IProfileService, ProfileService>();
 
             services.AddHealthChecks()

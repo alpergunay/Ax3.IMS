@@ -12,6 +12,7 @@
 <div class="row mb-2" id="mGridContainer">
     <dx-data-grid id="gridContainer{{ComponentName}}" #grid
                   [dataSource]="DataSource"
+                  [columns]="Columns"
                   [filterValue]="gridFilterValue"
                   [rowAlternationEnabled]="true"
                   (onSelectionChanged)="gridSelectionChanged($event)"

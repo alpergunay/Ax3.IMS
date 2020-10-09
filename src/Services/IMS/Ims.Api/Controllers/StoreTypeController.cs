@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Ax3.IMS.DataAccess.Core;
 using Ims.Api.Application.Modules.Infrastructure.Models.StoreType;
 using Ims.Domain.DomainModels;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace Ims.Api.Controllers
 {
@@ -44,6 +41,7 @@ namespace Ims.Api.Controllers
             return rawResult;
         }
         [HttpGet]
+        [Route("store-types")]
         [ProducesResponseType(typeof(ICollection<StoreTypeResponseModel>), (int)HttpStatusCode.OK)]
         public async Task<ICollection<StoreTypeResponseModel>> GetStoreTypesAsync()
         {

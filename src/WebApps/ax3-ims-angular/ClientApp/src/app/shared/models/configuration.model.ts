@@ -1,5 +1,5 @@
 export interface IConfiguration {
   identityUrl: string;
-  imsUrl: string;
+  imsApiClient: string;
   signalrHubUrl: string;
 }

@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {Routes} from '@angular/router';
-import {AccountsComponent} from '../../accounts/accounts.component';
-import {AccountComponent} from '../../accounts/account/account.component';
+import {RouterModule, Routes} from '@angular/router';
+import {AccountTypesComponent} from './account-types/account-types.component';
+import {AccountDefinitionsComponent} from './account-definitions.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AccountsComponent,
+    component: AccountDefinitionsComponent,
     children: [
       {
-        path: 'account-definitions',
-        component: AccountComponent,
+        path: 'account-types',
+        component: AccountTypesComponent,
       },
-      { path: '', redirectTo: 'account', pathMatch: 'full' },
+      { path: '', redirectTo: 'account-types', pathMatch: 'full' },
       {
         path: '**',
-        component: AccountComponent,
+        component: AccountTypesComponent,
         pathMatch: 'full',
       },
     ],
@@ -25,9 +24,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
 export class AccountDefinitionsRoutingModule { }
