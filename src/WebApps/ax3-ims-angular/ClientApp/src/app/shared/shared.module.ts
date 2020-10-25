@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,7 +19,10 @@ import { Identity } from './components/identity/identity';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PageTemplateHeaderComponent } from './components/page-template-header/page-template-header.component';
 import { PageTemplateComponent } from './components/page-template/page-template.component';
-import {DxButtonModule, DxDataGridModule} from 'devextreme-angular';
+import {DxButtonModule, DxDataGridModule, DxTextBoxModule} from 'devextreme-angular';
+import {DialogComponent} from './base/dialog/dialog.component';
+import {InputDialogComponent} from './base/input-dialog/input-dialog.component';
+import {ConfirmationComponent} from './base/confirmation/confirmation.component';
 
 @NgModule({
   imports: [
@@ -32,7 +35,8 @@ import {DxButtonModule, DxDataGridModule} from 'devextreme-angular';
     HttpClientModule,
     HttpClientJsonpModule,
     DxButtonModule,
-    DxDataGridModule
+    DxDataGridModule,
+    DxTextBoxModule
   ],
   declarations: [
     Pager,
@@ -41,6 +45,9 @@ import {DxButtonModule, DxDataGridModule} from 'devextreme-angular';
     PageNotFoundComponent,
     PageTemplateHeaderComponent,
     PageTemplateComponent,
+    DialogComponent,
+    InputDialogComponent,
+    ConfirmationComponent
   ],
   exports: [
     // Modules

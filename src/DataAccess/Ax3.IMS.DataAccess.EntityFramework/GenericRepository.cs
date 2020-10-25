@@ -1,4 +1,7 @@
-﻿using Ax3.IMS.Domain.Types;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Ax3.IMS.DataAccess.Core;
+using Ax3.IMS.Domain.Types;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
@@ -7,10 +10,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Transactions;
-using AutoMapper;
-using AutoMapper.QueryableExtensions;
-using Ax3.IMS.DataAccess.Core;
-using Ax3.IMS.Domain;
 using Z.EntityFramework.Plus;
 using IsolationLevel = System.Data.IsolationLevel;
 

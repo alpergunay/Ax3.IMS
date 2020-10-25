@@ -4,7 +4,7 @@ import {PageTemplateComponent} from '../../../shared/components/page-template/pa
 import {AccountTypesService} from './account-types.service';
 import {ConfigurationService} from '../../../shared/services/configuration.service';
 import {catchError} from 'rxjs/operators';
-import {Observable} from 'rxjs';
+import {throwError} from 'rxjs';
 import {IAccountTypes} from '../../../shared/models/account-types';
 
 @Component({
@@ -17,6 +17,7 @@ export class AccountTypesComponent implements OnInit {
   @ViewChild(PageTemplateComponent) pageTemplate: PageTemplateComponent;
   errorReceived: boolean;
   accountTypes: IAccountTypes[];
+  DataSource: any;
   constructor(private service: AccountTypesService, private configurationService: ConfigurationService) {
     this.Columns = [
       {caption: 'Kod', dataField: 'code'},
@@ -36,14 +37,15 @@ export class AccountTypesComponent implements OnInit {
 
   getAccountTypes() {
     this.errorReceived = false;
-    this.service.getAccountTypes()
+    this.service.getList()
       .pipe(catchError((err) => this.handleError(err)))
       .subscribe(accountTypes => {
         this.accountTypes = accountTypes;
+        this.DataSource = accountTypes;
       });
   }
   private handleError(error: any) {
     this.errorReceived = true;
-    return Observable.throw(error);
+    return throwError(error);
   }
 }

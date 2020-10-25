@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using Ims.Api.Application.Modules.Infrastructure.Queries;
 
 namespace Ims.Api.Controllers
 {
@@ -21,16 +22,19 @@ namespace Ims.Api.Controllers
         private readonly ILogger<StoreTypeController> _logger;
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
+        private readonly IImsQueries _queries;
 
         public StoreTypeController(IStoreTypeRepository storeTypeRepository,
             ILogger<StoreTypeController> logger,
             IMediator mediator,
-            IMapper mapper)
+            IMapper mapper,
+            IImsQueries queries)
         {
             _storeTypeRepository = storeTypeRepository;
             _logger = logger;
             _mediator = mediator;
             _mapper = mapper;
+            _queries = queries;
         }
         //TODO:Paging örneği için bırakılmıştır. Gerçek kullanım sonrasında kaldırılacaktır.
         [HttpPost]
@@ -41,11 +45,11 @@ namespace Ims.Api.Controllers
             return rawResult;
         }
         [HttpGet]
-        [Route("store-types")]
-        [ProducesResponseType(typeof(ICollection<StoreTypeResponseModel>), (int)HttpStatusCode.OK)]
-        public async Task<ICollection<StoreTypeResponseModel>> GetStoreTypesAsync()
+        [Route("")]
+        [ProducesResponseType(typeof(IEnumerable<StoreTypeResponseModel>), (int)HttpStatusCode.OK)]
+        public async Task<IEnumerable<StoreTypeResponseModel>> GetStoreTypesAsync()
         {
-            return await _storeTypeRepository.GetAllAsync<StoreTypeResponseModel>();
+            return await _queries.GetStoreTypesAsync();
         }
     }
 }

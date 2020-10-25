@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Ims.Api.Application.Modules.Infrastructure.Models.DirectionType;
 using Ims.Api.Application.Modules.Infrastructure.Models.TransactionType;
+using Ims.Api.Application.Modules.Infrastructure.Queries;
 using Ims.Domain.DomainModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,17 +16,17 @@ namespace Ims.Api.Controllers
     [ApiController]
     public class DirectionTypeController : ControllerBase
     {
-        private readonly IDirectionTypeRepository _repository;
-        public DirectionTypeController(IDirectionTypeRepository repository)
+        private readonly IImsQueries _queries;
+        public DirectionTypeController(IImsQueries queries)
         {
-            _repository = repository;
+            _queries = queries;
         }
         [HttpGet]
-        [Route("direction-types")]
-        [ProducesResponseType(typeof(ICollection<DirectionTypeResponseModel>), (int)HttpStatusCode.OK)]
-        public async Task<ICollection<DirectionTypeResponseModel>> GetDirectionTypesAsync()
+        [Route("")]
+        [ProducesResponseType(typeof(IEnumerable<DirectionTypeResponseModel>), (int)HttpStatusCode.OK)]
+        public async Task<IEnumerable<DirectionTypeResponseModel>> GetDirectionTypesAsync()
         {
-            return await _repository.GetAllAsync<DirectionTypeResponseModel>();
+            return await _queries.GetDirectionTypesAsync();
         }
     }
 }

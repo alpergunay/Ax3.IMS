@@ -1,28 +1,29 @@
 ﻿using Ims.Api.Application.Modules.Infrastructure.Models.AccountType;
-using Ims.Domain.DomainModels;
+using Ims.Api.Application.Modules.Infrastructure.Queries;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Ims.Api.Controllers
 {
-    [Route("api/account-types")]
+    [Route("api/[controller]")]
     [Authorize]
     [ApiController]
     public class AccountTypeController : ControllerBase
     {
-        private readonly IAccountTypeRepository _repository;
-        public AccountTypeController(IAccountTypeRepository repository)
+        private readonly IImsQueries _queries;
+        public AccountTypeController(IImsQueries queries)
         {
-            _repository = repository;
+            _queries = queries;
         }
         [HttpGet]
-        [ProducesResponseType(typeof(ICollection<AccountTypeResponseModel>), (int)HttpStatusCode.OK)]
-        public async Task<ICollection<AccountTypeResponseModel>> GetAccountTypesAsync()
+        [Route("")]
+        [ProducesResponseType(typeof(IEnumerable<AccountTypeResponseModel>), (int)HttpStatusCode.OK)]
+        public async Task<IEnumerable<AccountTypeResponseModel>> GetAccountTypesAsync()
         {
-            return await _repository.GetAllAsync<AccountTypeResponseModel>();
+            return await _queries.GetAccountTypesAsync();
         }
     }
 }

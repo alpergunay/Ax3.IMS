@@ -1,2 +1,21 @@
-<app-page-template>
+<app-page-template
+  [Columns]="Columns"
+  [DataSource]="DataSource"
+  (addButton)="title='Hesap Oluştur'; openModal(addAccountModal,'add')")>
 </app-page-template>
+
+<ng-template #addAccountModal let-c="close">
+  <div class="modal-header">
+    <h5 class="modal-title">
+      {{'Hesap Oluştur'}
+    </h5>
+    <button aria-label="Close" class="close" type="button" (click)="c()">
+            <span aria-hidden="true">
+                &times;
+            </span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-add-account> </app-add-account>
+  </div>
+</ng-template>

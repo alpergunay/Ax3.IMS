@@ -23,6 +23,18 @@ const routes: Routes = [
           import('../modules/account-definitions/account-definitions.module').then((m) => m.AccountDefinitionsModule),
       },
       {
+        path: 'investment-tool-definitions',
+        loadChildren: () =>
+          import('../modules/investment-tool-definitions/investment-tool-definitions.module').then((m) =>
+            m.InvestmentToolDefinitionsModule),
+      },
+      {
+        path: 'store-definitions',
+        loadChildren: () =>
+          import('../modules/store-definitions/store-definitions.module').then((m) =>
+            m.StoreDefinitionsModule),
+      },
+      {
         path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full',

@@ -2,6 +2,7 @@
 using Ims.Api.Application.Modules.Infrastructure.Models.AccountType;
 using Ims.Api.Application.Modules.Infrastructure.Models.DirectionType;
 using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentToolType;
+using Ims.Api.Application.Modules.Infrastructure.Models.Store;
 using Ims.Api.Application.Modules.Infrastructure.Models.StoreType;
 using Ims.Api.Application.Modules.Infrastructure.Models.TransactionType;
 using Ims.Domain.DomainModels;
@@ -17,6 +18,13 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
             CreateMapForTransactionType();
             CreateMapForDirectionType();
             CreateMapForInvestmentToolType();
+            CreateMapForStore();
+        }
+
+        private void CreateMapForStore()
+        {
+            CreateMap<Store, StoreResponseModel>()
+                .ForMember(m => m.StoreTypeName, d => d.MapFrom(s => s.StoreType.Name));
         }
 
         private void CreateMapForStoreType()

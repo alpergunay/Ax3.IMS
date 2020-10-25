@@ -17,7 +17,7 @@ namespace Ims.Api.Controllers
             _repository = repository;
         }
         [HttpGet]
-        [Route("transaction-types")]
+        [Route("")]
         [ProducesResponseType(typeof(ICollection<TransactionTypeResponseModel>), (int)HttpStatusCode.OK)]
         public async Task<ICollection<TransactionTypeResponseModel>> GetTransactionTypesAsync()
         {

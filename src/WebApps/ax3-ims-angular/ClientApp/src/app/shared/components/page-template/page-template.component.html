@@ -1,12 +1,13 @@
-<app-page-template-header #filterHeader (add)="addButtonClicked()"
-                       (edit)="editButtonClicked()"
-                       (view)="viewButtonClicked()"
-                       (delete)="deleteButtonClicked()"
-                       (refresh)="refreshButtonClicked()"
-                       (download)="downloadButtonClicked()"
-                       (expandAll)="expandAllButtonClicked()"
-                       (filter)="gridFilterValueChange($event)"
-                       [dataGrid]="grid">
+<app-page-template-header #filterHeader
+                          (add)="addButtonClicked()"
+                          (edit)="editButtonClicked()"
+                          (view)="viewButtonClicked()"
+                          (delete)="deleteButtonClicked()"
+                          (refresh)="refreshButtonClicked()"
+                          (download)="downloadButtonClicked()"
+                          (expandAll)="expandAllButtonClicked()"
+                          (filter)="gridFilterValueChange($event)"
+                          [dataGrid]="grid">
 </app-page-template-header>
 
 <div class="row mb-2" id="mGridContainer">

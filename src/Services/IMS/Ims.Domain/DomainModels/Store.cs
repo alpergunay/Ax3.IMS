@@ -7,14 +7,14 @@ namespace Ims.Domain.DomainModels
 {
     public class Store : Entity
     {
-        private string _name;
-        private int _storeTypeId;
+        public string Name { get; }
+        public int StoreTypeId { get; private set; }
         public StoreType StoreType { get; private set; }
 
         public Store(string name, int storeTypeId)
         {
-            _name = name;
-            _storeTypeId = storeTypeId;
+            Name = name;
+            StoreTypeId = storeTypeId;
         }
     }
 }

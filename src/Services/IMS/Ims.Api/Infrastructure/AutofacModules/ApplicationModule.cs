@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Autofac;
+﻿using Autofac;
+using Ims.Api.Application.Modules.Infrastructure.Queries;
 using Ims.Domain.DomainModels;
 using Ims.Infrastructure.Idempotency;
 using Ims.Infrastructure.Repositories;
@@ -13,9 +10,9 @@ namespace Ims.Api.Infrastructure.AutofacModules
     {
         public string QueriesConnectionString { get; }
 
-        public ApplicationModule(string qconstr)
+        public ApplicationModule(string connectionString)
         {
-            QueriesConnectionString = qconstr;
+            QueriesConnectionString = connectionString;
         }
 
         protected override void Load(ContainerBuilder builder)
@@ -39,6 +36,11 @@ namespace Ims.Api.Infrastructure.AutofacModules
             builder.RegisterType<TransactionTypeRepository>()
                 .As<ITransactionTypeRepository>()
                 .InstancePerLifetimeScope();
+
+            builder.Register(c => new ImsQueries(QueriesConnectionString))
+                .As<IImsQueries>()
+                .InstancePerLifetimeScope();
+
             #endregion
 
             #region Validations
