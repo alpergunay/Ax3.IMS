@@ -13,11 +13,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
     {
         public ResponseModelMapperConfiguration()
         {
-            CreateMapForStoreType();
-            CreateMapForAccountType();
             CreateMapForTransactionType();
-            CreateMapForDirectionType();
-            CreateMapForInvestmentToolType();
             CreateMapForStore();
         }
 
@@ -27,25 +23,10 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
                 .ForMember(m => m.StoreTypeName, d => d.MapFrom(s => s.StoreType.Name));
         }
 
-        private void CreateMapForStoreType()
-        {
-            CreateMap<StoreType, StoreTypeResponseModel>();
-        }
-        private void CreateMapForAccountType()
-        {
-            CreateMap<AccountType, AccountTypeResponseModel>();
-        }
+        
         private void CreateMapForTransactionType()
         {
             CreateMap<TransactionType, TransactionTypeResponseModel>();
-        }
-        private void CreateMapForDirectionType()
-        {
-            CreateMap<DirectionType, DirectionTypeResponseModel>();
-        }
-        private void CreateMapForInvestmentToolType()
-        {
-            CreateMap<InvestmentToolType, InvestmentToolTypeResponseModel>();
         }
     }
 }

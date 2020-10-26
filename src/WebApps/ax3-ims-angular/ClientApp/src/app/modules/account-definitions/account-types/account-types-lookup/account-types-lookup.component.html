@@ -1,0 +1,17 @@
+<dx-lookup [dataSource]="dataSource"
+           displayExpr="name"
+           valueExpr="id"
+           placeholder="Seçiniz..."
+           searchPlaceholder="Ara..."
+           [showPopupTitle]="false"
+           closeOnOutsideClick="true"
+           [(value)]="selectedValue"
+           searchMode="startswith"
+           pageLoadingText="Yükleniyor..."
+           cancelButtonText="İptal"
+           noDataText="Veri bulunamadı..."
+           minSearchLength="0"
+           (onSelectionChanged)="onChange()"
+           showClearButton="true"
+           clearButtonText="Temizle">
+</dx-lookup>
