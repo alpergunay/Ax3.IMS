@@ -5,6 +5,7 @@ import {BaseComponent} from '../../../shared/base/base.component';
 import {AccountService} from './account.service';
 import {NotifyService} from '../../../shared/base/notify.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {ConfigurationService} from '../../../shared/services/configuration.service';
 
 @Component({
   selector: 'app-account',
@@ -14,9 +15,15 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 export class AccountComponent extends BaseComponent<null, null> {
   Columns: DataGridColumnModel[] = [];
   @ViewChild(PageTemplateComponent) pageTemplate: PageTemplateComponent;
-  DataSource: any;
-  constructor(private accountService: AccountService, notifyService: NotifyService, modalService: NgbModal) {
-    super(accountService, notifyService, modalService);
+  constructor(private accountService: AccountService,
+              notifyService: NotifyService,
+              modalService: NgbModal,
+              configurationService: ConfigurationService) {
+    super(accountService, notifyService, modalService, configurationService);
+    this.Columns = [
+      {caption: 'Kod', dataField: 'code'},
+      {caption: 'Açıklama', dataField: 'name'},
+    ];
   }
 
   validateAddModel(): string[] {
@@ -26,5 +33,4 @@ export class AccountComponent extends BaseComponent<null, null> {
   validateUpdateModel(): string[] {
     return [];
   }
-
 }

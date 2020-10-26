@@ -21,6 +21,7 @@ namespace Identity.Api.Factories
             var storeOptions = new ConfigurationStoreOptions();
 
             optionsBuilder.UseNpgsql(config["ConnectionString"], npgsqlOptionsAction: o => o.MigrationsAssembly("Identity.Api"));
+            optionsBuilder.UseSnakeCaseNamingConvention();
 
             return new ConfigurationDbContext(optionsBuilder.Options, storeOptions);
         }

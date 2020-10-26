@@ -41,12 +41,6 @@ namespace Ims.Infrastructure
         {
         }
 
-
-        public ImsContext() : base(new DbContextOptionsBuilder<ImsContext>()
-            .UseNpgsql("Server=localhost;Database=ims;User ID=ims;Password=ax32020!").Options)
-        {
-        }
-
         public ImsContext(DbContextOptions<ImsContext> options) : base(options) { }
 
         public ImsContext(DbContextOptions<ImsContext> options, IMediator mediator, IUserService service)
@@ -116,6 +110,7 @@ namespace Ims.Infrastructure
                 }
             }
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //base.OnModelCreating(modelBuilder);
@@ -132,7 +127,7 @@ namespace Ims.Infrastructure
             modelBuilder.ApplyConfiguration(new StoreTypeEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionTypeEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new UserEntityTypeConfiguration());
-            
+            modelBuilder.SnakeCaseifyNames();
         }
     }
 }

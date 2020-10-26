@@ -2,12 +2,17 @@ import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
 import {NotifyService} from './notify.service';
 import {NgbModal, NgbModalOptions, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {BaseDataService} from '../models/base-data-service';
+import {catchError} from 'rxjs/operators';
+import {throwError} from 'rxjs';
+import {ConfigurationService} from '../services/configuration.service';
 @Component({
   template: ''
 })
 export abstract class BaseComponent<TCreate, TUpdate> implements OnInit {
-  protected constructor(private service: BaseDataService, private notifyService: NotifyService, private modalService: NgbModal) {
-    this.loadGridData();
+  protected constructor(private service: BaseDataService,
+                        private notifyService: NotifyService,
+                        private modalService: NgbModal,
+                        private configurationService: ConfigurationService) {
   }
   addModel = <TCreate>{};
   updateModel = <TUpdate>{};
@@ -19,19 +24,31 @@ export abstract class BaseComponent<TCreate, TUpdate> implements OnInit {
   modalOptions: NgbModalOptions;
   renderer: Renderer2;
   elementRef: ElementRef;
+  errorReceived: boolean;
   abstract validateAddModel(): string[];
   abstract validateUpdateModel(): string[];
   ngOnInit(): void {
+    if (this.configurationService.isReady) {
+      this.listData();
+    } else {
+      this.configurationService.settingsLoaded$.subscribe(x => {
+        this.listData();
+      });
+    }
   }
-  loadGridData() {
-    this.service.getList().subscribe(result => {
-      if (result.isSuccess) {
-        this.dataSource = result.data;
-      } else {
-        this.notifyService.error(result.exceptionMessage);
-      }
-    });
+  listData() {
+    this.errorReceived = false;
+    this.service.getList()
+      .pipe(catchError((err) => this.handleError(err)))
+      .subscribe(data => {
+        this.dataSource = data;
+      });
   }
+  private handleError(error: any) {
+    this.errorReceived = true;
+    return throwError(error);
+  }
+
   addClicked() {
     const errorList = this.validateAddModel();
     if (errorList != null && errorList.length === 0) {
@@ -85,7 +102,7 @@ export abstract class BaseComponent<TCreate, TUpdate> implements OnInit {
     } else {
       this.isPopupVisible = false;
     }
-    this.loadGridData();
+    this.listData();
   }
   getById(id) {
     return this.service.getById(id);

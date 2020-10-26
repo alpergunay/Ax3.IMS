@@ -23,6 +23,7 @@ import {DxButtonModule, DxDataGridModule, DxTextBoxModule} from 'devextreme-angu
 import {DialogComponent} from './base/dialog/dialog.component';
 import {InputDialogComponent} from './base/input-dialog/input-dialog.component';
 import {ConfirmationComponent} from './base/confirmation/confirmation.component';
+import {NotifyService} from './base/notify.service';
 
 @NgModule({
   imports: [
@@ -74,7 +75,8 @@ export class SharedModule {
         SecurityService,
         ConfigurationService,
         StorageService,
-        SignalrService
+        SignalrService,
+        NotifyService
       ]
     };
   }

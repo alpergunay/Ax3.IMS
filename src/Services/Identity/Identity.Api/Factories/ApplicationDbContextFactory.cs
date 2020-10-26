@@ -19,6 +19,7 @@ namespace Identity.Api.Factories
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
             optionsBuilder.UseNpgsql(config["ConnectionString"], npgsqlOptionsAction: o => o.MigrationsAssembly("Identity.Api"));
+            optionsBuilder.UseSnakeCaseNamingConvention();
 
             return new ApplicationDbContext(optionsBuilder.Options);
         }

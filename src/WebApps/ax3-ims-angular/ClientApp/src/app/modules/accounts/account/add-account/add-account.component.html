@@ -1,1 +1,12 @@
-<p>add-account works!</p>
+<div class="form-group row">
+  <label class="col-lg-4">
+    Hesap Tipi
+  </label>
+  <div class="col-lg-8">
+    <app-account-types-lookup
+      [selectedValue]="addModel.accountTypeId"
+      [selectedText]="addModel.accountTypeName"
+      (selected)="addModel.accountTypeId = $event">
+    </app-account-types-lookup>
+  </div>
+</div>

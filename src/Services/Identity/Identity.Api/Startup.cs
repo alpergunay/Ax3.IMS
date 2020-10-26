@@ -47,10 +47,7 @@ namespace Identity.Api
 
             _settings = new ApplicationSettings();
             AppConfiguration.GetSection(nameof(ApplicationSettings)).Bind(_settings);
-            //services.Configure<CookiePolicyOptions>(opt =>
-            //{
-            //    opt.MinimumSameSitePolicy = SameSiteMode.None;
-            //});
+            
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
              options.UseNpgsql(_settings.Persistence.ConnectionString,
@@ -59,7 +56,7 @@ namespace Identity.Api
                     sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
                     //Configuring Connection Resiliency: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
                     sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorCodesToAdd: null);
-                }));
+                }).UseSnakeCaseNamingConvention());
 
             services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -89,7 +86,7 @@ namespace Identity.Api
                         sqlOptions.MigrationsAssembly(migrationsAssembly);
                         //Configuring Connection Resiliency: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
                         sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorCodesToAdd: null);
-                    });
+                    }).UseSnakeCaseNamingConvention();
             })
             .AddOperationalStore(options =>
             {
@@ -99,7 +96,7 @@ namespace Identity.Api
                         sqlOptions.MigrationsAssembly(migrationsAssembly);
                         //Configuring Connection Resiliency: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
                         sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorCodesToAdd: null);
-                    });
+                    }).UseSnakeCaseNamingConvention();
             })
             .AddInMemoryIdentityResources(Config.GetResources())
             .AddInMemoryApiScopes(Config.GetApiScopes())

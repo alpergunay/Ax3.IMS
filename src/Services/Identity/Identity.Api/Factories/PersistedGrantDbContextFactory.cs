@@ -22,6 +22,7 @@ namespace Identity.Api.Factories
             //operationOptions.DefaultSchema = "identity";
 
             optionsBuilder.UseNpgsql(config["ConnectionString"], npgsqlOptionsAction: o => o.MigrationsAssembly("Identity.Api"));
+            optionsBuilder.UseSnakeCaseNamingConvention();
 
             return new PersistedGrantDbContext(optionsBuilder.Options, operationOptions);
         }

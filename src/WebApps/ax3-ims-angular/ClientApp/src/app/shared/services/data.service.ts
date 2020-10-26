@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
@@ -16,7 +16,9 @@ export class DataService {
   get(url: string, params?: any): Observable<Response> {
     const options = { };
     this.setHeaders(options);
-
+    if (params != null) {
+      options['params'] = params;
+    }
     return this.http.get(url, options)
       .pipe(
         // retry(3), // retry a failed request up to 3 times

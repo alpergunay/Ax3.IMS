@@ -1,1 +1,1 @@
-
+dotnet ef migrations add Initial -p ../Ims.Infrastructure  -o ../Ims.Api/Infrastructure/DatabaseMigrations -c ImsContext

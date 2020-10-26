@@ -25,5 +25,12 @@ namespace Ims.Api.Controllers
         {
             return await _queries.GetAccountTypesAsync();
         }
+        [HttpGet()]
+        [Route("filter")]
+        [ProducesResponseType(typeof(IEnumerable<AccountTypeResponseModel>), (int)HttpStatusCode.OK)]
+        public async Task<IEnumerable<AccountTypeResponseModel>> FilterAccountTypesAsync([FromQuery] string typed)
+        {
+            return await _queries.FilterAccountTypesAsync(typed);
+        }
     }
 }

@@ -27,7 +27,7 @@ namespace Ims.Api.Factories
                 npgsqlOptionsAction: sqlOptions =>
                 {
                     sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
-                });
+                }).UseSnakeCaseNamingConvention();
             return new ImsContext(optionsBuilder.Options);
         }
     }

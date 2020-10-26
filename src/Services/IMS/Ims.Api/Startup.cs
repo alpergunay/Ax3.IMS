@@ -269,7 +269,7 @@ namespace Ims.Api
                         {
                             sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
                             sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorCodesToAdd: null);
-                        })
+                        }).UseSnakeCaseNamingConvention()
                     .AddInterceptors(serviceProvider.GetRequiredService<SecondLevelCacheInterceptor>()));
 
             services.AddDbContext<IntegrationEventLogContext>(options =>
@@ -278,7 +278,8 @@ namespace Ims.Api
                     {
                         sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
                         sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorCodesToAdd: null);
-                    }));
+                    })
+                    .UseSnakeCaseNamingConvention());
             return services;
         }
         public static IServiceCollection AddCustomIntegrations(this IServiceCollection services)

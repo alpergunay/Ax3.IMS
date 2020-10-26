@@ -4,14 +4,14 @@ import {Observable} from 'rxjs';
 import {IAccountTypes} from '../../../shared/models/account-types';
 import {ConfigurationService} from '../../../shared/services/configuration.service';
 import {tap} from 'rxjs/operators';
-import {BaseDataService} from '../../../shared/models/base-data-service';
 import {IAddModel} from '../../../shared/models/iadd-model';
 import {IUpdateModel} from '../../../shared/models/iupdate-model';
+import {LookupRequestModel, LookupResponseModel} from '../../../shared/models/lookupModel';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AccountTypesService implements BaseDataService {
+export class AccountTypesService {
   private webApiUrl = '';
   constructor(private service: DataService, private configurationService: ConfigurationService) {
     if (this.configurationService.isReady) {
@@ -24,6 +24,14 @@ export class AccountTypesService implements BaseDataService {
     const url = this.webApiUrl + '/api/AccountType';
 
     return this.service.get(url).pipe<IAccountTypes[]>(tap((response: any) => {
+      return response;
+    }));
+  }
+  getLookupList(typed: string): Observable<LookupResponseModel[]> {
+    const url = this.webApiUrl + '/api/AccountType/filter';
+    const requestModel = <LookupRequestModel>{};
+    requestModel.typed = typed;
+    return this.service.get(url, requestModel).pipe<LookupResponseModel[]>(tap((response: any) => {
       return response;
     }));
   }
