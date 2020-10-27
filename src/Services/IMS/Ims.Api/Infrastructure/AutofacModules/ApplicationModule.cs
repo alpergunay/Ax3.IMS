@@ -36,6 +36,9 @@ namespace Ims.Api.Infrastructure.AutofacModules
             builder.RegisterType<TransactionTypeRepository>()
                 .As<ITransactionTypeRepository>()
                 .InstancePerLifetimeScope();
+            builder.RegisterType<AccountRepository>()
+                .As<IAccountRepository>()
+                .InstancePerLifetimeScope();
 
             builder.Register(c => new ImsQueries(QueriesConnectionString))
                 .As<IImsQueries>()

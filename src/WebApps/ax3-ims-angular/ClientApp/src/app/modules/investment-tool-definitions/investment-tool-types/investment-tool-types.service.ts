@@ -3,10 +3,10 @@ import {DataService} from '../../../shared/services/data.service';
 import {ConfigurationService} from '../../../shared/services/configuration.service';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
-import {IInvestmentToolType} from '../../../shared/models/investment-tool-type';
+import {InvestmentToolType} from '../../../shared/models/investment-tool-type.model';
 import {BaseDataService} from '../../../shared/models/base-data-service';
-import {IAddModel} from '../../../shared/models/iadd-model';
-import {IUpdateModel} from '../../../shared/models/iupdate-model';
+import {BaseAddModel} from '../../../shared/models/base-add.model';
+import {BaseUpdateModel} from '../../../shared/models/base-update.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,15 +21,15 @@ export class InvestmentToolTypesService implements BaseDataService {
       this.configurationService.settingsLoaded$.subscribe(x => this.webApiUrl = this.configurationService.serverSettings.imsApiClient);
     }
   }
-  getList(): Observable<IInvestmentToolType[]> {
+  getList(): Observable<InvestmentToolType[]> {
     const url = this.webApiUrl + 'InvestmentToolType';
 
-    return this.service.get(url).pipe<IInvestmentToolType[]>(tap((response: any) => {
+    return this.service.get(url).pipe<InvestmentToolType[]>(tap((response: any) => {
       return response;
     }));
   }
 
-  add(addModel: IAddModel) {
+  add(addModel: BaseAddModel) {
   }
 
   delete() {
@@ -38,6 +38,6 @@ export class InvestmentToolTypesService implements BaseDataService {
   getById(id: any) {
   }
 
-  update(updateModel: IUpdateModel) {
+  update(updateModel: BaseUpdateModel) {
   }
 }

@@ -1,4 +1,4 @@
-export interface IInvestmentToolType {
+export interface Store {
   code: string;
   description: string;
 }

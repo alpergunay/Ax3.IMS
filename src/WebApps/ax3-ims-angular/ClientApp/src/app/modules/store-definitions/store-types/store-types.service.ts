@@ -3,10 +3,10 @@ import {DataService} from '../../../shared/services/data.service';
 import {ConfigurationService} from '../../../shared/services/configuration.service';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
-import {IStoreType} from '../../../shared/models/store-type';
+import {StoreType} from '../../../shared/models/store-type.model';
 import {BaseDataService} from '../../../shared/models/base-data-service';
-import {IAddModel} from '../../../shared/models/iadd-model';
-import {IUpdateModel} from '../../../shared/models/iupdate-model';
+import {BaseAddModel} from '../../../shared/models/base-add.model';
+import {BaseUpdateModel} from '../../../shared/models/base-update.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,15 +22,15 @@ export class StoreTypesService implements BaseDataService {
       this.configurationService.settingsLoaded$.subscribe(x => this.webApiUrl = this.configurationService.serverSettings.imsApiClient);
     }
   }
-  getList(): Observable<IStoreType[]> {
+  getList(): Observable<StoreType[]> {
     const url = this.webApiUrl + 'StoreTypes';
 
-    return this.service.get(url).pipe<IStoreType[]>(tap((response: any) => {
+    return this.service.get(url).pipe<StoreType[]>(tap((response: any) => {
       return response;
     }));
   }
 
-  add(addModel: IAddModel) {
+  add(addModel: BaseAddModel) {
   }
 
   delete() {
@@ -39,6 +39,6 @@ export class StoreTypesService implements BaseDataService {
   getById(id: any) {
   }
 
-  update(updateModel: IUpdateModel) {
+  update(updateModel: BaseUpdateModel) {
   }
 }

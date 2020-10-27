@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ims.Api.Application.Modules.Infrastructure.Models.Account;
 using Ims.Api.Application.Modules.Infrastructure.Models.AccountType;
 using Ims.Api.Application.Modules.Infrastructure.Models.DirectionType;
 using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentToolType;
@@ -18,5 +19,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
         Task<IEnumerable<AccountTypeResponseModel>> FilterAccountTypesAsync(string typed);
         Task<IEnumerable<TransactionTypeResponseModel>> GetTransactionTypesAsync();
         Task<IEnumerable<DirectionTypeResponseModel>> GetDirectionTypesAsync();
+        Task<IEnumerable<AccountResponseModel>> GetAccountsAsync(Guid userId);
+
     }
 }

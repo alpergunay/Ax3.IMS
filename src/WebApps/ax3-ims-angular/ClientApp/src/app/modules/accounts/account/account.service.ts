@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import {AccountAddModel} from '../../../shared/models/account/account-add-model';
-import {AccountUpdateModel} from '../../../shared/models/account/account-update-model';
+import {AccountAddModel} from '../../../shared/models/account/account-add.model';
+import {AccountUpdateModel} from '../../../shared/models/account/account-update.model';
 import {BaseDataService} from '../../../shared/models/base-data-service';
 import {DataService} from '../../../shared/services/data.service';
 import {ConfigurationService} from '../../../shared/services/configuration.service';
 import {Observable} from 'rxjs';
-import {IAccountTypes} from '../../../shared/models/account-types';
+import {AccountTypes} from '../../../shared/models/account-types.model';
 import {tap} from 'rxjs/operators';
+import {Account} from '../../../shared/models/account/account.model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,10 +32,10 @@ export class AccountService implements BaseDataService {
   getById(id: any) {
   }
 
-  getList(): Observable<IAccountTypes[]> {
-    const url = this.webApiUrl + '/api/AccountType';
+  getList(): Observable<Account[]> {
+    const url = this.webApiUrl + '/api/Account';
 
-    return this.service.get(url).pipe<IAccountTypes[]>(tap((response: any) => {
+    return this.service.get(url).pipe<Account[]>(tap((response: any) => {
       return response;
     }));
   }

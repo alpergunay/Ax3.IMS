@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import DataSource from 'devextreme/data/data_source';
 import {AccountTypesService} from '../account-types.service';
 import CustomStore from 'devextreme/data/custom_store';
-import {LookupRequestModel, LookupResponseModel} from '../../../../shared/models/lookupModel';
+import {LookupRequestModel, LookupResponseModel} from '../../../../shared/models/lookup.model';
 
 @Component({
   selector: 'app-account-types-lookup',

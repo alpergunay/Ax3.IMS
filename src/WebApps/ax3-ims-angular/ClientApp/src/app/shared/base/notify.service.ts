@@ -4,7 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {ConfirmationComponent} from './confirmation/confirmation.component';
 import {DialogComponent} from './dialog/dialog.component';
 import {InputDialogComponent} from './input-dialog/input-dialog.component';
-import {ResponseMessage} from '../models/response-message';
+import {ResponseMessageModel} from '../models/response-message.model';
 
 @Injectable()
 export class NotifyService {
@@ -70,7 +70,7 @@ export class NotifyService {
     this.toastr.error(inMessage, title, this.toastrOptions);
   }
 
-  public errorResponseMessage(responseMessages: ResponseMessage[], title?: string) {
+  public errorResponseMessage(responseMessages: ResponseMessageModel[], title?: string) {
     const messages: string[] = responseMessages.map(x => x.result);
     const inMessage = messages.join('<br />');
     this.toastr.error(inMessage, title, this.toastrOptions);
@@ -84,7 +84,7 @@ export class NotifyService {
     this.toastr.info(message, title, this.toastrOptions);
   }
 
-  public infoResponseMessage(responseMessages: ResponseMessage[], title?: string) {
+  public infoResponseMessage(responseMessages: ResponseMessageModel[], title?: string) {
     const messages: string[] = responseMessages.map(x => x.result);
     const inMessage = messages.join('<br />');
     this.toastr.success(inMessage, title, this.toastrOptions);

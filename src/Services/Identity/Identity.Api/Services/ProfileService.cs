@@ -23,7 +23,7 @@ namespace Identity.Api.Services
             _userManager = userManager; _context = applicationDbContext;
         }
 
-        async public Task GetProfileDataAsync(ProfileDataRequestContext context)
+        public async Task GetProfileDataAsync(ProfileDataRequestContext context)
         {
             var subject = context.Subject ?? throw new ArgumentNullException(nameof(context.Subject));
 
@@ -37,7 +37,7 @@ namespace Identity.Api.Services
             context.IssuedClaims = claims.ToList();
         }
 
-        async public Task IsActiveAsync(IsActiveContext context)
+        public async Task IsActiveAsync(IsActiveContext context)
         {
             var subject = context.Subject ?? throw new ArgumentNullException(nameof(context.Subject));
 

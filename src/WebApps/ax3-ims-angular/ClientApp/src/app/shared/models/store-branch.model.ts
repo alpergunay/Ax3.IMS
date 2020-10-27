@@ -1,4 +1,4 @@
-export interface IStore {
+export interface StoreBranch {
   code: string;
   description: string;
 }

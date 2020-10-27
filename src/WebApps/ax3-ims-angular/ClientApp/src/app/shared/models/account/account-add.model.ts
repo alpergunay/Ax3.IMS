@@ -1,6 +1,6 @@
-import {IAddModel} from '../iadd-model';
+import {BaseAddModel} from '../base-add.model';
 
-export interface AccountAddModel extends IAddModel {
+export interface AccountAddModel extends BaseAddModel {
   userId: string;
   storeBranchId: string;
   accountTypeId: number;

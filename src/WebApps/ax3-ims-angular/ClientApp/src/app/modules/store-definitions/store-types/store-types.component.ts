@@ -5,7 +5,7 @@ import {ConfigurationService} from '../../../shared/services/configuration.servi
 import {catchError} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {StoreTypesService} from './store-types.service';
-import {IStoreType} from '../../../shared/models/store-type';
+import {StoreType} from '../../../shared/models/store-type.model';
 
 @Component({
   selector: 'app-store-types',
@@ -15,7 +15,7 @@ import {IStoreType} from '../../../shared/models/store-type';
 export class StoreTypesComponent implements OnInit {Columns: DataGridColumnModel[] = [];
   @ViewChild(PageTemplateComponent) pageTemplate: PageTemplateComponent;
   errorReceived: boolean;
-  storeTypes: IStoreType[];
+  storeTypes: StoreType[];
   DataSource: any;
   constructor(private service: StoreTypesService, private configurationService: ConfigurationService) {
     this.Columns = [

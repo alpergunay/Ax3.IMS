@@ -1,5 +1,5 @@
-import {IAddModel} from './iadd-model';
-import {IUpdateModel} from './iupdate-model';
+import {BaseAddModel} from './base-add.model';
+import {BaseUpdateModel} from './base-update.model';
 import {Injectable} from '@angular/core';
 
 @Injectable({
@@ -8,7 +8,7 @@ import {Injectable} from '@angular/core';
 export abstract class BaseDataService {
   abstract getList();
   abstract getById(id: any);
-  abstract add(addModel: IAddModel);
-  abstract update(updateModel: IUpdateModel);
+  abstract add(addModel: BaseAddModel);
+  abstract update(updateModel: BaseUpdateModel);
   abstract delete();
 }

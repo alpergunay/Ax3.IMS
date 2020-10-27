@@ -17,14 +17,16 @@ namespace Ims.Domain.DomainModels
         private Guid _investmentToolId;
         public InvestmentTool InvestmentTool { get; set; }
         private string _accountNo;
+        private string _accountName;
 
-        public Account(Guid userId, Guid storeBranchId, int accountTypeId, Guid investmentToolId, string accountNo)
+        public Account(Guid userId, Guid storeBranchId, int accountTypeId, Guid investmentToolId, string accountNo, string accountName)
         {
             _userId = userId;
             _storeBranchId = storeBranchId;
             _accountTypeId = accountTypeId;
             _investmentToolId = investmentToolId;
             _accountNo = accountNo;
+            _accountName = accountName;
         }
     }
 }

@@ -1,1 +1,4 @@
+--------
+D:\STORAGE\SOURCES\Ax3.IMS\src\Services\IMS\Ims.Api
 dotnet ef migrations add Initial -p ../Ims.Infrastructure  -o ../Ims.Api/Infrastructure/DatabaseMigrations -c ImsContext
+-------

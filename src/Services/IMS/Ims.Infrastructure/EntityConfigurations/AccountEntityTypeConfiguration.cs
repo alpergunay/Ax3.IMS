@@ -17,6 +17,12 @@ namespace Ims.Infrastructure.EntityConfigurations
                 .HasColumnName("AccountNo")
                 .HasMaxLength(50)
                 .IsRequired();
+            builder
+                .Property<string>("_accountName")
+                .UsePropertyAccessMode(PropertyAccessMode.Field)
+                .HasColumnName("AccountName")
+                .HasMaxLength(255)
+                .IsRequired();
 
             builder
                 .Property("_userId")

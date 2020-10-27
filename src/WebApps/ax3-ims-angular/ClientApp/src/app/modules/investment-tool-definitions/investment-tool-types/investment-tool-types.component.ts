@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {DataGridColumnModel} from '../../../shared/components/page-template/data-grid-column-model';
 import {PageTemplateComponent} from '../../../shared/components/page-template/page-template.component';
-import {IInvestmentToolType} from '../../../shared/models/investment-tool-type';
+import {InvestmentToolType} from '../../../shared/models/investment-tool-type.model';
 import {ConfigurationService} from '../../../shared/services/configuration.service';
 import {InvestmentToolTypesService} from './investment-tool-types.service';
 import {catchError} from 'rxjs/operators';
@@ -16,7 +16,7 @@ export class InvestmentToolTypesComponent implements OnInit {
   Columns: DataGridColumnModel[] = [];
   @ViewChild(PageTemplateComponent) pageTemplate: PageTemplateComponent;
   errorReceived: boolean;
-  investmentToolTypes: IInvestmentToolType[];
+  investmentToolTypes: InvestmentToolType[];
   DataSource: any;
   constructor(private service: InvestmentToolTypesService, private configurationService: ConfigurationService) {
     this.Columns = [

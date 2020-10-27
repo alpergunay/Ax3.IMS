@@ -5,7 +5,7 @@ import {AccountTypesService} from './account-types.service';
 import {ConfigurationService} from '../../../shared/services/configuration.service';
 import {catchError} from 'rxjs/operators';
 import {throwError} from 'rxjs';
-import {IAccountTypes} from '../../../shared/models/account-types';
+import {AccountTypes} from '../../../shared/models/account-types.model';
 
 @Component({
   selector: 'app-account-types',
@@ -16,7 +16,7 @@ export class AccountTypesComponent implements OnInit {
   Columns: DataGridColumnModel[] = [];
   @ViewChild(PageTemplateComponent) pageTemplate: PageTemplateComponent;
   errorReceived: boolean;
-  accountTypes: IAccountTypes[];
+  accountTypes: AccountTypes[];
   DataSource: any;
   constructor(private service: AccountTypesService, private configurationService: ConfigurationService) {
     this.Columns = [

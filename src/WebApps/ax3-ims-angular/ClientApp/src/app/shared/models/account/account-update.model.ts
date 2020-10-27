@@ -1,6 +1,6 @@
-import {IUpdateModel} from '../iupdate-model';
+import {BaseUpdateModel} from '../base-update.model';
 
-export interface AccountUpdateModel extends IUpdateModel {
+export interface AccountUpdateModel extends BaseUpdateModel {
   userId: string;
   storeBranchId: string;
   accountTypeId: string;
