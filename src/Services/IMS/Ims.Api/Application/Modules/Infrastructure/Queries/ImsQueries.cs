@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Castle.Core.Internal;
 using Dapper;
+using Ims.Api.Application.Modules.Infrastructure.Models;
 using Ims.Api.Application.Modules.Infrastructure.Models.Account;
 using Ims.Api.Application.Modules.Infrastructure.Models.AccountType;
 using Ims.Api.Application.Modules.Infrastructure.Models.DirectionType;
 using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentToolType;
+using Ims.Api.Application.Modules.Infrastructure.Models.Store;
 using Ims.Api.Application.Modules.Infrastructure.Models.StoreType;
 using Ims.Api.Application.Modules.Infrastructure.Models.TransactionType;
 using Npgsql;
@@ -29,6 +31,15 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
                 connection.Open();
 
                 return await connection.QueryAsync<StoreTypeResponseModel>("SELECT * FROM ims.store_types");
+            }
+        }
+        public async Task<IEnumerable<StoreResponseModel>> GetStoresAsync()
+        {
+            await using (var connection = new NpgsqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                return await connection.QueryAsync<StoreResponseModel>("SELECT * FROM ims.stores");
             }
         }
 
@@ -59,6 +70,26 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
                 connection.Open();
                 var x = await connection.QueryAsync<AccountTypeResponseModel>("SELECT * FROM ims.account_types " +
                                                                         "WHERE name LIKE @t", new { t = "%" + queryString + "%" });
+                return x;
+            }
+        }
+        public async Task<IEnumerable<StoreTypeResponseModel>> FilterStoreTypesAsync(string queryString)
+        {
+            await using (var connection = new NpgsqlConnection(_connectionString))
+            {
+                connection.Open();
+                var x = await connection.QueryAsync<StoreTypeResponseModel>("SELECT * FROM ims.store_types " +
+                                                                            "WHERE name LIKE @t", new { t = "%" + queryString + "%" });
+                return x;
+            }
+        }
+        public async Task<IEnumerable<StoreResponseModel>> FilterStoresAsync(BaseFilterRequestModel filter)
+        {
+            await using (var connection = new NpgsqlConnection(_connectionString))
+            {
+                connection.Open();
+                var x = await connection.QueryAsync<StoreResponseModel>("SELECT * FROM ims.stores " +
+                                                                            "WHERE name LIKE @t AND (store_type_id=@stid OR @stid=0)", new { t = "%" + filter.typed + "%", stid=filter.id ?? 0 });
                 return x;
             }
         }

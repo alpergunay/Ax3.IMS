@@ -4,8 +4,7 @@ import {Observable} from 'rxjs';
 import {AccountTypes} from '../../../shared/models/account-types.model';
 import {ConfigurationService} from '../../../shared/services/configuration.service';
 import {tap} from 'rxjs/operators';
-import {BaseAddModel} from '../../../shared/models/base-add.model';
-import {BaseUpdateModel} from '../../../shared/models/base-update.model';
+import {BaseModel} from '../../../shared/models/base-add.model';
 import {LookupRequestModel, LookupResponseModel} from '../../../shared/models/lookup.model';
 
 @Injectable({
@@ -36,7 +35,7 @@ export class AccountTypesService {
     }));
   }
 
-  add(addModel: BaseAddModel) {
+  add(addModel: BaseModel) {
   }
 
   delete() {
@@ -45,6 +44,6 @@ export class AccountTypesService {
   getById(id: any) {
   }
 
-  update(updateModel: BaseUpdateModel) {
+  update(updateModel: BaseModel) {
   }
 }

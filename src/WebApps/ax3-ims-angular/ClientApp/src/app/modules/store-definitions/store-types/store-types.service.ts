@@ -5,8 +5,10 @@ import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
 import {StoreType} from '../../../shared/models/store-type.model';
 import {BaseDataService} from '../../../shared/models/base-data-service';
-import {BaseAddModel} from '../../../shared/models/base-add.model';
-import {BaseUpdateModel} from '../../../shared/models/base-update.model';
+import {BaseModel} from '../../../shared/models/base-add.model';
+import {LookupRequestModel, LookupResponseModel} from '../../../shared/models/lookup.model';
+import CustomStore from "devextreme/data/custom_store";
+import {BaseRequestModel} from "../../../shared/models/base-request.model";
 
 @Injectable({
   providedIn: 'root'
@@ -23,14 +25,33 @@ export class StoreTypesService implements BaseDataService {
     }
   }
   getList(): Observable<StoreType[]> {
-    const url = this.webApiUrl + 'StoreTypes';
+    const url = this.webApiUrl + '/api/StoreType';
 
     return this.service.get(url).pipe<StoreType[]>(tap((response: any) => {
       return response;
     }));
   }
+  // getLookupList(typed: string, parentId?: any): Observable<LookupResponseModel[]> {
+  //   const url = this.webApiUrl + '/api/StoreType/filter';
+  //   const requestModel = <LookupRequestModel>{};
+  //   requestModel.typed = typed;
+  //   requestModel.id = parentId;
+  //   return this.service.get(url, requestModel).pipe<LookupResponseModel[]>(tap((response: any) => {
+  //     return response;
+  //   }));
+  // }
 
-  add(addModel: BaseAddModel) {
+  getLookupList(typed: string, parentId?: any): Observable<LookupResponseModel[]> {
+    const url = this.webApiUrl + '/api/StoreType/filter';
+    const requestModel = <LookupRequestModel>{};
+    requestModel.typed = typed;
+    requestModel.id = parentId;
+    return this.service.get(url, requestModel).pipe<LookupResponseModel[]>(tap((response: any) => {
+      return response;
+    }));
+  }
+
+  add(addModel: BaseModel) {
   }
 
   delete() {
@@ -39,6 +60,11 @@ export class StoreTypesService implements BaseDataService {
   getById(id: any) {
   }
 
-  update(updateModel: BaseUpdateModel) {
+  update(updateModel: BaseModel) {
+  }
+
+  dxGetList(): CustomStore {
+    const url = this.webApiUrl + '/api/StoreType/list';
+    return this.service.dxGet(url, <BaseRequestModel>{});
   }
 }

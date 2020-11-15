@@ -13,8 +13,7 @@ using Ims.Infrastructure.EntityConfigurations;
 
 namespace Ims.Infrastructure
 {
-    public class ImsContext : BaseDbContext<ImsContext>,
-        IUnitOfWork
+    public class ImsContext : BaseDbContext<ImsContext>
     {
         public const string DEFAULT_SCHEMA = "ims";
         private readonly IMediator _mediator;
@@ -41,7 +40,7 @@ namespace Ims.Infrastructure
         {
         }
 
-        public ImsContext(DbContextOptions<ImsContext> options) : base(options) { }
+        //public ImsContext(DbContextOptions<ImsContext> options) : base(options) { }
 
         public ImsContext(DbContextOptions<ImsContext> options, IMediator mediator, IUserService service)
             : base(options, service)

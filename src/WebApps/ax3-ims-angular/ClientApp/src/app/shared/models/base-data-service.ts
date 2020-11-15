@@ -1,5 +1,4 @@
-import {BaseAddModel} from './base-add.model';
-import {BaseUpdateModel} from './base-update.model';
+import {BaseModel} from './base-add.model';
 import {Injectable} from '@angular/core';
 
 @Injectable({
@@ -7,8 +6,10 @@ import {Injectable} from '@angular/core';
 })
 export abstract class BaseDataService {
   abstract getList();
+  abstract dxGetList();
+  abstract getLookupList(typed: string, parentId?: any);
   abstract getById(id: any);
-  abstract add(addModel: BaseAddModel);
-  abstract update(updateModel: BaseUpdateModel);
+  abstract add(addModel: BaseModel);
+  abstract update(updateModel: BaseModel);
   abstract delete();
 }

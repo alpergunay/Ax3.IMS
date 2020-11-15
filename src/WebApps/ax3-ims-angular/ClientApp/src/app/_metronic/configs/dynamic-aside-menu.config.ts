@@ -25,11 +25,6 @@ export const DynamicAsideMenuConfig = {
           title: 'Hesap Hareketleri',
           bullet: 'dot',
           page: '/accounts/transactions',
-        },
-        {
-          title: 'Saklama Yerleri',
-          bullet: 'dot',
-          page: '/accounts/stores',
         }
       ]
     },
@@ -95,6 +90,11 @@ export const DynamicAsideMenuConfig = {
         {
           title: 'Saklama Yeri Tipi',
           page: '/store-definitions/store-types'
+        },
+        {
+          title: 'Saklama Yerleri',
+          bullet: 'dot',
+          page: '/store-definitions/stores',
         },
         {
           title: 'Saklama Yeri Şubeleri',

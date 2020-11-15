@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Ax3.IMS.Domain;
 
 namespace Ims.Domain.DomainModels
 {
-    public interface IStoreTypeRepository
+    public interface IStoreTypeRepository : IRepository<StoreType>
     {
         Task<ICollection<T>> GetAllAsync<T>() where T : class;
         Task<PagedResult<TD>> RetrievePagedResultAsync<TS, TD>(Expression<Func<TS, bool>> predicate,

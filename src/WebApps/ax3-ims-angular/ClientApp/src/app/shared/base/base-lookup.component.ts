@@ -1,8 +1,5 @@
 ﻿import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
 import {BaseDataService} from "../models/base-data-service";
-import {NotifyService} from "./notify.service";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ConfigurationService} from "../services/configuration.service";
 import DataSource from "devextreme/data/data_source";
 import CustomStore from "devextreme/data/custom_store";
 import {LookupResponseModel} from "../models/lookup.model";
@@ -10,37 +7,30 @@ import {LookupResponseModel} from "../models/lookup.model";
 @Component({
   template: ''
 })
-export abstract class BaseLookupComponent implements OnInit {
-  @Input() selectedValue = 0;
+export abstract class BaseLookupComponent<T> implements OnInit {
+  @Input() selectedValue = <T>{};
   @Input() selectedText = '';
-  @Output() selected: EventEmitter<number> = new EventEmitter<number>();
-  dataSource: DataSource;
-  protected constructor(private service: BaseDataService,
-                        private notifyService: NotifyService,
-                        private modalService: NgbModal,
-                        private configurationService: ConfigurationService) {
+  @Output() selected: EventEmitter<T> = new EventEmitter<T>();
+  dataSource: any;
+  parentId?: any;
+  protected constructor(private service: BaseDataService) {
   }
 
   ngOnInit(): void {
-    if (this.configurationService.isReady) {
-      this.loadData();
-    } else {
-      this.configurationService.settingsLoaded$.subscribe(x => {
-        this.loadData();
-      });
-    }
+    this.loadData();
   }
 
   loadData() {
     const serviceIns = this.service;
     const selectedItemId = this.selectedValue;
     const selectedItemText = this.selectedText;
+    const selectedParentId = this.parentId;
 
     this.dataSource = new DataSource({
       store: new CustomStore({
         load: function (loadOptions) {
           const typed = loadOptions.searchValue == null ? '' : loadOptions.searchValue;
-          return serviceIns.getLookupList(typed).toPromise().then(response => {
+          return serviceIns.getLookupList(typed, selectedParentId).toPromise().then(response => {
             return response;
           });
         },
@@ -59,6 +49,7 @@ export abstract class BaseLookupComponent implements OnInit {
         }
       })
     });
+
   }
 
   onChange() {

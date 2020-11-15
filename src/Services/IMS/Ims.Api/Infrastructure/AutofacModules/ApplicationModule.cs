@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Ax3.IMS.Infrastructure.Core.Services;
 using Ims.Api.Application.Modules.Infrastructure.Queries;
 using Ims.Domain.DomainModels;
 using Ims.Infrastructure.Idempotency;
@@ -39,9 +40,16 @@ namespace Ims.Api.Infrastructure.AutofacModules
             builder.RegisterType<AccountRepository>()
                 .As<IAccountRepository>()
                 .InstancePerLifetimeScope();
+            builder.RegisterType<StoreRepository>()
+                .As<IStoreRepository>()
+                .InstancePerLifetimeScope();
 
             builder.Register(c => new ImsQueries(QueriesConnectionString))
                 .As<IImsQueries>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<UserHttpService>()
+                .As<IUserService>()
                 .InstancePerLifetimeScope();
 
             #endregion

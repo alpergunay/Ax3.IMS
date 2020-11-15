@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {DataGridColumnModel} from './data-grid-column-model';
 import {DxDataGridComponent} from 'devextreme-angular';
+import {RemoteOperationsModel} from "./remote-operations.model";
 
 @Component({
   selector: 'app-page-template',
@@ -11,6 +12,8 @@ export class PageTemplateComponent implements OnInit {
   @Input() ComponentName = '';
   @Input() DataSource: any = {};
   @Input() Columns: DataGridColumnModel[] = [];
+  @Input() AllowSelection = true;
+  @Input() SingleSelectionMode = false;
   @Output() addButton = new EventEmitter();
   @Output() refreshButton = new EventEmitter();
   @Output() editButton = new EventEmitter();
@@ -22,12 +25,18 @@ export class PageTemplateComponent implements OnInit {
   @Output() expandAllButton = new EventEmitter();
   @Output() selectionChange = new EventEmitter<any>();
   @Output() doubleClickRow = new EventEmitter<any>();
+  @Output() onDataGridContentReady = new EventEmitter();
   filter: any;
   gridFilterValue: any;
   isEditAndDeleteButtonDisabled = true;
   ModalParameter: { SelectedRowId } = { SelectedRowId: 0 };
   manageAutoExpandAll = false;
   @Input() IsPreview = false;
+  @Input() RemoteOperations: RemoteOperationsModel = <RemoteOperationsModel>{
+    enable: false,
+    paging: false,
+    scrollingMode: 'infinite'
+  };
   @ViewChild('grid') DataGrid: DxDataGridComponent;
   constructor() { }
 
@@ -40,7 +49,7 @@ export class PageTemplateComponent implements OnInit {
     this.refreshButton.emit();
   }
   editButtonClicked() {
-    this.editButton.emit();
+    this.editButton.emit(this.ModalParameter);
   }
   deleteButtonClicked() {
     this.deleteButton.emit();
@@ -103,5 +112,15 @@ export class PageTemplateComponent implements OnInit {
         e.component.expandRow(e.key);
       }
     }
+  }
+  onGridContentReady(e) {
+    const grid = e.component;
+    const selectedKeys = grid.getSelectedRowKeys();
+    for (let i = 0; i < selectedKeys.length; i++) {
+      if (grid.getRowIndexByKey(selectedKeys[i]) < 0) {
+        grid.deselectRows([selectedKeys[i]]);
+      }
+    }
+    this.onDataGridContentReady.emit();
   }
 }

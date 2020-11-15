@@ -7,7 +7,7 @@ namespace Ims.Domain.DomainModels
 {
     public class Store : Entity
     {
-        public string Name { get; }
+        public string Name { get; private set; }
         public int StoreTypeId { get; private set; }
         public StoreType StoreType { get; private set; }
 
@@ -15,6 +15,12 @@ namespace Ims.Domain.DomainModels
         {
             Name = name;
             StoreTypeId = storeTypeId;
+        }
+
+        public void Update(string name, int storeTypeId)
+        {
+            this.Name = name;
+            this.StoreTypeId = storeTypeId;
         }
     }
 }

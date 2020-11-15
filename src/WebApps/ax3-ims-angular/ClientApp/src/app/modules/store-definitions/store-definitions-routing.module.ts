@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {StoreDefinitionsComponent} from './store-definitions.component';
 import {StoreTypesComponent} from './store-types/store-types.component';
+import {StoresComponent} from './stores/stores.component';
+import {StoreBranchesComponent} from './store-branches/store-branches.component';
 
 const routes: Routes = [
   {
@@ -9,10 +11,18 @@ const routes: Routes = [
     component: StoreDefinitionsComponent,
     children: [
       {
-        path: 'investment-tool-types',
+        path: 'store-types',
         component: StoreTypesComponent,
       },
-      { path: '', redirectTo: 'investment-tool-types', pathMatch: 'full' },
+      {
+        path: 'stores',
+        component: StoresComponent,
+      },
+      {
+        path: 'store-branches',
+        component: StoreBranchesComponent,
+      },
+      { path: '', redirectTo: 'store-types', pathMatch: 'full' },
       {
         path: '**',
         component: StoreTypesComponent,

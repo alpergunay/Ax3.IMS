@@ -9,6 +9,9 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using AutoMapper.QueryableExtensions;
+using DevExtreme.AspNet.Data;
+using DevExtreme.AspNet.Mvc;
 using Ims.Api.Application.Modules.Infrastructure.Queries;
 
 namespace Ims.Api.Controllers
@@ -50,6 +53,21 @@ namespace Ims.Api.Controllers
         public async Task<IEnumerable<StoreTypeResponseModel>> GetStoreTypesAsync()
         {
             return await _queries.GetStoreTypesAsync();
+        }
+        [HttpGet()]
+        [Route("filter")]
+        [ProducesResponseType(typeof(IEnumerable<StoreTypeResponseModel>), (int)HttpStatusCode.OK)]
+        public async Task<IEnumerable<StoreTypeResponseModel>> FilterStoreTypesAsync([FromQuery] string typed)
+        {
+            return await _queries.FilterStoreTypesAsync(typed);
+        }
+        [HttpGet]
+        [Route("list")]
+        [ProducesResponseType(typeof(IEnumerable<StoreTypeResponseModel>), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<object>> GetStoreTypeListAsync(DataSourceLoadOptions loadOptions)
+        {
+            return await DataSourceLoader.LoadAsync(_storeTypeRepository.GetAllAsQueryable()
+                .ProjectTo<StoreTypeResponseModel>(_mapper.ConfigurationProvider), loadOptions);
         }
     }
 }

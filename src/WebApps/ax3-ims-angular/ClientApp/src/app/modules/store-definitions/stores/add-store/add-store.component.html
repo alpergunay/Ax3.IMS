@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <h5 class="modal-title">
+    Yeni Saklama Yeri
+  </h5>
+  <button aria-label="Close" class="close" type="button" (click)="closeModal()">
+    <span aria-hidden='true'>
+        &times;
+    </span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form-group row">
+    <label class="col-lg-12">
+      Saklama Yeri Tipi
+    </label>
+    <div class="col-lg-12">
+      <app-store-type-lookup
+        [selectedValue]="dataModel.storeTypeId"
+        [selectedText]="dataModel.storeTypeName"
+        (selected)="dataModel.storeTypeId = $event">
+      </app-store-type-lookup>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-lg-12">
+      Saklama Yeri Adı
+    </label>
+    <div class="col-lg-12">
+      <dx-text-box [(value)]="dataModel.name" placeholder="Hesap adı giriniz..." maxLength="100">
+      </dx-text-box>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <dx-button class="btn btn-outline-primary float-right" text="Kaydet" (onClick)="saveClicked()"
+             icon="la la-save"></dx-button>
+  <dx-button class="btn btn-outline-danger float-right" text="Vazgeç" (onClick)="closeModal()"
+             icon="la la-ban"></dx-button>
+</div>

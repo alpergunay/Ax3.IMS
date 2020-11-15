@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Ax3.IMS.Domain;
 
 namespace Ims.Domain.DomainModels
 {
-    public interface IStoreRepository
+    public interface IStoreRepository : IRepository<Store>
     {
-        Task<ICollection<T>> GetAllAsync<T>() where T : class;
-        Store Add(Store entity);
-        Store Delete(Store entity);
-        void Update(Store entity);
+        
     }
 }

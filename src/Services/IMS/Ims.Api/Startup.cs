@@ -33,6 +33,7 @@ using System.Data.Common;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
 using AutoMapper;
+using Ax3.IMS.DataAccess.EntityFramework.Interceptors;
 using HealthChecks.UI.Client;
 using Ims.Api.Application.Modules.Infrastructure.Mapper;
 using Ims.Api.Infrastructure.AutofacModules;
@@ -280,6 +281,7 @@ namespace Ims.Api
                         sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorCodesToAdd: null);
                     })
                     .UseSnakeCaseNamingConvention());
+            DbInterceptorsProvider.Add(new AuditInformationInterceptor());
             return services;
         }
         public static IServiceCollection AddCustomIntegrations(this IServiceCollection services)

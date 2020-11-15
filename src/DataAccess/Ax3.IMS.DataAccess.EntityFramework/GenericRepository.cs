@@ -10,17 +10,19 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Transactions;
+using Ax3.IMS.Domain;
 using Z.EntityFramework.Plus;
 using IsolationLevel = System.Data.IsolationLevel;
+using System.Threading;
 
 namespace Ax3.IMS.DataAccess.EntityFramework
 {
     public abstract class GenericRepository<TContext, TEntity, TEntityId>
         where TContext : DbContext
-        where TEntity : class, IEntity<TEntityId>
+        where TEntity : class, IEntity<TEntityId> 
     {
         protected TContext Context { get; }
-
+        public IUnitOfWork UnitOfWork => (IUnitOfWork)Context;
         protected DbSet<TEntity> DbSet { get; }
         protected TransactionScope ReadUncommitedTransactionScopeAsync => new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = System.Transactions.IsolationLevel.ReadUncommitted }, TransactionScopeAsyncFlowOption.Enabled);
         protected IMapper Mapper { get; }
@@ -94,9 +96,10 @@ namespace Ax3.IMS.DataAccess.EntityFramework
             return DbSet.SingleOrDefault(GetByIdPredicate(entityId));
         }
 
-        public Task<TEntity> FindOrDefaultAsync(TEntityId entityId)
+        public virtual async Task<TEntity> FindOrDefaultAsync(TEntityId entityId)
         {
-            return DbSet.SingleOrDefaultAsync(GetByIdPredicate(entityId));
+            var x = await DbSet.SingleOrDefaultAsync(GetByIdPredicate(entityId));
+            return x;
         }
 
         public virtual IQueryable<TEntity> FindAsQueryable(Expression<Func<TEntity, bool>> predicate)
@@ -153,7 +156,7 @@ namespace Ax3.IMS.DataAccess.EntityFramework
         {
             return Context.Database.BeginTransaction(isolationLevel);
         }
-        private static Expression<Func<TEntity, bool>> GetByIdPredicate(TEntityId entityId) => e => (object)e.Id == (object)entityId;
+        private static Expression<Func<TEntity, bool>> GetByIdPredicate(TEntityId entityId) => e => entityId.Equals(e.Id);
 
         public virtual async Task<PagedResult<TD>> RetrievePagedResultAsync<TS, TD>(Expression<Func<TS, bool>> predicate, List<OrderBy> orderBy = null, Paging paging = null, params Expression<Func<TS, object>>[] includeExpressions) where TS : class
         {
@@ -173,6 +176,11 @@ namespace Ax3.IMS.DataAccess.EntityFramework
                 query = query.OrderBy(orderBy);
 
             return query;
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }

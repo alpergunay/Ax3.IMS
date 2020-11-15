@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
 import {BaseComponent} from '../../../../shared/base/base.component';
 import {AccountAddModel} from '../../../../shared/models/account/account-add.model';
 import {AccountUpdateModel} from '../../../../shared/models/account/account-update.model';
 import {AccountService} from '../account.service';
 import {NotifyService} from '../../../../shared/base/notify.service';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ConfigurationService} from '../../../../shared/services/configuration.service';
 
 @Component({
@@ -12,7 +12,7 @@ import {ConfigurationService} from '../../../../shared/services/configuration.se
   templateUrl: './add-account.component.html',
   styleUrls: ['./add-account.component.scss']
 })
-export class AddAccountComponent extends BaseComponent<AccountAddModel, AccountUpdateModel> implements OnInit {
+export class AddAccountComponent extends BaseComponent implements OnInit {
 
   constructor(private accountService: AccountService,
               notifyService: NotifyService,

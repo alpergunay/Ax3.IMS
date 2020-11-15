@@ -1,10 +1,10 @@
 export interface LookupRequestModel {
   typed: string;
-  id: number;
+  id: any;
 }
 
 export interface LookupResponseModel {
-  id: number;
+  id: any;
   name: string;
 }
 export interface LookupResponseModelGuid {

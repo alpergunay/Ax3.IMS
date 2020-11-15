@@ -42,4 +42,10 @@ export class AccountService implements BaseDataService {
 
   update(updateModel: AccountUpdateModel) {
   }
+
+  dxGetList() {
+  }
+
+  getLookupList(typed: string) {
+  }
 }

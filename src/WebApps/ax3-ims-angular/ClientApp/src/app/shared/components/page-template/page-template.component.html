@@ -1,49 +1,57 @@
-<app-page-template-header #filterHeader
-                          (add)="addButtonClicked()"
-                          (edit)="editButtonClicked()"
-                          (view)="viewButtonClicked()"
-                          (delete)="deleteButtonClicked()"
-                          (refresh)="refreshButtonClicked()"
-                          (download)="downloadButtonClicked()"
-                          (expandAll)="expandAllButtonClicked()"
-                          (filter)="gridFilterValueChange($event)"
-                          [dataGrid]="grid">
-</app-page-template-header>
+<div class="row mb-2">
+  <app-page-template-header #filterHeader
+                            (add)="addButtonClicked()"
+                            (edit)="editButtonClicked()"
+                            (view)="viewButtonClicked()"
+                            (delete)="deleteButtonClicked()"
+                            (refresh)="refreshButtonClicked()"
+                            (download)="downloadButtonClicked()"
+                            (expandAll)="expandAllButtonClicked()"
+                            (filter)="gridFilterValueChange($event)"
+                            [dataGrid]="grid">
+  </app-page-template-header>
+</div>
 
 <div class="row mb-2" id="mGridContainer">
-    <dx-data-grid id="gridContainer{{ComponentName}}" #grid
-                  [dataSource]="DataSource"
-                  [columns]="Columns"
-                  [filterValue]="gridFilterValue"
-                  [rowAlternationEnabled]="true"
-                  (onSelectionChanged)="gridSelectionChanged($event)"
-                  (onRowClick)="gridDoubleClicked($event)"
-                  (onRowClick)="gridRowClicked($event)"
-                  [columnAutoWidth]="true"
-                  [allowColumnResizing]="true"
-                  [allowColumnReordering]="true"
-                  [showColumnLines]="true"
-                  [showRowLines]="true"
-                  [showBorders]="true"
-                  [columnMinWidth]="90">
+  <dx-data-grid id="gridContainer{{ComponentName}}" #grid
+                [dataSource]="DataSource"
+                [columns]="Columns"
+                [filterValue]="gridFilterValue"
+                [rowAlternationEnabled]="true"
+                (onSelectionChanged)="gridSelectionChanged($event)"
+                (onRowClick)="gridDoubleClicked($event)"
+                (onRowClick)="gridRowClicked($event)"
+                (onContentReady)="onGridContentReady($event)"
+                [remoteOperations]="RemoteOperations.enable"
+                [columnAutoWidth]="true"
+                [allowColumnResizing]="true"
+                [allowColumnReordering]="true"
+                [showColumnLines]="true"
+                [showRowLines]="true"
+                [showBorders]="true"
+                [columnMinWidth]="90">
 
-      <dxo-summary>
-        <!-- <dxi-total-item [column]="Columns[0].dataField" summaryType="count" alignment ="left"> </dxi-total-item>  -->
-        <dxi-group-item summaryType="count" displayFormat="{0}"></dxi-group-item>
+    <dxo-summary>
+      <!-- <dxi-total-item [column]="Columns[0].dataField" summaryType="count" alignment ="left"> </dxi-total-item>  -->
+      <dxi-group-item summaryType="count" displayFormat="{0}"></dxi-group-item>
 
-      </dxo-summary>
-      <dxo-header-filter [visible]="true" [allowSearch]="true"></dxo-header-filter>
-      <dxo-scrolling mode="standart" showScrollbar="always" useNative="false" rowRenderingMode="standart"></dxo-scrolling>
-      <dxo-grouping #expand [expandMode]="'rowClick'" [allowCollapsing]="true" [autoExpandAll]="manageAutoExpandAll"></dxo-grouping>
-      <dxo-group-panel [visible]="false" emptyPanelText="Gruplama için sütun başlıklarını sürükleyiniz..."></dxo-group-panel>
-      <dxo-filter-row resetOperationText="Temizle" [visible]="false" [applyFilter]="'auto'"></dxo-filter-row>
-      <dxo-sorting mode="single"></dxo-sorting>
-      <dxo-load-panel [enabled]="true"></dxo-load-panel>
-      <dxo-column-chooser [enabled]="false" mode="dragAndDrop"></dxo-column-chooser>
-      <dxo-paging [enabled]="true" [pageSize]="25"></dxo-paging>
-      <dxo-pager [showPageSizeSelector]="false" showNavigationButtons="true" [visible]="true" [showInfo]="true" infoText="Sayfa #{0}. Toplam: {1} ({2} Kayıt)">
-      </dxo-pager>
-    </dx-data-grid>
+    </dxo-summary>
+    <dxo-header-filter [visible]="true" [allowSearch]="true"></dxo-header-filter>
+    <dxo-scrolling mode="standart" showScrollbar="always" useNative="false" rowRenderingMode="standart"></dxo-scrolling>
+    <dxo-grouping #expand [expandMode]="'rowClick'" [allowCollapsing]="true"
+                  [autoExpandAll]="manageAutoExpandAll"></dxo-grouping>
+    <dxo-group-panel [visible]="false"
+                     emptyPanelText="Gruplama için sütun başlıklarını sürükleyiniz..."></dxo-group-panel>
+    <dxo-filter-row resetOperationText="Temizle" [visible]="false" [applyFilter]="'auto'"></dxo-filter-row>
+    <dxo-selection *ngIf ="AllowSelection" [mode]="SingleSelectionMode ? 'single' : 'multiple'"></dxo-selection>
+    <dxo-sorting mode="single"></dxo-sorting>
+    <dxo-load-panel [enabled]="true"></dxo-load-panel>
+    <dxo-column-chooser [enabled]="false" mode="dragAndDrop"></dxo-column-chooser>
+    <dxo-paging [enabled]="true" [pageSize]="25"></dxo-paging>
+    <dxo-pager [showPageSizeSelector]="false" showNavigationButtons="true" [visible]="true" [showInfo]="true"
+               infoText="Sayfa #{0}. Toplam: {1} ({2} Kayıt)">
+    </dxo-pager>
+  </dx-data-grid>
 </div>
 
 

@@ -24,6 +24,8 @@ import {DialogComponent} from './base/dialog/dialog.component';
 import {InputDialogComponent} from './base/input-dialog/input-dialog.component';
 import {ConfirmationComponent} from './base/confirmation/confirmation.component';
 import {NotifyService} from './base/notify.service';
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   imports: [
@@ -32,12 +34,14 @@ import {NotifyService} from './base/notify.service';
     ReactiveFormsModule,
     RouterModule,
     NgbModule,
-    // No need to export as these modules don't expose any components/directive etc'
     HttpClientModule,
     HttpClientJsonpModule,
     DxButtonModule,
     DxDataGridModule,
-    DxTextBoxModule
+    DxTextBoxModule,
+    ToastrModule.forRoot({
+      preventDuplicates: true,
+    }),
   ],
   declarations: [
     Pager,

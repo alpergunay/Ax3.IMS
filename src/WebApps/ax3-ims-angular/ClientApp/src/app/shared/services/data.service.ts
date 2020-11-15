@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from '@angular/common/http';
-
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 import { SecurityService } from './security.service';
 import { Guid } from '../../../guid';
+import CustomStore from 'devextreme/data/custom_store';
 
 // Implementing a Retry-Circuit breaker policy
 // is pending to do for the SPA app
@@ -27,6 +27,21 @@ export class DataService {
         }),
         catchError(this.handleError)
       );
+  }
+  dxGet(url: string, payload: object): CustomStore {
+    const AspNetData = require('devextreme-aspnet-data-nojquery');
+    return AspNetData.createStore({
+      key: 'id',
+      loadUrl: url,
+      loadParams: payload,
+      onBeforeSend: (method, ajaxOptions) => {
+        ajaxOptions.xhrFields = { withCredentials: true };
+        ajaxOptions.headers = {
+          'Content-Type': 'application/json',
+          'authorization': 'Bearer ' + this.securityService.GetToken()
+        };
+      }
+    });
   }
 
   postWithId(url: string, data: any, params?: any): Observable<Response> {

@@ -1,1 +1,7 @@
-<p>store-branches works!</p>
+<app-page-template
+  [Columns]="Columns"
+  [DataSource]="dataSource"
+  (addButton)="title='Şubesi Oluştur'; openModalFor('add')"
+  (editButton)="title='Şube Değiştir'; openModalFor('update', $event)"
+  [RemoteOperations]="remoteOperations">
+</app-page-template>

@@ -1,1 +1,8 @@
-<p>stores works!</p>
+<app-page-template
+  [Columns]="Columns"
+  [DataSource]="dataSource"
+  (addButton)="title='Saklama Yeri Oluştur'; openModalFor('add')"
+  (editButton)="title='Saklama Yeri Değiştir'; openModalFor('update', $event)"
+  [RemoteOperations]="remoteOperations">
+</app-page-template>
+

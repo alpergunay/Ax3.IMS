@@ -14,9 +14,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.2" />
     <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="3.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.9" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
   </ItemGroup>
 
@@ -1653,6 +1653,11 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\modules\accounts\accounts-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\base\base-lookup.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\page-template\remote-operations.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\base-request.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\process-type.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\store\store-branch.model.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

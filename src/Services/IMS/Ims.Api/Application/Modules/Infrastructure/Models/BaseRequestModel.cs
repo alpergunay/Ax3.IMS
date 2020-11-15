@@ -8,6 +8,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Models
     public class BaseRequestModel<T>
     {
         public T Id { get; set; }
+        public bool WithDeletedRecords { get; set; }
     }
 
     public class BaseEntityRequestModel : BaseRequestModel<Guid>

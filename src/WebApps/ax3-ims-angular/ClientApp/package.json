@@ -1,15 +1,15 @@
 {
    "name": "ax3_ims_angular",
    "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve",
-    "build": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build",
-    "build:ssr": "ng run ax3_ims_angular:server:dev",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+   "scripts": {
+      "ng": "ng",
+      "start": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve",
+      "build": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build",
+      "build:ssr": "ng run ax3_ims_angular:server:dev",
+      "test": "ng test",
+      "lint": "ng lint",
+      "e2e": "ng e2e"
+   },
    "private": true,
    "dependencies": {
       "@angular/animations": "~10.0.5",

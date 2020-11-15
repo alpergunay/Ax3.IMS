@@ -5,8 +5,7 @@ import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
 import {InvestmentToolType} from '../../../shared/models/investment-tool-type.model';
 import {BaseDataService} from '../../../shared/models/base-data-service';
-import {BaseAddModel} from '../../../shared/models/base-add.model';
-import {BaseUpdateModel} from '../../../shared/models/base-update.model';
+import {BaseModel} from '../../../shared/models/base-add.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +28,7 @@ export class InvestmentToolTypesService implements BaseDataService {
     }));
   }
 
-  add(addModel: BaseAddModel) {
+  add(addModel: BaseModel) {
   }
 
   delete() {
@@ -38,6 +37,12 @@ export class InvestmentToolTypesService implements BaseDataService {
   getById(id: any) {
   }
 
-  update(updateModel: BaseUpdateModel) {
+  update(updateModel: BaseModel) {
+  }
+
+  dxGetList() {
+  }
+
+  getLookupList(typed: string) {
   }
 }
