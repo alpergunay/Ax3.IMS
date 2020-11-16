@@ -2,9 +2,8 @@
 
 namespace Ims.Api.Application.Modules.Infrastructure.Models.Store
 {
-    public class StoreResponseModel
+    public class StoreResponseModel :BaseResponseModel
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public int StoreTypeId { get; set; }
         public string StoreTypeName { get; set; }

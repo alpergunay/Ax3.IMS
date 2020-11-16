@@ -10,6 +10,7 @@ using Ims.Api.Application.Modules.Infrastructure.Models.AccountType;
 using Ims.Api.Application.Modules.Infrastructure.Models.DirectionType;
 using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentToolType;
 using Ims.Api.Application.Modules.Infrastructure.Models.Store;
+using Ims.Api.Application.Modules.Infrastructure.Models.StoreBranch;
 using Ims.Api.Application.Modules.Infrastructure.Models.StoreType;
 using Ims.Api.Application.Modules.Infrastructure.Models.TransactionType;
 using Npgsql;
@@ -40,6 +41,15 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
                 connection.Open();
 
                 return await connection.QueryAsync<StoreResponseModel>("SELECT * FROM ims.stores");
+            }
+        }
+        public async Task<IEnumerable<StoreBranchResponseModel>> GetStoreBranchesAsync()
+        {
+            await using (var connection = new NpgsqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                return await connection.QueryAsync<StoreBranchResponseModel>("SELECT * FROM ims.store_branches");
             }
         }
 
@@ -90,6 +100,16 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
                 connection.Open();
                 var x = await connection.QueryAsync<StoreResponseModel>("SELECT * FROM ims.stores " +
                                                                             "WHERE name LIKE @t AND (store_type_id=@stid OR @stid=0)", new { t = "%" + filter.typed + "%", stid=filter.id ?? 0 });
+                return x;
+            }
+        }
+        public async Task<IEnumerable<StoreBranchResponseModel>> FilterStoreBranchesAsync(BaseFilterRequestModel filter)
+        {
+            await using (var connection = new NpgsqlConnection(_connectionString))
+            {
+                connection.Open();
+                var x = await connection.QueryAsync<StoreBranchResponseModel>("SELECT * FROM ims.store_branches " +
+                                                                        "WHERE name LIKE @t AND (store_id=@stid OR @stid=0)", new { t = "%" + filter.typed + "%", stid = filter.id ?? 0 });
                 return x;
             }
         }

@@ -15,19 +15,19 @@ namespace Ims.Infrastructure.EntityConfigurations
             base.ConfigureForEntity(builder);
 
             builder
-                .Property<string>("_name")
+                .Property<string>("Name")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Name")
                 .HasMaxLength(200)
                 .IsRequired();
             builder
-                .Property("_storeId")
+                .Property("StoreId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("StoreId")
                 .IsRequired();
             builder.HasOne(p => p.Store)
                 .WithMany()
-                .HasForeignKey("_storeId");
+                .HasForeignKey("StoreId");
         }
     }
 }

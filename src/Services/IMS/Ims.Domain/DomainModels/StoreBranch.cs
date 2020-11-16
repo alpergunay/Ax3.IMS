@@ -7,14 +7,19 @@ namespace Ims.Domain.DomainModels
 {
     public class StoreBranch : Entity
     {
-        private string _name;
-        private Guid _storeId;
+        public string Name { get; private set; }
+        public Guid StoreId { get; private set; }
         public Store Store { get; private set; }
 
         public StoreBranch(string name, Guid storeId)
         {
-            _name = name;
-            _storeId = storeId;
+            Name = name;
+            StoreId = storeId;
+        }
+        public void Update(string name, Guid storeId)
+        {
+            this.Name = name;
+            this.StoreId = storeId;
         }
     }
 }
