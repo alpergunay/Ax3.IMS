@@ -15,9 +15,9 @@
     </label>
     <div class="col-lg-12">
       <app-store-type-lookup
-        [selectedValue]="0"
-        [selectedText]=" "
-        (selected)="selectedStoreTypeId = $event">
+        [selectedValue]="dataModel.storeTypeId"
+        [selectedText]="dataModel.storeTypeName"
+        (selected)="dataModel.storeTypeId = $event">
       </app-store-type-lookup>
     </div>
   </div>
@@ -27,7 +27,7 @@
     </label>
     <div class="col-lg-12">
       <app-store-lookup
-        [selectedStoreTypeId] = "selectedStoreTypeId"
+        [selectedStoreTypeId] = "dataModel.storeTypeId"
         [selectedValue]="dataModel.storeId"
         [selectedText]="dataModel.storeName"
         (selected)="dataModel.storeId = $event">

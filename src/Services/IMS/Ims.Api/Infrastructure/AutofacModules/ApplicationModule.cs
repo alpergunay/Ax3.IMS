@@ -43,6 +43,9 @@ namespace Ims.Api.Infrastructure.AutofacModules
             builder.RegisterType<StoreRepository>()
                 .As<IStoreRepository>()
                 .InstancePerLifetimeScope();
+            builder.RegisterType<StoreBranchRepository>()
+                .As<IStoreBranchRepository>()
+                .InstancePerLifetimeScope();
 
             builder.Register(c => new ImsQueries(QueriesConnectionString))
                 .As<IImsQueries>()

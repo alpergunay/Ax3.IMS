@@ -29,12 +29,10 @@ export class StoreBranchesComponent extends BaseComponent {
     this.Columns = [
       {caption: 'Saklama Yeri Tipi', dataField: 'storeTypeName'},
       {caption: 'Saklama Yeri', dataField: 'storeName'},
-      {caption: 'Şube İsmi', dataField: 'storeBranchName'}
+      {caption: 'Şube İsmi', dataField: 'name'}
     ];
   }
 
-  ngOnInit(): void {
-  }
   openModalFor(modalType: string, parameters?:any) {
     this.openModal(AddStoreBranchComponent, modalType, parameters);
   }
