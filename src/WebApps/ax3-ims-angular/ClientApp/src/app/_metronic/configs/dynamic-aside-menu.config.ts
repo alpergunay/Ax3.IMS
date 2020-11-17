@@ -37,10 +37,6 @@ export const DynamicAsideMenuConfig = {
       svg: './assets/media/svg/icons/Shopping/Bitcoin.svg',
       submenu: [
         {
-          title: 'Yatırım Aracı Listesi',
-          page: '/investment-tools/investment-tools-list'
-        },
-        {
           title: 'Fiyatlar',
           page: '/investment-tools/investment-tools-price'
         }
@@ -76,6 +72,10 @@ export const DynamicAsideMenuConfig = {
         {
           title: 'Yatırım Aracı Tipi',
           page: '/investment-tool-definitions/investment-tool-types'
+        },
+        {
+          title: 'Yatırım Araçları',
+          page: '/investment-tool-definitions/investment-tools'
         }
       ]
     },

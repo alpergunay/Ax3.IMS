@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Ax3.IMS.Domain;
 
 namespace Ims.Domain.DomainModels
 {
-    public interface IInvestmentToolTypeRepository
+    public interface IInvestmentToolTypeRepository: IRepository<InvestmentToolType>
     {
-        Task<ICollection<T>> GetAllAsync<T>() where T : class;
     }
 }

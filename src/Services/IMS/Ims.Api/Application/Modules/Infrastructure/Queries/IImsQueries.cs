@@ -6,6 +6,7 @@ using Ims.Api.Application.Modules.Infrastructure.Models;
 using Ims.Api.Application.Modules.Infrastructure.Models.Account;
 using Ims.Api.Application.Modules.Infrastructure.Models.AccountType;
 using Ims.Api.Application.Modules.Infrastructure.Models.DirectionType;
+using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentTool;
 using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentToolType;
 using Ims.Api.Application.Modules.Infrastructure.Models.Store;
 using Ims.Api.Application.Modules.Infrastructure.Models.StoreBranch;
@@ -21,13 +22,15 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
         Task<IEnumerable<StoreBranchResponseModel>> GetStoreBranchesAsync();
         Task<IEnumerable<InvestmentToolTypeResponseModel>> GetInvestmentToolTypesAsync();
         Task<IEnumerable<AccountTypeResponseModel>> GetAccountTypesAsync();
+        Task<IEnumerable<InvestmentToolResponseModel>> GetInvestmentToolsAsync();
         Task<IEnumerable<AccountTypeResponseModel>> FilterAccountTypesAsync(string typed);
         Task<IEnumerable<StoreTypeResponseModel>> FilterStoreTypesAsync(string queryString);
         Task<IEnumerable<StoreResponseModel>> FilterStoresAsync(BaseFilterRequestModel queryString);
         Task<IEnumerable<StoreBranchResponseModel>> FilterStoreBranchesAsync(BaseFilterRequestModel queryString);
+        Task<IEnumerable<InvestmentToolResponseModel>> FilterInvestmentToolAsync(BaseFilterRequestModel queryString);
+        Task<IEnumerable<InvestmentToolTypeResponseModel>> FilterInvestmentToolTypesAsync(BaseFilterRequestModel queryString);
         Task<IEnumerable<TransactionTypeResponseModel>> GetTransactionTypesAsync();
         Task<IEnumerable<DirectionTypeResponseModel>> GetDirectionTypesAsync();
         Task<IEnumerable<AccountResponseModel>> GetAccountsAsync(Guid userId);
-
     }
 }

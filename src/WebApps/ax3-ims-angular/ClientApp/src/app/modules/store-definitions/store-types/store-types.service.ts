@@ -31,15 +31,6 @@ export class StoreTypesService implements BaseDataService {
       return response;
     }));
   }
-  // getLookupList(typed: string, parentId?: any): Observable<LookupResponseModel[]> {
-  //   const url = this.webApiUrl + '/api/StoreType/filter';
-  //   const requestModel = <LookupRequestModel>{};
-  //   requestModel.typed = typed;
-  //   requestModel.id = parentId;
-  //   return this.service.get(url, requestModel).pipe<LookupResponseModel[]>(tap((response: any) => {
-  //     return response;
-  //   }));
-  // }
 
   getLookupList(typed: string, parentId?: any): Observable<LookupResponseModel[]> {
     const url = this.webApiUrl + '/api/StoreType/filter';

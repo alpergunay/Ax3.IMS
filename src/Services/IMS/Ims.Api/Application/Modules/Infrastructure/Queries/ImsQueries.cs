@@ -8,6 +8,7 @@ using Ims.Api.Application.Modules.Infrastructure.Models;
 using Ims.Api.Application.Modules.Infrastructure.Models.Account;
 using Ims.Api.Application.Modules.Infrastructure.Models.AccountType;
 using Ims.Api.Application.Modules.Infrastructure.Models.DirectionType;
+using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentTool;
 using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentToolType;
 using Ims.Api.Application.Modules.Infrastructure.Models.Store;
 using Ims.Api.Application.Modules.Infrastructure.Models.StoreBranch;
@@ -73,6 +74,16 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
             }
         }
 
+        public async Task<IEnumerable<InvestmentToolResponseModel>> GetInvestmentToolsAsync()
+        {
+            await using (var connection = new NpgsqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                return await connection.QueryAsync<InvestmentToolResponseModel>("SELECT * FROM ims.investment_tools");
+            }
+        }
+
         public async Task<IEnumerable<AccountTypeResponseModel>> FilterAccountTypesAsync(string queryString)
         {
             await using (var connection = new NpgsqlConnection(_connectionString))
@@ -108,9 +119,28 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
             await using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
-                var x = await connection.QueryAsync<StoreBranchResponseModel>("SELECT * FROM ims.store_branches " +
+                return await connection.QueryAsync<StoreBranchResponseModel>("SELECT * FROM ims.store_branches " +
                                                                         "WHERE name LIKE @t AND (store_id=@stid OR @stid=0)", new { t = "%" + filter.typed + "%", stid = filter.id ?? 0 });
-                return x;
+            }
+        }
+
+        public async Task<IEnumerable<InvestmentToolResponseModel>> FilterInvestmentToolAsync(BaseFilterRequestModel queryString)
+        {
+            await using (var connection = new NpgsqlConnection(_connectionString))
+            {
+                connection.Open();
+                return await connection.QueryAsync<InvestmentToolResponseModel>("SELECT * FROM ims.investment_tools " +
+                                                                                "WHERE name LIKE @t AND (investment_tool_type_id=@ittid OR @ittid=0)", new { t = "%" + queryString.typed + "%", stid = queryString.id ?? 0 });
+            }
+        }
+
+        public async Task<IEnumerable<InvestmentToolTypeResponseModel>> FilterInvestmentToolTypesAsync(BaseFilterRequestModel queryString)
+        {
+            await using (var connection = new NpgsqlConnection(_connectionString))
+            {
+                connection.Open();
+                return await connection.QueryAsync<InvestmentToolTypeResponseModel>("SELECT * FROM ims.investment_tool_types " +
+                                                                                    "WHERE name LIKE @t", new { t = "%" + queryString.typed + "%" });
             }
         }
 

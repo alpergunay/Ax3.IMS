@@ -1,0 +1,7 @@
+<app-page-template
+  [Columns]="Columns"
+  [DataSource]="dataSource"
+  (addButton)="title='Yatırım Aracı Oluştur'; openModalFor('add')"
+  (editButton)="title='Yatırım Aracı Değiştir'; openModalFor('update', $event)"
+  [RemoteOperations]="remoteOperations">
+</app-page-template>

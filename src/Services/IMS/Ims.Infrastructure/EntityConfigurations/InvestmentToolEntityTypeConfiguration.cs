@@ -15,28 +15,28 @@ namespace Ims.Infrastructure.EntityConfigurations
             base.ConfigureForEntity(builder);
 
             builder
-                .Property<string>("_code")
+                .Property<string>("Code")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Code")
                 .HasMaxLength(20)
                 .IsRequired();
 
             builder
-                .Property<string>("_name")
+                .Property<string>("Name")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Name")
                 .HasMaxLength(200)
                 .IsRequired();
 
             builder
-                .Property("_investmentToolTypeId")
+                .Property("InvestmentToolTypeId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("InvestmentToolTypeId")
                 .IsRequired();
 
             builder.HasOne(p => p.InvestmentToolType)
                 .WithMany()
-                .HasForeignKey("_investmentToolTypeId");
+                .HasForeignKey("InvestmentToolTypeId");
         }
     }
 }

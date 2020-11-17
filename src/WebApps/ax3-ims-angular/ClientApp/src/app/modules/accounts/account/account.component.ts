@@ -6,6 +6,9 @@ import {AccountService} from './account.service';
 import {NotifyService} from '../../../shared/base/notify.service';
 import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ConfigurationService} from '../../../shared/services/configuration.service';
+import {RemoteOperationsModel} from "../../../shared/components/page-template/remote-operations.model";
+import {StoreBranchService} from "../../store-definitions/store-branches/store-branch.service";
+import {AddStoreBranchComponent} from "../../store-definitions/store-branches/add-store-branch/add-store-branch.component";
 
 @Component({
   selector: 'app-account',
@@ -14,23 +17,27 @@ import {ConfigurationService} from '../../../shared/services/configuration.servi
 })
 export class AccountComponent extends BaseComponent {
   Columns: DataGridColumnModel[] = [];
-  @ViewChild(PageTemplateComponent) pageTemplate: PageTemplateComponent;
-  constructor(private accountService: AccountService,
+  remoteOperations = <RemoteOperationsModel>{
+    enable: true,
+    paging: true,
+    scrollingMode: 'false'
+  };
+
+  constructor(private accountService: StoreBranchService,
               notifyService: NotifyService,
               modalService: NgbModal,
               configurationService: ConfigurationService) {
     super(accountService, notifyService, modalService, configurationService);
     this.Columns = [
-      {caption: 'Kod', dataField: 'code'},
-      {caption: 'Açıklama', dataField: 'name'},
+      {caption: 'Saklama Yeri Tipi', dataField: 'storeTypeName'},
+      {caption: 'Saklama Yeri', dataField: 'storeName'},
+      {caption: 'Şube', dataField: 'storeBranchName'},
+      {caption: 'Hesap Tipi', dataField: 'accountTypeName'},
+      {caption: 'Yatırım Aracı', dataField: 'investmentToolName'}
     ];
   }
 
-  validateAddModel(): string[] {
-    return [];
-  }
-
-  validateUpdateModel(): string[] {
-    return [];
+  openModalFor(modalType: string, parameters?:any) {
+    this.openModal(AddStoreBranchComponent, modalType, parameters);
   }
 }

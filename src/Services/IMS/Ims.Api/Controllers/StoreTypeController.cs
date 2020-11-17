@@ -47,6 +47,7 @@ namespace Ims.Api.Controllers
             var rawResult = await _storeTypeRepository.RetrievePagedResultAsync<StoreType, StoreTypeResponseModel>(null, null,paging);
             return rawResult;
         }
+
         [HttpGet]
         [Route("")]
         [ProducesResponseType(typeof(IEnumerable<StoreTypeResponseModel>), (int)HttpStatusCode.OK)]
@@ -54,6 +55,7 @@ namespace Ims.Api.Controllers
         {
             return await _queries.GetStoreTypesAsync();
         }
+
         [HttpGet()]
         [Route("filter")]
         [ProducesResponseType(typeof(IEnumerable<StoreTypeResponseModel>), (int)HttpStatusCode.OK)]
@@ -61,6 +63,7 @@ namespace Ims.Api.Controllers
         {
             return await _queries.FilterStoreTypesAsync(typed);
         }
+
         [HttpGet]
         [Route("list")]
         [ProducesResponseType(typeof(IEnumerable<StoreTypeResponseModel>), (int)HttpStatusCode.OK)]

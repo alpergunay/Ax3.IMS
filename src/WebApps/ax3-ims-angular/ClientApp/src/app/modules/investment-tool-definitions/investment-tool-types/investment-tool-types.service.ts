@@ -6,6 +6,8 @@ import {tap} from 'rxjs/operators';
 import {InvestmentToolType} from '../../../shared/models/investment-tool-type.model';
 import {BaseDataService} from '../../../shared/models/base-data-service';
 import {BaseModel} from '../../../shared/models/base-add.model';
+import {BaseRequestModel} from "../../../shared/models/base-request.model";
+import {LookupRequestModel, LookupResponseModel} from "../../../shared/models/lookup.model";
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +23,7 @@ export class InvestmentToolTypesService implements BaseDataService {
     }
   }
   getList(): Observable<InvestmentToolType[]> {
-    const url = this.webApiUrl + 'InvestmentToolType';
+    const url = this.webApiUrl + '/api/InvestmentToolType';
 
     return this.service.get(url).pipe<InvestmentToolType[]>(tap((response: any) => {
       return response;
@@ -41,8 +43,19 @@ export class InvestmentToolTypesService implements BaseDataService {
   }
 
   dxGetList() {
+    const url = this.webApiUrl + '/api/InvestmentToolType/list';
+    return this.service.dxGet(url, <BaseRequestModel>{});
   }
 
-  getLookupList(typed: string) {
+  getLookupList(typed: string, parentId?: any) {
+    const url = this.webApiUrl + '/api/InvestmentToolType/filter';
+    const requestModel = <LookupRequestModel>{};
+    requestModel.typed = typed;
+    if(parentId !== undefined)
+      requestModel.id = parentId;
+    else requestModel.id = '';
+    return this.service.get(url, requestModel).pipe<LookupResponseModel[]>(tap((response: any) => {
+      return response;
+    }));
   }
 }

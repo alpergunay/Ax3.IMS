@@ -73,6 +73,7 @@ namespace Ims.Api.Controllers
             await _storeBranchRepository.UnitOfWork.SaveChangesAsync();
             return CreatedAtAction(nameof(GetByIdAsync), new { id = storeBranch.Id }, null);
         }
+
         [HttpGet()]
         [Route("filter")]
         [ProducesResponseType(typeof(IEnumerable<StoreBranchResponseModel>), (int)HttpStatusCode.OK)]
@@ -80,6 +81,7 @@ namespace Ims.Api.Controllers
         {
             return await _queries.FilterStoreBranchesAsync(filter);
         }
+
         [HttpGet]
         [Route("")]
         [ProducesResponseType(typeof(IEnumerable<StoreBranchResponseModel>), (int)HttpStatusCode.OK)]

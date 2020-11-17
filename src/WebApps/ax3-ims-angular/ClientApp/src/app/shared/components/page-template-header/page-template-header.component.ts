@@ -28,7 +28,9 @@ export class PageTemplateHeaderComponent implements OnChanges {
     this.add.emit();
   }
   refreshClicked() {
-    this.refresh.emit();
+    if(this.dataGrid) {
+      this.dataGrid.instance.getDataSource().reload();
+    }
   }
   editClicked() {
     this.edit.emit();

@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
 using Ax3.IMS.DataAccess.EntityFramework;
 using Ims.Domain.DomainModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
-using Ax3.IMS.Domain;
-using Microsoft.EntityFrameworkCore;
-using Z.EntityFramework.Extensions;
 
 namespace Ims.Infrastructure.Repositories
 {

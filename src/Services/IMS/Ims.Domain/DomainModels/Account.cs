@@ -19,7 +19,8 @@ namespace Ims.Domain.DomainModels
         private string _accountNo;
         private string _accountName;
 
-        public Account(Guid userId, Guid storeBranchId, int accountTypeId, Guid investmentToolId, string accountNo, string accountName)
+        public Account(Guid userId, Guid storeBranchId, int accountTypeId, Guid investmentToolId, string accountNo,
+            string accountName)
         {
             _userId = userId;
             _storeBranchId = storeBranchId;
