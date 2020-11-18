@@ -6,11 +6,14 @@ import {ConfigurationService} from '../../../shared/services/configuration.servi
 import {tap} from 'rxjs/operators';
 import {BaseModel} from '../../../shared/models/base-add.model';
 import {LookupRequestModel, LookupResponseModel} from '../../../shared/models/lookup.model';
+import {BaseDataService} from "../../../shared/models/base-data-service";
+import CustomStore from "devextreme/data/custom_store";
+import {BaseRequestModel} from "../../../shared/models/base-request.model";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AccountTypesService {
+export class AccountTypesService implements BaseDataService {
   private webApiUrl = '';
   constructor(private service: DataService, private configurationService: ConfigurationService) {
     if (this.configurationService.isReady) {
@@ -45,5 +48,10 @@ export class AccountTypesService {
   }
 
   update(updateModel: BaseModel) {
+  }
+
+  dxGetList(): CustomStore {
+    const url = this.webApiUrl + '/api/AccountType/list';
+    return this.service.dxGet(url, <BaseRequestModel>{});
   }
 }

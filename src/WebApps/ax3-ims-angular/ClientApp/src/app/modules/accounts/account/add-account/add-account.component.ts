@@ -1,34 +1,59 @@
-import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
-import {BaseComponent} from '../../../../shared/base/base.component';
-import {AccountAddModel} from '../../../../shared/models/account/account-add.model';
-import {AccountUpdateModel} from '../../../../shared/models/account/account-update.model';
+import {Component} from '@angular/core';
 import {AccountService} from '../account.service';
 import {NotifyService} from '../../../../shared/base/notify.service';
-import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {ConfigurationService} from '../../../../shared/services/configuration.service';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {BaseModalComponent} from "../../../../shared/base/base-modal.component";
+import {AccountModel} from "../../../../shared/models/account/account.model";
 
 @Component({
   selector: 'app-add-account',
   templateUrl: './add-account.component.html',
   styleUrls: ['./add-account.component.scss']
 })
-export class AddAccountComponent extends BaseComponent implements OnInit {
-
+export class AddAccountComponent extends BaseModalComponent<AccountModel> {
   constructor(private accountService: AccountService,
               notifyService: NotifyService,
-              modalService: NgbModal,
-              configurationService: ConfigurationService) {
-    super(accountService, notifyService, modalService, configurationService);
-  }
-  ngOnInit() {
+              activeModal: NgbActiveModal) {
+    super(accountService, notifyService, activeModal);
   }
 
   validateAddModel(): string[] {
-    return [];
+    const errorList = [];
+    if (this.dataModel.storeBranchId === undefined) {
+      errorList.push('Şube Boş Bırakılamaz!');
+    }
+    if(this.dataModel.storeId === undefined){
+      errorList.push('Saklama Yeri Boş Bırakılamaz!');
+    }
+    if(this.dataModel.accountTypeId === undefined){
+      errorList.push('Hesap Tipi Boş Bırakılamaz!');
+    }
+    if(this.dataModel.investmentToolId === undefined){
+      errorList.push('Yatırım Aracı Boş Bırakılamaz!');
+    }
+    if(this.dataModel.accountName === undefined){
+      errorList.push('Hesap Adı Boş Bırakılamaz!');
+    }
+    return errorList;
   }
 
   validateUpdateModel(): string[] {
-    return [];
+    const errorList = [];
+    if (this.dataModel.storeBranchId === undefined) {
+      errorList.push('Şube Boş Bırakılamaz!');
+    }
+    if(this.dataModel.storeId === undefined){
+      errorList.push('Saklama Yeri Boş Bırakılamaz!');
+    }
+    if(this.dataModel.accountTypeId === undefined){
+      errorList.push('Hesap Tipi Boş Bırakılamaz!');
+    }
+    if(this.dataModel.investmentToolId === undefined){
+      errorList.push('Yatırım Aracı Boş Bırakılamaz!');
+    }
+    if(this.dataModel.accountName === undefined){
+      errorList.push('Hesap Adı Boş Bırakılamaz!');
+    }
+    return errorList;
   }
-
 }

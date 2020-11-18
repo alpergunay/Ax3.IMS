@@ -1,4 +1,4 @@
-export interface Account {
+export interface AccountModel {
   userId: string;
   storeBranchId: string;
   storeBranchName: string;
@@ -6,6 +6,8 @@ export interface Account {
   storeName: string;
   accountTypeId: string;
   accountTypeName: string;
+  investmentToolTypeId: string;
+  investmentToolTypeName: string;
   investmentToolId: string;
   investmentToolName: string;
   accountNo: string;

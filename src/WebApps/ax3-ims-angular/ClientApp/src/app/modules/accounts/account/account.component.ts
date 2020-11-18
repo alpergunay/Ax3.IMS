@@ -1,14 +1,12 @@
-import {Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
 import {DataGridColumnModel} from '../../../shared/components/page-template/data-grid-column-model';
-import {PageTemplateComponent} from '../../../shared/components/page-template/page-template.component';
 import {BaseComponent} from '../../../shared/base/base.component';
 import {AccountService} from './account.service';
 import {NotifyService} from '../../../shared/base/notify.service';
-import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ConfigurationService} from '../../../shared/services/configuration.service';
 import {RemoteOperationsModel} from "../../../shared/components/page-template/remote-operations.model";
-import {StoreBranchService} from "../../store-definitions/store-branches/store-branch.service";
-import {AddStoreBranchComponent} from "../../store-definitions/store-branches/add-store-branch/add-store-branch.component";
+import {AddAccountComponent} from "./add-account/add-account.component";
 
 @Component({
   selector: 'app-account',
@@ -23,7 +21,7 @@ export class AccountComponent extends BaseComponent {
     scrollingMode: 'false'
   };
 
-  constructor(private accountService: StoreBranchService,
+  constructor(private accountService: AccountService,
               notifyService: NotifyService,
               modalService: NgbModal,
               configurationService: ConfigurationService) {
@@ -33,11 +31,13 @@ export class AccountComponent extends BaseComponent {
       {caption: 'Saklama Yeri', dataField: 'storeName'},
       {caption: 'Şube', dataField: 'storeBranchName'},
       {caption: 'Hesap Tipi', dataField: 'accountTypeName'},
-      {caption: 'Yatırım Aracı', dataField: 'investmentToolName'}
+      {caption: 'Yatırım Aracı', dataField: 'investmentToolName'},
+      {caption: 'Hesap Adı', dataField: 'accountName'},
+      {caption: 'Hesap Numarası', dataField: 'accountNo'}
     ];
   }
 
   openModalFor(modalType: string, parameters?:any) {
-    this.openModal(AddStoreBranchComponent, modalType, parameters);
+    this.openModal(AddAccountComponent, modalType, parameters);
   }
 }

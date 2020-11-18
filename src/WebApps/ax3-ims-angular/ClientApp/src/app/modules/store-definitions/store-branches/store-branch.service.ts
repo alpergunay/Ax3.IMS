@@ -22,7 +22,7 @@ export class StoreBranchService implements BaseDataService{
     }
   }
 
-  add(addModel: BaseModel) {
+  add(addModel: StoreBranchModel) {
     const url = this.webApiUrl + '/api/StoreBranch';
     return this.service.post(url, addModel).pipe<boolean>(tap((response: any) => true));
   }
@@ -49,7 +49,7 @@ export class StoreBranchService implements BaseDataService{
     }));
   }
 
-  update(updateModel: BaseModel) {
+  update(updateModel: StoreBranchModel) {
     const url = this.webApiUrl + '/api/StoreBranch';
     return this.service.putWithId(url, updateModel).pipe<boolean>(tap((response: any) => true));
   }

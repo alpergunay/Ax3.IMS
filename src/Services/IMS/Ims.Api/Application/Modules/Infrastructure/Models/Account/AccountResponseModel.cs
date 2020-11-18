@@ -9,7 +9,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Models.Account
         public string StoreBranchName { get; set; }
         public Guid StoreId { get; set; }
         public string StoreName { get; set; }
-        public Guid AccountTypeId { get; set; }
+        public int AccountTypeId { get; set; }
         public string AccountTypeName { get; set; }
         public Guid InvestmentToolId { get; set; }
         public string InvestmentToolName { get; set; }

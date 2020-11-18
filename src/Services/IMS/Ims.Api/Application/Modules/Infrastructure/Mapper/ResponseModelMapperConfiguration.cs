@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Ims.Api.Application.Modules.Infrastructure.Models.Account;
 using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentTool;
 using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentToolType;
 using Ims.Api.Application.Modules.Infrastructure.Models.Store;
@@ -19,6 +20,18 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
             CreateMapForStoreBranch();
             CreateMapForInvestmentToolType();
             CreateMapForInvestmentTool();
+            CreateMapForAccount();
+        }
+
+        private void CreateMapForAccount()
+        {
+            CreateMap<Account, AccountResponseModel>()
+                .ForMember(m => m.StoreId, d => d.MapFrom(s => s.StoreBranch.Store.Id))
+                .ForMember(m => m.StoreName, d => d.MapFrom(s => s.StoreBranch.Store.Name))
+                .ForMember(m => m.AccountTypeId, d => d.MapFrom(s => s.AccountType.EnumId))
+                .ForMember(m => m.AccountTypeName, d => d.MapFrom(s => s.AccountType.Name))
+                .ForMember(m => m.InvestmentToolName, d => d.MapFrom(s => s.InvestmentTool.Name))
+                .ForMember(m => m.StoreBranchName, d => d.MapFrom(s => s.StoreBranch.Name));
         }
 
         private void CreateMapForInvestmentToolType()

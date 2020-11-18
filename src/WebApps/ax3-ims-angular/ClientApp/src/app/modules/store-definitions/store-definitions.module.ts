@@ -11,16 +11,22 @@ import { AddStoreComponent } from './stores/add-store/add-store.component';
 import {DxButtonModule, DxLookupModule, DxTextBoxModule} from 'devextreme-angular';
 import { StoreTypeLookupComponent } from './store-types/store-type-lookup/store-type-lookup.component';
 import { AddStoreBranchComponent } from './store-branches/add-store-branch/add-store-branch.component';
+import { StoreBranchLookupComponent } from './store-branches/store-branch-lookup/store-branch-lookup.component';
 
 @NgModule({
-  declarations: [StoreDefinitionsComponent,
-    StoreTypesComponent,
-    StoresComponent,
-    StoreBranchesComponent,
+    declarations: [StoreDefinitionsComponent,
+        StoreTypesComponent,
+        StoresComponent,
+        StoreBranchesComponent,
+        StoreLookupComponent,
+        AddStoreComponent,
+        StoreTypeLookupComponent,
+        AddStoreBranchComponent,
+        StoreBranchLookupComponent],
+  exports: [
     StoreLookupComponent,
-    AddStoreComponent,
-    StoreTypeLookupComponent,
-    AddStoreBranchComponent],
+    StoreBranchLookupComponent
+  ],
     imports: [
         CommonModule,
         StoreDefinitionsRoutingModule,

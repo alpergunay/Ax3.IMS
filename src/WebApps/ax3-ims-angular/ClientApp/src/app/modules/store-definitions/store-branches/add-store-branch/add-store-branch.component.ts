@@ -11,7 +11,6 @@ import {StoreBranchService} from "../store-branch.service";
   styleUrls: ['./add-store-branch.component.scss']
 })
 export class AddStoreBranchComponent extends BaseModalComponent<StoreBranchModel> {
-  selectedStoreTypeId: number;
   constructor(private storeBranchService: StoreBranchService,
               notifyService: NotifyService,
               activeModal: NgbActiveModal) {

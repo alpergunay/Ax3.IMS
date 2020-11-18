@@ -5,20 +5,22 @@ namespace Ims.Domain.DomainModels
 {
     public class User : Entity
     {
-        private string _name;
-        private string _surname;
-        private string _mobile;
-        private string _email;
-        private Guid _familyId;
-        public Family Family { get; set; }
+        public string UserName { get; private set; }
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
+        public string Mobile { get; private set; }
+        public string Email { get; private set; }
+        public Guid FamilyId { get; private set; }
+        public Family Family { get; private set; }
 
-        public User(string name, string surname, Guid familyId, string mobile, string email)
+        public User(string userName, string name, string surname, Guid familyId, string mobile, string email)
         {
-            _name = name;
-            _surname = surname;
-            _familyId = familyId;
-            _mobile = mobile;
-            _email = email;
+            UserName = userName;
+            Name = name;
+            Surname = surname;
+            FamilyId = familyId;
+            Mobile = mobile;
+            Email = email;
         }
     }
 }

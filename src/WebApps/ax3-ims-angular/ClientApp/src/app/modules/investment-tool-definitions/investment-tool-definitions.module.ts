@@ -8,18 +8,23 @@ import { InvestmentToolsComponent } from './investment-tools/investment-tools.co
 import { AddInvestmentToolComponent } from './investment-tools/add-investment-tool/add-investment-tool.component';
 import {DxButtonModule, DxLookupModule, DxTextBoxModule} from "devextreme-angular";
 import { InvestmentToolTypeLookupComponent } from './investment-tool-types/investment-tool-type-lookup/investment-tool-type-lookup.component';
+import { InvestmentToolLookupComponent } from './investment-tools/investment-tool-lookup/investment-tool-lookup.component';
 
 
 
 @NgModule({
-  declarations: [InvestmentToolDefinitionsComponent, InvestmentToolTypesComponent, InvestmentToolsComponent, AddInvestmentToolComponent, InvestmentToolTypeLookupComponent],
-  imports: [
-    CommonModule,
-    InvestmentToolDefinitionsRoutingModule,
-    SharedModule,
-    DxTextBoxModule,
-    DxButtonModule,
-    DxLookupModule
-  ]
+    declarations: [InvestmentToolDefinitionsComponent, InvestmentToolTypesComponent, InvestmentToolsComponent, AddInvestmentToolComponent, InvestmentToolTypeLookupComponent, InvestmentToolLookupComponent],
+  exports: [
+    InvestmentToolTypeLookupComponent,
+    InvestmentToolLookupComponent
+  ],
+    imports: [
+        CommonModule,
+        InvestmentToolDefinitionsRoutingModule,
+        SharedModule,
+        DxTextBoxModule,
+        DxButtonModule,
+        DxLookupModule
+    ]
 })
 export class InvestmentToolDefinitionsModule { }

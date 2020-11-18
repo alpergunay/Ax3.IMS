@@ -7,27 +7,32 @@ namespace Ims.Domain.DomainModels
 {
     public class Account : Entity
     {
-        private Guid _userId;
+        public string Username { get; set; }
         public User User { get; set; }
-
-        private Guid _storeBranchId;
+        public Guid StoreBranchId { get; private set; }
         public StoreBranch StoreBranch { get; set; }
-        private int _accountTypeId;
+        public int AccountTypeId { get; private set; }
         public AccountType AccountType { get; set; }
-        private Guid _investmentToolId;
+        public Guid InvestmentToolId { get; private set; }
         public InvestmentTool InvestmentTool { get; set; }
-        private string _accountNo;
-        private string _accountName;
+        public string AccountNo { get; private set; }
+        public string AccountName { get; private set; }
 
-        public Account(Guid userId, Guid storeBranchId, int accountTypeId, Guid investmentToolId, string accountNo,
+        public Account(Guid storeBranchId, int accountTypeId, Guid investmentToolId, string accountNo,
             string accountName)
         {
-            _userId = userId;
-            _storeBranchId = storeBranchId;
-            _accountTypeId = accountTypeId;
-            _investmentToolId = investmentToolId;
-            _accountNo = accountNo;
-            _accountName = accountName;
+            StoreBranchId = storeBranchId;
+            AccountTypeId = accountTypeId;
+            InvestmentToolId = investmentToolId;
+            AccountNo = accountNo;
+            AccountName = accountName;
+        }
+
+        public void Update(string accountNo,
+            string accountName)
+        {
+            AccountNo = accountNo;
+            AccountName = accountName;
         }
     }
 }

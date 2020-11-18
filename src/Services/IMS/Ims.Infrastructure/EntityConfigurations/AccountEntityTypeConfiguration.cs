@@ -12,57 +12,51 @@ namespace Ims.Infrastructure.EntityConfigurations
             base.ConfigureForEntity(builder);
 
             builder
-                .Property<string>("_accountNo")
+                .Property<string>("AccountNo")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("AccountNo")
                 .HasMaxLength(50)
                 .IsRequired();
             builder
-                .Property<string>("_accountName")
+                .Property<string>("AccountName")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("AccountName")
                 .HasMaxLength(255)
                 .IsRequired();
 
-            builder
-                .Property("_userId")
-                .UsePropertyAccessMode(PropertyAccessMode.Field)
-                .HasColumnName("UserId")
-                .IsRequired();
-
             builder.HasOne(p => p.User)
                 .WithMany()
-                .HasForeignKey("_userId");
+                .HasForeignKey("Username");
 
             builder
-                .Property("_storeBranchId")
+                .Property("StoreBranchId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("StoreBranchId")
                 .IsRequired();
 
             builder.HasOne(p => p.StoreBranch)
                 .WithMany()
-                .HasForeignKey("_storeBranchId");
+                .HasForeignKey("StoreBranchId");
 
             builder
-                .Property("_accountTypeId")
+                .Property("AccountTypeId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("AccountTypeId")
                 .IsRequired();
 
             builder.HasOne(p => p.AccountType)
                 .WithMany()
-                .HasForeignKey("_accountTypeId");
+                .HasForeignKey("AccountTypeId");
 
             builder
-                .Property("_investmentToolId")
+                .Property("InvestmentToolId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("InvestmentToolId")
                 .IsRequired();
 
             builder.HasOne(p => p.InvestmentTool)
                 .WithMany()
-                .HasForeignKey("_investmentToolId");
+                .HasForeignKey("InvestmentToolId");
         }
     }
 }

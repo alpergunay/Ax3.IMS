@@ -15,37 +15,37 @@ namespace Ims.Infrastructure.EntityConfigurations
             base.ConfigureForEntity(builder);
 
             builder
-                .Property<string>("_name")
+                .Property<string>("Name")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Name")
                 .HasMaxLength(50)
                 .IsRequired();
 
             builder
-                .Property<string>("_surname")
+                .Property<string>("Surname")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Surname")
                 .HasMaxLength(50)
                 .IsRequired();
 
             builder
-                .Property("_familyId")
+                .Property("FamilyId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("FamilyId")
                 .IsRequired();
             builder.HasOne(p => p.Family)
                 .WithMany()
-                .HasForeignKey("_familyId");
+                .HasForeignKey("FamilyId");
 
             builder
-                .Property<string>("_mobile")
+                .Property<string>("Mobile")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Mobile")
                 .HasMaxLength(20)
                 .IsRequired();
 
             builder
-                .Property<string>("_email")
+                .Property<string>("Email")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Email")
                 .HasMaxLength(100)
