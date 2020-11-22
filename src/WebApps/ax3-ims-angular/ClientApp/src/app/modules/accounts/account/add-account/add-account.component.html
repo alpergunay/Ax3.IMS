@@ -9,90 +9,101 @@
   </button>
 </div>
 <div class="modal-body">
-  <div class="form-group row">
-    <label class="col-lg-12">
-      Hesap tipi
-    </label>
-    <div class="col-lg-12">
-      <app-account-type-lookup
-        [selectedValue]="dataModel.accountTypeId"
-        [selectedText]="dataModel.accountTypeName"
-        (selected)="dataModel.accountTypeId = $event">
-      </app-account-type-lookup>
+  <div class="form form-label-right">
+    <div class="form-group row">
+      <div class="col-lg-6">
+        <label>
+          Hesap tipi
+        </label>
+        <app-account-type-lookup
+          [selectedValue]="dataModel.accountTypeId"
+          [selectedText]="dataModel.accountTypeName"
+          (selected)="dataModel.accountTypeId = $event">
+        </app-account-type-lookup>
+      </div>
+      <div class="col-lg-6">
+        <label>
+          Hesap Adı
+        </label>
+        <dx-text-box [(value)]="dataModel.accountName" placeholder="Hesap adı giriniz..." maxLength="100">
+        </dx-text-box>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-lg-6">
+        <label>
+          Hesap Numarası
+        </label>
+        <dx-text-box [(value)]="dataModel.accountNo" placeholder="Hesap numarası giriniz..." maxLength="100">
+        </dx-text-box>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-lg-6">
+        <label>
+          Saklama Yeri Tipi
+        </label>
+        <app-store-type-lookup
+          [selectedValue]="dataModel.storeTypeId"
+          [selectedText]="dataModel.storeTypeName"
+          (selected)="dataModel.storeTypeId = $event">
+        </app-store-type-lookup>
+      </div>
+      <div class="col-lg-6">
+        <label>
+          Saklama Yeri
+        </label>
+        <div>
+          <app-store-lookup
+            [selectedStoreTypeId]="dataModel.storeTypeId"
+            [selectedValue]="dataModel.storeId"
+            [selectedText]="dataModel.storeName"
+            (selected)="dataModel.storeId = $event">
+          </app-store-lookup>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-lg-6">
+        <label>
+          Şube
+        </label>
+        <app-store-branch-lookup
+          [selectedStoreId]="dataModel.storeId"
+          [selectedValue]="dataModel.storeBranchId"
+          [selectedText]="dataModel.storeBranchName"
+          (selected)="dataModel.storeBranchId = $event">
+        </app-store-branch-lookup>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-lg-6">
+        <label>
+          Yatırım Aracı Tipi
+        </label>
+        <app-investment-tool-type-lookup
+          [selectedValue]="dataModel.investmentToolTypeId"
+          [selectedText]="dataModel.investmentToolTypeName"
+          (selected)="dataModel.investmentToolTypeId = $event">
+        </app-investment-tool-type-lookup>
+      </div>
+      <div class="col-lg-6">
+        <label>
+          Yatırım Aracı
+        </label>
+        <app-investment-tool-lookup
+          [selectedInvestmentToolTypeId]="dataModel.investmentToolTypeId"
+          [selectedValue]="dataModel.investmentToolId"
+          [selectedText]="dataModel.investmentToolName"
+          (selected)="dataModel.investmentToolId = $event">
+        </app-investment-tool-lookup>
+      </div>
     </div>
   </div>
-  <div class="form-group row">
-    <label class="col-lg-12">
-      Hesap Adı
-    </label>
-    <div class="col-lg-12">
-      <dx-text-box [(value)]="dataModel.accountName" placeholder="Hesap adı giriniz..." maxLength="100">
-      </dx-text-box>
-    </div>
+  <div class="modal-footer">
+    <dx-button class="btn btn-outline-primary float-right" text="Kaydet" (onClick)="saveClicked()"
+               icon="la la-save"></dx-button>
+    <dx-button class="btn btn-outline-danger float-right" text="Vazgeç" (onClick)="closeModal()"
+               icon="la la-ban"></dx-button>
   </div>
-  <div class="form-group row">
-    <label class="col-lg-12">
-      Hesap Numarası
-    </label>
-    <div class="col-lg-12">
-      <dx-text-box [(value)]="dataModel.accountNo" placeholder="Hesap adı giriniz..." maxLength="100">
-      </dx-text-box>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-lg-12">
-      Saklama Yeri
-    </label>
-    <div class="col-lg-12">
-      <app-store-lookup
-        [selectedValue]="dataModel.storeId"
-        [selectedText]="dataModel.storeName"
-        (selected)="dataModel.storeId = $event">
-      </app-store-lookup>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-lg-12">
-      Şube
-    </label>
-    <div class="col-lg-12">
-      <app-store-branch-lookup
-        [selectedStoreId] = "dataModel.storeId"
-        [selectedValue]="dataModel.storeBranchId"
-        [selectedText]="dataModel.storeBranchName"
-        (selected)="dataModel.storeBranchId = $event">
-      </app-store-branch-lookup>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-lg-12">
-      Yatırım Aracı Tipi
-    </label>
-    <div class="col-lg-12">
-      <app-investment-tool-type-lookup
-        [selectedValue]="dataModel.investmentToolTypeId"
-        [selectedText]="dataModel.investmentToolTypeName"
-        (selected)="dataModel.investmentToolTypeId = $event">
-      </app-investment-tool-type-lookup>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-lg-12">
-      Yatırım Aracı
-    </label>
-    <div class="col-lg-12">
-      <app-investment-tool-lookup
-        [selectedInvestmentToolTypeId]= "dataModel.investmentToolTypeId"
-        [selectedValue]="dataModel.investmentToolId"
-        [selectedText]="dataModel.investmentToolName"
-        (selected)="dataModel.investmentToolId = $event">
-      </app-investment-tool-lookup>
-    </div>
-  </div>
-</div>
-<div class="modal-footer">
-  <dx-button class="btn btn-outline-primary float-right" text="Kaydet" (onClick)="saveClicked()"
-             icon="la la-save"></dx-button>
-  <dx-button class="btn btn-outline-danger float-right" text="Vazgeç" (onClick)="closeModal()"
-             icon="la la-ban"></dx-button>
 </div>

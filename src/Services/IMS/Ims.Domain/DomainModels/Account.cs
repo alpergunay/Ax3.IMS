@@ -7,6 +7,7 @@ namespace Ims.Domain.DomainModels
 {
     public class Account : Entity
     {
+        public Guid UserId { get; set; }
         public string Username { get; set; }
         public User User { get; set; }
         public Guid StoreBranchId { get; private set; }

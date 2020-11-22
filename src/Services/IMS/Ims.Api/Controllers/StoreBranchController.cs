@@ -77,9 +77,14 @@ namespace Ims.Api.Controllers
         [HttpGet()]
         [Route("filter")]
         [ProducesResponseType(typeof(IEnumerable<StoreBranchResponseModel>), (int)HttpStatusCode.OK)]
-        public async Task<IEnumerable<StoreBranchResponseModel>> FilterStoresAsync([FromQuery] BaseFilterRequestModel filter)
+        public async Task<IEnumerable<StoreBranchResponseModel>> FilterStoreBranchesAsync([FromQuery] BaseFilterRequestModel<string> queryString)
         {
-            return await _queries.FilterStoreBranchesAsync(filter);
+            var filter = new BaseFilterRequestModel<Guid>
+            {
+                typed = queryString.typed,
+                id = !Guid.TryParse(queryString.id, out var storeId) ? Guid.Empty : storeId
+            };
+            return await _queries.FilterStoreBranchesAsync<Guid>(filter);
         }
 
         [HttpGet]

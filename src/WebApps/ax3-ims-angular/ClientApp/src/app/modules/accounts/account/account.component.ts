@@ -35,6 +35,10 @@ export class AccountComponent extends BaseComponent {
       {caption: 'Hesap Adı', dataField: 'accountName'},
       {caption: 'Hesap Numarası', dataField: 'accountNo'}
     ];
+    this.modalOptions = {
+      backdrop: 'static',
+      size: "lg"
+    };
   }
 
   openModalFor(modalType: string, parameters?:any) {

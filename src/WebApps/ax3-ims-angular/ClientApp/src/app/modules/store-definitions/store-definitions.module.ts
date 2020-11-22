@@ -23,10 +23,11 @@ import { StoreBranchLookupComponent } from './store-branches/store-branch-lookup
         StoreTypeLookupComponent,
         AddStoreBranchComponent,
         StoreBranchLookupComponent],
-  exports: [
-    StoreLookupComponent,
-    StoreBranchLookupComponent
-  ],
+    exports: [
+        StoreLookupComponent,
+        StoreBranchLookupComponent,
+        StoreTypeLookupComponent
+    ],
     imports: [
         CommonModule,
         StoreDefinitionsRoutingModule,

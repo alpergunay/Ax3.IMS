@@ -26,7 +26,7 @@ namespace Ims.Infrastructure.EntityConfigurations
 
             builder.HasOne(p => p.User)
                 .WithMany()
-                .HasForeignKey("Username");
+                .HasForeignKey("UserId");
 
             builder
                 .Property("StoreBranchId")

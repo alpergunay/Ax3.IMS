@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Ims.Infrastructure.Migrations
 {
-    public partial class Initial : Migration
+    public partial class AccountUpdate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -142,11 +142,12 @@ namespace Ims.Infrastructure.Migrations
                     is_deleted = table.Column<bool>(nullable: false),
                     created_on = table.Column<DateTime>(nullable: false),
                     modified_on = table.Column<DateTime>(nullable: false),
-                    family_id = table.Column<Guid>(nullable: false),
-                    email = table.Column<string>(maxLength: 100, nullable: false),
-                    mobile = table.Column<string>(maxLength: 20, nullable: false),
+                    user_name = table.Column<string>(nullable: true),
                     name = table.Column<string>(maxLength: 50, nullable: false),
-                    surname = table.Column<string>(maxLength: 50, nullable: false)
+                    surname = table.Column<string>(maxLength: 50, nullable: false),
+                    mobile = table.Column<string>(maxLength: 20, nullable: false),
+                    email = table.Column<string>(maxLength: 100, nullable: false),
+                    family_id = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -171,9 +172,9 @@ namespace Ims.Infrastructure.Migrations
                     is_deleted = table.Column<bool>(nullable: false),
                     created_on = table.Column<DateTime>(nullable: false),
                     modified_on = table.Column<DateTime>(nullable: false),
-                    investment_tool_type_id = table.Column<int>(nullable: false),
                     code = table.Column<string>(maxLength: 20, nullable: false),
-                    name = table.Column<string>(maxLength: 200, nullable: false)
+                    name = table.Column<string>(maxLength: 200, nullable: false),
+                    investment_tool_type_id = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -252,8 +253,8 @@ namespace Ims.Infrastructure.Migrations
                     is_deleted = table.Column<bool>(nullable: false),
                     created_on = table.Column<DateTime>(nullable: false),
                     modified_on = table.Column<DateTime>(nullable: false),
-                    store_id = table.Column<Guid>(nullable: false),
-                    name = table.Column<string>(maxLength: 200, nullable: false)
+                    name = table.Column<string>(maxLength: 200, nullable: false),
+                    store_id = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -279,10 +280,12 @@ namespace Ims.Infrastructure.Migrations
                     created_on = table.Column<DateTime>(nullable: false),
                     modified_on = table.Column<DateTime>(nullable: false),
                     user_id = table.Column<Guid>(nullable: false),
+                    username = table.Column<string>(nullable: true),
                     store_branch_id = table.Column<Guid>(nullable: false),
                     account_type_id = table.Column<int>(nullable: false),
                     investment_tool_id = table.Column<Guid>(nullable: false),
-                    account_no = table.Column<string>(maxLength: 50, nullable: false)
+                    account_no = table.Column<string>(maxLength: 50, nullable: false),
+                    account_name = table.Column<string>(maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {

@@ -26,6 +26,22 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnName("id")
                         .HasColumnType("uuid");
 
+                    b.Property<string>("AccountName")
+                        .IsRequired()
+                        .HasColumnName("account_name")
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
+
+                    b.Property<string>("AccountNo")
+                        .IsRequired()
+                        .HasColumnName("account_no")
+                        .HasColumnType("character varying(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<int>("AccountTypeId")
+                        .HasColumnName("account_type_id")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnName("created_on")
                         .HasColumnType("timestamp without time zone");
@@ -34,6 +50,10 @@ namespace Ims.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnName("creator")
                         .HasColumnType("text");
+
+                    b.Property<Guid>("InvestmentToolId")
+                        .HasColumnName("investment_tool_id")
+                        .HasColumnType("uuid");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnName("is_deleted")
@@ -48,41 +68,31 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnName("modifier")
                         .HasColumnType("text");
 
-                    b.Property<string>("_accountNo")
-                        .IsRequired()
-                        .HasColumnName("account_no")
-                        .HasColumnType("character varying(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<int>("_accountTypeId")
-                        .HasColumnName("account_type_id")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid>("_investmentToolId")
-                        .HasColumnName("investment_tool_id")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("_storeBranchId")
+                    b.Property<Guid>("StoreBranchId")
                         .HasColumnName("store_branch_id")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("_userId")
+                    b.Property<Guid>("UserId")
                         .HasColumnName("user_id")
                         .HasColumnType("uuid");
+
+                    b.Property<string>("Username")
+                        .HasColumnName("username")
+                        .HasColumnType("text");
 
                     b.HasKey("Id")
                         .HasName("pk_accounts");
 
-                    b.HasIndex("_accountTypeId")
+                    b.HasIndex("AccountTypeId")
                         .HasName("ix_accounts_account_type_id");
 
-                    b.HasIndex("_investmentToolId")
+                    b.HasIndex("InvestmentToolId")
                         .HasName("ix_accounts_investment_tool_id");
 
-                    b.HasIndex("_storeBranchId")
+                    b.HasIndex("StoreBranchId")
                         .HasName("ix_accounts_store_branch_id");
 
-                    b.HasIndex("_userId")
+                    b.HasIndex("UserId")
                         .HasName("ix_accounts_user_id");
 
                     b.ToTable("accounts","ims");
@@ -290,6 +300,12 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnName("id")
                         .HasColumnType("uuid");
 
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnName("code")
+                        .HasColumnType("character varying(20)")
+                        .HasMaxLength(20);
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnName("created_on")
                         .HasColumnType("timestamp without time zone");
@@ -298,6 +314,10 @@ namespace Ims.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnName("creator")
                         .HasColumnType("text");
+
+                    b.Property<int>("InvestmentToolTypeId")
+                        .HasColumnName("investment_tool_type_id")
+                        .HasColumnType("integer");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnName("is_deleted")
@@ -312,17 +332,7 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnName("modifier")
                         .HasColumnType("text");
 
-                    b.Property<string>("_code")
-                        .IsRequired()
-                        .HasColumnName("code")
-                        .HasColumnType("character varying(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("_investmentToolTypeId")
-                        .HasColumnName("investment_tool_type_id")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("_name")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnName("name")
                         .HasColumnType("character varying(200)")
@@ -331,7 +341,7 @@ namespace Ims.Infrastructure.Migrations
                     b.HasKey("Id")
                         .HasName("pk_investment_tools");
 
-                    b.HasIndex("_investmentToolTypeId")
+                    b.HasIndex("InvestmentToolTypeId")
                         .HasName("ix_investment_tools_investment_tool_type_id");
 
                     b.ToTable("investment_tools","ims");
@@ -515,20 +525,20 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnName("modifier")
                         .HasColumnType("text");
 
-                    b.Property<string>("_name")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnName("name")
                         .HasColumnType("character varying(200)")
                         .HasMaxLength(200);
 
-                    b.Property<Guid>("_storeId")
+                    b.Property<Guid>("StoreId")
                         .HasColumnName("store_id")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id")
                         .HasName("pk_store_branches");
 
-                    b.HasIndex("_storeId")
+                    b.HasIndex("StoreId")
                         .HasName("ix_store_branches_store_id");
 
                     b.ToTable("store_branches","ims");
@@ -649,9 +659,25 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnName("creator")
                         .HasColumnType("text");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnName("email")
+                        .HasColumnType("character varying(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<Guid>("FamilyId")
+                        .HasColumnName("family_id")
+                        .HasColumnType("uuid");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnName("is_deleted")
                         .HasColumnType("boolean");
+
+                    b.Property<string>("Mobile")
+                        .IsRequired()
+                        .HasColumnName("mobile")
+                        .HasColumnType("character varying(20)")
+                        .HasMaxLength(20);
 
                     b.Property<DateTime>("ModifiedOn")
                         .HasColumnName("modified_on")
@@ -662,38 +688,26 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnName("modifier")
                         .HasColumnType("text");
 
-                    b.Property<string>("_email")
-                        .IsRequired()
-                        .HasColumnName("email")
-                        .HasColumnType("character varying(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<Guid>("_familyId")
-                        .HasColumnName("family_id")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("_mobile")
-                        .IsRequired()
-                        .HasColumnName("mobile")
-                        .HasColumnType("character varying(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("_name")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnName("name")
                         .HasColumnType("character varying(50)")
                         .HasMaxLength(50);
 
-                    b.Property<string>("_surname")
+                    b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnName("surname")
                         .HasColumnType("character varying(50)")
                         .HasMaxLength(50);
 
+                    b.Property<string>("UserName")
+                        .HasColumnName("user_name")
+                        .HasColumnType("text");
+
                     b.HasKey("Id")
                         .HasName("pk_users");
 
-                    b.HasIndex("_familyId")
+                    b.HasIndex("FamilyId")
                         .HasName("ix_users_family_id");
 
                     b.ToTable("users","ims");
@@ -703,28 +717,28 @@ namespace Ims.Infrastructure.Migrations
                 {
                     b.HasOne("Ims.Domain.DomainModels.AccountType", "AccountType")
                         .WithMany()
-                        .HasForeignKey("_accountTypeId")
+                        .HasForeignKey("AccountTypeId")
                         .HasConstraintName("fk_accounts_account_types_account_type_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Ims.Domain.DomainModels.InvestmentTool", "InvestmentTool")
                         .WithMany()
-                        .HasForeignKey("_investmentToolId")
+                        .HasForeignKey("InvestmentToolId")
                         .HasConstraintName("fk_accounts_investment_tools_investment_tool_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Ims.Domain.DomainModels.StoreBranch", "StoreBranch")
                         .WithMany()
-                        .HasForeignKey("_storeBranchId")
+                        .HasForeignKey("StoreBranchId")
                         .HasConstraintName("fk_accounts_store_branches_store_branch_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Ims.Domain.DomainModels.User", "User")
                         .WithMany()
-                        .HasForeignKey("_userId")
+                        .HasForeignKey("UserId")
                         .HasConstraintName("fk_accounts_users_user_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -751,7 +765,7 @@ namespace Ims.Infrastructure.Migrations
                 {
                     b.HasOne("Ims.Domain.DomainModels.InvestmentToolType", "InvestmentToolType")
                         .WithMany()
-                        .HasForeignKey("_investmentToolTypeId")
+                        .HasForeignKey("InvestmentToolTypeId")
                         .HasConstraintName("fk_investment_tools_investment_tool_types_investment_tool_type_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -781,7 +795,7 @@ namespace Ims.Infrastructure.Migrations
                 {
                     b.HasOne("Ims.Domain.DomainModels.Store", "Store")
                         .WithMany()
-                        .HasForeignKey("_storeId")
+                        .HasForeignKey("StoreId")
                         .HasConstraintName("fk_store_branches_stores_store_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -801,7 +815,7 @@ namespace Ims.Infrastructure.Migrations
                 {
                     b.HasOne("Ims.Domain.DomainModels.Family", "Family")
                         .WithMany()
-                        .HasForeignKey("_familyId")
+                        .HasForeignKey("FamilyId")
                         .HasConstraintName("fk_users_families_family_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

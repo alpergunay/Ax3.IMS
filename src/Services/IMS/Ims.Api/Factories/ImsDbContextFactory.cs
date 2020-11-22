@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using Ax3.IMS.Infrastructure.Core.Services;
 using Ims.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -26,8 +27,9 @@ namespace Ims.Api.Factories
     //        optionsBuilder.UseNpgsql(config["ApplicationSettings:Persistence:ConnectionString"],
     //            npgsqlOptionsAction: sqlOptions =>
     //            {
-    //                sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
+                    
     //            }).UseSnakeCaseNamingConvention();
+             
     //        return new ImsContext(optionsBuilder.Options);
     //    }
     //}

@@ -92,9 +92,9 @@ namespace Ims.Api.Controllers
         [HttpGet()]
         [Route("filter")]
         [ProducesResponseType(typeof(IEnumerable<StoreResponseModel>), (int)HttpStatusCode.OK)]
-        public async Task<IEnumerable<StoreResponseModel>> FilterStoresAsync([FromQuery] BaseFilterRequestModel filter)
+        public async Task<IEnumerable<StoreResponseModel>> FilterStoresAsync([FromQuery] BaseFilterRequestModel<int> filter)
         {
-            return await _queries.FilterStoresAsync(filter);
+            return await _queries.FilterStoresAsync<int>(filter);
         }
         [HttpGet]
         [Route("")]

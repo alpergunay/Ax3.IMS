@@ -75,9 +75,9 @@ namespace Ims.Api.Controllers
         [HttpGet()]
         [Route("filter")]
         [ProducesResponseType(typeof(IEnumerable<InvestmentToolResponseModel>), (int)HttpStatusCode.OK)]
-        public async Task<IEnumerable<InvestmentToolResponseModel>> FilterInvestmentToolAsync([FromQuery] BaseFilterRequestModel filter)
+        public async Task<IEnumerable<InvestmentToolResponseModel>> FilterInvestmentToolAsync([FromQuery] BaseFilterRequestModel<int> filter)
         {
-            return await _queries.FilterInvestmentToolAsync(filter);
+            return await _queries.FilterInvestmentToolAsync<int>(filter);
         }
         [HttpGet]
         [Route("")]

@@ -58,7 +58,9 @@ export class StoreService implements BaseDataService {
     const url = this.webApiUrl + '/api/Store/filter';
     const requestModel = <LookupRequestModel>{};
     requestModel.typed = typed;
-    requestModel.id = parentId;
+    if(parentId !== undefined)
+      requestModel.id = parentId;
+    else requestModel.id = 0;
     return this.service.get(url, requestModel).pipe<LookupResponseModel[]>(tap((response: any) => {
       return response;
     }));

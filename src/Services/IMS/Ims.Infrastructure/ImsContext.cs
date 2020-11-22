@@ -112,7 +112,6 @@ namespace Ims.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new AccountEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new AccountTransactionEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new AccountTypeEntityTypeConfiguration());

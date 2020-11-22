@@ -91,7 +91,7 @@ namespace Ims.Api.Controllers
         [HttpGet()]
         [Route("filter")]
         [ProducesResponseType(typeof(IEnumerable<AccountResponseModel>), (int)HttpStatusCode.OK)]
-        public async Task<IEnumerable<AccountResponseModel>> FilterAccountsAsync([FromQuery] BaseFilterRequestModel filter)
+        public async Task<IEnumerable<AccountResponseModel>> FilterAccountsAsync([FromQuery] BaseFilterRequestModel<string> filter)
         {
             return await _queries.FilterAccountsAsync(filter);
         }

@@ -4,6 +4,8 @@ export interface AccountModel {
   storeBranchName: string;
   storeId: string;
   storeName: string;
+  storeTypeId: number;
+  storeTypeName: string;
   accountTypeId: string;
   accountTypeName: string;
   investmentToolTypeId: string;
