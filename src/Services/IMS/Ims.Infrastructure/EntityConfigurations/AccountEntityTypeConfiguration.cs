@@ -24,9 +24,9 @@ namespace Ims.Infrastructure.EntityConfigurations
                 .HasMaxLength(255)
                 .IsRequired();
 
-            builder.HasOne(p => p.User)
-                .WithMany()
-                .HasForeignKey("UserId");
+            //builder.HasOne(p => p.User)
+            //    .WithMany()
+            //    .HasForeignKey("UserId");
 
             builder
                 .Property("StoreBranchId")

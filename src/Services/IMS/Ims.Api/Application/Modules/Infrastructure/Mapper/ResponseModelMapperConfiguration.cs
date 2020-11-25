@@ -31,7 +31,11 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
                 .ForMember(m => m.AccountTypeId, d => d.MapFrom(s => s.AccountType.EnumId))
                 .ForMember(m => m.AccountTypeName, d => d.MapFrom(s => s.AccountType.Name))
                 .ForMember(m => m.InvestmentToolName, d => d.MapFrom(s => s.InvestmentTool.Name))
-                .ForMember(m => m.StoreBranchName, d => d.MapFrom(s => s.StoreBranch.Name));
+                .ForMember(m => m.InvestmentToolTypeId, d => d.MapFrom(s => s.InvestmentTool.InvestmentToolType.EnumId))
+                .ForMember(m => m.InvestmentToolTypeName, d => d.MapFrom(s => s.InvestmentTool.InvestmentToolType.Name))
+                .ForMember(m => m.StoreBranchName, d => d.MapFrom(s => s.StoreBranch.Name))
+                .ForMember(m => m.StoreTypeId, d => d.MapFrom(s => s.StoreBranch.Store.StoreType.EnumId))
+                .ForMember(m => m.StoreTypeName, d => d.MapFrom(s => s.StoreBranch.Store.StoreType.Name));
         }
 
         private void CreateMapForInvestmentToolType()

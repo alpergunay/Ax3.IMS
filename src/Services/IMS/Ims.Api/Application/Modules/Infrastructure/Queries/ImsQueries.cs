@@ -134,13 +134,13 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
             }
         }
 
-        public async Task<IEnumerable<InvestmentToolTypeResponseModel>> FilterInvestmentToolTypesAsync<T>(BaseFilterRequestModel<T> queryString)
+        public async Task<IEnumerable<InvestmentToolTypeResponseModel>> FilterInvestmentToolTypesAsync(string queryString)
         {
             await using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
                 return await connection.QueryAsync<InvestmentToolTypeResponseModel>("SELECT * FROM ims.investment_tool_types " +
-                                                                                    "WHERE name LIKE @t", new { t = "%" + queryString.typed + "%" });
+                                                                                    "WHERE name LIKE @t", new { t = "%" + queryString + "%" });
             }
         }
 
