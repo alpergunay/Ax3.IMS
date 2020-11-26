@@ -9,10 +9,11 @@ import {AccountDefinitionsModule} from '../account-definitions/account-definitio
 import {DxButtonModule, DxTextBoxModule} from 'devextreme-angular';
 import {StoreDefinitionsModule} from "../store-definitions/store-definitions.module";
 import {InvestmentToolDefinitionsModule} from "../investment-tool-definitions/investment-tool-definitions.module";
+import { TransactionComponent } from './transaction/transaction.component';
 
 
 @NgModule({
-  declarations: [AccountsComponent, AccountComponent, AddAccountComponent],
+  declarations: [AccountsComponent, AccountComponent, AddAccountComponent, TransactionComponent],
   imports: [
     CommonModule,
     AccountsRoutingModule,

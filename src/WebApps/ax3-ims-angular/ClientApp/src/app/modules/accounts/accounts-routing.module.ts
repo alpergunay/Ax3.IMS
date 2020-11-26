@@ -2,6 +2,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import {AccountsComponent} from './accounts.component';
 import {AccountComponent} from './account/account.component';
+import {TransactionComponent} from "./transaction/transaction.component";
 
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
       {
         path: 'account',
         component: AccountComponent,
+      },
+      {
+        path: 'transaction',
+        component: TransactionComponent,
       },
       { path: '', redirectTo: 'account', pathMatch: 'full' },
       {

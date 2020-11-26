@@ -24,7 +24,7 @@ export const DynamicAsideMenuConfig = {
         {
           title: 'Hesap Hareketleri',
           bullet: 'dot',
-          page: '/accounts/transactions',
+          page: '/accounts/transaction',
         }
       ]
     },
