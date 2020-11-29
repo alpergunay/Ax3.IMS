@@ -9,6 +9,14 @@ export const DynamicAsideMenuConfig = {
       bullet: 'dot',
     },
     {
+      title: 'Varlıklarım',
+      root: true,
+      icon: 'flaticon2-pie-chart-3',
+      svg: './assets/media/svg/icons/Design/Layers.svg',
+      page: '/assets',
+      bullet: 'dot',
+    },
+    {
       title: 'Hesap Bilgileri',
       root: true,
       bullet: 'dot',
@@ -25,6 +33,32 @@ export const DynamicAsideMenuConfig = {
           title: 'Hesap Hareketleri',
           bullet: 'dot',
           page: '/accounts/transaction',
+        }
+      ]
+    },
+    {
+      title: 'Hesap Hareketleri',
+      bullet: 'dot',
+      icon: 'flaticon2-list-2',
+      svg: './assets/media/svg/icons/Shopping/Cart3.svg',
+      root: true,
+      page: '/transactions',
+      submenu: [
+        {
+          title: 'Hesaba Para Koy',
+          page: '/transactions/invest-money'
+        },
+        {
+          title: 'Hesaptan Para Çek',
+          page: '/transactions/issue-money'
+        },
+        {
+          title: 'Döviz Al',
+          page: '/transactions/invest-foreign-currency'
+        },
+        {
+          title: 'Döviz Sat',
+          page: '/transactions/sell-foreign-currency'
         }
       ]
     },
