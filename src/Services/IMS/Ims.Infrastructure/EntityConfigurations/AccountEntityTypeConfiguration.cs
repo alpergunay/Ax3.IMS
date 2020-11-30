@@ -46,7 +46,7 @@ namespace Ims.Infrastructure.EntityConfigurations
 
             builder.HasOne(p => p.AccountType)
                 .WithMany()
-                .HasForeignKey("AccountTypeId");
+                .HasForeignKey(x => x.AccountTypeId);
 
             builder
                 .Property("InvestmentToolId")

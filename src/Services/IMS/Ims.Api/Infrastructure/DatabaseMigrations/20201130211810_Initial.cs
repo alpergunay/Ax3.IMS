@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Ims.Infrastructure.Migrations
 {
-    public partial class AccountUpdate : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -109,21 +109,21 @@ namespace Ims.Infrastructure.Migrations
                 schema: "ims",
                 columns: table => new
                 {
-                    id = table.Column<Guid>(nullable: false),
-                    creator = table.Column<string>(nullable: false),
-                    modifier = table.Column<string>(nullable: false),
+                    id = table.Column<int>(nullable: false, defaultValue: 1),
+                    creator = table.Column<string>(nullable: true),
+                    modifier = table.Column<string>(nullable: true),
                     is_deleted = table.Column<bool>(nullable: false),
                     created_on = table.Column<DateTime>(nullable: false),
                     modified_on = table.Column<DateTime>(nullable: false),
-                    code = table.Column<string>(maxLength: 20, nullable: false),
-                    description = table.Column<string>(maxLength: 200, nullable: false),
+                    code = table.Column<string>(maxLength: 200, nullable: false),
+                    name = table.Column<string>(maxLength: 200, nullable: false),
                     direction_type_id = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("pk_transaction_types", x => x.id);
                     table.ForeignKey(
-                        name: "fk_transaction_types_direction_types_direction_type_enum_id",
+                        name: "fk_transaction_types_direction_types_direction_type_id",
                         column: x => x.direction_type_id,
                         principalSchema: "ims",
                         principalTable: "direction_types",
@@ -332,10 +332,10 @@ namespace Ims.Infrastructure.Migrations
                     created_on = table.Column<DateTime>(nullable: false),
                     modified_on = table.Column<DateTime>(nullable: false),
                     account_id = table.Column<Guid>(nullable: false),
-                    transaction_type_id = table.Column<Guid>(nullable: false),
+                    transaction_type_id = table.Column<int>(nullable: false),
+                    transaction_date = table.Column<DateTime>(maxLength: 25, nullable: false),
                     amount = table.Column<decimal>(type: "decimal(18, 6)", maxLength: 25, nullable: false),
-                    rate = table.Column<decimal>(type: "decimal(18, 6)", maxLength: 25, nullable: false),
-                    transaction_date = table.Column<DateTime>(maxLength: 25, nullable: false)
+                    rate = table.Column<decimal>(type: "decimal(18, 6)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {

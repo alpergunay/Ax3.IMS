@@ -1,0 +1,18 @@
+<dx-lookup [dataSource]="dataSource"
+           displayExpr="accountName"
+           valueExpr="id"
+           placeholder="Seçiniz..."
+           searchPlaceholder="Ara..."
+           [showPopupTitle]="false"
+           closeOnOutsideClick="true"
+           [(value)]="selectedValue"
+           searchMode="startswith"
+           pageLoadingText="Yükleniyor..."
+           cancelButtonText="İptal"
+           noDataText="Veri bulunamadı..."
+           minSearchLength="0"
+           (onSelectionChanged)="onChange()"
+           showClearButton="true"
+           clearButtonText="Temizle"
+           [grouped]="true">
+</dx-lookup>

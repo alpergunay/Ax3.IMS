@@ -66,6 +66,14 @@ namespace Ims.Api.Infrastructure.Data
                             await context.SaveChangesAsync();
                         }
                     }
+                    foreach (var transactionType in Enumeration.GetAll<TransactionType>())
+                    {
+                        if (!context.TransactionTypes.Any(x => x.EnumId == transactionType.EnumId))
+                        {
+                            await context.TransactionTypes.AddAsync(transactionType);
+                            await context.SaveChangesAsync();
+                        }
+                    }
                 }
             });
         }

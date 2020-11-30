@@ -32,6 +32,6 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
         Task<IEnumerable<TransactionTypeResponseModel>> GetTransactionTypesAsync();
         Task<IEnumerable<DirectionTypeResponseModel>> GetDirectionTypesAsync();
         Task<IEnumerable<AccountResponseModel>> GetAccountsAsync(Guid userId);
-        Task<IEnumerable<AccountResponseModel>> FilterAccountsAsync<T>(BaseFilterRequestModel<T> queryString);
+        Task<IEnumerable<AccountLookupResponseModel>> FilterAccountsAsync<T>(BaseFilterRequestModel<T> queryString);
     }
 }

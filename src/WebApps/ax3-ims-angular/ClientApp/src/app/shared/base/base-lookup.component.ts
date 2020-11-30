@@ -13,6 +13,7 @@ export abstract class BaseLookupComponent<T> implements OnInit {
   @Output() selected: EventEmitter<T> = new EventEmitter<T>();
   dataSource: any;
   parentId?: any;
+  groupColumnName: string;
   protected constructor(private service: BaseDataService) {
   }
 
@@ -25,6 +26,7 @@ export abstract class BaseLookupComponent<T> implements OnInit {
     const selectedItemId = this.selectedValue;
     const selectedItemText = this.selectedText;
     const selectedParentId = this.parentId;
+    const groupColumnName = this.groupColumnName;
 
     this.dataSource = new DataSource({
       store: new CustomStore({
@@ -47,9 +49,9 @@ export abstract class BaseLookupComponent<T> implements OnInit {
             return selectedItemList;
           });
         }
-      })
+      }),
+      group: groupColumnName
     });
-
   }
 
   onChange() {

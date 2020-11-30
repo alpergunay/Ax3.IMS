@@ -15,34 +15,34 @@ namespace Ims.Infrastructure.EntityConfigurations
             base.ConfigureForEntity(builder);
 
             builder
-                .Property("_accountId")
+                .Property("AccountId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("AccountId")
                 .IsRequired();
 
             builder.HasOne(p => p.Account)
                 .WithMany()
-                .HasForeignKey("_accountId");
+                .HasForeignKey("AccountId");
 
             builder
-                .Property("_transactionTypeId")
+                .Property("TransactionTypeId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("TransactionTypeId")
                 .IsRequired();
 
             builder.HasOne(p => p.TransactionType)
                 .WithMany()
-                .HasForeignKey("_transactionTypeId");
+                .HasForeignKey("TransactionTypeId");
 
             builder
-                .Property<DateTime>("_transactionDate")
+                .Property<DateTime>("TransactionDate")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("TransactionDate")
                 .HasMaxLength(25)
                 .IsRequired();
 
             builder
-                .Property<double>("_amount")
+                .Property<double>("Amount")
                 .HasColumnType("decimal(18, 6)")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Amount")
@@ -50,7 +50,7 @@ namespace Ims.Infrastructure.EntityConfigurations
                 .IsRequired();
 
             builder
-                .Property<double>("_rate")
+                .Property<double>("Rate")
                 .HasColumnType("decimal(18, 6)")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Rate")

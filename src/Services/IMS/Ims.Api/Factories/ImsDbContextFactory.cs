@@ -12,25 +12,25 @@ using Microsoft.Extensions.Configuration;
 
 namespace Ims.Api.Factories
 {
-    //public class ImsDbContextFactory : IDesignTimeDbContextFactory<ImsContext>
-    //{
-    //    public ImsContext CreateDbContext(string[] args)
-    //    {
-    //        var config = new ConfigurationBuilder()
-    //            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory()))
-    //            .AddJsonFile("appsettings.json")
-    //            .AddEnvironmentVariables()
-    //            .Build();
+    public class ImsDbContextFactory : IDesignTimeDbContextFactory<ImsContext>
+    {
+        public ImsContext CreateDbContext(string[] args)
+        {
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory()))
+                .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables()
+                .Build();
 
-    //        var optionsBuilder = new DbContextOptionsBuilder<ImsContext>();
+            var optionsBuilder = new DbContextOptionsBuilder<ImsContext>();
 
-    //        optionsBuilder.UseNpgsql(config["ApplicationSettings:Persistence:ConnectionString"],
-    //            npgsqlOptionsAction: sqlOptions =>
-    //            {
-                    
-    //            }).UseSnakeCaseNamingConvention();
-             
-    //        return new ImsContext(optionsBuilder.Options);
-    //    }
-    //}
+            optionsBuilder.UseNpgsql(config["ApplicationSettings:Persistence:ConnectionString"],
+                npgsqlOptionsAction: sqlOptions =>
+                {
+
+                }).UseSnakeCaseNamingConvention();
+
+            return new ImsContext(optionsBuilder.Options);
+        }
+    }
 }

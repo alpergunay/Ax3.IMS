@@ -105,6 +105,15 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnName("id")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid>("AccountId")
+                        .HasColumnName("account_id")
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnName("amount")
+                        .HasColumnType("decimal(18, 6)")
+                        .HasMaxLength(25);
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnName("created_on")
                         .HasColumnType("timestamp without time zone");
@@ -127,36 +136,27 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnName("modifier")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("_accountId")
-                        .HasColumnName("account_id")
-                        .HasColumnType("uuid");
-
-                    b.Property<decimal>("_amount")
-                        .HasColumnName("amount")
-                        .HasColumnType("decimal(18, 6)")
-                        .HasMaxLength(25);
-
-                    b.Property<decimal>("_rate")
+                    b.Property<decimal>("Rate")
                         .HasColumnName("rate")
                         .HasColumnType("decimal(18, 6)")
                         .HasMaxLength(25);
 
-                    b.Property<DateTime>("_transactionDate")
+                    b.Property<DateTime>("TransactionDate")
                         .HasColumnName("transaction_date")
                         .HasColumnType("timestamp without time zone")
                         .HasMaxLength(25);
 
-                    b.Property<Guid>("_transactionTypeId")
+                    b.Property<int>("TransactionTypeId")
                         .HasColumnName("transaction_type_id")
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
 
                     b.HasKey("Id")
                         .HasName("pk_account_transactions");
 
-                    b.HasIndex("_accountId")
+                    b.HasIndex("AccountId")
                         .HasName("ix_account_transactions_account_id");
 
-                    b.HasIndex("_transactionTypeId")
+                    b.HasIndex("TransactionTypeId")
                         .HasName("ix_account_transactions_transaction_type_id");
 
                     b.ToTable("account_transactions","ims");
@@ -591,31 +591,24 @@ namespace Ims.Infrastructure.Migrations
 
             modelBuilder.Entity("Ims.Domain.DomainModels.TransactionType", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("EnumId")
                         .HasColumnName("id")
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer")
+                        .HasDefaultValue(1);
 
                     b.Property<string>("Code")
                         .IsRequired()
                         .HasColumnName("code")
-                        .HasColumnType("character varying(20)")
-                        .HasMaxLength(20);
+                        .HasColumnType("character varying(200)")
+                        .HasMaxLength(200);
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnName("created_on")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Creator")
-                        .IsRequired()
                         .HasColumnName("creator")
                         .HasColumnType("text");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnName("description")
-                        .HasColumnType("character varying(200)")
-                        .HasMaxLength(200);
 
                     b.Property<int>("DirectionTypeId")
                         .HasColumnName("direction_type_id")
@@ -630,11 +623,16 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Modifier")
-                        .IsRequired()
                         .HasColumnName("modifier")
                         .HasColumnType("text");
 
-                    b.HasKey("Id")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnName("name")
+                        .HasColumnType("character varying(200)")
+                        .HasMaxLength(200);
+
+                    b.HasKey("EnumId")
                         .HasName("pk_transaction_types");
 
                     b.HasIndex("DirectionTypeId")
@@ -716,7 +714,7 @@ namespace Ims.Infrastructure.Migrations
             modelBuilder.Entity("Ims.Domain.DomainModels.Account", b =>
                 {
                     b.HasOne("Ims.Domain.DomainModels.AccountType", "AccountType")
-                        .WithMany()
+                        .WithMany("Accounts")
                         .HasForeignKey("AccountTypeId")
                         .HasConstraintName("fk_accounts_account_types_account_type_id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -748,14 +746,14 @@ namespace Ims.Infrastructure.Migrations
                 {
                     b.HasOne("Ims.Domain.DomainModels.Account", "Account")
                         .WithMany()
-                        .HasForeignKey("_accountId")
+                        .HasForeignKey("AccountId")
                         .HasConstraintName("fk_account_transactions_accounts_account_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Ims.Domain.DomainModels.TransactionType", "TransactionType")
                         .WithMany()
-                        .HasForeignKey("_transactionTypeId")
+                        .HasForeignKey("TransactionTypeId")
                         .HasConstraintName("fk_account_transactions_transaction_types_transaction_type_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -806,7 +804,7 @@ namespace Ims.Infrastructure.Migrations
                     b.HasOne("Ims.Domain.DomainModels.DirectionType", "DirectionType")
                         .WithMany()
                         .HasForeignKey("DirectionTypeId")
-                        .HasConstraintName("fk_transaction_types_direction_types_direction_type_enum_id")
+                        .HasConstraintName("fk_transaction_types_direction_types_direction_type_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -2,17 +2,18 @@
 
 namespace Ims.Domain.DomainModels
 {
-    public class TransactionType : Entity
+    public class TransactionType : Enumeration
     {
-        public string Code { get; }
-        public string Description { get; }
-        public int DirectionTypeId { get; }
+        public int DirectionTypeId { get;  private set; }
         public DirectionType DirectionType { get; set; }
 
-        public TransactionType(string code, string description, int directionTypeId)
+        public static TransactionType PutInvestmentToolToAccount = new TransactionType(1, "PutInvestmentToolToAccount", "Hesaba Koy", 1);
+        public static TransactionType PullInvestmentToolFromAccount = new TransactionType(2, "PullInvestmentToolFromAccount", "Hesaptan Çek", 2);
+        public static TransactionType BuyInvestmentTool = new TransactionType(3, "BuyInvestmentTool", "Satın Alındı", 1);
+        public static TransactionType SellInvestmentTool = new TransactionType(4, "SellInvestmentTool", "Satış Yapıldı", 2);
+
+        public TransactionType(int enumId, string code, string name, int directionTypeId):base(enumId, code, name)
         {
-            Code = code;
-            Description = description;
             DirectionTypeId = directionTypeId;
         }
     }

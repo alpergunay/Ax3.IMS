@@ -7,21 +7,21 @@ namespace Ims.Domain.DomainModels
 {
     public class AccountTransaction : Entity
     {
-        private Guid _accountId;
+        public Guid AccountId { get; private set; }
         public Account Account { get; set; }
-        private Guid _transactionTypeId;
+        public int TransactionTypeId { get; private set; }
         public TransactionType TransactionType { get; set; }
-        private DateTime _transactionDate;
-        private double _amount;
-        private double _rate;
+        public DateTime TransactionDate { get; private set; }
+        public double Amount { get; private set; }
+        public double Rate { get; private set; }
 
-        public AccountTransaction(Guid accountId, Guid transactionTypeId, DateTime transactionDate, double amount, double rate)
+        public AccountTransaction(Guid accountId, int transactionTypeId, DateTime transactionDate, double amount, double rate)
         {
-            _accountId = accountId;
-            _transactionTypeId = transactionTypeId;
-            _transactionDate = transactionDate;
-            _amount = amount;
-            _rate = rate;
+            AccountId = accountId;
+            TransactionTypeId = transactionTypeId;
+            TransactionDate = transactionDate;
+            Amount = amount;
+            Rate = rate;
         }
     }
 }

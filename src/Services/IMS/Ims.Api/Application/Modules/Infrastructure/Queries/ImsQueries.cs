@@ -172,44 +172,58 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
 
                 return await connection.QueryAsync<AccountResponseModel>(@"SELECT a.id as Id,
                                                                                a.account_no as AccountNo,
+                                                                               a.account_name as Name, 
                                                                                at.id as AccountTypeId,
                                                                                at.name as AccountTypeName,
                                                                                sb.id as StoreBranchId,
                                                                                sb.name as StoreBranchName,
                                                                                s.id as StoreId,
                                                                                s.name as StoreName,
+                                                                               st.id as StoreTypeId,
+                                                                               st.name as StoreTypeName,
                                                                                it.id as InvestmentToolId,
-                                                                               it.name as InvestmentToolName
+                                                                               it.name as InvestmentToolName,
+                                                                               itt.id as InvestmentToolTypeId,
+                                                                               itt.name as InvestmentToolTypeName 
                                                                         FROM accounts a
                                                                         INNER JOIN account_types at on at.id = a.account_type_id
-                                                                        INNER JOIN store_branches sb on sb.id = a.store_branch_id
+                                                                        LEFT JOIN store_branches sb on sb.id = a.store_branch_id
                                                                         INNER JOIN stores s on s.id = sb.store_id
+                                                                        INNER JOIN store_types st on st.id = s.store_type_id
                                                                         INNER JOIN investment_tools it on it.id = a.investment_tool_id
+                                                                        INNER JOIN investment_tool_types itt on itt.id = it.investment_tool_type_id
                                                                         WHERE a.creator = @user_id", new {user_id = userId});
             }
         }
 
-        public async Task<IEnumerable<AccountResponseModel>> FilterAccountsAsync<T>(BaseFilterRequestModel<T> queryString)
+        public async Task<IEnumerable<AccountLookupResponseModel>> FilterAccountsAsync<T>(BaseFilterRequestModel<T> queryString)
         {
             await using (var connection = new NpgsqlConnection(_connectionString))
             {
                 connection.Open();
 
-                return await connection.QueryAsync<AccountResponseModel>(@"SELECT a.id as Id,
+                return await connection.QueryAsync<AccountLookupResponseModel>(@"SELECT a.id as Id,
                                                                                a.account_no as AccountNo,
+                                                                               a.account_name as Name,
                                                                                at.id as AccountTypeId,
                                                                                at.name as AccountTypeName,
                                                                                sb.id as StoreBranchId,
                                                                                sb.name as StoreBranchName,
                                                                                s.id as StoreId,
                                                                                s.name as StoreName,
+                                                                               st.id as StoreTypeId,
+                                                                               st.name as StoreTypeName, 
                                                                                it.id as InvestmentToolId,
-                                                                               it.name as InvestmentToolName
+                                                                               it.name as InvestmentToolName,
+                                                                               itt.id as InvestmentToolTypeId,
+                                                                               itt.name as InvestmentToolTypeName 
                                                                         FROM accounts a
                                                                         INNER JOIN account_types at on at.id = a.account_type_id
-                                                                        INNER JOIN store_branches sb on sb.id = a.store_branch_id
+                                                                        LEFT JOIN store_branches sb on sb.id = a.store_branch_id
                                                                         INNER JOIN stores s on s.id = sb.store_id
+                                                                        INNER JOIN store_types st on st.id = s.store_type_id
                                                                         INNER JOIN investment_tools it on it.id = a.investment_tool_id
+                                                                        INNER JOIN investment_tool_types itt on itt.id = it.investment_tool_type_id    
                                                                         WHERE a.creator = @user_id AND a.account_name LIKE @t", new { user_id = queryString.id, t = "%" + queryString.typed + "%" });
             }
         }

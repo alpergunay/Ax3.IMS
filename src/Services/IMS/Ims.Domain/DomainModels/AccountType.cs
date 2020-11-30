@@ -7,6 +7,7 @@ namespace Ims.Domain.DomainModels
 {
     public class AccountType : Enumeration
     {
+        public List<Account> Accounts { get; set; }
         public static AccountType Deposit = new AccountType(1, "VDL", "Vadeli Hesap");
         public static AccountType Draw = new AccountType(2, "VDS", "Vadesiz Hesap");
         public static AccountType Invest = new AccountType(3, "YAT", "Yatırım");

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {AccountUpdateModel} from '../../../shared/models/account/account-update.model';
 import {BaseDataService} from '../../../shared/models/base-data-service';
 import {DataService} from '../../../shared/services/data.service';
 import {ConfigurationService} from '../../../shared/services/configuration.service';
@@ -9,6 +8,8 @@ import {AccountModel} from '../../../shared/models/account/account.model';
 import {BaseModel} from "../../../shared/models/base-add.model";
 import {BaseRequestModel} from "../../../shared/models/base-request.model";
 import {LookupRequestModel, LookupResponseModel} from "../../../shared/models/lookup.model";
+import DataSource from "devextreme/data/data_source";
+import {AccountLookupModel} from "../../../shared/models/account/account-lookup.model";
 
 @Injectable({
   providedIn: 'root'
@@ -55,12 +56,14 @@ export class AccountService implements BaseDataService {
     return this.service.dxGet(url, <BaseRequestModel>{});
   }
 
-  getLookupList(typed: string , parentId?: any) : Observable<LookupResponseModel[]> {
-    const url = this.webApiUrl + '/api/Account/filter';
+  getLookupList(typed: string , parentId?: any) : Observable<AccountLookupModel[]> {
+    const url = this.webApiUrl + '/api/AccountType/account-types-with-accounts';
     const requestModel = <LookupRequestModel>{};
     requestModel.typed = typed;
-    requestModel.id = parentId;
-    return this.service.get(url, requestModel).pipe<LookupResponseModel[]>(tap((response: any) => {
+    if(parentId)
+      requestModel.id = parentId;
+    else requestModel.id = "";
+    return this.service.get(url, requestModel).pipe<AccountLookupModel[]>(tap((response: any) => {
       return response;
     }));
   }

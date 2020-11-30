@@ -23,6 +23,11 @@ const routes: Routes = [
           import('../modules/accounts/accounts.module').then((m) => m.AccountsModule),
       },
       {
+        path: 'transactions',
+        loadChildren: () =>
+          import('../modules/transactions/transactions.module').then((m) => m.TransactionsModule),
+      },
+      {
         path: 'account-definitions',
         loadChildren: () =>
           import('../modules/account-definitions/account-definitions.module').then((m) => m.AccountDefinitionsModule),

@@ -45,20 +45,20 @@ export const DynamicAsideMenuConfig = {
       page: '/transactions',
       submenu: [
         {
-          title: 'Hesaba Para Koy',
-          page: '/transactions/invest-money'
+          title: 'Hesaba Koy',
+          page: '/transactions/invest'
         },
         {
-          title: 'Hesaptan Para Çek',
-          page: '/transactions/issue-money'
+          title: 'Hesaptan Çek',
+          page: '/transactions/withdraw'
         },
         {
-          title: 'Döviz Al',
-          page: '/transactions/invest-foreign-currency'
+          title: 'Alım Yap',
+          page: '/transactions/buy-investment-tool'
         },
         {
-          title: 'Döviz Sat',
-          page: '/transactions/sell-foreign-currency'
+          title: 'Satış Yap',
+          page: '/transactions/sell-investment-tool'
         }
       ]
     },

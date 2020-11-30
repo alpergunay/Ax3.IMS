@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Ims.Domain.DomainModels;
+﻿using Ims.Domain.DomainModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -13,6 +10,12 @@ namespace Ims.Infrastructure.EntityConfigurations
         {
             builder.ToTable("account_types", ImsContext.DEFAULT_SCHEMA);
             base.ConfigureForEnum(builder);
+
+            builder.HasMany(p => p.Accounts)
+                .WithOne(x => x.AccountType)
+                .HasForeignKey("AccountTypeId");
+
+
         }
     }
 }

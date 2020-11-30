@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Ims.Api.Application.Modules.Infrastructure.Models.Account;
+using Ims.Api.Application.Modules.Infrastructure.Models.AccountType;
 using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentTool;
 using Ims.Api.Application.Modules.Infrastructure.Models.InvestmentToolType;
 using Ims.Api.Application.Modules.Infrastructure.Models.Store;
@@ -21,6 +22,24 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
             CreateMapForInvestmentToolType();
             CreateMapForInvestmentTool();
             CreateMapForAccount();
+            CreateMapForAccountLookup();
+            CreateMapForAccountType();
+        }
+
+        private void CreateMapForAccountType()
+        {
+            CreateMap<AccountType, AccountTypeWithAccountsResponseModel>()
+                .ForMember(m => m.Id, d => d.MapFrom(s => s.EnumId))
+                .ForMember(m => m.AccountTypeName, d => d.MapFrom(s => s.Name))
+                .ForMember(m => m.Accounts, d => d.MapFrom(s => s.Accounts));
+        }
+
+        private void CreateMapForAccountLookup()
+        {
+            CreateMap<Account, AccountLookupResponseModel>()
+                .ForMember(m => m.AccountName, d => d.MapFrom(s => s.AccountName))
+                .ForMember(m => m.Id, d => d.MapFrom(s => s.Id));
+            //.ForMember(m => m.AccountTypeId, d => d.MapFrom(s => s.AccountType.EnumId));
         }
 
         private void CreateMapForAccount()
@@ -35,7 +54,8 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
                 .ForMember(m => m.InvestmentToolTypeName, d => d.MapFrom(s => s.InvestmentTool.InvestmentToolType.Name))
                 .ForMember(m => m.StoreBranchName, d => d.MapFrom(s => s.StoreBranch.Name))
                 .ForMember(m => m.StoreTypeId, d => d.MapFrom(s => s.StoreBranch.Store.StoreType.EnumId))
-                .ForMember(m => m.StoreTypeName, d => d.MapFrom(s => s.StoreBranch.Store.StoreType.Name));
+                .ForMember(m => m.StoreTypeName, d => d.MapFrom(s => s.StoreBranch.Store.StoreType.Name))
+                .ForMember(m => m.AccountName, d => d.MapFrom(s => s.AccountName));
         }
 
         private void CreateMapForInvestmentToolType()
@@ -68,11 +88,13 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
 
         private void CreateMapForTransactionType()
         {
-            CreateMap<TransactionType, TransactionTypeResponseModel>();
+            CreateMap<TransactionType, TransactionTypeResponseModel>()
+                .ForMember(m => m.Id, d => d.MapFrom(s => s.EnumId));
+
         }
         private void CreateMapForStoreType()
         {
-            CreateMap<StoreType, StoreTypeResponseModel>().ForMember(m => m.Id, d => d.MapFrom(s => s.EnumId)); ;
+            CreateMap<StoreType, StoreTypeResponseModel>().ForMember(m => m.Id, d => d.MapFrom(s => s.EnumId));
         }
     }
 }

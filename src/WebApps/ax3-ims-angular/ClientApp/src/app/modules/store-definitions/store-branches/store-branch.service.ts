@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {BaseDataService} from "../../../shared/models/base-data-service";
-import {BaseModel} from "../../../shared/models/base-add.model";
 import {tap} from "rxjs/operators";
 import {DataService} from "../../../shared/services/data.service";
 import {ConfigurationService} from "../../../shared/services/configuration.service";

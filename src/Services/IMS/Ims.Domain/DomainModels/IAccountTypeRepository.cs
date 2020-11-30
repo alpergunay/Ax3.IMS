@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ax3.IMS.Domain;
 
 namespace Ims.Domain.DomainModels
 {
-    public interface IAccountTypeRepository
+    public interface IAccountTypeRepository:IRepository<AccountType>
     {
-        Task<ICollection<T>> GetAllAsync<T>() where T : class;
+        IQueryable<AccountType> GetWithAccounts(string userName, string typed);
     }
 }
