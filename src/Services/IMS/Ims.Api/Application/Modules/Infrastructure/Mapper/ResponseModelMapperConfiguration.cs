@@ -38,8 +38,9 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
         {
             CreateMap<Account, AccountLookupResponseModel>()
                 .ForMember(m => m.AccountName, d => d.MapFrom(s => s.AccountName))
-                .ForMember(m => m.Id, d => d.MapFrom(s => s.Id));
-            //.ForMember(m => m.AccountTypeId, d => d.MapFrom(s => s.AccountType.EnumId));
+                .ForMember(m => m.Id, d => d.MapFrom(s => s.Id))
+                .ForMember(m => m.InvestmentToolTypeId, d => d.MapFrom(s => s.InvestmentTool.InvestmentToolType.EnumId))
+                .ForMember(m => m.InvestmentToolTypeName, d => d.MapFrom(s => s.InvestmentTool.InvestmentToolType.Name));
         }
 
         private void CreateMapForAccount()

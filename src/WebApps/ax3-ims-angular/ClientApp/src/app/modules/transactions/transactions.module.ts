@@ -7,19 +7,20 @@ import { BuyInvestmentToolComponent } from './buy-investment-tool/buy-investment
 import { SellInvestmentToolComponent } from './sell-investment-tool/sell-investment-tool.component';
 import {TransactionsRoutingModule} from "./transactions-routing.module";
 import {AccountsModule} from "../accounts/accounts.module";
-import {DxButtonModule, DxNumberBoxModule, DxTextBoxModule} from "devextreme-angular";
+import {DxButtonModule, DxDateBoxModule, DxNumberBoxModule, DxTextBoxModule} from "devextreme-angular";
 
 
 
 @NgModule({
   declarations: [TransactionsComponent, InvestComponent, WithdrawComponent, BuyInvestmentToolComponent, SellInvestmentToolComponent],
-  imports: [
-    CommonModule,
-    TransactionsRoutingModule,
-    AccountsModule,
-    DxTextBoxModule,
-    DxNumberBoxModule,
-    DxButtonModule
-  ]
+    imports: [
+        CommonModule,
+        TransactionsRoutingModule,
+        AccountsModule,
+        DxTextBoxModule,
+        DxNumberBoxModule,
+        DxButtonModule,
+        DxDateBoxModule
+    ]
 })
 export class TransactionsModule { }

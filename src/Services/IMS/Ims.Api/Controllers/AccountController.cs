@@ -12,11 +12,13 @@ using AutoMapper.QueryableExtensions;
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Mvc;
 using Ims.Api.Application.Modules.Infrastructure.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ims.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AccountController : ImsControllerBase<AccountResponseModel, Account>
     {
         private readonly IImsQueries _queries;

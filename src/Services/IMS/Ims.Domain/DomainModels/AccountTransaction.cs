@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Ax3.IMS.Domain.Types;
+﻿using Ax3.IMS.Domain.Types;
+using System;
 
 namespace Ims.Domain.DomainModels
 {

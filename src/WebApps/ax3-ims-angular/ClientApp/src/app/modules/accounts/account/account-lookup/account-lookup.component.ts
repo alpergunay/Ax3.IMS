@@ -61,7 +61,7 @@ export class AccountLookupComponent  {
     });
   }
 
-  onChange() {
-    this.selected.emit(this.selectedValue);
+  onChange(data: any) {
+    this.selected.emit(data.component.option("selectedItem"));
   }
 }

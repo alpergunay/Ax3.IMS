@@ -4,11 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ims.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class TransactionTypeController : ControllerBase
     {
         private readonly ITransactionTypeRepository _repository;

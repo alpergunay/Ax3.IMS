@@ -5,6 +5,8 @@ import {ConfigurationService} from "../../shared/services/configuration.service"
 import {StoreBranchModel} from "../../shared/models/store/store-branch.model";
 import {Observable} from "rxjs";
 import {LookupResponseModel} from "../../shared/models/lookup.model";
+import {InvestModel} from "../../shared/models/transaction/invest.model";
+import {tap} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +21,13 @@ export class TransactionService implements BaseDataService{
     }
   }
 
-  add(addModel: StoreBranchModel) {
+  add(addModel: InvestModel) {
     return;
+  }
+
+  putInvestmentToolToAccount(addModel: InvestModel) {
+    const url = this.webApiUrl + '/api/Transaction/investment-tool-to-account';
+    return this.service.post(url, addModel).pipe<boolean>(tap((response: any) => true));
   }
 
   delete() {

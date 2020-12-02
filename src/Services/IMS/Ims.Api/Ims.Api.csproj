@@ -50,6 +50,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Application\Modules\Infrastructure\DomainEventHandlers\" />
     <Folder Include="Application\Modules\Infrastructure\Validations\" />
     <Folder Include="Infrastructure\DatabaseMigrations\" />
   </ItemGroup>
