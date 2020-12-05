@@ -1663,6 +1663,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\investment-tool.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\process-type.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\store\store-branch.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\transaction-type-enum.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\transaction\invest.model.ts" />
   </ItemGroup>
 

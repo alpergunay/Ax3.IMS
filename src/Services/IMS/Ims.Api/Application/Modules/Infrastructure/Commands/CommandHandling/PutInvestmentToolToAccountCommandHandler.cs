@@ -1,4 +1,5 @@
-﻿using Ims.Api.Application.Modules.Infrastructure.IntegrationEvents;
+﻿using System;
+using Ims.Api.Application.Modules.Infrastructure.IntegrationEvents;
 using Ims.Api.Application.Modules.Infrastructure.IntegrationEvents.Events;
 using Ims.Domain.DomainModels;
 using MediatR;
@@ -25,10 +26,10 @@ namespace Ims.Api.Application.Modules.Infrastructure.Commands.CommandHandling
         public async Task<bool> Handle(PutInvestmentToolToAccountCommand request, CancellationToken cancellationToken)
         {
             //Notify for reporting
-            var accountBalanceChangedIntegrationEvent = new AccountBalanceChangedIntegrationEvent(request.AccountId);
+            var accountBalanceChangedIntegrationEvent = new AccountBalanceChangedIntegrationEvent(Guid.Parse(request.AccountId));
             await _imsIntegrationEventService.AddAndSaveEventAsync(accountBalanceChangedIntegrationEvent);
             
-            var transaction = new AccountTransaction(request.AccountId, request.TransactionTypeId, request.TransactionDate, request.Amount, request.Rate);
+            var transaction = new AccountTransaction(Guid.Parse(request.AccountId), request.TransactionTypeId, request.TransactionDate, request.Amount, request.Rate ?? 1);
 
             _logger.LogInformation("----- Creating Transaction - Transaction: {@Transaction}", transaction);
             _accountTransactionRepository.Add(transaction);

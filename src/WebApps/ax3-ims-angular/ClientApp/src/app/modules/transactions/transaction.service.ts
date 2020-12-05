@@ -26,7 +26,7 @@ export class TransactionService implements BaseDataService{
   }
 
   putInvestmentToolToAccount(addModel: InvestModel) {
-    const url = this.webApiUrl + '/api/Transaction/investment-tool-to-account';
+    const url = this.webApiUrl + '/api/AccountTransaction/investment-tool-to-account';
     return this.service.post(url, addModel).pipe<boolean>(tap((response: any) => true));
   }
 

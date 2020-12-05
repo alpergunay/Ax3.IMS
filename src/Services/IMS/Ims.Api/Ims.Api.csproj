@@ -52,7 +52,7 @@
   <ItemGroup>
     <Folder Include="Application\Modules\Infrastructure\DomainEventHandlers\" />
     <Folder Include="Application\Modules\Infrastructure\Validations\" />
-    <Folder Include="Infrastructure\DatabaseMigrations\" />
+    <Folder Include="Infrastructure\DatabaseMigrations\IntegrationEventLog\" />
   </ItemGroup>
 
   <ItemGroup>

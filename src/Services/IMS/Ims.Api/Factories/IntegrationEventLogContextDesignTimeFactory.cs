@@ -2,19 +2,17 @@
 //using System.Collections.Generic;
 //using System.IO;
 //using System.Linq;
-//using System.Reflection;
 //using System.Threading.Tasks;
-//using Ax3.IMS.Infrastructure.Core.Services;
-//using Ims.Infrastructure;
+//using Ax3.IMS.Infrastructure.EventBus.EFEventStore;
 //using Microsoft.EntityFrameworkCore;
 //using Microsoft.EntityFrameworkCore.Design;
 //using Microsoft.Extensions.Configuration;
 
 //namespace Ims.Api.Factories
 //{
-//    public class ImsDbContextFactory : IDesignTimeDbContextFactory<ImsContext>
+//    public class IntegrationEventLogContextDesignTimeFactory : IDesignTimeDbContextFactory<IntegrationEventLogContext>
 //    {
-//        public ImsContext CreateDbContext(string[] args)
+//        public IntegrationEventLogContext CreateDbContext(string[] args)
 //        {
 //            var config = new ConfigurationBuilder()
 //                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory()))
@@ -22,7 +20,7 @@
 //                .AddEnvironmentVariables()
 //                .Build();
 
-//            var optionsBuilder = new DbContextOptionsBuilder<ImsContext>();
+//            var optionsBuilder = new DbContextOptionsBuilder<IntegrationEventLogContext>();
 
 //            optionsBuilder.UseNpgsql(config["ApplicationSettings:Persistence:ConnectionString"],
 //                npgsqlOptionsAction: sqlOptions =>
@@ -30,7 +28,7 @@
 
 //                }).UseSnakeCaseNamingConvention();
 
-//            return new ImsContext(optionsBuilder.Options);
+//            return new IntegrationEventLogContext(optionsBuilder.Options);
 //        }
 //    }
 //}

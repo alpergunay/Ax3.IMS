@@ -18,7 +18,7 @@ namespace Ax3.IMS.Infrastructure.EventBus.EFEventStore
 
         private void ConfigureIntegrationEventLogEntry(EntityTypeBuilder<IntegrationEventLogEntry> builder)
         {
-            builder.ToTable("IntegrationEventLog");
+            builder.ToTable("integration_event_log");
 
             builder.HasKey(e => e.EventId);
 

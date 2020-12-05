@@ -40,7 +40,7 @@ namespace Ims.Infrastructure
         {
         }
 
-        public ImsContext(DbContextOptions<ImsContext> options) : base(options) { }
+        //public ImsContext(DbContextOptions<ImsContext> options) : base(options) { }
 
         public ImsContext(DbContextOptions<ImsContext> options, IMediator mediator, IUserService service)
             : base(options, service)

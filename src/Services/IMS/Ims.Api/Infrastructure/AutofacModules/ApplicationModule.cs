@@ -1,5 +1,7 @@
-﻿using Autofac;
+﻿using System.Reflection;
+using Autofac;
 using Ax3.IMS.Infrastructure.Core.Services;
+using Ax3.IMS.Infrastructure.EventBus.Abstractions;
 using Ims.Api.Application.Modules.Infrastructure.Queries;
 using Ims.Domain.DomainModels;
 using Ims.Infrastructure.Idempotency;
@@ -48,6 +50,9 @@ namespace Ims.Api.Infrastructure.AutofacModules
                 .InstancePerLifetimeScope();
             builder.RegisterType<InvestmentToolRepository>()
                 .As<IInvestmentToolRepository>()
+                .InstancePerLifetimeScope();
+            builder.RegisterType<AccountTransactionRepository>()
+                .As<IAccountTransactionRepository>()
                 .InstancePerLifetimeScope();
 
             builder.Register(c => new ImsQueries(QueriesConnectionString))

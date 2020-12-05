@@ -1,6 +1,6 @@
 <div class="modal-header">
   <h5 class="modal-title">
-    Hesaba Koy
+    Hesaba Yatırım Aracı Koy
   </h5>
   <button aria-label="Close" class="close" type="button" (click)="clearClicked()">
   </button>
@@ -15,30 +15,35 @@
         <app-account-lookup
           [selectedValue]="dataModel.accountId"
           [selectedText]="dataModel.accountName"
-          (selected)="selectionChanged($event)">
+          (selectedData)="selectionChanged($event)">
         </app-account-lookup>
       </div>
     </div>
-    <div class="form form-label-right">
-      <div class="form-group row">
-        <label class="col-lg-12">
-          Hareket Tarihi
-        </label>
+    <div class="form-group row">
+      <label class="col-lg-12">
+        Hareket Tarihi
+      </label>
+      <div class="col-lg-6">
         <dx-date-box
-          [(value)]="dataModel.investDate"
-          type="time">
+          [placeholder]="datePlaceholder"
+          [(value)]="dataModel.transactionDate"
+          [showClearButton]="true"
+          [useMaskBehavior]="true"
+          type="date"
+          displayFormat="dd-MM-yyyy">
         </dx-date-box>
       </div>
     </div>
-    <div class="form-group row" *ngIf="hideControl">
+    <div class="form-group row" *ngIf="hideRateControl">
       <label class="col-lg-12">
         Alış Kuru
       </label>
       <div class="col-lg-6">
-        <dx-number-box [(value)]="dataModel.investRate"
+        <dx-number-box [(value)]="dataModel.rate"
                        placeholder="Alış kuru giriniz..."
-                       format="#,##0.00"
-                       [showClearButton]="true">
+                       format="#,##0.0000"
+                       [showClearButton]="true"
+                       (onValueChanged)="numberBoxValueChanged($event)">
         </dx-number-box>
       </div>
     </div>
@@ -47,7 +52,7 @@
         Toplam Miktar
       </label>
       <div class="col-lg-6">
-        <dx-number-box [(value)]="dataModel.investAmount"
+        <dx-number-box [(value)]="dataModel.amount"
                        placeholder="Toplam mikarı giriniz..."
                        format="#,##0.00"
                        [showClearButton]="true">

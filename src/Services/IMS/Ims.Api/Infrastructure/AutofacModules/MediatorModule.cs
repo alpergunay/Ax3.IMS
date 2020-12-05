@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Autofac;
 using FluentValidation;
 using Ims.Api.Application.Modules.Infrastructure.Behaviours;
+using Ims.Api.Application.Modules.Infrastructure.Commands.CommandHandling;
 using MediatR;
 
 namespace Ims.Api.Infrastructure.AutofacModules
@@ -17,9 +18,9 @@ namespace Ims.Api.Infrastructure.AutofacModules
             builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
                 .AsImplementedInterfaces();
 
-            //// Register all the Command classes (they implement IRequestHandler) in assembly holding the Commands
-            //builder.RegisterAssemblyTypes(typeof(CreateOrderCommand).GetTypeInfo().Assembly)
-            //    .AsClosedTypesOf(typeof(IRequestHandler<,>));
+            // Register all the Command classes (they implement IRequestHandler) in assembly holding the Commands
+            builder.RegisterAssemblyTypes(typeof(PutInvestmentToolToAccountCommandHandler).GetTypeInfo().Assembly)
+                .AsClosedTypesOf(typeof(IRequestHandler<,>));
 
             //// Register the DomainEventHandler classes (they implement INotificationHandler<>) in assembly holding the Domain Events
             //builder.RegisterAssemblyTypes(typeof(ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler).GetTypeInfo().Assembly)

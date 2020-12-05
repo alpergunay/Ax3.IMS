@@ -13,7 +13,7 @@ namespace Ims.Domain.DomainModels
         public double Amount { get; private set; }
         public double Rate { get; private set; }
 
-        public AccountTransaction(Guid accountId, int transactionTypeId, DateTime transactionDate, double amount, double rate)
+        public AccountTransaction(Guid accountId, int transactionTypeId, DateTime transactionDate, double amount, double rate=1)
         {
             AccountId = accountId;
             TransactionTypeId = transactionTypeId;

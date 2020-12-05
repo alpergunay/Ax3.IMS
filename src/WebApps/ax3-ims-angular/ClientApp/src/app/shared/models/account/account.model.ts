@@ -1,4 +1,5 @@
 export interface AccountModel {
+  accountId: string;
   userId: string;
   storeBranchId: string;
   storeBranchName: string;

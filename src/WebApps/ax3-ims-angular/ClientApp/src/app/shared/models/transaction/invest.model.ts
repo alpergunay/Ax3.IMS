@@ -1,8 +1,9 @@
 ﻿export interface InvestModel {
   accountId: string;
   accountName: string;
-  investDate: Date;
-  investRate: number;
-  investAmount: number;
+  transactionTypeId: number;
+  transactionDate: Date;
+  rate: number;
+  amount: number;
   description: string;
 }

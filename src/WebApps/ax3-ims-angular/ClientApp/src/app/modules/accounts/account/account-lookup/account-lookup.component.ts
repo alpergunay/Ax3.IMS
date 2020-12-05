@@ -2,7 +2,6 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {AccountService} from "../account.service";
 import DataSource from "devextreme/data/data_source";
 import CustomStore from "devextreme/data/custom_store";
-import {LookupResponseModel} from "../../../../shared/models/lookup.model";
 import {AccountLookupModel} from "../../../../shared/models/account/account-lookup.model";
 
 
@@ -15,6 +14,7 @@ export class AccountLookupComponent  {
   groupColumnName = "accountTypeName";
   @Input() selectedValue = <string>{};
   @Input() selectedText = '';
+  @Output() selectedData: EventEmitter<string> = new EventEmitter<string>();
   @Output() selected: EventEmitter<string> = new EventEmitter<string>();
   dataSource: any;
   parentId?: any;
@@ -29,7 +29,6 @@ export class AccountLookupComponent  {
     const selectedItemId = this.selectedValue;
     const selectedItemText = this.selectedText;
     const selectedParentId = this.parentId;
-    const groupColumnName = this.groupColumnName;
 
     this.dataSource = new DataSource({
       store: new CustomStore({
@@ -40,18 +39,18 @@ export class AccountLookupComponent  {
           });
         },
         byKey: function (key) {
-          const selectedItemList = [];
-          const selectedItem = <AccountLookupModel>{};
-          selectedItem.accounts[0].id = selectedItemId;
-          selectedItem.accounts[0].accountName = selectedItemText;
-          selectedItemList[0] = selectedItem;
-
-          return new Promise<AccountLookupModel[]>((resolve, reject) => {
-            resolve(selectedItemList);
-          }).then(selectedItemList => {
-            return selectedItemList;
-          });
-        }
+           const selectedItemList = [];
+        //   const selectedItem = <AccountLookupModel>{};
+        //   selectedItem.accounts[0].accountId = selectedItemId;
+        //   selectedItem.accounts[0].accountName = selectedItemText;
+        //   selectedItemList[0] = selectedItem;
+        //
+           return new Promise<AccountLookupModel[]>((resolve, reject) => {
+             resolve(selectedItemList);
+           }).then(selectedItemList => {
+             return selectedItemList;
+           });
+         }
       }),
       map: function(item) {
         item.key = item.accountTypeName;
@@ -62,6 +61,7 @@ export class AccountLookupComponent  {
   }
 
   onChange(data: any) {
-    this.selected.emit(data.component.option("selectedItem"));
+    this.selectedData.emit(data.component.option("selectedItem"));
+    this.selected.emit(this.selectedValue);
   }
 }
