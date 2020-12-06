@@ -1,5 +1,5 @@
 <dx-lookup [dataSource]="dataSource"
-           displayExpr="accountName"
+           [displayExpr]="getDisplayExpr"
            valueExpr="id"
            placeholder="Seçiniz..."
            searchPlaceholder="Ara..."
@@ -14,5 +14,12 @@
            (onSelectionChanged)="onChange($event)"
            showClearButton="true"
            clearButtonText="Temizle"
-           [grouped]="true">
+           [grouped]="true"
+           itemTemplate="listItem">
+  <dxo-drop-down-options title="Hesap Seçiniz"></dxo-drop-down-options>
+  <div *dxTemplate="let item of 'listItem'">
+    <div class="custom-item">
+      <div>{{item.accountName }} ( {{item.balance }} {{item.investmentToolCode }} )</div>
+    </div>
+  </div>
 </dx-lookup>

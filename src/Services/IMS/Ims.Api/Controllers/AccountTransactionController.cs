@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Ims.Api.Application.Modules.Infrastructure.Commands;
 using Ims.Api.Application.Modules.Infrastructure.Models.Account;
 using Ims.Api.Application.Modules.Infrastructure.Queries;
@@ -11,8 +6,9 @@ using Ims.Api.Services;
 using Ims.Domain.DomainModels;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace Ims.Api.Controllers
 {
@@ -38,11 +34,19 @@ namespace Ims.Api.Controllers
             _identityService = identityService;
             _mediator = mediator;
         }
-        [Route("investment-tool-to-account")]
+        [Route("invest")]
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<bool>> PutInvestmentToolToAccount([FromBody] PutInvestmentToolToAccountCommand transactionCommand)
+        public async Task<ActionResult<bool>> InvestInvestmentToolToAccount([FromBody] InvestInvestmentToolToAccountCommand transactionCommand)
+        {
+            return await _mediator.Send(transactionCommand);
+        }
+        [Route("withdraw")]
+        [HttpPost]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<bool>> WithdrawInvestmentToolFromAccount([FromBody] WithdrawInvestmentToolFromAccountCommand transactionCommand)
         {
             return await _mediator.Send(transactionCommand);
         }

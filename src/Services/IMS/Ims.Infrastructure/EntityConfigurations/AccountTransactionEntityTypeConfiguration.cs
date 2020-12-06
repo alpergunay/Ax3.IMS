@@ -15,14 +15,12 @@ namespace Ims.Infrastructure.EntityConfigurations
             base.ConfigureForEntity(builder);
 
             builder
-                .Property("AccountId")
-                .UsePropertyAccessMode(PropertyAccessMode.Field)
-                .HasColumnName("AccountId")
+                .Property(a=>a.AccountId)
                 .IsRequired();
 
             builder.HasOne(p => p.Account)
-                .WithMany()
-                .HasForeignKey("AccountId");
+                .WithMany(at=>at.AccountTransactions)
+                .HasForeignKey(k=>k.AccountId);
 
             builder
                 .Property("TransactionTypeId")

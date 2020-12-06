@@ -9,6 +9,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Models.Account
         public int AccountTypeId { get; set; }
         public int InvestmentToolTypeId { get; set; }
         public string InvestmentToolTypeName { get; set; }
-
+        public string InvestmentToolCode { get; set; }
+        public double Balance { get; set; }
     }
 }

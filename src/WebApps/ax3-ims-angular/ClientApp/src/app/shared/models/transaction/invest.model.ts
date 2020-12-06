@@ -5,5 +5,6 @@
   transactionDate: Date;
   rate: number;
   amount: number;
+  balance: number;
   description: string;
 }

@@ -13,6 +13,8 @@ export interface AccountModel {
   investmentToolTypeName: string;
   investmentToolId: string;
   investmentToolName: string;
+  investmentToolCode: string;
   accountNo: string;
   accountName: string;
+  balance: number;
 }

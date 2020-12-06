@@ -17,6 +17,9 @@ namespace Ims.Infrastructure.Repositories
         {
             return Context.AccountTypes
                 .Include(a => a.Accounts)
+                .ThenInclude(a=>a.AccountTransactions)
+                .ThenInclude(t=>t.TransactionType)
+                .ThenInclude(d=>d.DirectionType)
                 .Where(at => at.Accounts
                     .Any(a => a.Creator == userName && 
                               a.AccountName

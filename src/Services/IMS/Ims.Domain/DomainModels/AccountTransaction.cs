@@ -5,7 +5,7 @@ namespace Ims.Domain.DomainModels
 {
     public class AccountTransaction : Entity
     {
-        public Guid AccountId { get; private set; }
+        public Guid AccountId { get; set; }
         public Account Account { get; set; }
         public int TransactionTypeId { get; private set; }
         public TransactionType TransactionType { get; set; }

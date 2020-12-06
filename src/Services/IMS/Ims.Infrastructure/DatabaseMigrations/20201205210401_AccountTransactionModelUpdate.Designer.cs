@@ -3,15 +3,17 @@ using System;
 using Ims.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace Ims.Infrastructure.Migrations
+namespace Ims.Infrastructure.DatabaseMigrations
 {
     [DbContext(typeof(ImsContext))]
-    partial class ImsContextModelSnapshot : ModelSnapshot
+    [Migration("20201205210401_AccountTransactionModelUpdate")]
+    partial class AccountTransactionModelUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -745,7 +747,7 @@ namespace Ims.Infrastructure.Migrations
             modelBuilder.Entity("Ims.Domain.DomainModels.AccountTransaction", b =>
                 {
                     b.HasOne("Ims.Domain.DomainModels.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountTransactions")
                         .HasForeignKey("AccountId")
                         .HasConstraintName("fk_account_transactions_accounts_account_id")
                         .OnDelete(DeleteBehavior.Cascade)

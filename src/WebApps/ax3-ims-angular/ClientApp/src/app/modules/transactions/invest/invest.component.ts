@@ -1,10 +1,11 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+import {Component, Inject, LOCALE_ID, OnInit, ViewChild} from '@angular/core';
 import {NotifyService} from "../../../shared/base/notify.service";
 import {InvestModel} from "../../../shared/models/transaction/invest.model";
 import {TransactionService} from "../transaction.service";
 import {InvestmentToolTypeEnumModel} from "../../../shared/models/investment-tool-type-enum.model";
 import {TransactionTypeEnumModel} from "../../../shared/models/transaction-type-enum.model";
 import {formatDate} from '@angular/common';
+import {AccountLookupComponent} from "../../accounts/account/account-lookup/account-lookup.component";
 
 @Component({
   selector: 'app-invest',
@@ -15,10 +16,11 @@ export class InvestComponent implements OnInit{
   hideRateControl = true;
   dataModel = <InvestModel>{};
   datePlaceholder = "";
+  @ViewChild(AccountLookupComponent, { static: false }) accountLookup: AccountLookupComponent;
   constructor(private transactionService: TransactionService,
               private notifyService: NotifyService,
               @Inject(LOCALE_ID) private locale: string) {
-    this.dataModel.transactionTypeId = TransactionTypeEnumModel.PutInvestmentToolToAccount;
+    this.dataModel.transactionTypeId = TransactionTypeEnumModel.Invest;
     this.dataModel.rate = 1;
     this.dataModel.transactionDate = new Date();
     this.datePlaceholder = formatDate(Date.now(),'dd-MM-yyyy', locale);
@@ -63,10 +65,17 @@ export class InvestComponent implements OnInit{
   saveClicked() {
     const errorList = this.validateAddModel();
     if (errorList != null && errorList.length === 0) {
-      this.transactionService.putInvestmentToolToAccount(this.dataModel).subscribe(result => {
-        this.notifyService.success('Kayıt başarılı bir şekilde eklendi');
+      this.transactionService.invest(this.dataModel).subscribe(result => {
+        if(result == true) {
+          this.notifyService.success('Kayıt başarılı bir şekilde eklendi');
+          this.clearControls();
+          this.accountLookup.reloadLookupData();
+        }
+        else {
+          errorList.push('Kayıt eklenirken bir hata meydana geldi.');
+          this.notifyService.error(errorList);
+        }
       });
-      this.clearControls();
     } else {
       this.notifyService.error(errorList);
     }
@@ -78,6 +87,7 @@ export class InvestComponent implements OnInit{
     if(data !== null) {
       this.hideRateControl = data.investmentToolTypeId !== InvestmentToolTypeEnumModel.LocalCurrency;
       this.dataModel.accountId = data.id;
+      this.dataModel.balance = data.balance;
     }
   }
   clearControls(){

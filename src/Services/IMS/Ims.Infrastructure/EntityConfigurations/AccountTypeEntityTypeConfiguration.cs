@@ -14,8 +14,6 @@ namespace Ims.Infrastructure.EntityConfigurations
             builder.HasMany(p => p.Accounts)
                 .WithOne(x => x.AccountType)
                 .HasForeignKey("AccountTypeId");
-
-
         }
     }
 }

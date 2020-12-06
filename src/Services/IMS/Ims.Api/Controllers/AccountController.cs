@@ -102,7 +102,7 @@ namespace Ims.Api.Controllers
         [HttpGet]
         [Route("list")]
         [ProducesResponseType(typeof(IEnumerable<AccountResponseModel>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<object>> GetStoreListAsync(DataSourceLoadOptions loadOptions)
+        public async Task<ActionResult<object>> GetAccountListAsync(DataSourceLoadOptions loadOptions)
         {
             return await DataSourceLoader.LoadAsync(_accountRepository.GetAllAsQueryable()
                 .ProjectTo<AccountResponseModel>(_mapper.ConfigurationProvider), loadOptions);

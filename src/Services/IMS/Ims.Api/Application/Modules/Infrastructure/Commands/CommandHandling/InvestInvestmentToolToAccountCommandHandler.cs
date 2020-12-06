@@ -9,21 +9,21 @@ using System.Threading.Tasks;
 
 namespace Ims.Api.Application.Modules.Infrastructure.Commands.CommandHandling
 {
-    public class PutInvestmentToolToAccountCommandHandler : IRequestHandler<PutInvestmentToolToAccountCommand, bool>
+    public class InvestInvestmentToolToAccountCommandHandler : IRequestHandler<InvestInvestmentToolToAccountCommand, bool>
     {
         private readonly IAccountTransactionRepository _accountTransactionRepository;
         private readonly IImsIntegrationEventService _imsIntegrationEventService;
-        private readonly ILogger<PutInvestmentToolToAccountCommandHandler> _logger;
+        private readonly ILogger<InvestInvestmentToolToAccountCommandHandler> _logger;
 
-        public PutInvestmentToolToAccountCommandHandler(IAccountTransactionRepository accountTransactionRepository,
+        public InvestInvestmentToolToAccountCommandHandler(IAccountTransactionRepository accountTransactionRepository,
             IImsIntegrationEventService imsIntegrationEventService,
-            ILogger<PutInvestmentToolToAccountCommandHandler> logger)
+            ILogger<InvestInvestmentToolToAccountCommandHandler> logger)
         {
             _accountTransactionRepository = accountTransactionRepository;
             _imsIntegrationEventService = imsIntegrationEventService;
             _logger = logger;
         }
-        public async Task<bool> Handle(PutInvestmentToolToAccountCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(InvestInvestmentToolToAccountCommand request, CancellationToken cancellationToken)
         {
             //Notify for reporting
             var accountBalanceChangedIntegrationEvent = new AccountBalanceChangedIntegrationEvent(Guid.Parse(request.AccountId));

@@ -1,9 +1,12 @@
-﻿using MediatR;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using MediatR;
 
 namespace Ims.Api.Application.Modules.Infrastructure.Commands
 {
-    public class PutInvestmentToolToAccountCommand : IRequest<bool>
+    public class WithdrawInvestmentToolFromAccountCommand : IRequest<bool>
     {
         public string AccountId { get; private set; }
         public int TransactionTypeId { get; private set; }
@@ -12,7 +15,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Commands
         public DateTime TransactionDate { get; set; }
         public string Description { get; private set; }
 
-        public PutInvestmentToolToAccountCommand(string accountId, int transactionTypeId, double rate, double amount, string description)
+        public WithdrawInvestmentToolFromAccountCommand(string accountId, int transactionTypeId, double rate, double amount, string description)
         {
             AccountId = accountId;
             TransactionTypeId = transactionTypeId;

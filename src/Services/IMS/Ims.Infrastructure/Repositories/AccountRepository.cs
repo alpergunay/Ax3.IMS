@@ -21,8 +21,8 @@ namespace Ims.Infrastructure.Repositories
                 .Include(a => a.StoreBranch.Store.StoreType)
                 .Include(a => a.InvestmentTool)
                 .Include(a => a.InvestmentTool.InvestmentToolType)
+                .Include(at=>at.AccountTransactions).ThenInclude(tt=>tt.TransactionType)
                 .FirstOrDefaultAsync(a => a.Id == entityId);
-
             return account;
         }
     }

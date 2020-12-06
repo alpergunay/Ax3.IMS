@@ -268,7 +268,7 @@ namespace Ims.Api
                 options.UseNpgsql(_settings.Persistence.ConnectionString,
                         npgsqlOptionsAction: sqlOptions =>
                         {
-                            sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
+                            sqlOptions.MigrationsAssembly(typeof(ImsContext).GetTypeInfo().Assembly.GetName().Name);
                             sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorCodesToAdd: null);
                         }).UseSnakeCaseNamingConvention()
                     .AddInterceptors(serviceProvider.GetRequiredService<SecondLevelCacheInterceptor>()));

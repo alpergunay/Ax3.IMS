@@ -39,8 +39,10 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
             CreateMap<Account, AccountLookupResponseModel>()
                 .ForMember(m => m.AccountName, d => d.MapFrom(s => s.AccountName))
                 .ForMember(m => m.Id, d => d.MapFrom(s => s.Id))
+                .ForMember(m => m.Balance, d => d.MapFrom(s => s.GetBalance()))
                 .ForMember(m => m.InvestmentToolTypeId, d => d.MapFrom(s => s.InvestmentTool.InvestmentToolType.EnumId))
-                .ForMember(m => m.InvestmentToolTypeName, d => d.MapFrom(s => s.InvestmentTool.InvestmentToolType.Name));
+                .ForMember(m => m.InvestmentToolTypeName, d => d.MapFrom(s => s.InvestmentTool.InvestmentToolType.Name))
+                .ForMember(m => m.InvestmentToolCode, d => d.MapFrom(s => s.InvestmentTool.Code));
         }
 
         private void CreateMapForAccount()
@@ -56,7 +58,9 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
                 .ForMember(m => m.StoreBranchName, d => d.MapFrom(s => s.StoreBranch.Name))
                 .ForMember(m => m.StoreTypeId, d => d.MapFrom(s => s.StoreBranch.Store.StoreType.EnumId))
                 .ForMember(m => m.StoreTypeName, d => d.MapFrom(s => s.StoreBranch.Store.StoreType.Name))
-                .ForMember(m => m.AccountName, d => d.MapFrom(s => s.AccountName));
+                .ForMember(m => m.AccountName, d => d.MapFrom(s => s.AccountName))
+                .ForMember(m => m.AccountBalance, d => d.MapFrom(s => s.GetBalance()));
+
         }
 
         private void CreateMapForInvestmentToolType()

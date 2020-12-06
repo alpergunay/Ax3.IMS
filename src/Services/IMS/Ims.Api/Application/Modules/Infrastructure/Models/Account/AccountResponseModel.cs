@@ -19,5 +19,6 @@ namespace Ims.Api.Application.Modules.Infrastructure.Models.Account
         public string InvestmentToolTypeName { get; set; }
         public string AccountNo { get; set; }
         public string AccountName { get; set; }
+        public double AccountBalance { get; set; }
     }
 }

@@ -1,8 +1,10 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import {AccountService} from "../account.service";
 import DataSource from "devextreme/data/data_source";
 import CustomStore from "devextreme/data/custom_store";
 import {AccountLookupModel} from "../../../../shared/models/account/account-lookup.model";
+import DevExpress from "devextreme";
+import data = DevExpress.data;
 
 
 @Component({
@@ -10,7 +12,7 @@ import {AccountLookupModel} from "../../../../shared/models/account/account-look
   templateUrl: './account-lookup.component.html',
   styleUrls: ['./account-lookup.component.scss']
 })
-export class AccountLookupComponent  {
+export class AccountLookupComponent {
   groupColumnName = "accountTypeName";
   @Input() selectedValue = <string>{};
   @Input() selectedText = '';
@@ -20,10 +22,15 @@ export class AccountLookupComponent  {
   parentId?: any;
   constructor(private service: AccountService) {
   }
+  getDisplayExpr(item) {
+    if(!item) {
+      return "";
+    }
+    return item.accountName + " (" + item.balance + " "+ item.investmentToolCode +" )";
+  }
   ngOnInit(): void {
     this.loadData();
   }
-
   loadData() {
     const serviceIns = this.service;
     const selectedItemId = this.selectedValue;
@@ -63,5 +70,9 @@ export class AccountLookupComponent  {
   onChange(data: any) {
     this.selectedData.emit(data.component.option("selectedItem"));
     this.selected.emit(this.selectedValue);
+  }
+
+  reloadLookupData() {
+    this.dataSource.load();
   }
 }

@@ -57,6 +57,10 @@ namespace Ims.Infrastructure.EntityConfigurations
             builder.HasOne(p => p.InvestmentTool)
                 .WithMany()
                 .HasForeignKey("InvestmentToolId");
+
+            builder.HasMany(p => p.AccountTransactions)
+                .WithOne(a => a.Account)
+                .HasForeignKey(k => k.AccountId);
         }
     }
 }
