@@ -196,7 +196,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
             }
         }
 
-        public async Task<IEnumerable<AccountLookupResponseModel>> FilterAccountsAsync<T>(BaseFilterRequestModel<T> queryString)
+        public async Task<IEnumerable<AccountLookupResponseModel>> FilterAccountsAsync(AccountFilterRequestModel queryString)
         {
             await using (var connection = new NpgsqlConnection(_connectionString))
             {
@@ -224,7 +224,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
                                                                         INNER JOIN store_types st on st.id = s.store_type_id
                                                                         INNER JOIN investment_tools it on it.id = a.investment_tool_id
                                                                         INNER JOIN investment_tool_types itt on itt.id = it.investment_tool_type_id    
-                                                                        WHERE a.creator = @user_id AND a.account_name LIKE @t", new { user_id = queryString.id, t = "%" + queryString.typed + "%" });
+                                                                        WHERE a.creator = @user_id AND a.account_name LIKE @t AND (investment_tool_id=@itid OR @itid=0)", new { user_id = queryString.id, t = "%" + queryString.typed + "%", itid = queryString.InvestmentToolId });
             }
         }
     }

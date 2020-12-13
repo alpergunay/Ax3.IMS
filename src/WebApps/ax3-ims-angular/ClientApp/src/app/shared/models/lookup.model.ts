@@ -3,6 +3,10 @@ export interface LookupRequestModel {
   id: any;
 }
 
+export interface AccountLookupRequestModel extends LookupRequestModel {
+  investmentToolId: string;
+}
+
 export interface LookupResponseModel {
   id: any;
   name: string;

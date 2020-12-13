@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
 import {LookupResponseModel} from "../../shared/models/lookup.model";
 import {InvestModel} from "../../shared/models/transaction/invest.model";
 import {tap} from "rxjs/operators";
+import {BuySellModel} from "../../shared/models/transaction/buy-sell.model";
 
 @Injectable({
   providedIn: 'root'
@@ -25,14 +26,24 @@ export class TransactionService implements BaseDataService{
     return;
   }
 
-  invest(addModel: InvestModel) :Observable<boolean> {
+  invest(model: InvestModel) :Observable<boolean> {
     const url = this.webApiUrl + '/api/AccountTransaction/invest';
-    return this.service.post(url, addModel).pipe<boolean>(tap((response: any) => true));
+    return this.service.post(url, model).pipe<boolean>(tap((response: any) => true));
   }
 
-  withdraw(addModel: InvestModel) :Observable<boolean> {
+  withdraw(model: InvestModel) :Observable<boolean> {
     const url = this.webApiUrl + '/api/AccountTransaction/withdraw';
-    return this.service.post(url, addModel).pipe<boolean>(tap((response: any) => true));
+    return this.service.post(url, model).pipe<boolean>(tap((response: any) => true));
+  }
+
+  buyInvestmentTool(model: BuySellModel) :Observable<boolean> {
+    const url = this.webApiUrl + '/api/AccountTransaction/buy';
+    return this.service.post(url, model).pipe<boolean>(tap((response: any) => true));
+  }
+
+  sellInvestmentTool(model: BuySellModel) :Observable<boolean> {
+    const url = this.webApiUrl + '/api/AccountTransaction/sell';
+    return this.service.post(url, model).pipe<boolean>(tap((response: any) => true));
   }
 
   delete() {

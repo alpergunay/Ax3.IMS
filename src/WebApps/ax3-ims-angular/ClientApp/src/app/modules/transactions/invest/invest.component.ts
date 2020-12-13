@@ -1,4 +1,4 @@
-import {Component, Inject, LOCALE_ID, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, Inject, LOCALE_ID, OnInit, ViewChild} from '@angular/core';
 import {NotifyService} from "../../../shared/base/notify.service";
 import {InvestModel} from "../../../shared/models/transaction/invest.model";
 import {TransactionService} from "../transaction.service";
@@ -19,7 +19,8 @@ export class InvestComponent implements OnInit{
   @ViewChild(AccountLookupComponent, { static: false }) accountLookup: AccountLookupComponent;
   constructor(private transactionService: TransactionService,
               private notifyService: NotifyService,
-              @Inject(LOCALE_ID) private locale: string) {
+              @Inject(LOCALE_ID) private locale: string,
+              private ref: ChangeDetectorRef) {
     this.dataModel.transactionTypeId = TransactionTypeEnumModel.Invest;
     this.dataModel.rate = 1;
     this.dataModel.transactionDate = new Date();
@@ -70,6 +71,7 @@ export class InvestComponent implements OnInit{
           this.notifyService.success('Kayıt başarılı bir şekilde eklendi');
           this.clearControls();
           this.accountLookup.reloadLookupData();
+          this.ref.detectChanges();
         }
         else {
           errorList.push('Kayıt eklenirken bir hata meydana geldi.');
@@ -96,7 +98,8 @@ export class InvestComponent implements OnInit{
     this.dataModel.accountName ='';
     this.dataModel.amount = 0;
     this.dataModel.transactionDate = new Date();
-    this.dataModel.rate = 0;
+    this.dataModel.rate = 1;
+    this.hideRateControl = false;
   }
   numberBoxValueChanged(e){
     if (e.value === null) {

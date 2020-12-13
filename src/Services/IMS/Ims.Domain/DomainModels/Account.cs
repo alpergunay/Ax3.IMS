@@ -39,6 +39,8 @@ namespace Ims.Domain.DomainModels
         }
         public double GetBalance()
         {
+            if (AccountTransactions == null) 
+                return 0;
             var plus = AccountTransactions.Where(at => at.TransactionType.DirectionTypeId == DirectionType.Positive.EnumId)
                 .Sum(s => s.Amount);
             var minus =  AccountTransactions.Where(at => at.TransactionType.DirectionTypeId == DirectionType.Negative.EnumId)

@@ -47,7 +47,7 @@ namespace Ax3.IMS.DataAccess.EntityFramework
             return await DbSet.AsQueryable().ProjectTo<T>(Mapper.ConfigurationProvider).ToListAsync();
         }
 
-        public IQueryable<TEntity> GetAllAsQueryable()
+        public virtual IQueryable<TEntity> GetAllAsQueryable()
         {
             return DbSet.AsQueryable();
         }

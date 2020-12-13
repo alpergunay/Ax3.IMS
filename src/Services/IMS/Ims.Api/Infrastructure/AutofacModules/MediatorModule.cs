@@ -7,6 +7,7 @@ using Autofac;
 using FluentValidation;
 using Ims.Api.Application.Modules.Infrastructure.Behaviours;
 using Ims.Api.Application.Modules.Infrastructure.Commands.CommandHandling;
+using Ims.Api.Application.Modules.Infrastructure.Validations;
 using MediatR;
 
 namespace Ims.Api.Infrastructure.AutofacModules
@@ -26,11 +27,11 @@ namespace Ims.Api.Infrastructure.AutofacModules
             //builder.RegisterAssemblyTypes(typeof(ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler).GetTypeInfo().Assembly)
             //    .AsClosedTypesOf(typeof(INotificationHandler<>));
 
-            //// Register the Command's Validators (Validators based on FluentValidation library)
-            //builder
-            //    .RegisterAssemblyTypes(typeof(CreateOrderCommandValidator).GetTypeInfo().Assembly)
-            //    .Where(t => t.IsClosedTypeOf(typeof(IValidator<>)))
-            //    .AsImplementedInterfaces();
+            // Register the Command's Validators (Validators based on FluentValidation library)
+            builder
+                .RegisterAssemblyTypes(typeof(BuyInvestmentToolCommandValidator).GetTypeInfo().Assembly)
+                .Where(t => t.IsClosedTypeOf(typeof(IValidator<>)))
+                .AsImplementedInterfaces();
 
 
             builder.Register<ServiceFactory>(context =>

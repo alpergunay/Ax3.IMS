@@ -1,6 +1,6 @@
-﻿namespace Ims.Api.Application.Modules.Infrastructure.Models.Account
+﻿namespace Ims.Domain.Dto
 {
-    public class AccountLookupResponseModel
+    public class AccountDto
     {
         public int AccountTypeId { get; set; }
         public string AccountTypeName { get; set; }

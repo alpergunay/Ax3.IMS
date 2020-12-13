@@ -7,7 +7,7 @@ import {tap} from 'rxjs/operators';
 import {AccountModel} from '../../../shared/models/account/account.model';
 import {BaseModel} from "../../../shared/models/base-add.model";
 import {BaseRequestModel} from "../../../shared/models/base-request.model";
-import {LookupRequestModel, LookupResponseModel} from "../../../shared/models/lookup.model";
+import {AccountLookupRequestModel, LookupRequestModel, LookupResponseModel} from "../../../shared/models/lookup.model";
 import DataSource from "devextreme/data/data_source";
 import {AccountLookupModel} from "../../../shared/models/account/account-lookup.model";
 
@@ -56,13 +56,18 @@ export class AccountService implements BaseDataService {
     return this.service.dxGet(url, <BaseRequestModel>{});
   }
 
-  getLookupList(typed: string , parentId?: any) : Observable<AccountLookupModel[]> {
+  getLookupList(typed: string , parentId?: any, investmentToolId?: any) : Observable<AccountLookupModel[]> {
     const url = this.webApiUrl + '/api/AccountType/account-types-with-accounts';
-    const requestModel = <LookupRequestModel>{};
+    const requestModel = <AccountLookupRequestModel>{};
     requestModel.typed = typed;
     if(parentId)
       requestModel.id = parentId;
     else requestModel.id = "";
+
+    if(investmentToolId)
+      requestModel.investmentToolId = investmentToolId
+    else requestModel.investmentToolId = ""
+
     return this.service.get(url, requestModel).pipe<AccountLookupModel[]>(tap((response: any) => {
       return response;
     }));

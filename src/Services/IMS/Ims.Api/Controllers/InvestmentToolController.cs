@@ -90,7 +90,7 @@ namespace Ims.Api.Controllers
         [HttpGet]
         [Route("list")]
         [ProducesResponseType(typeof(IEnumerable<InvestmentToolResponseModel>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<object>> GetStoreListAsync(DataSourceLoadOptions loadOptions)
+        public async Task<ActionResult<object>> GetInvestmentToolListAsync(DataSourceLoadOptions loadOptions)
         {
             return await DataSourceLoader.LoadAsync(_investmentToolRepository.GetAllAsQueryable()
                 .ProjectTo<InvestmentToolResponseModel>(_mapper.ConfigurationProvider), loadOptions);

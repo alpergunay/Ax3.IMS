@@ -33,7 +33,8 @@ namespace Ims.Api.Application.Modules.Infrastructure.Commands.CommandHandling
             if (account == null || !account.CheckBalanceForWithdraw(request.Amount))
                 return false;
             //Notify for reporting
-            var accountBalanceChangedIntegrationEvent = new AccountBalanceChangedIntegrationEvent(Guid.Parse(request.AccountId));
+            var accountBalanceChangedIntegrationEvent = new AccountBalanceChangedIntegrationEvent();
+            accountBalanceChangedIntegrationEvent.EffectedAccountIds.Add(Guid.Parse(request.AccountId));
             await _imsIntegrationEventService.AddAndSaveEventAsync(accountBalanceChangedIntegrationEvent);
 
             var transaction = new AccountTransaction(Guid.Parse(request.AccountId), request.TransactionTypeId, request.TransactionDate, request.Amount, request.Rate ?? 1);

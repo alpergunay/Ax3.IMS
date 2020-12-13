@@ -4,3 +4,7 @@ dotnet ef migrations add Initial -p ../Ims.Infrastructure  -o ../Ims.Api/Infrast
 -------
 
 dotnet ef migrations add Initial_EFStore -p ../../../Infrastructure/EventBus/Ax3.IMS.Infrastructure.EventBus.EFEventStore  -o ../../../Services/IMS/Ims.Api/Infrastructure/DatabaseMigrations/IntegrationEventLog -c IntegrationEventLogContext -v
+
+
+
+dotnet ef migrations add AccountTransactionModelUpdate -p ../Ims.Api  -o ../Ims.Api/Infrastructure/DatabaseMigrations -c ImsContext -v

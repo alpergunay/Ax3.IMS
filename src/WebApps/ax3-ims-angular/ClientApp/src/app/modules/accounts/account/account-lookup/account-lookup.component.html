@@ -19,7 +19,7 @@
   <dxo-drop-down-options title="Hesap Seçiniz"></dxo-drop-down-options>
   <div *dxTemplate="let item of 'listItem'">
     <div class="custom-item">
-      <div>{{item.accountName }} ( {{item.balance }} {{item.investmentToolCode }} )</div>
+      <div>{{item.accountName }} ( {{item.balance.toLocaleString() }} {{item.investmentToolCode }} )</div>
     </div>
   </div>
 </dx-lookup>

@@ -8,6 +8,7 @@ import { SellInvestmentToolComponent } from './sell-investment-tool/sell-investm
 import {TransactionsRoutingModule} from "./transactions-routing.module";
 import {AccountsModule} from "../accounts/accounts.module";
 import {DxButtonModule, DxDateBoxModule, DxNumberBoxModule, DxTextBoxModule} from "devextreme-angular";
+import {InvestmentToolDefinitionsModule} from "../investment-tool-definitions/investment-tool-definitions.module";
 
 
 
@@ -20,7 +21,8 @@ import {DxButtonModule, DxDateBoxModule, DxNumberBoxModule, DxTextBoxModule} fro
         DxTextBoxModule,
         DxNumberBoxModule,
         DxButtonModule,
-        DxDateBoxModule
+        DxDateBoxModule,
+        InvestmentToolDefinitionsModule
     ]
 })
 export class TransactionsModule { }

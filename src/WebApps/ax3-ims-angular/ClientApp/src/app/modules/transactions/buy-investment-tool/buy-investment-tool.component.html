@@ -1,12 +1,116 @@
-<div class="form-group row">
-  <label class="col-lg-12">
-    Gidecek Hesap
-  </label>
-  <div class="col-lg-12">
-<!--    <app-store-type-lookup-->
-<!--      [selectedValue]="dataModel.storeTypeId"-->
-<!--      [selectedText]="dataModel.storeTypeName"-->
-<!--      (selected)="dataModel.storeTypeId = $event">-->
-<!--    </app-store-type-lookup>-->
+<div class="modal-header">
+  <h5 class="modal-title">
+    Yatırım Aracı Al
+  </h5>
+  <button aria-label="Close" class="close" type="button" (click)="clearClicked()">
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form form-label-right">
+    <div class="form-group row">
+      <label class="col-lg-12">
+        Kaynak Hesap
+      </label>
+      <div class="col-lg-6">
+        <app-account-lookup
+          [selectedValue]="dataModel.sourceAccountId"
+          [selectedText]="dataModel.sourceAccountName"
+          (selectedData)="sourceAccountSelectionChanged($event)">
+        </app-account-lookup>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-12">
+        Yatırım Aracı Tipi
+      </label>
+      <div class="col-lg-6">
+        <app-investment-tool-type-lookup
+          [selectedValue]="dataModel.investmentToolTypeId"
+          [selectedText]="dataModel.investmentToolTypeName"
+          (selected)="dataModel.investmentToolTypeId = $event">
+        </app-investment-tool-type-lookup>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-12">
+        Yatırım Aracı
+      </label>
+      <div class="col-lg-6">
+        <app-investment-tool-lookup
+          [selectedInvestmentToolTypeId]="dataModel.investmentToolTypeId"
+          [selectedValue]="dataModel.investmentToolId"
+          [selectedText]="dataModel.investmentToolName"
+          (selected)="dataModel.investmentToolId=$event">
+        </app-investment-tool-lookup>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-12">
+        Hareket Tarihi
+      </label>
+      <div class="col-lg-6">
+        <dx-date-box
+          [placeholder]="datePlaceholder"
+          [(value)]="dataModel.transactionDate"
+          [showClearButton]="true"
+          [useMaskBehavior]="true"
+          type="date"
+          displayFormat="dd-MM-yyyy">
+        </dx-date-box>
+      </div>
+    </div>
+    <div class="form-group row" *ngIf="hideRateControl">
+      <label class="col-lg-12">
+        Alış Birim Fiyatı
+      </label>
+      <div class="col-lg-6">
+        <dx-number-box [(value)]="dataModel.rate"
+                       placeholder="Alış kuru giriniz..."
+                       format="#,##0.0000"
+                       [showClearButton]="true"
+                       (onValueChanged)="numberBoxValueChanged($event)">
+        </dx-number-box>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-12">
+        Toplam Miktar
+      </label>
+      <div class="col-lg-6">
+        <dx-number-box [(value)]="dataModel.amount"
+                       placeholder="Toplam mikarı giriniz..."
+                       format="#,##0.00"
+                       [showClearButton]="true">
+        </dx-number-box>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-12">
+        Hedef Hesap
+      </label>
+      <div class="col-lg-6">
+        <app-account-lookup
+          [selectedValue]="dataModel.destinationAccountId"
+          [selectedText]="dataModel.destinationAccountName"
+          (selectedData)="destinationAccountSelectionChanged($event)"
+          [investmentToolId]="dataModel.investmentToolId">
+        </app-account-lookup>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-12">
+        Açıklama
+      </label>
+      <div class="col-lg-6">
+        <dx-text-box [(value)]="dataModel.description" placeholder="Açıklama giriniz..." maxLength="100">
+        </dx-text-box>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <dx-button class="btn btn-outline-primary float-right" text="Kaydet" (onClick)="saveClicked()"
+               icon="la la-save"></dx-button>
+    <dx-button class="btn btn-outline-danger float-right" text="Temizle" (onClick)="clearClicked()"
+               icon="la la-ban"></dx-button>
   </div>
 </div>

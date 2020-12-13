@@ -1,18 +1,16 @@
 ﻿using AutoMapper;
+using DevExtreme.AspNet.Data;
+using DevExtreme.AspNet.Mvc;
 using Ims.Api.Application.Modules.Infrastructure.Models.Account;
 using Ims.Api.Application.Modules.Infrastructure.Queries;
 using Ims.Api.Services;
 using Ims.Domain.DomainModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using AutoMapper.QueryableExtensions;
-using DevExtreme.AspNet.Data;
-using DevExtreme.AspNet.Mvc;
-using Ims.Api.Application.Modules.Infrastructure.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Ims.Api.Controllers
 {
@@ -93,7 +91,7 @@ namespace Ims.Api.Controllers
         [HttpGet()]
         [Route("filter")]
         [ProducesResponseType(typeof(IEnumerable<AccountResponseModel>), (int)HttpStatusCode.OK)]
-        public async Task<IEnumerable<AccountLookupResponseModel>> FilterAccountsAsync([FromQuery] BaseFilterRequestModel<string> filter)
+        public async Task<IEnumerable<AccountLookupResponseModel>> FilterAccountsAsync([FromQuery] AccountFilterRequestModel filter)
         {
             filter.id = _identityService.GetUserName();
             return await _queries.FilterAccountsAsync(filter);
@@ -104,8 +102,8 @@ namespace Ims.Api.Controllers
         [ProducesResponseType(typeof(IEnumerable<AccountResponseModel>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<object>> GetAccountListAsync(DataSourceLoadOptions loadOptions)
         {
-            return await DataSourceLoader.LoadAsync(_accountRepository.GetAllAsQueryable()
-                .ProjectTo<AccountResponseModel>(_mapper.ConfigurationProvider), loadOptions);
+            return await DataSourceLoader.LoadAsync(_accountRepository
+                .GetUserAccountsAsQueryable(_identityService.GetUserName()), loadOptions);
         }
     }
 }

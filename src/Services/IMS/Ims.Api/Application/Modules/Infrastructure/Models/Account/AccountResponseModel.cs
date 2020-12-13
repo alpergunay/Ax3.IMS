@@ -4,6 +4,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Models.Account
 {
     public class AccountResponseModel : BaseResponseModel
     {
+        public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public Guid StoreBranchId { get; set; }
         public string StoreBranchName { get; set; }
@@ -19,6 +20,6 @@ namespace Ims.Api.Application.Modules.Infrastructure.Models.Account
         public string InvestmentToolTypeName { get; set; }
         public string AccountNo { get; set; }
         public string AccountName { get; set; }
-        public double AccountBalance { get; set; }
+        public double Balance { get; set; }
     }
 }

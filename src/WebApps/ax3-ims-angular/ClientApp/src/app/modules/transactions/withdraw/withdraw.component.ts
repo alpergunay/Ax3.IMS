@@ -1,4 +1,4 @@
-import {Component, Inject, LOCALE_ID, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, Inject, LOCALE_ID, NgZone, OnInit, ViewChild} from '@angular/core';
 import {InvestModel} from "../../../shared/models/transaction/invest.model";
 import {TransactionService} from "../transaction.service";
 import {NotifyService} from "../../../shared/base/notify.service";
@@ -16,11 +16,12 @@ export class WithdrawComponent implements OnInit {
   hideRateControl = false;
   dataModel = <InvestModel>{};
   datePlaceholder = "";
-  @ViewChild(AccountLookupComponent, { static: false }) accountLookup: AccountLookupComponent;
+  @ViewChild(AccountLookupComponent, {static: false}) accountLookup: AccountLookupComponent;
 
   constructor(private transactionService: TransactionService,
               private notifyService: NotifyService,
-              @Inject(LOCALE_ID) private locale: string) {
+              @Inject(LOCALE_ID) private locale: string,
+              private ref: ChangeDetectorRef) {
     this.dataModel.transactionTypeId = TransactionTypeEnumModel.Withdraw;
     this.dataModel.rate = 1;
     this.dataModel.transactionDate = new Date();
@@ -73,8 +74,10 @@ export class WithdrawComponent implements OnInit {
       this.transactionService.withdraw(this.dataModel).subscribe(result => {
         if (result == true) {
           this.notifyService.success('Kayıt başarılı bir şekilde eklendi');
+          // refreshing UI
           this.accountLookup.reloadLookupData();
           this.clearControls();
+          this.ref.detectChanges();
         } else {
           errorList.push('Kayıt eklemede bir hata meydana geldi. Lütfen hesapta yeterli miktar olduğundan emin olunuz.')
           this.notifyService.error(errorList);
@@ -102,7 +105,8 @@ export class WithdrawComponent implements OnInit {
     this.dataModel.accountName = '';
     this.dataModel.amount = 0;
     this.dataModel.transactionDate = new Date();
-    this.dataModel.rate = 0;
+    this.dataModel.rate = 1;
+    this.hideRateControl = false;
   }
 
   numberBoxValueChanged(e) {

@@ -33,7 +33,8 @@ export class AccountComponent extends BaseComponent {
       {caption: 'Hesap Tipi', dataField: 'accountTypeName'},
       {caption: 'Yatırım Aracı', dataField: 'investmentToolName'},
       {caption: 'Hesap Adı', dataField: 'accountName'},
-      {caption: 'Hesap Numarası', dataField: 'accountNo'}
+      {caption: 'Hesap Numarası', dataField: 'accountNo'},
+      {caption: 'Hesaptaki Miktar', dataField: 'balance', format:"#,##0.00"}
     ];
     this.modalOptions = {
       backdrop: 'static',

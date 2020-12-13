@@ -8,11 +8,11 @@ namespace Ims.Api.Application.Modules.Infrastructure.IntegrationEvents.Events
 {
     public class AccountBalanceChangedIntegrationEvent : IntegrationEvent
     {
-        public Guid AccountId { get; set; }
+        public List<Guid> EffectedAccountIds { get; set; }
 
-        public AccountBalanceChangedIntegrationEvent(Guid accountId)
+        public AccountBalanceChangedIntegrationEvent()
         {
-            AccountId = accountId;
+            EffectedAccountIds ??= new List<Guid>();
         }
     }
 }

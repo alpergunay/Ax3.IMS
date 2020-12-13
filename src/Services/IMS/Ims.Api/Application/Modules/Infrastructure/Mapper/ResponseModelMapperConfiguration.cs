@@ -8,6 +8,7 @@ using Ims.Api.Application.Modules.Infrastructure.Models.StoreBranch;
 using Ims.Api.Application.Modules.Infrastructure.Models.StoreType;
 using Ims.Api.Application.Modules.Infrastructure.Models.TransactionType;
 using Ims.Domain.DomainModels;
+using Ims.Domain.Dto;
 
 namespace Ims.Api.Application.Modules.Infrastructure.Mapper
 {
@@ -22,29 +23,13 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
             CreateMapForInvestmentToolType();
             CreateMapForInvestmentTool();
             CreateMapForAccount();
-            CreateMapForAccountLookup();
-            CreateMapForAccountType();
+            CreateMapForAccountDto();
         }
 
-        private void CreateMapForAccountType()
+        private void CreateMapForAccountDto()
         {
-            CreateMap<AccountType, AccountTypeWithAccountsResponseModel>()
-                .ForMember(m => m.Id, d => d.MapFrom(s => s.EnumId))
-                .ForMember(m => m.AccountTypeName, d => d.MapFrom(s => s.Name))
-                .ForMember(m => m.Accounts, d => d.MapFrom(s => s.Accounts));
+            CreateMap<AccountDto, AccountLookupResponseModel>();
         }
-
-        private void CreateMapForAccountLookup()
-        {
-            CreateMap<Account, AccountLookupResponseModel>()
-                .ForMember(m => m.AccountName, d => d.MapFrom(s => s.AccountName))
-                .ForMember(m => m.Id, d => d.MapFrom(s => s.Id))
-                .ForMember(m => m.Balance, d => d.MapFrom(s => s.GetBalance()))
-                .ForMember(m => m.InvestmentToolTypeId, d => d.MapFrom(s => s.InvestmentTool.InvestmentToolType.EnumId))
-                .ForMember(m => m.InvestmentToolTypeName, d => d.MapFrom(s => s.InvestmentTool.InvestmentToolType.Name))
-                .ForMember(m => m.InvestmentToolCode, d => d.MapFrom(s => s.InvestmentTool.Code));
-        }
-
         private void CreateMapForAccount()
         {
             CreateMap<Account, AccountResponseModel>()
@@ -59,7 +44,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
                 .ForMember(m => m.StoreTypeId, d => d.MapFrom(s => s.StoreBranch.Store.StoreType.EnumId))
                 .ForMember(m => m.StoreTypeName, d => d.MapFrom(s => s.StoreBranch.Store.StoreType.Name))
                 .ForMember(m => m.AccountName, d => d.MapFrom(s => s.AccountName))
-                .ForMember(m => m.AccountBalance, d => d.MapFrom(s => s.GetBalance()));
+                .ForMember(m => m.Balance, d => d.MapFrom(s => s.GetBalance()));
 
         }
 

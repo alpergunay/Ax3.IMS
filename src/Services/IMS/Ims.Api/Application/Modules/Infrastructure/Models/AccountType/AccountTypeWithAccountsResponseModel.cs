@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Ims.Api.Application.Modules.Infrastructure.Models.Account;
+using Ims.Domain.Dto;
 
 namespace Ims.Api.Application.Modules.Infrastructure.Models.AccountType
 {

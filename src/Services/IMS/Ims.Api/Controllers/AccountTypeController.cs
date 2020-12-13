@@ -1,14 +1,19 @@
-﻿using Ims.Api.Application.Modules.Infrastructure.Models.AccountType;
+﻿using System;
+using System.Collections;
+using Ims.Api.Application.Modules.Infrastructure.Models.AccountType;
 using Ims.Api.Application.Modules.Infrastructure.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Ims.Api.Application.Modules.Infrastructure.Models.Account;
 using Ims.Api.Services;
 using Ims.Domain.DomainModels;
+using Ims.Domain.Dto;
 using Microsoft.EntityFrameworkCore.Internal;
 
 namespace Ims.Api.Controllers
@@ -44,14 +49,28 @@ namespace Ims.Api.Controllers
         {
             return await _queries.FilterAccountTypesAsync(typed);
         }
+
         [HttpGet()]
         [Route("account-types-with-accounts")]
-        [ProducesResponseType(typeof(IEnumerable<AccountTypeResponseModel>), (int)HttpStatusCode.OK)]
-        public IEnumerable<AccountTypeWithAccountsResponseModel> GetAccountTypesWithAccountsAsync([FromQuery] string typed)
+        [ProducesResponseType(typeof(IEnumerable<AccountTypeWithAccountsResponseModel>), (int)HttpStatusCode.OK)]
+        public IEnumerable<AccountTypeWithAccountsResponseModel> GetAccountTypesWithAccountsAsync([FromQuery] string typed,
+            string investmentToolId)
         {
-            return  _repository.GetWithAccounts(_identityService.GetUserName(), typed)
-                .ProjectTo<AccountTypeWithAccountsResponseModel>(_mapper.ConfigurationProvider);
-            //return await _queries.FilterAccountTypesAsync(typed);
+            var accountDto = _repository.GetWithAccounts(_identityService.GetUserName(), typed, investmentToolId);
+
+            var accountTypeGroup = accountDto.GroupBy(a => new { a.AccountTypeName, a.AccountTypeId })
+                .Select(g => new AccountTypeWithAccountsResponseModel()
+                {
+                    AccountTypeName = g.Key.AccountTypeName,
+                    Id = g.Key.AccountTypeId
+                }).ToList();
+
+            foreach (var g in accountTypeGroup)
+            {
+                g.Accounts = accountDto.Where(at => at.AccountTypeName == g.AccountTypeName)
+                    .ProjectTo<AccountLookupResponseModel>(_mapper.ConfigurationProvider).ToList();
+            }
+            return accountTypeGroup;
         }
     }
 }

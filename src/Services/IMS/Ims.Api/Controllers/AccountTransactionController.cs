@@ -50,5 +50,13 @@ namespace Ims.Api.Controllers
         {
             return await _mediator.Send(transactionCommand);
         }
+        [Route("buy")]
+        [HttpPost]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<bool>> BuyInvestmentTool([FromBody] BuyInvestmentToolCommand transactionCommand)
+        {
+            return await _mediator.Send(transactionCommand);
+        }
     }
 }
