@@ -1,0 +1,27 @@
+
+{
+    "region" : "eu-central-1",
+    "profile" : "ax3-app",
+    "configuration" : "Release",
+    "image-tag"     : "ax3:ims-api",
+    "docker-build-working-dir" : "",
+    "cluster"                  : "ims-ecs-cluster",
+    "launch-type"              : "FARGATE",
+    "launch-subnets"           : "subnet-04b75e0d76bfa733a",
+    "launch-security-groups"   : "sg-06852dbad9fa554b9",
+    "assign-public-ip"         : true,
+    "task-definition-name"     : "ims-api-task",
+    "task-cpu"                 : "256",
+    "task-memory"              : "512",
+    "task-definition-task-role" : "arn:aws:iam::974597802872:role/ecsTaskExecutionRole",
+    "task-execution-role"       : "ecsTaskExecutionRole",
+    "container-name"            : "ims-api-container",
+    "container-port-mapping"    : "5005:5005",
+    "container-environment-variables" : "\"ASPNETCORE_ENVIRONMENT\"=\"Production\"",
+    "skip-image-push"                 : false,
+    "cluster-service"                 : "ims-ecs-cluster/ims-api-service",
+    "desired-count"                   : 1,
+    "deployment-minimum-healthy-percent" : 50,
+    "deployment-maximum-percent"         : 200,
+    "vstoolkit-deployment-mode"          : "DeployService"
+}

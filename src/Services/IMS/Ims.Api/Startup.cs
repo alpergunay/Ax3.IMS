@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
+using System.Security.Authentication;
 using AutoMapper;
 using Ax3.IMS.DataAccess.EntityFramework.Interceptors;
 using HealthChecks.UI.Client;
@@ -187,7 +188,7 @@ namespace Ims.Api
 
             hcBuilder
                 .AddRabbitMQ(
-                    $"amqp://{_settings.ServiceBus.RabbitMQUrl}",
+                    $"amqps://{_settings.ServiceBus.RabbitMQUrl}",
                     name: "rabbitmqbus-check",
                     tags: new string[] { "mqbus" });
 
@@ -296,12 +297,17 @@ namespace Ims.Api
             services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
             {
                 var logger = sp.GetRequiredService<ILogger<DefaultRabbitMQPersistentConnection>>();
+             
+                var uriBuilder = new UriBuilder(_settings.ServiceBus.RabbitMQUrl)
+                {
+                    Scheme = _settings.ServiceBus.Scheme,
+                    Port = int.Parse(_settings.ServiceBus.Port) // default port for scheme
+                };
                 var factory = new ConnectionFactory()
                 {
-                    HostName = _settings.ServiceBus.RabbitMQUrl,
-                    DispatchConsumersAsync = true
+                    DispatchConsumersAsync = true,
+                    Uri = uriBuilder.Uri
                 };
-
                 if (!string.IsNullOrEmpty(_settings.ServiceBus.RabbitUsername))
                 {
                     factory.UserName = _settings.ServiceBus.RabbitUsername;
@@ -317,7 +323,6 @@ namespace Ims.Api
                 {
                     retryCount = int.Parse(_settings.ServiceBus.RetryCount);
                 }
-
                 return new DefaultRabbitMQPersistentConnection(factory, logger, retryCount);
             });
 

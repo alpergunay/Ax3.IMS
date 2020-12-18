@@ -38,14 +38,19 @@ services:
   mongodb:
     container_name: "ims-mongodb"
     environment: 
-      - MONGO_INITDB_DATABASE="ims"
-      - MONGO_INITDB_ROOT_USERNAME="ims"
-      - MONGO_INITDB_ROOT_PASSWORD="ax32020!"
+      - MONGO_INITDB_DATABASE=ims
+      - MONGO_INITDB_ROOT_USERNAME=imsuser
+      - MONGO_INITDB_ROOT_PASSWORD=ax32020!
+      - MONGODB_INITSCRIPTS_DIR=/docker-entrypoint-initdb.d
+      - MONGODB_ADVERTISED_HOSTNAME=localhost
+      - MONGODB_PORT_NUMBER=27017
+      - MONGODB_CLIENT_EXTRA_FLAGS=--authenticationDatabase=ims
     volumes: 
-      - ../mongodb/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - "../mongodb/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro"
       - mongo_data:/data/db
     ports:
-      - '27017-27019:27017-27019'
+      - "27017:27017"
+    command: mongod
   redis:
     command: redis-server --requirepass 123
     ports:

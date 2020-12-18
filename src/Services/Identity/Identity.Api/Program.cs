@@ -84,13 +84,14 @@ namespace Identity.Api
                 webBuilder.UseStartup<Startup>();
                 webBuilder.UseContentRoot(Directory.GetCurrentDirectory());
                 webBuilder.UseConfiguration(configuration);
+                webBuilder.UseUrls("http://0.0.0.0:5000");
             });
 
         private static IConfiguration GetConfiguration()
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                //.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",
                              optional: true)
                 .AddJsonFile("appsettings.Local.json", optional: true)

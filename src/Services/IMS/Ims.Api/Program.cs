@@ -88,6 +88,7 @@ namespace Ims.Api
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseContentRoot(Directory.GetCurrentDirectory());
                     webBuilder.UseConfiguration(configuration);
+                    webBuilder.UseUrls("http://0.0.0.0:5005");
                     //Uncomment when implement Vault
                     //webBuilder.UseVault();
                 });
@@ -95,7 +96,7 @@ namespace Ims.Api
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                //.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true)
                 .AddJsonFile($"appsettings.Local.json", optional: true)
                 .AddEnvironmentVariables();
