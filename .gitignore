@@ -323,7 +323,9 @@ launchSettings.json
 /publish
 
 # local appsettings.json
-/src/Services/Identity/Identity.API/appsettings.Local.json
-/src/Services/Test/Europcar.RentoCloud.Services.Test/appsettings.Local.json
-/src/Services/Web/Web.API/appsettings.Local.json
-/src/Services/Email/Email.Api/appsettings.Local.json
+/src/Services/Identity/Identity.Api/appsettings.Local.json
+/src/Services/Identity/Identity.Api/appsettings.Production.json
+/src/Services/IMS/Ims.Api/appsettings.Production.json
+
+
+
