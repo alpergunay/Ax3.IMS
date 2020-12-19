@@ -5,6 +5,7 @@ export interface LookupRequestModel {
 
 export interface AccountLookupRequestModel extends LookupRequestModel {
   investmentToolId: string;
+  isLocalCurrencyAccount: boolean;
 }
 
 export interface LookupResponseModel {

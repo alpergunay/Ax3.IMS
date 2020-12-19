@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FluentValidation;
+﻿using FluentValidation;
 using Ims.Api.Application.Modules.Infrastructure.Commands;
 
 namespace Ims.Api.Application.Modules.Infrastructure.Validations
 {
-    public class BuyInvestmentToolCommandValidator : AbstractValidator<BuyInvestmentToolCommand>
+    public class SellInvestmentToolCommandValidator : AbstractValidator<SellInvestmentToolCommand>
     {
-        public BuyInvestmentToolCommandValidator()
+        public SellInvestmentToolCommandValidator()
         {
             RuleFor(command => command.SourceAccountId).SetValidator(new GuidValidator())
                 .NotEmpty().WithMessage("Invalid source account");

@@ -188,7 +188,7 @@ namespace Ims.Api
 
             hcBuilder
                 .AddRabbitMQ(
-                    $"amqps://{_settings.ServiceBus.RabbitMQUrl}",
+                    $"amqp://{_settings.ServiceBus.RabbitMQUrl}",
                     name: "rabbitmqbus-check",
                     tags: new string[] { "mqbus" });
 

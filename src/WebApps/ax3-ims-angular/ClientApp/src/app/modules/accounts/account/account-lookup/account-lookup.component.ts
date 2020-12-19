@@ -41,7 +41,6 @@ export class AccountLookupComponent {
         this.selectedValue = "";
         this.selectedText = "";
       }, 0);
-      //this.onChange();
     }
     if (this.oldInvestmentToolId !== this.investmentToolId) {
       this.loadData();

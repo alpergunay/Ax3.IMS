@@ -67,6 +67,7 @@
         <dx-number-box [(value)]="dataModel.rate"
                        placeholder="Alış kuru giriniz..."
                        format="#,##0.0000"
+                       min="0"
                        [showClearButton]="true"
                        (onValueChanged)="numberBoxValueChanged($event)">
         </dx-number-box>
@@ -80,6 +81,7 @@
         <dx-number-box [(value)]="dataModel.amount"
                        placeholder="Toplam mikarı giriniz..."
                        format="#,##0.00"
+                       min="0"
                        [showClearButton]="true">
         </dx-number-box>
       </div>

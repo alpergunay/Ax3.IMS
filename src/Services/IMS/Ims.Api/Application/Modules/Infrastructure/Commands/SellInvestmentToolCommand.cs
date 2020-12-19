@@ -1,9 +1,12 @@
-﻿using MediatR;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using MediatR;
 
 namespace Ims.Api.Application.Modules.Infrastructure.Commands
 {
-    public class BuyInvestmentToolCommand : IRequest<bool>
+    public class SellInvestmentToolCommand : IRequest<bool>
     {
         public string SourceAccountId { get; set; }
         public DateTime TransactionDate { get; set; }
@@ -12,7 +15,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Commands
         public string DestinationAccountId { get; set; }
         public string Description { get; set; }
 
-        public BuyInvestmentToolCommand(string sourceAccountId, DateTime transactionDate, 
+        public SellInvestmentToolCommand(string sourceAccountId, DateTime transactionDate,
             double? rate, double amount, string destinationAccountId, string description)
         {
             SourceAccountId = sourceAccountId;

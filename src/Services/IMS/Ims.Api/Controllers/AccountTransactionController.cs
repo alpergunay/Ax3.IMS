@@ -34,6 +34,7 @@ namespace Ims.Api.Controllers
             _identityService = identityService;
             _mediator = mediator;
         }
+
         [Route("invest")]
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Created)]
@@ -42,6 +43,7 @@ namespace Ims.Api.Controllers
         {
             return await _mediator.Send(transactionCommand);
         }
+
         [Route("withdraw")]
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Created)]
@@ -50,11 +52,21 @@ namespace Ims.Api.Controllers
         {
             return await _mediator.Send(transactionCommand);
         }
+
         [Route("buy")]
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<ActionResult<bool>> BuyInvestmentTool([FromBody] BuyInvestmentToolCommand transactionCommand)
+        {
+            return await _mediator.Send(transactionCommand);
+        }
+
+        [Route("sell")]
+        [HttpPost]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<bool>> SellInvestmentTool([FromBody] SellInvestmentToolCommand transactionCommand)
         {
             return await _mediator.Send(transactionCommand);
         }

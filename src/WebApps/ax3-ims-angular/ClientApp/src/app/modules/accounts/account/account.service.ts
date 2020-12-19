@@ -60,6 +60,7 @@ export class AccountService implements BaseDataService {
     const url = this.webApiUrl + '/api/AccountType/account-types-with-accounts';
     const requestModel = <AccountLookupRequestModel>{};
     requestModel.typed = typed;
+
     if(parentId)
       requestModel.id = parentId;
     else requestModel.id = "";
@@ -67,7 +68,7 @@ export class AccountService implements BaseDataService {
     if(investmentToolId)
       requestModel.investmentToolId = investmentToolId
     else requestModel.investmentToolId = ""
-
+    
     return this.service.get(url, requestModel).pipe<AccountLookupModel[]>(tap((response: any) => {
       return response;
     }));
