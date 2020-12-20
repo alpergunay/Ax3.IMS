@@ -59,6 +59,8 @@
     <ProjectReference Include="..\..\..\Infrastructure\Configuration\Ax3.IMS.Infrastructure.Core.Configuration\Ax3.IMS.Infrastructure.Configuration.csproj" />
     <ProjectReference Include="..\..\..\Infrastructure\Core\Ax3.IMS.Core\Ax3.IMS.Infrastructure.Core.csproj" />
     <ProjectReference Include="..\..\..\Infrastructure\Core\Ax3.IMS.Infrastructure.Core.Http\Ax3.IMS.Infrastructure.Core.Http.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus.RabbitMQ\Ax3.IMS.Infrastructure.EventBus.RabbitMQ.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus\Ax3.IMS.Infrastructure.EventBus.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -67,6 +69,7 @@
     <Folder Include="Data\Migrations\IdentityServer\PersistedGrantDb\" />
     <Folder Include="Data\IntegrationEventMigrations\" />
     <Folder Include="Factories\" />
+    <Folder Include="IntegrationEvents\Events\" />
   </ItemGroup>
 
 
