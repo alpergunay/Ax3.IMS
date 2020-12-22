@@ -60,18 +60,20 @@
                             <h3 class="opacity-40 font-weight-normal">Sign Up</h3>
                             <p class="opacity-40">Enter your details to create your account</p>
                         </div>
-                        <form class="form text-center" id="kt_login_signup_form" >
+                        <form class="form text-center" id="kt_login_signup_form" asp-controller="Account" asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                            <input type="hidden" asp-for="ReturnUrl" />
+                            <div asp-validation-summary="All" class="text-danger"></div>
                             <div class="form-group">
-                                <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Name" name="name" asp-for="RegisterViewModel.Name" autocomplete="off" />
+                                <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Name" name="name" asp-for="Name" autocomplete="off" />
                             </div>
                             <div class="form-group">
-                                <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Surname" name="surname" asp-for="RegisterViewModel.Surname" autocomplete="off" />
+                                <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Surname" name="surname" asp-for="Surname" autocomplete="off" />
                             </div>
                             <div class="form-group">
-                                <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Email" name="email" asp-for="RegisterViewModel.Email" autocomplete="off" />
+                                <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Email" name="email" asp-for="Email" autocomplete="off" />
                             </div>
                             <div class="form-group">
-                                <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="password" placeholder="Password" asp-for="RegisterViewModel.Password" name="password" />
+                                <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="password" placeholder="Password" asp-for="Password" name="password" />
                             </div>
                             <div class="form-group">
                                 <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="password" placeholder="Confirm Password" name="cpassword" />

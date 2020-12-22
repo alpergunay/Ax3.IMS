@@ -14,6 +14,11 @@ namespace Identity.Api.Controllers.Account
 
         public bool IsExternalLoginOnly => EnableLocalLogin == false && ExternalProviders?.Count() == 1;
         public string ExternalLoginScheme => IsExternalLoginOnly ? ExternalProviders?.SingleOrDefault()?.AuthenticationScheme : null;
-        public RegisterViewModel RegisterViewModel { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+
+        public LoginViewModel()
+        {
+        }
     }
 }

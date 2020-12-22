@@ -243,17 +243,17 @@ namespace Identity.Api.Controllers.Account
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.RegisterViewModel.Email,
-                    Email = model.RegisterViewModel.Email,
-                    Name = model.RegisterViewModel.Name,
-                    SurName = model.RegisterViewModel.Surname
+                    UserName = model.Email,
+                    Email = model.Email,
+                    Name = model.Name,
+                    SurName = model.Surname
                 };
                 var result = await _userManager.CreateAsync(user, model.Password).ConfigureAwait(false);
                 if (result.Errors.Any())
                 {
                     AddErrors(result);
                     // If we got this far, something failed, redisplay form
-                    //return View(model);
+                    return await Login(returnUrl);
                 }
             }
 
