@@ -8,13 +8,9 @@ namespace Identity.Api.Models
     {
         [Required]
         public string Name { get; set; }
-
         [Required]
-        public string SurName { get; set; }
-
-        [Required]
+        public string Surname { get; set; }
         public string MobilePhoneNumber { get; set; }
-
         public Guid? LanguageId { get; set; }
         public DateTime LastLoginTime { get; set; }
     }

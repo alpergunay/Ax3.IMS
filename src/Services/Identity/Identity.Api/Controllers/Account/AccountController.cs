@@ -23,11 +23,6 @@ using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace Identity.Api.Controllers.Account
 {
-    /// <summary>
-    /// This sample controller implements a typical login/logout/provision workflow for local and external accounts.
-    /// The login service encapsulates the interactions with the user data store. This data store is in-memory only and cannot be used for production!
-    /// The interaction service provides a way for the UI to communicate with identityserver for validation and context retrieval
-    /// </summary>
     [SecurityHeaders]
     [AllowAnonymous]
     public class AccountController : Controller
@@ -37,19 +32,21 @@ namespace Identity.Api.Controllers.Account
         private readonly IAuthenticationSchemeProvider _schemeProvider;
         private readonly IEventService _events;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
         public AccountController(
             IIdentityServerInteractionService interaction,
             IClientStore clientStore,
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager,
+            UserManager<ApplicationUser> userManager)
         {
             _interaction = interaction;
             _clientStore = clientStore;
             _schemeProvider = schemeProvider;
             _events = events;
-
+            _userManager = userManager;
             _signInManager = signInManager;
         }
 
@@ -70,6 +67,7 @@ namespace Identity.Api.Controllers.Account
 
             return View(vm);
         }
+
 
         /// <summary>
         /// Handle postback from username/password login
@@ -235,6 +233,44 @@ namespace Identity.Api.Controllers.Account
             return View();
         }
 
+        // POST: /Account/Register
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(LoginViewModel model, string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    Name = model.Name,
+                    Surname = model.Surname
+                };
+                var result = await _userManager.CreateAsync(user, model.Password).ConfigureAwait(false);
+                if (result.Errors.Any())
+                {
+                    AddErrors(result);
+                    // If we got this far, something failed, redisplay form
+                    return RedirectToAction("Register", "Account", returnUrl);
+                }
+            }
+
+            if (returnUrl != null)
+            {
+                if (HttpContext.User.Identity.IsAuthenticated)
+                    return Redirect(returnUrl);
+                else
+                if (ModelState.IsValid)
+                    return RedirectToAction("login", "account", new { returnUrl });
+                //else
+                    //return View(model);
+            }
+            return RedirectToAction("index", "home");
+        }
+
 
         /*****************************************/
         /* helper APIs for the AccountController */
@@ -365,6 +401,13 @@ namespace Identity.Api.Controllers.Account
             }
 
             return vm;
+        }
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
         }
     }
 }
