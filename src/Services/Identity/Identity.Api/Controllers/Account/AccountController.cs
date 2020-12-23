@@ -68,6 +68,7 @@ namespace Identity.Api.Controllers.Account
             return View(vm);
         }
 
+
         /// <summary>
         /// Handle postback from username/password login
         /// </summary>
@@ -246,14 +247,14 @@ namespace Identity.Api.Controllers.Account
                     UserName = model.Email,
                     Email = model.Email,
                     Name = model.Name,
-                    SurName = model.Surname
+                    Surname = model.Surname
                 };
                 var result = await _userManager.CreateAsync(user, model.Password).ConfigureAwait(false);
                 if (result.Errors.Any())
                 {
                     AddErrors(result);
                     // If we got this far, something failed, redisplay form
-                    return await Login(returnUrl);
+                    return RedirectToAction("Register", "Account", returnUrl);
                 }
             }
 
@@ -267,7 +268,6 @@ namespace Identity.Api.Controllers.Account
                 //else
                     //return View(model);
             }
-
             return RedirectToAction("index", "home");
         }
 
