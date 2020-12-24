@@ -228,8 +228,25 @@ namespace Identity.Api.Controllers.Account
         }
 
         [HttpGet]
+        [AllowAnonymous]
+        public IActionResult ForgotPassword(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult AccessDenied()
         {
+            return View();
+        }
+
+        // GET: /Account/Register
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Register(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
 
@@ -237,7 +254,7 @@ namespace Identity.Api.Controllers.Account
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(LoginViewModel model, string returnUrl = null)
+        public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
@@ -254,10 +271,9 @@ namespace Identity.Api.Controllers.Account
                 {
                     AddErrors(result);
                     // If we got this far, something failed, redisplay form
-                    return RedirectToAction("Register", "Account", returnUrl);
+                    return View(model);
                 }
             }
-
             if (returnUrl != null)
             {
                 if (HttpContext.User.Identity.IsAuthenticated)
@@ -265,13 +281,11 @@ namespace Identity.Api.Controllers.Account
                 else
                 if (ModelState.IsValid)
                     return RedirectToAction("login", "account", new { returnUrl });
-                //else
-                    //return View(model);
+                else
+                    return View(model);
             }
             return RedirectToAction("index", "home");
         }
-
-
         /*****************************************/
         /* helper APIs for the AccountController */
         /*****************************************/
