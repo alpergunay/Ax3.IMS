@@ -1,7 +1,7 @@
 ﻿using System;
 using Ax3.IMS.Infrastructure.EventBus.Events;
 
-namespace Ims.Api.Application.Modules.Infrastructure.IntegrationEvents.Events
+namespace Identity.Api.IntegrationEvents.Events
 {
     public class UserCreatedIntegrationEvent : IntegrationEvent
     {

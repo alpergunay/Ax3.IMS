@@ -18,7 +18,11 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Ax3.IMS.Infrastructure.EventBus.Abstractions;
+using Ax3.IMS.Infrastructure.EventBus.RabbitMQ;
+using Identity.Api.IntegrationEvents.Events;
 using Identity.Api.Models;
+using Microsoft.Extensions.Logging;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace Identity.Api.Controllers.Account
@@ -33,6 +37,8 @@ namespace Identity.Api.Controllers.Account
         private readonly IEventService _events;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IEventBus _eventBus;
+        private readonly ILogger<AccountController> _logger;
 
         public AccountController(
             IIdentityServerInteractionService interaction,
@@ -40,7 +46,9 @@ namespace Identity.Api.Controllers.Account
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
             SignInManager<ApplicationUser> signInManager,
-            UserManager<ApplicationUser> userManager)
+            UserManager<ApplicationUser> userManager,
+            IEventBus eventBus,
+            ILogger<AccountController> logger)
         {
             _interaction = interaction;
             _clientStore = clientStore;
@@ -48,6 +56,8 @@ namespace Identity.Api.Controllers.Account
             _events = events;
             _userManager = userManager;
             _signInManager = signInManager;
+            _eventBus = eventBus;
+            _logger = logger;
         }
 
         /// <summary>
@@ -228,8 +238,25 @@ namespace Identity.Api.Controllers.Account
         }
 
         [HttpGet]
+        [AllowAnonymous]
+        public IActionResult ForgotPassword(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult AccessDenied()
         {
+            return View();
+        }
+
+        // GET: /Account/Register
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Register(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
 
@@ -237,24 +264,38 @@ namespace Identity.Api.Controllers.Account
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(LoginViewModel model, string returnUrl = null)
+        public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.Email,
-                    Email = model.Email,
-                    Name = model.Name,
-                    Surname = model.Surname
+                    UserName = model?.Email,
+                    Email = model?.Email,
+                    Name = model?.Name,
+                    Surname = model?.Surname
                 };
-                var result = await _userManager.CreateAsync(user, model.Password).ConfigureAwait(false);
+                var result = await _userManager.CreateAsync(user, model?.Password).ConfigureAwait(false);
                 if (result.Errors.Any())
                 {
                     AddErrors(result);
                     // If we got this far, something failed, redisplay form
-                    return RedirectToAction("Register", "Account", returnUrl);
+                    return View(model);
+                }
+
+                //Inform Web.Api through service bus. 
+                var @event = new UserCreatedIntegrationEvent(user.Id, user.Email, user.Name, user.Surname, user.Email);
+                try
+                {
+                    _eventBus.Publish(@event);
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError(
+                        "An error occured while publishing integration event: {IntegrationEventId} from {AppName}",
+                        @event.Id, Program.AppName);
+                    throw;
                 }
             }
 
@@ -265,13 +306,11 @@ namespace Identity.Api.Controllers.Account
                 else
                 if (ModelState.IsValid)
                     return RedirectToAction("login", "account", new { returnUrl });
-                //else
-                    //return View(model);
+                else
+                    return View(model);
             }
             return RedirectToAction("index", "home");
         }
-
-
         /*****************************************/
         /* helper APIs for the AccountController */
         /*****************************************/

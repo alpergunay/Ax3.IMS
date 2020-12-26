@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using Ax3.IMS.Infrastructure.EventBus.Extensions;
 using Ims.Api.Application.Modules.Infrastructure.IntegrationEvents;
 using Ims.Infrastructure;
-using Web.API.Application.Modules.Infrastructure.IntegrationEvents;
 
 namespace Ims.Api.Application.Modules.Infrastructure.Behaviours
 {

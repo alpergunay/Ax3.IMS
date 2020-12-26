@@ -49,6 +49,10 @@ namespace Ax3.IMS.Domain.Types
         {
             Id = Guid.NewGuid();
         }
+        public Entity(Guid id)
+        {
+            Id = id;
+        }
 
         public Entity(Guid id, string creator)
         {
