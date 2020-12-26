@@ -18,7 +18,11 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Ax3.IMS.Infrastructure.EventBus.Abstractions;
+using Ax3.IMS.Infrastructure.EventBus.RabbitMQ;
+using Identity.Api.IntegrationEvents.Events;
 using Identity.Api.Models;
+using Microsoft.Extensions.Logging;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace Identity.Api.Controllers.Account
@@ -33,6 +37,8 @@ namespace Identity.Api.Controllers.Account
         private readonly IEventService _events;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IEventBus _eventBus;
+        private readonly ILogger<AccountController> _logger;
 
         public AccountController(
             IIdentityServerInteractionService interaction,
@@ -40,7 +46,9 @@ namespace Identity.Api.Controllers.Account
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
             SignInManager<ApplicationUser> signInManager,
-            UserManager<ApplicationUser> userManager)
+            UserManager<ApplicationUser> userManager,
+            IEventBus eventBus,
+            ILogger<AccountController> logger)
         {
             _interaction = interaction;
             _clientStore = clientStore;
@@ -48,6 +56,8 @@ namespace Identity.Api.Controllers.Account
             _events = events;
             _userManager = userManager;
             _signInManager = signInManager;
+            _eventBus = eventBus;
+            _logger = logger;
         }
 
         /// <summary>
@@ -261,19 +271,34 @@ namespace Identity.Api.Controllers.Account
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.Email,
-                    Email = model.Email,
-                    Name = model.Name,
-                    Surname = model.Surname
+                    UserName = model?.Email,
+                    Email = model?.Email,
+                    Name = model?.Name,
+                    Surname = model?.Surname
                 };
-                var result = await _userManager.CreateAsync(user, model.Password).ConfigureAwait(false);
+                var result = await _userManager.CreateAsync(user, model?.Password).ConfigureAwait(false);
                 if (result.Errors.Any())
                 {
                     AddErrors(result);
                     // If we got this far, something failed, redisplay form
                     return View(model);
                 }
+
+                //Inform Web.Api through service bus. 
+                var @event = new UserCreatedIntegrationEvent(user.Id, user.Email, user.Name, user.Surname, user.Email);
+                try
+                {
+                    _eventBus.Publish(@event);
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError(
+                        "An error occured while publishing integration event: {IntegrationEventId} from {AppName}",
+                        @event.Id, Program.AppName);
+                    throw;
+                }
             }
+
             if (returnUrl != null)
             {
                 if (HttpContext.User.Identity.IsAuthenticated)

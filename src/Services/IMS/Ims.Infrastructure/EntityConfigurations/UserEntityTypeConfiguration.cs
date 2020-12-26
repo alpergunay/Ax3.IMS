@@ -32,7 +32,7 @@ namespace Ims.Infrastructure.EntityConfigurations
                 .Property("FamilyId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("FamilyId")
-                .IsRequired();
+                .IsRequired(false);
             builder.HasOne(p => p.Family)
                 .WithMany()
                 .HasForeignKey("FamilyId");
@@ -42,7 +42,7 @@ namespace Ims.Infrastructure.EntityConfigurations
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Mobile")
                 .HasMaxLength(20)
-                .IsRequired();
+                .IsRequired(false);
 
             builder
                 .Property<string>("Email")
@@ -50,6 +50,15 @@ namespace Ims.Infrastructure.EntityConfigurations
                 .HasColumnName("Email")
                 .HasMaxLength(100)
                 .IsRequired();
+
+            builder
+                .Property("LocalCurrencyId")
+                .UsePropertyAccessMode(PropertyAccessMode.Field)
+                .HasColumnName("LocalCurrencyId")
+                .IsRequired(false);
+            builder.HasOne(p => p.LocalCurrency)
+                .WithMany()
+                .HasForeignKey("LocalCurrencyId");
         }
     }
 }

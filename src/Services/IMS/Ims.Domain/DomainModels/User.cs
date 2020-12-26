@@ -10,10 +10,13 @@ namespace Ims.Domain.DomainModels
         public string Surname { get; private set; }
         public string Mobile { get; private set; }
         public string Email { get; private set; }
-        public Guid FamilyId { get; private set; }
+        public Guid? FamilyId { get; private set; }
         public Family Family { get; private set; }
+        public Guid? LocalCurrencyId { get; private set; }
+        public InvestmentTool LocalCurrency { get; set; }
 
-        public User(string userName, string name, string surname, Guid familyId, string mobile, string email)
+        public User(Guid id, string userName, string name, string surname, Guid? familyId, string mobile,
+            string email, Guid? localCurrencyId) : base(id)
         {
             UserName = userName;
             Name = name;
@@ -21,6 +24,12 @@ namespace Ims.Domain.DomainModels
             FamilyId = familyId;
             Mobile = mobile;
             Email = email;
+            LocalCurrencyId = localCurrencyId;
+        }
+
+        public void SetLocalCurrencyId(Guid investmentToolId)
+        {
+            LocalCurrencyId = investmentToolId;
         }
     }
 }

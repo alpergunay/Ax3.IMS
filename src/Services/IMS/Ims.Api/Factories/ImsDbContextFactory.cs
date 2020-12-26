@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using Ax3.IMS.Infrastructure.Core.Services;
 using Ims.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
+using System.IO;
+using System.Reflection;
 
 namespace Ims.Api.Factories
 {
@@ -18,16 +14,15 @@ namespace Ims.Api.Factories
         {
             var config = new ConfigurationBuilder()
                 .SetBasePath(Path.Combine(Directory.GetCurrentDirectory()))
-                .AddJsonFile("appsettings.json")
+                .AddJsonFile($"appsettings.Development.json", optional: false)
                 .AddEnvironmentVariables()
                 .Build();
 
             var optionsBuilder = new DbContextOptionsBuilder<ImsContext>();
-
             optionsBuilder.UseNpgsql(config["ApplicationSettings:Persistence:ConnectionString"],
                 npgsqlOptionsAction: sqlOptions =>
                 {
-
+                    sqlOptions.MigrationsAssembly(typeof(ImsContext).GetTypeInfo().Assembly.GetName().Name);
                 }).UseSnakeCaseNamingConvention();
 
             return new ImsContext(optionsBuilder.Options);

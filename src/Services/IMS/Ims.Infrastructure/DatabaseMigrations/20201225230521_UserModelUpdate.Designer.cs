@@ -3,15 +3,17 @@ using System;
 using Ims.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace Ims.Infrastructure.Migrations
+namespace Ims.Infrastructure.DatabaseMigrations
 {
     [DbContext(typeof(ImsContext))]
-    partial class ImsContextModelSnapshot : ModelSnapshot
+    [Migration("20201225230521_UserModelUpdate")]
+    partial class UserModelUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -2,6 +2,7 @@
 using Autofac;
 using Ax3.IMS.Infrastructure.Core.Services;
 using Ax3.IMS.Infrastructure.EventBus.Abstractions;
+using Ims.Api.Application.Modules.Infrastructure.IntegrationEvents.Handlers;
 using Ims.Api.Application.Modules.Infrastructure.Queries;
 using Ims.Domain.DomainModels;
 using Ims.Infrastructure.Idempotency;
@@ -54,6 +55,9 @@ namespace Ims.Api.Infrastructure.AutofacModules
             builder.RegisterType<AccountTransactionRepository>()
                 .As<IAccountTransactionRepository>()
                 .InstancePerLifetimeScope();
+            builder.RegisterType<UserRepository>()
+                .As<IUserRepository>()
+                .InstancePerLifetimeScope();
 
             builder.Register(c => new ImsQueries(QueriesConnectionString))
                 .As<IImsQueries>()
@@ -62,6 +66,9 @@ namespace Ims.Api.Infrastructure.AutofacModules
             builder.RegisterType<UserHttpService>()
                 .As<IUserService>()
                 .InstancePerLifetimeScope();
+
+            builder.RegisterAssemblyTypes(typeof(UserCreatedIntegrationEventHandler).GetTypeInfo().Assembly)
+                .AsClosedTypesOf(typeof(IIntegrationEventHandler<>));
 
             #endregion
 

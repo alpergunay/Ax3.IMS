@@ -18,10 +18,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Logging;
 using System;
+using System.Data.Common;
 using System.Reflection;
 using System.Security.Cryptography;
 using Ax3.IMS.Infrastructure.EventBus;
 using Ax3.IMS.Infrastructure.EventBus.Abstractions;
+using Ax3.IMS.Infrastructure.EventBus.EFEventStore.Services;
 using Ax3.IMS.Infrastructure.EventBus.RabbitMQ;
 using HealthChecks.UI.Client;
 using Identity.Api.Configuration;
@@ -29,6 +31,7 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
+using RabbitMQ.Client;
 
 namespace Identity.Api
 {
@@ -111,7 +114,9 @@ namespace Identity.Api
                 .Services.AddTransient<IProfileService, ProfileService>();
 
             services.AddCustomConfiguration(AppConfiguration)
+                .AddIntegrationServices()
                 .AddEventBus();
+
 
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy())
@@ -193,6 +198,45 @@ namespace Identity.Api
     internal static class CustomExtensionsMethods
     {
         private static ApplicationSettings _settings;
+        public static IServiceCollection AddIntegrationServices(this IServiceCollection services)
+        {
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<Func<DbConnection, IIntegrationEventLogService>>(
+                sp => (DbConnection c) => new IntegrationEventLogService(c));
+            services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
+            {
+                var logger = sp.GetRequiredService<ILogger<DefaultRabbitMQPersistentConnection>>();
+
+                var uriBuilder = new UriBuilder(_settings.ServiceBus.RabbitMQUrl)
+                {
+                    Scheme = _settings.ServiceBus.Scheme,
+                    Port = int.Parse(_settings.ServiceBus.Port) // default port for scheme
+                };
+                var factory = new ConnectionFactory()
+                {
+                    DispatchConsumersAsync = true,
+                    Uri = uriBuilder.Uri
+                };
+                if (!string.IsNullOrEmpty(_settings.ServiceBus.RabbitUsername))
+                {
+                    factory.UserName = _settings.ServiceBus.RabbitUsername;
+                }
+
+                if (!string.IsNullOrEmpty(_settings.ServiceBus.RabbitPassword))
+                {
+                    factory.Password = _settings.ServiceBus.RabbitPassword;
+                }
+
+                var retryCount = 5;
+                if (!string.IsNullOrEmpty(_settings.ServiceBus.RetryCount))
+                {
+                    retryCount = int.Parse(_settings.ServiceBus.RetryCount);
+                }
+                return new DefaultRabbitMQPersistentConnection(factory, logger, retryCount);
+            });
+
+            return services;
+        }
         public static IServiceCollection AddEventBus(this IServiceCollection services)
         {
             var subscriptionClientName = _settings.SubscriptionClientName;
