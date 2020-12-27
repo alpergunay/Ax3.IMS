@@ -73,7 +73,9 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
         {
             CreateMap<InvestmentTool, InvestmentToolResponseModel>()
                 .ForMember(m => m.InvestmentToolTypeName, d => d.MapFrom(s => s.InvestmentToolType.Name))
-                .ForMember(m => m.InvestmentToolTypeId, d => d.MapFrom(s => s.InvestmentToolType.EnumId));
+                .ForMember(m => m.InvestmentToolTypeId, d => d.MapFrom(s => s.InvestmentToolType.EnumId))
+                .ForMember(m => m.CountryId, d => d.MapFrom(s => s.Country.Id))
+                .ForMember(m => m.CountryName, d => d.MapFrom(s => s.Country.Name));
         }
 
         private void CreateMapForTransactionType()

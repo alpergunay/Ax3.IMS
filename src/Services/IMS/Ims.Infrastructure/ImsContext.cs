@@ -33,6 +33,7 @@ namespace Ims.Infrastructure
         public DbSet<TransactionType> TransactionTypes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Family> Families { get; set; }
+        public DbSet<Country> Countries { get; set; }
 
 
         protected ImsContext(DbContextOptions<ImsContext> options, IUserService userService) : base(options,

@@ -10,5 +10,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.Models.InvestmentTool
         public int InvestmentToolTypeId { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
+        public string Symbol { get; set; }
+        public Guid? CountryId { get; set; }
     }
 }

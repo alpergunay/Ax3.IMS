@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="EntityConfigurations\CountryEntityTypeConfiguration.cs~RFbe58cc4.TMP" />
     <None Remove="EntityConfigurations\StoreEntityTypeConfiguration.cs~RF9f4a32c.TMP" />
   </ItemGroup>
 

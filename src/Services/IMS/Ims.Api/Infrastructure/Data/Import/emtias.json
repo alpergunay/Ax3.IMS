@@ -1,0 +1,102 @@
+[
+	{
+		"market": "EMTIA",
+		"names": {},
+		"name": "BRENT",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Brent Petrol Spot",
+		"key": "BRENT.EMTIA.GARAN",
+		"group": "EMTIA"
+	},
+	{
+		"market": "EMTIA",
+		"names": {},
+		"name": "COPPER",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Bakır (COMEX Emtia Borsası)",
+		"key": "COPPER.EMTIA.GARAN",
+		"group": "EMTIA"
+	},
+	{
+		"market": "EMTIA",
+		"names": {},
+		"name": "CORN",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Mısır (Chicago CBOT)",
+		"key": "CORN.EMTIA.GARAN",
+		"group": "EMTIA"
+	},
+	{
+		"market": "EMTIA",
+		"names": {},
+		"name": "GOLD",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Altın (COMEX Emtia Borsası)",
+		"key": "GOLD.EMTIA.GARAN",
+		"group": "EMTIA"
+	},
+	{
+		"market": "EMTIA",
+		"names": {},
+		"name": "HHBGAS",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Doğal Gaz (NY NYMEX)",
+		"key": "HHBGAS.EMTIA.GARAN",
+		"group": "EMTIA"
+	},
+	{
+		"market": "EMTIA",
+		"names": {},
+		"name": "PL1",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Platin (NY NYMEX)",
+		"key": "PL1.EMTIA.GARAN",
+		"group": "EMTIA"
+	},
+	{
+		"market": "EMTIA",
+		"names": {},
+		"name": "SILVER",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Gümüş (COMEX Emtia Borsası)",
+		"key": "SILVER.EMTIA.GARAN",
+		"group": "EMTIA"
+	},
+	{
+		"market": "EMTIA",
+		"names": {},
+		"name": "TT1",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Pamuk (NY NYMEX)",
+		"key": "TT1.EMTIA.GARAN",
+		"group": "EMTIA"
+	},
+	{
+		"market": "EMTIA",
+		"names": {},
+		"name": "WHEAT",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Buğday (Chicago CBOT)",
+		"key": "WHEAT.EMTIA.GARAN",
+		"group": "EMTIA"
+	},
+	{
+		"market": "EMTIA",
+		"names": {},
+		"name": "WTI",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Ham Petrol (NY NYMEX)",
+		"key": "WTI.EMTIA.GARAN",
+		"group": "EMTIA"
+	}
+]

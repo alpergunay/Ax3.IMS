@@ -1,0 +1,142 @@
+[
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "ALT14BIL",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "14 Ayar Bilezik Gram Altın",
+		"key": "ALT14BIL.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "ALT18BIL",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "18 Ayar Bilezik Gram Altın",
+		"key": "ALT18BIL.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "ALT22BIL",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "22 Ayar Bilezik Gram Altın",
+		"key": "ALT22BIL.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "CEYREK",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Çeyrek Altın",
+		"key": "CEYREK.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "GRAM",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Gram Altın (TL)",
+		"key": "GRAM.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "GRAM/USD",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Gram Altın (USD)",
+		"key": "GRAM/USD.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "SGATA",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Ata Tam Altın",
+		"key": "SGATA.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "SGBESLI",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Beşli Altın",
+		"key": "SGBESLI.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "SGZIYNET",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Ziynet Altın",
+		"key": "SGZIYNET.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "TAM",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Cumhuriyet Altını",
+		"key": "TAM.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "USGLD",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Külçe Altın (USD)",
+		"key": "USGLD.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "USGLDKG",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Altın (KG/USD)",
+		"key": "USGLDKG.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "XAU/USD",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Altın (ONS/USD)",
+		"key": "XAU/USD.GOLD.GARAN",
+		"group": "GOLD"
+	},
+	{
+		"market": "GOLD",
+		"names": {},
+		"name": "YARIM",
+		"exchange": "GARAN",
+		"titles": {},
+		"title": "Yarım Altın",
+		"key": "YARIM.GOLD.GARAN",
+		"group": "GOLD"
+	}
+]

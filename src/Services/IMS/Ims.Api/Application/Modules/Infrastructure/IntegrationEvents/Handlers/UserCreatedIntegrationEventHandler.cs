@@ -26,7 +26,7 @@ namespace Ims.Api.Application.Modules.Infrastructure.IntegrationEvents.Handlers
             {
                 _logger.LogInformation("----- Handling integration event: {IntegrationEventId} at {AppName} - ({@IntegrationEvent})", @event.Id, Program.AppName, @event);
                 var user = new User(@event.UserId, @event.UserName, @event.Name, @event.Surname, null, string.Empty,
-                    @event.Email, null);
+                    @event.Email, null, null);
                 _userRepository.Add(user);
                 await _userRepository.UnitOfWork.SaveEntitiesAsync();
             }
