@@ -5,21 +5,22 @@ namespace Ims.Domain.DomainModels
 {
     public class InvestmentToolPrice : Entity
     {
-        private DateTime _priceDate;
-        private Guid _investmentToolId;
+        public DateTime PriceDate { get; private set; }
+        public Guid InvestmentToolId { get; private set; }
         public InvestmentTool InvestmentTool { get; set; }
-        private double _salesPrice;
-        private double _buyingPrice;
-        
+        public double SalesPrice { get; protected set; }
+        public double BuyingPrice { get; protected set; }
+
+
         public InvestmentToolPrice(DateTime priceDate,
             Guid investmentToolId,
             double salesPrice,
             double buyingPrice)
         {
-            _priceDate = priceDate;
-            _investmentToolId = investmentToolId;
-            _salesPrice = salesPrice;
-            _buyingPrice = buyingPrice;
+            PriceDate = priceDate;
+            InvestmentToolId = investmentToolId;
+            SalesPrice = salesPrice;
+            BuyingPrice = buyingPrice;
         }
     }
 }
