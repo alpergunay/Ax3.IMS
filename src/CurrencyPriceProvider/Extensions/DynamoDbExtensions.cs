@@ -7,9 +7,13 @@ namespace CurrencyPriceProvider.Extensions
 {
     public static class DynamoDbExtensions
     {
-        public static string ToDynamoDbId(this InvestmentToolPrice itp)
+        public static string ToDynamoDbDateId(this InvestmentToolPrice itp)
         {
             return itp.PriceDate.ToString("yyyyMMdd") + "#" + itp.InvestmentTool?.Code;
+        }
+        public static string ToDynamoDbTimeId(this InvestmentToolPrice itp)
+        {
+            return itp.PriceDate.ToDynamoDbDateTime() + "#" + itp.InvestmentTool?.Code;
         }
         public static string ToDynamoDbDate(this DateTime date)
         {

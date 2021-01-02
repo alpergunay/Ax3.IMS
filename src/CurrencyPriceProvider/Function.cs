@@ -6,7 +6,10 @@ using CurrencyPriceProvider.Implementations;
 using CurrencyPriceProvider.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
@@ -74,11 +77,21 @@ namespace CurrencyPriceProvider
         {
             try
             {
-                LambdaLogger.Log("Getting prices from provider...");
-                var currentPrice = _pgpPriceProvider.GetCurrentPrice("USD").Result;
-                currentPrice.InvestmentTool = new InvestmentTool("USD", "Dollar");
-                LambdaLogger.Log(currentPrice.ToString() + " CurrentPrice Is : " + currentPrice.BuyingPrice);
-                await _repository.PutNewPrice(currentPrice);
+                var currencies = JsonSerializer.Deserialize<List<InvestmentTool>>(Environment.GetEnvironmentVariable("currencies"), new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                });
+                var url = Environment.GetEnvironmentVariable("url");
+
+                if (currencies == null || currencies.Count <= 0 || string.IsNullOrEmpty(url)) return "OK";
+                foreach (var currency in currencies)
+                {
+                    LambdaLogger.Log($"Getting prices from provider for {currency.Code}...");
+                    var currentPrice = await _pgpPriceProvider.GetCurrentPrice(currency.Code, url);
+                    currentPrice.InvestmentTool = currency;
+                    LambdaLogger.Log(currentPrice.ToString() + " CurrentPrice Is : " + currentPrice.BuyingPrice);
+                    await _repository.SavePriceAsync(currentPrice);
+                }
                 return "OK";
             }
             catch (Exception e)

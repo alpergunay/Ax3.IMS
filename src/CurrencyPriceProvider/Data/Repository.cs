@@ -2,13 +2,11 @@
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.Lambda.Core;
 using CurrencyPriceProvider.Abstractions;
+using CurrencyPriceProvider.Extensions;
 using CurrencyPriceProvider.Models;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
-using Amazon.DynamoDBv2.Model;
-using CurrencyPriceProvider.Extensions;
 
 namespace CurrencyPriceProvider.Data
 {
@@ -25,7 +23,7 @@ namespace CurrencyPriceProvider.Data
             _dynamoDb = dynamoDb;
             _context = context;
         }
-        public async Task PutNewPrice(T currentPrice)
+        public async Task SavePriceAsync(T currentPrice)
         {
             try
             {
@@ -36,7 +34,7 @@ namespace CurrencyPriceProvider.Data
                  * 3. Insert new price
                  * 4. If search is unsuccessful, create new document
                  */
-                var priceId = currentPrice.ToDynamoDbId();
+                var priceId = currentPrice.ToDynamoDbDateId();
                 LambdaLogger.Log("priceID = " + priceId);
 
                 var dailyPrice = await _context.LoadAsync<DailyInvestmentToolPrices<T>>(priceId);
@@ -71,7 +69,7 @@ namespace CurrencyPriceProvider.Data
                 var priceTimeSeries = new PriceTimeSeries<T>
                 {
                     DailyPriceId = priceId,
-                    Id = DateTime.Now.ToDynamoDbDateTime(),
+                    Id = currentPrice.ToDynamoDbTimeId(),
                     PriceTime = currentPrice.PriceDate.ToDynamoDbDateTime(),
                     Price = currentPrice
                 };

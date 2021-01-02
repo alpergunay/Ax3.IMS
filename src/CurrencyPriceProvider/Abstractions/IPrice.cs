@@ -10,6 +10,6 @@ namespace CurrencyPriceProvider.Abstractions
             DateTime startDate,
             DateTime endDate);
         List<string> GetInvestmentToolCodes();
-        Task<T> GetCurrentPrice(string investmentToolCode);
+        Task<T> GetCurrentPrice(string investmentToolCode, string url);
     }
 }

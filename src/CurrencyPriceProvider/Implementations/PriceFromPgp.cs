@@ -14,7 +14,7 @@ using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace CurrencyPriceProvider.Implementations
 {
-    public class PriceFromPgp<T> : IPrice<T> where T:ForeignCurrencyPrice
+    public class PriceFromPgp<T> : IPrice<T> where T:InvestmentToolPrice
     {
         private static HttpClient _client;
         private readonly IMapper _mapper;
@@ -36,20 +36,19 @@ namespace CurrencyPriceProvider.Implementations
             return list;
         }
 
-        public async Task<T> GetCurrentPrice(string investmentToolCode)
+        public async Task<T> GetCurrentPrice(string investmentToolCode, string url)
         {
-            var pgUrl = "https://www.paragaranti.com/api/doviz/";
-            LambdaLogger.Log("Url is : " + pgUrl);
-            if (string.IsNullOrEmpty(pgUrl))
+            LambdaLogger.Log("Url is : " + url);
+            if (string.IsNullOrEmpty(url))
             {
                 LambdaLogger.Log("Could not find Paragaranti Url to retrieve current foreign currency price");
-                throw new ArgumentNullException(nameof(pgUrl));
+                throw new ArgumentNullException(nameof(url));
             }
             T pgPrice = null;
             try
             {
                 LambdaLogger.Log("Calling provider's endpoint...");
-                HttpResponseMessage response = await _client.GetAsync(pgUrl + investmentToolCode);
+                HttpResponseMessage response = await _client.GetAsync(url + investmentToolCode);
                 if (response.IsSuccessStatusCode)
                 {
                     LambdaLogger.Log("Succesfully took prices from provider...");

@@ -18,7 +18,7 @@
     "package-type"         : "Zip",
     "function-role"        : "arn:aws:iam::974597802872:role/lambda_exec_upperlowerupper",
     "tracing-mode"         : "PassThrough",
-    "environment-variables" : "",
+    "environment-variables" : "\"url\"=\"https://www.paragaranti.com/api/doviz/\";\"currencies\"=\"[ \t{ \t\t\"code\": \"USD\", \t\t\"name\": \"US Dollar\" \t}, \t{ \t\t\"code\": \"EUR\", \t\t\"name\": \"Euro\" \t}, \t{ \t\t\"code\": \"GBP\", \t\t\"name\": \"Great Britain Pound\" \t}, \t{ \t\t\"code\": \"JPY\", \t\t\"name\": \"Japanese Yen\" \t}, \t{ \t\t\"code\": \"CHF\", \t\t\"name\": \"Swiss Franc \" \t} ]\"",
     "image-tag"             : "",
     "function-description"  : "",
     "function-subnets"      : "subnet-00242ced5859d873b",

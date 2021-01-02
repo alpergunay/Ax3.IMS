@@ -9,7 +9,7 @@ namespace CurrencyPriceProvider.Abstractions
 {
     public interface IRepository<T> where T:InvestmentToolPrice
     {
-        Task PutNewPrice(T price);
+        Task SavePriceAsync(T price);
         void Get();
     }
 }
