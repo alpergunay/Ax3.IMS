@@ -6,7 +6,7 @@ using System.Globalization;
 namespace CurrencyPriceProvider.Models
 {
     [DynamoDBTable("DailyInvestmentToolPrices")]
-    public class DailyInvestmentToolPrices<T> 
+    public class DailyInvestmentToolPrices<T> where T:InvestmentToolPrice
     {
         [DynamoDBHashKey("id")]
         public string Id { get; set; }
@@ -20,26 +20,18 @@ namespace CurrencyPriceProvider.Models
         public int WeekNumber { get; set; }
         [DynamoDBProperty("day")]
         public int Day { get; set; }
-        [DynamoDBProperty("todayPrice")]
-        public T TodayPrice { get; set; }
-        [DynamoDBProperty("investmentTool")]
-        public InvestmentTool InvestmentTool { get; set; }
-        [DynamoDBProperty("prices")]
-        public List<T> Prices { get; private set; }
-
-        
+        [DynamoDBProperty("investmentToolCode")]
+        public string InvestmentToolCode { get; set; }
+        [DynamoDBProperty("investmentToolName")]
+        public string InvestmentToolName { get; set; }
+        [DynamoDBProperty("lastUpdateTime")]
+        public string LastUpdateTime { get; set; }
+        [DynamoDBProperty("price")]
+        public T Price { get; set; }
 
         public DailyInvestmentToolPrices()
         {
-            Prices = new List<T>();
         }
-
-        public void AddPrice(T price)
-        {
-            Prices?.Add(price);
-            //TODO Add exception for the case of empty Prices list.
-        }
-
         public void SetPriceDate(DateTime priceDate)
         {
             PriceDate = priceDate.Date.ToString();

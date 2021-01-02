@@ -7,6 +7,7 @@ using CurrencyPriceProvider.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
+using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using CurrencyPriceProvider.Data;
@@ -44,7 +45,7 @@ namespace CurrencyPriceProvider
             _serviceCollection.AddSingleton<IConfiguration>(configuration);
             _serviceCollection.AddAWSService<IAmazonDynamoDB>();
             _serviceCollection.AddTransient<IDynamoDBContext, DynamoDBContext>();
-            _serviceCollection.AddTransient<IRepository, Repository>();
+            _serviceCollection.AddTransient<IRepository<ForeignCurrencyPrice>, Repository<ForeignCurrencyPrice>>();
         }
 
         /// <summary>
@@ -53,30 +54,31 @@ namespace CurrencyPriceProvider
         /// <param name="input"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public string FunctionHandler(string input, ILambdaContext context)
+        public async Task<string> FunctionHandler(string input, ILambdaContext context)
         {
-            using ServiceProvider serviceProvider = _serviceCollection.BuildServiceProvider();
-            return serviceProvider.GetService<App>().Run();
+            await using var serviceProvider = _serviceCollection.BuildServiceProvider();
+            return await serviceProvider.GetService<App>().Run();
         }
     }
     public class App
     {
         private readonly IPrice<ForeignCurrencyPrice> _pgpPriceProvider;
-        private readonly IRepository _repository;
-        public App(IPrice<ForeignCurrencyPrice> priceProvider, IRepository repository)
+        private readonly IRepository<ForeignCurrencyPrice> _repository;
+        public App(IPrice<ForeignCurrencyPrice> priceProvider, IRepository<ForeignCurrencyPrice> repository)
         {
             _pgpPriceProvider = priceProvider;
             _repository = repository;
         }
 
-        public string Run()
+        public async Task<string> Run()
         {
             try
             {
                 LambdaLogger.Log("Getting prices from provider...");
                 var currentPrice = _pgpPriceProvider.GetCurrentPrice("USD").Result;
-                LambdaLogger.Log(currentPrice.ToString() + " CurrentPrice Is : " + currentPrice.ClosingPrice);
-                _repository.Put(currentPrice);
+                currentPrice.InvestmentTool = new InvestmentTool("USD", "Dollar");
+                LambdaLogger.Log(currentPrice.ToString() + " CurrentPrice Is : " + currentPrice.BuyingPrice);
+                await _repository.PutNewPrice(currentPrice);
                 return "OK";
             }
             catch (Exception e)

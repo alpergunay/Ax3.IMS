@@ -7,9 +7,9 @@ using CurrencyPriceProvider.Models;
 
 namespace CurrencyPriceProvider.Abstractions
 {
-    public interface IRepository
+    public interface IRepository<T> where T:InvestmentToolPrice
     {
-        Task Put(InvestmentToolPrice price);
+        Task PutNewPrice(T price);
         void Get();
     }
 }

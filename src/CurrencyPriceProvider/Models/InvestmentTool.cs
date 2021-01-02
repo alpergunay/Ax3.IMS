@@ -2,6 +2,7 @@
 
 namespace CurrencyPriceProvider.Models
 {
+    [DynamoDBTable("InvestmentTool")]
     public class InvestmentTool
     {
         [DynamoDBProperty("code")]
