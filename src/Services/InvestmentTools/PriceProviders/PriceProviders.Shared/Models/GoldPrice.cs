@@ -1,14 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Amazon.DynamoDBv2.DataModel;
 
-namespace CurrencyPriceProvider.Models
+namespace PriceProviders.Shared.Models
 {
-    [DynamoDBTable("ForeignCurrencyPrice")]
-    public class ForeignCurrencyPrice : InvestmentToolPrice
+    [DynamoDBTable("GoldPrice")]
+    public class GoldPrice : InvestmentToolPrice
     {
         [DynamoDBIgnore]
         public Guid Id { get; set; }
-        [DynamoDBProperty("currencyCode")]
+        [DynamoDBProperty("goldCode")]
         public string CurrencyCode { get; set; }
         [DynamoDBProperty("openingPrice")]
         public double OpeningPrice { get; private set; }
@@ -19,9 +21,9 @@ namespace CurrencyPriceProvider.Models
         [DynamoDBProperty("lowestPrice")]
         public double LowestPrice { get; private set; }
 
-        public ForeignCurrencyPrice()
+        public GoldPrice()
         {
-            
+
         }
     }
 }

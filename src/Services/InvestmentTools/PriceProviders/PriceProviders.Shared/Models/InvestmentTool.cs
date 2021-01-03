@@ -1,6 +1,6 @@
 ﻿using Amazon.DynamoDBv2.DataModel;
 
-namespace CurrencyPriceProvider.Models
+namespace PriceProviders.Shared.Models
 {
     [DynamoDBTable("InvestmentTool")]
     public class InvestmentTool

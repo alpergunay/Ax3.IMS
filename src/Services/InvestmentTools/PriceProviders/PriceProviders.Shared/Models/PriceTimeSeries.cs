@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Amazon.DynamoDBv2.DataModel;
 
-namespace CurrencyPriceProvider.Models
+namespace PriceProviders.Shared.Models
 {
     [DynamoDBTable("PriceTimeSeries")]
     public class PriceTimeSeries<T> where T:InvestmentToolPrice

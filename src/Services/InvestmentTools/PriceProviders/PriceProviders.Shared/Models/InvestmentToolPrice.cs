@@ -1,9 +1,9 @@
 ﻿using System;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.Model;
-using CurrencyPriceProvider.Abstractions;
+using PriceProviders.Shared.Abstractions;
 
-namespace CurrencyPriceProvider.Models
+namespace PriceProviders.Shared.Models
 {
     [DynamoDBTable("InvestmentToolPrice")]
     public class InvestmentToolPrice : IEntity

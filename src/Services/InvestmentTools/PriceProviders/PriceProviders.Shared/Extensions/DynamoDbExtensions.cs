@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using CurrencyPriceProvider.Models;
+using PriceProviders.Shared.Models;
 
-namespace CurrencyPriceProvider.Extensions
+namespace PriceProviders.Shared.Extensions
 {
     public static class DynamoDbExtensions
     {

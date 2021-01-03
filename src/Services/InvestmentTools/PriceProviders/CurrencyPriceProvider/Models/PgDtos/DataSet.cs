@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CurrencyPriceProvider.Models.PgDtos
+﻿namespace CurrencyPriceProvider.Models.PgDtos
 {
     public class DataSet
     {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace CurrencyPriceProvider.Models
+namespace PriceProviders.Shared.Models
 {
     [DynamoDBTable("DailyInvestmentToolPrices")]
     public class DailyInvestmentToolPrices<T> where T:InvestmentToolPrice

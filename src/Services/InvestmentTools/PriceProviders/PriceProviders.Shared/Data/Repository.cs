@@ -1,33 +1,35 @@
 ﻿using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
-using Amazon.Lambda.Core;
-using CurrencyPriceProvider.Abstractions;
-using CurrencyPriceProvider.Extensions;
-using CurrencyPriceProvider.Models;
+using Microsoft.Extensions.Logging;
+using PriceProviders.Shared.Abstractions;
+using PriceProviders.Shared.Extensions;
+using PriceProviders.Shared.Models;
 using System;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace CurrencyPriceProvider.Data
+namespace PriceProviders.Shared.Data
 {
     public class Repository<T> : IRepository<T> where T:InvestmentToolPrice
     {
         private readonly IAmazonDynamoDB _dynamoDb;
         private readonly IDynamoDBContext _context;
+        private readonly ILogger<Repository<T>> _logger;
 
         private const string TableNameDailyPrice = "DailyInvestmentToolPrices";
         private const string TableNamePriceTimeSeries = "PriceTimeSeries";
 
-        public Repository(IAmazonDynamoDB dynamoDb, IDynamoDBContext context)
+        public Repository(IAmazonDynamoDB dynamoDb, IDynamoDBContext context, ILogger<Repository<T>> logger)
         {
             _dynamoDb = dynamoDb;
             _context = context;
+            _logger = logger;
         }
         public async Task SavePriceAsync(T currentPrice)
         {
             try
             {
-                LambdaLogger.Log("Saving current price...");
+                _logger.LogInformation("Saving current price...");
                 /*
                  * 1. Find the document with price date and investment tool
                  * 2. Update Today Price
@@ -35,13 +37,11 @@ namespace CurrencyPriceProvider.Data
                  * 4. If search is unsuccessful, create new document
                  */
                 var priceId = currentPrice.ToDynamoDbDateId();
-                LambdaLogger.Log("priceID = " + priceId);
-
-                var dailyPrice = await _context.LoadAsync<DailyInvestmentToolPrices<T>>(priceId);
-
+                _logger.LogInformation("priceID = " + priceId);
+                var dailyPrice = _context.LoadAsync<DailyInvestmentToolPrices<T>>(priceId).Result;
                 if (dailyPrice == null)
                 {
-                    LambdaLogger.Log("Could not find the price. Adding first time for the new day...");
+                    _logger.LogInformation("Could not find the price. Adding first time for the new day...");
                     dailyPrice = new DailyInvestmentToolPrices<T>
                     {
                         PriceDate = currentPrice.PriceDate.ToDynamoDbDate(),
@@ -56,15 +56,15 @@ namespace CurrencyPriceProvider.Data
                         LastUpdateTime = DateTime.Now.ToDynamoDbDateTime()
                     };
                     await _context.SaveAsync(dailyPrice);
-                    LambdaLogger.Log("New date is successfully saved");
+                    _logger.LogInformation("New date is successfully saved.");
                 }
                 else
                 {
-                    LambdaLogger.Log("Found daily price. Updating the item...");
+                    _logger.LogInformation("Found daily price. Updating the item...");
                     dailyPrice.Price = currentPrice;
                     dailyPrice.LastUpdateTime = DateTime.Now.ToDynamoDbDateTime();
-                    await _context.SaveAsync(dailyPrice);
-                    LambdaLogger.Log("New date is successfully saved");
+                    _context.SaveAsync(dailyPrice).GetAwaiter();
+                    _logger.LogInformation("New date is successfully saved.");
                 }
                 var priceTimeSeries = new PriceTimeSeries<T>
                 {
@@ -74,11 +74,11 @@ namespace CurrencyPriceProvider.Data
                     Price = currentPrice
                 };
                 await _context.SaveAsync(priceTimeSeries);
-                LambdaLogger.Log("Current price is saved to database");
+                _logger.LogInformation("Current price is saved to database.");
             }
             catch (Exception e)
             {
-                LambdaLogger.Log("Error occured while saving the current foreign price: " + e.Message);
+                _logger.LogError("Error occured while saving the current foreign price: " + e.Message);
                 throw e;
             }
         }

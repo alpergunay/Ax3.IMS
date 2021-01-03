@@ -5,6 +5,7 @@ using AutoMapper;
 using CurrencyPriceProvider.Models;
 using CurrencyPriceProvider.Models.PgDtos;
 using Epoch.net;
+using PriceProviders.Shared.Models;
 
 namespace CurrencyPriceProvider.Configuration
 {

@@ -1,15 +1,14 @@
-﻿using CurrencyPriceProvider.Abstractions;
-using CurrencyPriceProvider.Models;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+﻿using Amazon.Lambda.Core;
+using AutoMapper;
+using CurrencyPriceProvider.Models.PgDtos;
+using Newtonsoft.Json;
+using PriceProviders.Shared.Abstractions;
+using PriceProviders.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Amazon.Lambda.Core;
-using CurrencyPriceProvider.Models.PgDtos;
-using AutoMapper;
-using Newtonsoft.Json;
+using Microsoft.Extensions.Logging;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace CurrencyPriceProvider.Implementations
@@ -18,10 +17,12 @@ namespace CurrencyPriceProvider.Implementations
     {
         private static HttpClient _client;
         private readonly IMapper _mapper;
-        public PriceFromPgp(IMapper mapper)
+        private readonly ILogger<T> _logger;
+        public PriceFromPgp(IMapper mapper, ILogger<T> logger)
         {
             _client = new HttpClient();
             _mapper = mapper;
+            _logger = logger;
         }
 
         public Task<List<T>> GetHistoricalPrices(string investmentToolCode, DateTime startDate, DateTime endDate)
@@ -29,43 +30,34 @@ namespace CurrencyPriceProvider.Implementations
             throw new NotImplementedException();
         }
 
-        public List<string> GetInvestmentToolCodes()
-        {
-            //TODO: Get list with API Call
-            var list = new List<string> {"USD", "EUR"};
-            return list;
-        }
-
         public async Task<T> GetCurrentPrice(string investmentToolCode, string url)
         {
-            LambdaLogger.Log("Url is : " + url);
+            _logger.LogInformation("Url is : " + url);
             if (string.IsNullOrEmpty(url))
             {
-                LambdaLogger.Log("Could not find Paragaranti Url to retrieve current foreign currency price");
+                _logger.LogInformation("Could not find Paragaranti Url to retrieve current foreign currency price");
                 throw new ArgumentNullException(nameof(url));
             }
             T pgPrice = null;
             try
             {
-                LambdaLogger.Log("Calling provider's endpoint...");
+                _logger.LogInformation("Calling provider's endpoint...");
                 HttpResponseMessage response = await _client.GetAsync(url + investmentToolCode);
                 if (response.IsSuccessStatusCode)
                 {
-                    LambdaLogger.Log("Succesfully took prices from provider...");
+                    _logger.LogInformation("Succesfully took prices from provider...");
                     var pgForeignCurrencyStream = response.Content.ReadAsStreamAsync();
-                    LambdaLogger.Log("Serializing prices...");
+                    _logger.LogInformation("Serializing prices...");
                     var pgPriceDto = await JsonSerializer.DeserializeAsync<PgForeignCurrencyCurrentPriceDto>(await pgForeignCurrencyStream);
-                    LambdaLogger.Log("Mapping prices...");
+                    _logger.LogInformation("Mapping prices...");
                     pgPrice = _mapper.Map<T>(pgPriceDto, o => o.Items["CurrencyCode"] = investmentToolCode);
-                    var obj = JsonConvert.SerializeObject(pgPrice);
-                    LambdaLogger.Log(obj);
                 }
             }
             catch (Exception ex)
             {
-                LambdaLogger.Log($"Unexpected error occured while getting {investmentToolCode} price." + ex.Message);
+                _logger.LogError($"Unexpected error occured while getting {investmentToolCode} price." + ex.Message);
             }
-            LambdaLogger.Log("Completed.");
+            _logger.LogInformation("Completed.");
             return pgPrice;
         }
     }
