@@ -37,7 +37,4 @@
 		<ProjectReference Include="..\..\..\..\Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus\Ax3.IMS.Infrastructure.EventBus.csproj" />
 		<ProjectReference Include="..\PriceProviders.Shared\PriceProviders.Shared.csproj" />
 	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Models\" />
-	</ItemGroup>
 </Project>

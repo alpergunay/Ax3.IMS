@@ -1,10 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Reflection;
-using System.Text.Json;
-using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.Lambda.Core;
@@ -15,6 +8,9 @@ using Ax3.IMS.Infrastructure.EventBus;
 using Ax3.IMS.Infrastructure.EventBus.Abstractions;
 using Ax3.IMS.Infrastructure.EventBus.EFEventStore.Services;
 using Ax3.IMS.Infrastructure.EventBus.RabbitMQ;
+using CurrencyPriceProvider.Configuration;
+using CurrencyPriceProvider.Events;
+using CurrencyPriceProvider.Implementations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,11 +19,21 @@ using PriceProviders.Shared.Abstractions;
 using PriceProviders.Shared.Data;
 using PriceProviders.Shared.Models;
 using RabbitMQ.Client;
+using Serilog;
+using Serilog.Formatting.Compact;
+using Serilog.Sinks.AwsCloudWatch;
+using System;
+using System.Collections.Generic;
+using System.Data.Common;
+using System.Reflection;
+using System.Text.Json;
+using System.Threading.Tasks;
+using ILogger = Serilog.ILogger;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
-namespace GoldPriceProvider
+namespace CurrencyPriceProvider
 {
     public class Function
     {
@@ -49,73 +55,94 @@ namespace GoldPriceProvider
             _serviceCollection.AddCustomConfiguration(configuration);
             _serviceCollection.AddCustomIntegrations();
             _serviceCollection.AddEventBus();
-            _serviceCollection.AddTransient<IPrice<ForeignCurrencyPrice>, PriceFromPgp<ForeignCurrencyPrice>>();
-            _serviceCollection.AddAutoMapper(mce => { mce.AddProfile<DtoToDomainMapperProfile>(); },
-                typeof(Function).GetTypeInfo().Assembly);
-            _serviceCollection.AddTransient<App>();
             _serviceCollection.AddDefaultAWSOptions(configuration.GetAWSOptions());
             _serviceCollection.AddSingleton<IConfiguration>(configuration);
             _serviceCollection.AddAWSService<IAmazonDynamoDB>();
             _serviceCollection.AddTransient<IDynamoDBContext, DynamoDBContext>();
             _serviceCollection.AddTransient<IRepository<ForeignCurrencyPrice>, Repository<ForeignCurrencyPrice>>();
+            _serviceCollection.AddLogging(config =>
+            {
+                config.ClearProviders();
+                config.AddSerilog(GetLogger(configuration), true);
+            });
+            _serviceCollection.AddTransient<IPrice<ForeignCurrencyPrice>, PriceFromPgp<ForeignCurrencyPrice>>();
+            _serviceCollection.AddAutoMapper(mce =>
+            {
+                mce.AddProfile<DtoToDomainMapperProfile>();
+            }, typeof(Function).GetTypeInfo().Assembly);
+            _serviceCollection.AddTransient<App>();
         }
-
+        private static ILogger GetLogger(IConfiguration configuration)
+        {
+            var options = new CloudWatchSinkOptions
+            {
+                TextFormatter = new CompactJsonFormatter()
+            };
+            return new LoggerConfiguration()
+                .ReadFrom.Configuration(configuration)
+                .Enrich.FromLogContext()
+                .CreateLogger();
+        }
         /// <summary>
-        /// A simple function that takes a string and does a ToUpper
+        /// Save current price to database and publish an integration event.
         /// </summary>
-        /// <param name="input"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public async Task<string> FunctionHandler(string input, ILambdaContext context)
+        public async Task<string> FunctionHandler(ILambdaContext context)
         {
             await using var serviceProvider = _serviceCollection.BuildServiceProvider();
             return await serviceProvider.GetService<App>().Run();
         }
-
-        public class App
+    }
+    public class App
+    {
+        private readonly IPrice<ForeignCurrencyPrice> _pgpPriceProvider;
+        private readonly IRepository<ForeignCurrencyPrice> _repository;
+        private readonly IEventBus _eventBus;
+        private readonly ILogger<App> _logger;
+        public App(IPrice<ForeignCurrencyPrice> priceProvider,
+            IRepository<ForeignCurrencyPrice> repository,
+            IEventBus eventBus, ILogger<App> logger)
         {
-            private readonly IPrice<ForeignCurrencyPrice> _pgpPriceProvider;
-            private readonly IRepository<ForeignCurrencyPrice> _repository;
-
-            public App(IPrice<ForeignCurrencyPrice> priceProvider, IRepository<ForeignCurrencyPrice> repository)
+            _pgpPriceProvider = priceProvider;
+            _repository = repository;
+            _eventBus = eventBus;
+            _logger = logger;
+        }
+        public async Task<string> Run()
+        {
+            try
             {
-                _pgpPriceProvider = priceProvider;
-                _repository = repository;
+                var currencies = JsonSerializer.Deserialize<List<InvestmentTool>>(Environment.GetEnvironmentVariable("currencies"), new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                });
+                var url = Environment.GetEnvironmentVariable("url");
+
+                if (currencies == null || currencies.Count <= 0 || string.IsNullOrEmpty(url)) return "OK";
+                foreach (var currency in currencies)
+                {
+                    _logger.LogInformation($"Getting prices from provider for {currency.Code}...");
+                    var currentPrice = await _pgpPriceProvider.GetCurrentPrice(currency.Code, url);
+                    currentPrice.InvestmentTool = currency;
+                    _logger.LogInformation($"Publishing integration event{nameof(ForeignCurrencyPriceChangedIntegrationEvent)}...");
+                    var foreignPriceChangedIntegrationEvent = new ForeignCurrencyPriceChangedIntegrationEvent(currentPrice.Id,
+                        currentPrice.PriceDate, currentPrice.Hour, currentPrice.Minute, currentPrice.CurrencyCode, currentPrice.SalesPrice,
+                        currentPrice.BuyingPrice, currentPrice.OpeningPrice, currentPrice.ClosingPrice, currentPrice.HighestPrice,
+                        currentPrice.LowestPrice);
+                    _eventBus.Publish(foreignPriceChangedIntegrationEvent);
+                    _logger.LogInformation("Saving price to DynamoDb...");
+                    _repository.SavePriceAsync(currentPrice).GetAwaiter();
+                }
+                return "OK";
             }
-
-            public async Task<string> Run()
+            catch (Exception e)
             {
-                try
-                {
-                    var currencies = JsonSerializer.Deserialize<List<InvestmentTool>>(
-                        Environment.GetEnvironmentVariable("currencies"), new JsonSerializerOptions
-                        {
-                            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                        });
-                    var url = Environment.GetEnvironmentVariable("url");
-
-                    if (currencies == null || currencies.Count <= 0 || string.IsNullOrEmpty(url)) return "OK";
-                    foreach (var currency in currencies)
-                    {
-                        LambdaLogger.Log($"Getting prices from provider for {currency.Code}...");
-                        var currentPrice = await _pgpPriceProvider.GetCurrentPrice(currency.Code, url);
-                        currentPrice.InvestmentTool = currency;
-                        LambdaLogger.Log(currentPrice.ToString() + " CurrentPrice Is : " + currentPrice.BuyingPrice);
-                        await _repository.SavePriceAsync(currentPrice);
-                    }
-
-                    return "OK";
-                }
-                catch (Exception e)
-                {
-                    LambdaLogger.Log("Unexpected exception." + e.Message);
-                    throw;
-                }
-
+                _logger.LogError("Unexpected exception." + e.Message);
+                throw;
             }
         }
     }
-
     internal static class CustomExtensionsMethods
     {
         private static ApplicationSettings _settings;
@@ -132,17 +159,20 @@ namespace GoldPriceProvider
             services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
             {
                 var rabbitMqPersistentConnection = sp.GetRequiredService<IRabbitMQPersistentConnection>();
-                var iLifetimeScope = sp.GetRequiredService<ILifetimeScope>();
+
+                var builder = new ContainerBuilder();
+                var container = builder.Build();
+                using var iLifetimeScope = container.BeginLifetimeScope();
+
                 var logger = sp.GetRequiredService<ILogger<EventBusRabbitMQ>>();
                 var eventBusSubscriptionManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
-
                 var retryCount = 5;
                 if (!string.IsNullOrEmpty(_settings.ServiceBus.RetryCount))
                 {
                     retryCount = int.Parse(_settings.ServiceBus.RetryCount);
                 }
-
-                return new EventBusRabbitMQ(rabbitMqPersistentConnection, logger, iLifetimeScope, eventBusSubscriptionManager, subscriptionClientName, retryCount);
+                return new EventBusRabbitMQ(rabbitMqPersistentConnection, logger, iLifetimeScope,
+                    eventBusSubscriptionManager, subscriptionClientName, retryCount);
             });
             services.AddSingleton<IEventBusSubscriptionsManager, InMemoryEventBusSubscriptionsManager>();
             return services;
@@ -158,7 +188,6 @@ namespace GoldPriceProvider
             services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
             {
                 var logger = sp.GetRequiredService<ILogger<DefaultRabbitMQPersistentConnection>>();
-
                 var uriBuilder = new UriBuilder(_settings.ServiceBus.RabbitMQUrl)
                 {
                     Scheme = _settings.ServiceBus.Scheme,
@@ -173,12 +202,10 @@ namespace GoldPriceProvider
                 {
                     factory.UserName = _settings.ServiceBus.RabbitUsername;
                 }
-
                 if (!string.IsNullOrEmpty(_settings.ServiceBus.RabbitPassword))
                 {
                     factory.Password = _settings.ServiceBus.RabbitPassword;
                 }
-
                 var retryCount = 5;
                 if (!string.IsNullOrEmpty(_settings.ServiceBus.RetryCount))
                 {

@@ -110,6 +110,7 @@ namespace Ims.Api
         {
             var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
             eventBus.Subscribe<UserCreatedIntegrationEvent, IIntegrationEventHandler<UserCreatedIntegrationEvent>>();
+            eventBus.Subscribe<ForeignCurrencyPriceChangedIntegrationEvent, IIntegrationEventHandler<ForeignCurrencyPriceChangedIntegrationEvent>>();
         }
         protected virtual void ConfigureAuth(IApplicationBuilder app)
         {
