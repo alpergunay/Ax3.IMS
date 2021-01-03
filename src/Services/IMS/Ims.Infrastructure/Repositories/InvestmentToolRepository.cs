@@ -22,5 +22,10 @@ namespace Ims.Infrastructure.Repositories
             return store;
         }
 
+        public async Task<InvestmentTool> FindByCodeAsync(string investmentToolCode)
+        {
+            var tool = await Context.InvestmentTools.FirstOrDefaultAsync(t => t.Code == investmentToolCode);
+            return tool;
+        }
     }
 }

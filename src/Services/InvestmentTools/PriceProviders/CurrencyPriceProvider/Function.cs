@@ -127,7 +127,7 @@ namespace CurrencyPriceProvider
                     currentPrice.InvestmentTool = currency;
                     _logger.LogInformation($"Publishing integration event{nameof(ForeignCurrencyPriceChangedIntegrationEvent)}...");
                     var foreignPriceChangedIntegrationEvent = new ForeignCurrencyPriceChangedIntegrationEvent(currentPrice.Id,
-                        currentPrice.PriceDate, currentPrice.Hour, currentPrice.Minute, currentPrice.CurrencyCode, currentPrice.SalesPrice,
+                        currentPrice.PriceDate, currentPrice.Hour, currentPrice.Minute, currentPrice.InvestmentTool.Code, currentPrice.SalesPrice,
                         currentPrice.BuyingPrice, currentPrice.OpeningPrice, currentPrice.ClosingPrice, currentPrice.HighestPrice,
                         currentPrice.LowestPrice);
                     _eventBus.Publish(foreignPriceChangedIntegrationEvent);

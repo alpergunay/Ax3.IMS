@@ -1,5 +1,6 @@
 ﻿using Ax3.IMS.Domain.Types;
 using System;
+using Ax3.IMS.Infrastructure.Core.Exception;
 
 namespace Ims.Domain.DomainModels
 {
@@ -19,6 +20,15 @@ namespace Ims.Domain.DomainModels
         {
             PriceDate = priceDate;
             InvestmentToolId = investmentToolId;
+            SalesPrice = salesPrice;
+            BuyingPrice = buyingPrice;
+        }
+
+        public void UpdatePrices(double salesPrice, double buyingPrice)
+        {
+            if(salesPrice <=0 || buyingPrice<=0)
+                throw new DomainException("Sales Price or Buying Price cannot be less than 0");
+
             SalesPrice = salesPrice;
             BuyingPrice = buyingPrice;
         }
