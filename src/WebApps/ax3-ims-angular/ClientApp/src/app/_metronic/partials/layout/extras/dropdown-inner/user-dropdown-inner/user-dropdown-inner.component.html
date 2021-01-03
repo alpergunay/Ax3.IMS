@@ -3,13 +3,13 @@
     <div class="d-flex align-items-center p-8 rounded-top">
       <!--begin::Symbol-->
       <div class="symbol symbol-md bg-light-primary mr-3 flex-shrink-0">
-        <img src="../ClientApp/src/assets/media/users/100_11.jpg" alt="" />
+        <img src="../../../../../../../assets/media/users/default.jpg" alt="" />
       </div>
       <!--end::Symbol-->
 
       <!--begin::Text-->
       <div class="text-dark m-0 flex-grow-1 mr-3 font-size-h5">
-        {{ userName }}
+        {{ userName }} {{ userSurname }}
       </div>
       <!--end::Text-->
     </div>
@@ -26,7 +26,7 @@
         </div>
         <div class="navi-text">
           <div class="font-weight-bold">
-            My Profile
+            <a routerLink="/user" routerLinkActive="active">My Profile</a>
           </div>
         </div>
       </div>

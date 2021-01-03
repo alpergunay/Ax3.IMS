@@ -1655,6 +1655,8 @@
     <TypeScriptCompile Include="ClientApp\src\app\modules\accounts\accounts-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modules\assets\assets-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modules\transactions\transactions-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\pages\user\user.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\pages\user\user.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\base\base-lookup.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\components\page-template\remote-operations.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\account\account-lookup.model.ts" />
@@ -1666,6 +1668,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\transaction-type-enum.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\transaction\buy-sell.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\transaction\invest.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\user.model.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

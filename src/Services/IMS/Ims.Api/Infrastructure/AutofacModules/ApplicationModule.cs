@@ -58,6 +58,9 @@ namespace Ims.Api.Infrastructure.AutofacModules
             builder.RegisterType<UserRepository>()
                 .As<IUserRepository>()
                 .InstancePerLifetimeScope();
+            builder.RegisterType<InvestmentToolPriceRepository>()
+                .As<IInvestmentToolPriceRepository>()
+                .InstancePerLifetimeScope();
 
             builder.Register(c => new ImsQueries(QueriesConnectionString))
                 .As<IImsQueries>()

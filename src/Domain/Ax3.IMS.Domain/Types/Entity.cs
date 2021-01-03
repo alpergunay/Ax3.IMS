@@ -16,7 +16,7 @@ namespace Ax3.IMS.Domain.Types
         /// <summary>
         /// id in string format
         /// </summary>
-        public Guid Id { get; set; }
+        public virtual Guid Id { get; set; }
 
         /// <summary>
         /// create date

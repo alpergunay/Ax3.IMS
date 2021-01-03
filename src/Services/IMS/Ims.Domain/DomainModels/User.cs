@@ -14,9 +14,11 @@ namespace Ims.Domain.DomainModels
         public Family Family { get; private set; }
         public Guid? LocalCurrencyId { get; private set; }
         public InvestmentTool LocalCurrency { get; set; }
+        public Guid? CountryId { get; private set; }
+        public Country Country { get; set; }
 
         public User(Guid id, string userName, string name, string surname, Guid? familyId, string mobile,
-            string email, Guid? localCurrencyId) : base(id)
+            string email, Guid? localCurrencyId, Guid? countryId) : base(id)
         {
             UserName = userName;
             Name = name;
@@ -25,6 +27,7 @@ namespace Ims.Domain.DomainModels
             Mobile = mobile;
             Email = email;
             LocalCurrencyId = localCurrencyId;
+            CountryId = countryId;
         }
 
         public void SetLocalCurrencyId(Guid investmentToolId)

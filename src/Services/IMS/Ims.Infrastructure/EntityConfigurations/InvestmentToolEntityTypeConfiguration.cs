@@ -29,6 +29,13 @@ namespace Ims.Infrastructure.EntityConfigurations
                 .IsRequired();
 
             builder
+                .Property<string>("Symbol")
+                .UsePropertyAccessMode(PropertyAccessMode.Field)
+                .HasColumnName("Symbol")
+                .HasMaxLength(200)
+                .IsRequired();
+
+            builder
                 .Property("InvestmentToolTypeId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("InvestmentToolTypeId")
@@ -37,6 +44,16 @@ namespace Ims.Infrastructure.EntityConfigurations
             builder.HasOne(p => p.InvestmentToolType)
                 .WithMany()
                 .HasForeignKey("InvestmentToolTypeId");
+
+            builder
+                .Property("CountryId")
+                .UsePropertyAccessMode(PropertyAccessMode.Field)
+                .HasColumnName("CountryId")
+                .IsRequired(false);
+
+            builder.HasOne(p => p.Country)
+                .WithMany()
+                .HasForeignKey("CountryId");
         }
     }
 }

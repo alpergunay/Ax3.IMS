@@ -207,6 +207,58 @@ namespace Ims.Infrastructure.Migrations
                     b.ToTable("account_types","ims");
                 });
 
+            modelBuilder.Entity("Ims.Domain.DomainModels.Country", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Code")
+                        .HasColumnName("code")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnName("created_on")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Creator")
+                        .HasColumnName("creator")
+                        .HasColumnType("text");
+
+                    b.Property<Guid?>("InvestmentToolId")
+                        .HasColumnName("investment_tool_id")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("InvestmentToolId1")
+                        .HasColumnName("investment_tool_id1")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnName("is_deleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("ModifiedOn")
+                        .HasColumnName("modified_on")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Modifier")
+                        .HasColumnName("modifier")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasColumnName("name")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id")
+                        .HasName("pk_countries");
+
+                    b.HasIndex("InvestmentToolId1")
+                        .HasName("ix_countries_investment_tool_id1");
+
+                    b.ToTable("countries");
+                });
+
             modelBuilder.Entity("Ims.Domain.DomainModels.DirectionType", b =>
                 {
                     b.Property<int>("EnumId")
@@ -306,6 +358,10 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnType("character varying(20)")
                         .HasMaxLength(20);
 
+                    b.Property<Guid?>("CountryId")
+                        .HasColumnName("country_id")
+                        .HasColumnType("uuid");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnName("created_on")
                         .HasColumnType("timestamp without time zone");
@@ -338,8 +394,17 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnType("character varying(200)")
                         .HasMaxLength(200);
 
+                    b.Property<string>("Symbol")
+                        .IsRequired()
+                        .HasColumnName("symbol")
+                        .HasColumnType("character varying(200)")
+                        .HasMaxLength(200);
+
                     b.HasKey("Id")
                         .HasName("pk_investment_tools");
+
+                    b.HasIndex("CountryId")
+                        .HasName("ix_investment_tools_country_id");
 
                     b.HasIndex("InvestmentToolTypeId")
                         .HasName("ix_investment_tools_investment_tool_type_id");
@@ -648,6 +713,10 @@ namespace Ims.Infrastructure.Migrations
                         .HasColumnName("id")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid?>("CountryId")
+                        .HasColumnName("country_id")
+                        .HasColumnType("uuid");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnName("created_on")
                         .HasColumnType("timestamp without time zone");
@@ -708,6 +777,9 @@ namespace Ims.Infrastructure.Migrations
                     b.HasKey("Id")
                         .HasName("pk_users");
 
+                    b.HasIndex("CountryId")
+                        .HasName("ix_users_country_id");
+
                     b.HasIndex("FamilyId")
                         .HasName("ix_users_family_id");
 
@@ -765,8 +837,21 @@ namespace Ims.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Ims.Domain.DomainModels.Country", b =>
+                {
+                    b.HasOne("Ims.Domain.DomainModels.InvestmentTool", "InvestmentTool")
+                        .WithMany()
+                        .HasForeignKey("InvestmentToolId1")
+                        .HasConstraintName("fk_countries_investment_tools_investment_tool_id1");
+                });
+
             modelBuilder.Entity("Ims.Domain.DomainModels.InvestmentTool", b =>
                 {
+                    b.HasOne("Ims.Domain.DomainModels.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .HasConstraintName("fk_investment_tools_countries_country_id");
+
                     b.HasOne("Ims.Domain.DomainModels.InvestmentToolType", "InvestmentToolType")
                         .WithMany()
                         .HasForeignKey("InvestmentToolTypeId")
@@ -817,6 +902,11 @@ namespace Ims.Infrastructure.Migrations
 
             modelBuilder.Entity("Ims.Domain.DomainModels.User", b =>
                 {
+                    b.HasOne("Ims.Domain.DomainModels.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .HasConstraintName("fk_users_countries_country_id");
+
                     b.HasOne("Ims.Domain.DomainModels.Family", "Family")
                         .WithMany()
                         .HasForeignKey("FamilyId")
