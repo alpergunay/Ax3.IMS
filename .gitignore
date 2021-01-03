@@ -329,3 +329,5 @@ launchSettings.json
 
 
 
+/src/Services/InvestmentTools/PriceProviders/CurrencyPriceProvider/appsettings.json
+/src/Services/InvestmentTools/PriceProviders/GoldPriceProvider/appsettings.json
