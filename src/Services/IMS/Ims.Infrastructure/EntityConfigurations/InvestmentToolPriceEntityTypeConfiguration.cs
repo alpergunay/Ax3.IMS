@@ -13,21 +13,21 @@ namespace Ims.Infrastructure.EntityConfigurations
             base.ConfigureForEntity(builder);
 
             builder
-                .Property<DateTime>("_priceDate")
+                .Property<DateTime>("PriceDate")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("PriceDate")
                 .HasMaxLength(25)
                 .IsRequired();
 
             builder
-                .Property<double>("_salesPrice")
+                .Property<double>("SalesPrice")
                 .HasColumnType("decimal(18, 6)")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("SalesPrice")
                 .IsRequired();
 
             builder
-                .Property<double>("_buyingPrice")
+                .Property<double>("BuyingPrice")
                 .HasColumnType("decimal(18, 6)")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("BuyingPrice")
@@ -35,14 +35,14 @@ namespace Ims.Infrastructure.EntityConfigurations
                 .IsRequired();
 
             builder
-                .Property("_investmentToolId")
+                .Property("InvestmentToolId")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("InvestmentToolId")
                 .IsRequired();
 
             builder.HasOne(p => p.InvestmentTool)
                 .WithMany()
-                .HasForeignKey("_investmentToolId");
+                .HasForeignKey("InvestmentToolId");
 
         }
     }

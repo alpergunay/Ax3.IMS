@@ -1,27 +1,23 @@
 ﻿using System;
 using Ax3.IMS.Infrastructure.EventBus.Events;
 
-namespace Web.API.Application.Modules.Infrastructure.IntegrationEvents.Events
+namespace Ims.Api.Application.Modules.Infrastructure.IntegrationEvents.Events
 {
     public class UserCreatedIntegrationEvent : IntegrationEvent
     {
-        public Guid UserId { get; set; }
-        public string Username { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public Guid RequestId { get; set; }
+        public Guid UserId { get; private set; }
+        public string UserName { get; private set; }
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
+        public string Email { get; private set; }
 
-        public UserCreatedIntegrationEvent(Guid id, string username, string name, string surname, string email, string password, Guid requestId)
+        public UserCreatedIntegrationEvent(Guid userId, string userName, string name, string surname, string email)
         {
-            UserId = id;
-            Username = username;
+            UserId = userId;
+            UserName = userName;
             Name = name;
             Surname = surname;
-            RequestId = requestId;
             Email = email;
-            Password = password;
         }
     }
 }

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
 using Ax3.IMS.Domain.Types;
 using Ims.Domain.Exceptions;
-using Microsoft.EntityFrameworkCore;
 
 namespace Ims.Domain.DomainModels
 {
@@ -12,14 +8,19 @@ namespace Ims.Domain.DomainModels
     {
         public string Code { get; private set; }
         public string Name { get; private set; }
+        public string Symbol { get; set; }
         public int InvestmentToolTypeId { get; private set; }
         public InvestmentToolType InvestmentToolType { get; set; }
+        public Guid? CountryId { get; set; }
+        public Country Country { get; set; }
 
-        public InvestmentTool(string code, string name, int investmentToolTypeId)
+        public InvestmentTool(string code, string name, string symbol, int investmentToolTypeId, Guid? countryId)
         {
             Code = code;
             Name = !string.IsNullOrWhiteSpace(name) ? name : throw new ImsDomainException(nameof(name));
             InvestmentToolTypeId = investmentToolTypeId;
+            Symbol = symbol;
+            CountryId = countryId;
         }
 
         public void Update(string code, string name)

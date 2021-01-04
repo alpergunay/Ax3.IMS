@@ -1,4 +1,6 @@
 using Autofac;
+using AutoMapper;
+using Ax3.IMS.DataAccess.EntityFramework.Interceptors;
 using Ax3.IMS.Infrastructure.Configuration.Settings;
 using Ax3.IMS.Infrastructure.Core.Http.Filters;
 using Ax3.IMS.Infrastructure.EventBus;
@@ -9,11 +11,16 @@ using Ax3.IMS.Infrastructure.EventBus.RabbitMQ;
 using CacheManager.Core;
 using EFCoreSecondLevelCacheInterceptor;
 using FluentValidation.AspNetCore;
+using HealthChecks.UI.Client;
 using Ims.Api.Application.Modules.Infrastructure.IntegrationEvents;
+using Ims.Api.Application.Modules.Infrastructure.IntegrationEvents.Events;
+using Ims.Api.Application.Modules.Infrastructure.Mapper;
 using Ims.Api.Controllers;
+using Ims.Api.Infrastructure.AutofacModules;
 using Ims.Api.Services;
 using Ims.Infrastructure;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +28,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.OpenApi.Models;
@@ -32,13 +38,6 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
-using System.Security.Authentication;
-using AutoMapper;
-using Ax3.IMS.DataAccess.EntityFramework.Interceptors;
-using HealthChecks.UI.Client;
-using Ims.Api.Application.Modules.Infrastructure.Mapper;
-using Ims.Api.Infrastructure.AutofacModules;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 namespace Ims.Api
 {
@@ -109,10 +108,9 @@ namespace Ims.Api
         }
         private static void ConfigureEventBus(IApplicationBuilder app)
         {
-            app.ApplicationServices.GetRequiredService<IEventBus>();
-
-            //eventBus.Subscribe<VehicleModelCreatedIntegrationEvent, IIntegrationEventHandler<VehicleModelCreatedIntegrationEvent>>();
-            //Other integration events....
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+            eventBus.Subscribe<UserCreatedIntegrationEvent, IIntegrationEventHandler<UserCreatedIntegrationEvent>>();
+            eventBus.Subscribe<ForeignCurrencyPriceChangedIntegrationEvent, IIntegrationEventHandler<ForeignCurrencyPriceChangedIntegrationEvent>>();
         }
         protected virtual void ConfigureAuth(IApplicationBuilder app)
         {

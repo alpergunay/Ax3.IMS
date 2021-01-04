@@ -63,7 +63,7 @@ namespace Identity.Api.Data
             {
                 Email = "alpergunay@gmail.com",
                 Id = Guid.NewGuid(),
-                SurName = "Günay",
+                Surname = "Günay",
                 Name = "Alper",
                 PhoneNumber = "5382588142",
                 MobilePhoneNumber = "5382588142",

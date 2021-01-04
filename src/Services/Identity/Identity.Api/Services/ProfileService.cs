@@ -79,8 +79,8 @@ namespace Identity.Api.Services
             if (!string.IsNullOrWhiteSpace(user.Name))
                 claims.Add(new Claim("name", user.Name));
 
-            if (!string.IsNullOrWhiteSpace(user.SurName))
-                claims.Add(new Claim("last_name", user.SurName));
+            if (!string.IsNullOrWhiteSpace(user.Surname))
+                claims.Add(new Claim("last_name", user.Surname));
 
             if (_userManager.SupportsUserEmail)
             {

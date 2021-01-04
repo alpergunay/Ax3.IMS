@@ -16,7 +16,7 @@ namespace Ax3.IMS.Domain.Types
         /// <summary>
         /// id in string format
         /// </summary>
-        public Guid Id { get; set; }
+        public virtual Guid Id { get; set; }
 
         /// <summary>
         /// create date
@@ -48,6 +48,10 @@ namespace Ax3.IMS.Domain.Types
         public Entity()
         {
             Id = Guid.NewGuid();
+        }
+        public Entity(Guid id)
+        {
+            Id = id;
         }
 
         public Entity(Guid id, string creator)

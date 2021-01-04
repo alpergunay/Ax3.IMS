@@ -1,10 +1,12 @@
 --------
-D:\STORAGE\SOURCES\Ax3.IMS\src\Services\IMS\Ims.Api
-dotnet ef migrations add Initial -p ../Ims.Infrastructure  -o ../Ims.Api/Infrastructure/DatabaseMigrations -c ImsContext
+D:\STORAGE\SOURCES\Ax3.IMS\src\Services\IMS\Ims.Infrastructure
+❯ dotnet ef migrations add UserModelUpdate --startup-project ../Ims.Api  -o ./DatabaseMigrations -c ImsContext -v
 -------
 
 dotnet ef migrations add Initial_EFStore -p ../../../Infrastructure/EventBus/Ax3.IMS.Infrastructure.EventBus.EFEventStore  -o ../../../Services/IMS/Ims.Api/Infrastructure/DatabaseMigrations/IntegrationEventLog -c IntegrationEventLogContext -v
 
 
 
-dotnet ef migrations add AccountTransactionModelUpdate -p ../Ims.Api  -o ../Ims.Api/Infrastructure/DatabaseMigrations -c ImsContext -v
+--
+If there is a change on the ApplicationUser execute below command to create new migration from Identity.Api folder.
+dotnet ef migrations add InitialIdentityServerApplicationDbMigration -c ApplicationDbContext -o Data/Migrations/ApplicationDb --verbose

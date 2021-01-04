@@ -1,0 +1,42 @@
+<div class="modal-header">
+  <h5 class="modal-title">
+    User Settings
+  </h5>
+  <button aria-label="Close" class="close" type="button" (click)="clearClicked()">
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form form-label-right">
+    <div class="form-group row">
+      <label class="col-lg-12">
+        Country
+      </label>
+      <div class="col-lg-6">
+        <app-account-lookup
+          [selectedValue]="dataModel.accountId"
+          [selectedText]="dataModel.accountName"
+          (selectedData)="selectionChanged($event)">
+        </app-account-lookup>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-lg-12">
+        Currency
+      </label>
+      <div class="col-lg-6">
+        <app-account-lookup
+          [selectedValue]="dataModel.accountId"
+          [selectedText]="dataModel.accountName"
+          (selectedData)="selectionChanged($event)">
+        </app-account-lookup>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <dx-button class="btn btn-outline-primary float-right" text="Kaydet" (onClick)="saveClicked()"
+               icon="la la-save"></dx-button>
+    <dx-button class="btn btn-outline-danger float-right" text="Temizle" (onClick)="clearClicked()"
+               icon="la la-ban"></dx-button>
+  </div>
+</div>
+

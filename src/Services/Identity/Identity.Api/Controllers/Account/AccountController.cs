@@ -18,16 +18,15 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Ax3.IMS.Infrastructure.EventBus.Abstractions;
+using Ax3.IMS.Infrastructure.EventBus.RabbitMQ;
+using Identity.Api.IntegrationEvents.Events;
 using Identity.Api.Models;
+using Microsoft.Extensions.Logging;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace Identity.Api.Controllers.Account
 {
-    /// <summary>
-    /// This sample controller implements a typical login/logout/provision workflow for local and external accounts.
-    /// The login service encapsulates the interactions with the user data store. This data store is in-memory only and cannot be used for production!
-    /// The interaction service provides a way for the UI to communicate with identityserver for validation and context retrieval
-    /// </summary>
     [SecurityHeaders]
     [AllowAnonymous]
     public class AccountController : Controller
@@ -37,20 +36,28 @@ namespace Identity.Api.Controllers.Account
         private readonly IAuthenticationSchemeProvider _schemeProvider;
         private readonly IEventService _events;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IEventBus _eventBus;
+        private readonly ILogger<AccountController> _logger;
 
         public AccountController(
             IIdentityServerInteractionService interaction,
             IClientStore clientStore,
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager,
+            UserManager<ApplicationUser> userManager,
+            IEventBus eventBus,
+            ILogger<AccountController> logger)
         {
             _interaction = interaction;
             _clientStore = clientStore;
             _schemeProvider = schemeProvider;
             _events = events;
-
+            _userManager = userManager;
             _signInManager = signInManager;
+            _eventBus = eventBus;
+            _logger = logger;
         }
 
         /// <summary>
@@ -70,6 +77,7 @@ namespace Identity.Api.Controllers.Account
 
             return View(vm);
         }
+
 
         /// <summary>
         /// Handle postback from username/password login
@@ -230,12 +238,79 @@ namespace Identity.Api.Controllers.Account
         }
 
         [HttpGet]
+        [AllowAnonymous]
+        public IActionResult ForgotPassword(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult AccessDenied()
         {
             return View();
         }
 
+        // GET: /Account/Register
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Register(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
 
+        // POST: /Account/Register
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser
+                {
+                    UserName = model?.Email,
+                    Email = model?.Email,
+                    Name = model?.Name,
+                    Surname = model?.Surname
+                };
+                var result = await _userManager.CreateAsync(user, model?.Password).ConfigureAwait(false);
+                if (result.Errors.Any())
+                {
+                    AddErrors(result);
+                    // If we got this far, something failed, redisplay form
+                    return View(model);
+                }
+
+                //Inform Web.Api through service bus. 
+                var @event = new UserCreatedIntegrationEvent(user.Id, user.Email, user.Name, user.Surname, user.Email);
+                try
+                {
+                    _eventBus.Publish(@event);
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError(
+                        "An error occured while publishing integration event: {IntegrationEventId} from {AppName}",
+                        @event.Id, Program.AppName);
+                    throw;
+                }
+            }
+
+            if (returnUrl != null)
+            {
+                if (HttpContext.User.Identity.IsAuthenticated)
+                    return Redirect(returnUrl);
+                else
+                if (ModelState.IsValid)
+                    return RedirectToAction("login", "account", new { returnUrl });
+                else
+                    return View(model);
+            }
+            return RedirectToAction("index", "home");
+        }
         /*****************************************/
         /* helper APIs for the AccountController */
         /*****************************************/
@@ -365,6 +440,13 @@ namespace Identity.Api.Controllers.Account
             }
 
             return vm;
+        }
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
         }
     }
 }

@@ -97,7 +97,6 @@ namespace Identity.Api.Data.Migrations.ApplicationDb
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("MobilePhoneNumber")
-                        .IsRequired()
                         .HasColumnName("mobile_phone_number")
                         .HasColumnType("text");
 
@@ -132,9 +131,9 @@ namespace Identity.Api.Data.Migrations.ApplicationDb
                         .HasColumnName("security_stamp")
                         .HasColumnType("text");
 
-                    b.Property<string>("SurName")
+                    b.Property<string>("Surname")
                         .IsRequired()
-                        .HasColumnName("sur_name")
+                        .HasColumnName("surname")
                         .HasColumnType("text");
 
                     b.Property<bool>("TwoFactorEnabled")

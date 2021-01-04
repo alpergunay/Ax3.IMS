@@ -6,6 +6,9 @@ COPY ["Infrastructure/Configuration/Ax3.IMS.Infrastructure.Core.Configuration/Ax
 COPY ["Infrastructure/Core/Ax3.IMS.Core/Ax3.IMS.Infrastructure.Core.csproj", "Infrastructure/Core/Ax3.IMS.Core/Ax3.IMS.Infrastructure.Core.csproj"]
 COPY ["Infrastructure/Core/Ax3.IMS.Infrastructure.Core.Exception/Ax3.IMS.Infrastructure.Core.Exception.csproj", "Infrastructure/Core/Ax3.IMS.Infrastructure.Core.Exception/Ax3.IMS.Infrastructure.Core.Exception.csproj"]
 COPY ["Infrastructure/Core/Ax3.IMS.Infrastructure.Core.Http/Ax3.IMS.Infrastructure.Core.Http.csproj", "Infrastructure/Core/Ax3.IMS.Infrastructure.Core.Http/Ax3.IMS.Infrastructure.Core.Http.csproj"]
+COPY ["Infrastructure/EventBus/Ax3.IMS.Infrastructure.EventBus/Ax3.IMS.Infrastructure.EventBus.csproj", "Infrastructure/EventBus/Ax3.IMS.Infrastructure.EventBus/Ax3.IMS.Infrastructure.EventBus.csproj"]
+COPY ["Infrastructure/EventBus/Ax3.IMS.Infrastructure.EventBus.EFEventStore/Ax3.IMS.Infrastructure.EventBus.EFEventStore.csproj", "Infrastructure/EventBus/Ax3.IMS.Infrastructure.EventBus.EFEventStore/Ax3.IMS.Infrastructure.EventBus.EFEventStore.csproj"]
+COPY ["Infrastructure/EventBus/Ax3.IMS.Infrastructure.EventBus.RabbitMQ/Ax3.IMS.Infrastructure.EventBus.RabbitMQ.csproj", "Infrastructure/EventBus/Ax3.IMS.Infrastructure.EventBus.RabbitMQ/Ax3.IMS.Infrastructure.EventBus.RabbitMQ.csproj"]
 COPY ["Services/Identity/Identity.Api/Identity.Api.csproj", "Services/Identity/Identity.Api/Identity.Api.csproj"]
 RUN dotnet restore "Services\Identity\Identity.Api\Identity.Api.csproj"
 COPY . .

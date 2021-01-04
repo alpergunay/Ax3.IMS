@@ -14,6 +14,7 @@ export class UserDropdownInnerComponent implements OnInit {
   user$: Observable<UserModel>;
   authenticated = false;
   public userName = '';
+  public userSurname = '';
 
 
   constructor(private layout: LayoutService, private securityService: SecurityService) {
@@ -27,6 +28,7 @@ export class UserDropdownInnerComponent implements OnInit {
     if (this.authenticated) {
       if (this.securityService.UserData) {
         this.userName = this.securityService.UserData.name;
+        this.userSurname = this.securityService.UserData.last_name;
       }
     }
   }
