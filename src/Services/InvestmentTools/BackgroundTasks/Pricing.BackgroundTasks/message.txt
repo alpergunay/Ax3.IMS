@@ -1,0 +1,1 @@
+﻿{"XAU/USD":{"last":1846.69,"bid":1846.47,"ask":1846.91,"dailyChangePercentage":-0.0676}}

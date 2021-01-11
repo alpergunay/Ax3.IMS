@@ -55,7 +55,6 @@ namespace Ims.Api
         {
             IdentityModelEventSource.ShowPII = true;
             services
-                //.UseSerilogSinkConfiguration(CustomColoredConsole.SinkConfiguration)
                 .AddCustomMvc()
                 .AddCustomConfiguration(Configuration)
                 .AddCustomHealthChecks()
