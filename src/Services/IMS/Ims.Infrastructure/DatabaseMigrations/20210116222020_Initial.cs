@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Ims.Infrastructure.Migrations
+namespace Ims.Infrastructure.DatabaseMigrations
 {
     public partial class Initial : Migration
     {
@@ -132,36 +132,6 @@ namespace Ims.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "users",
-                schema: "ims",
-                columns: table => new
-                {
-                    id = table.Column<Guid>(nullable: false),
-                    creator = table.Column<string>(nullable: false),
-                    modifier = table.Column<string>(nullable: false),
-                    is_deleted = table.Column<bool>(nullable: false),
-                    created_on = table.Column<DateTime>(nullable: false),
-                    modified_on = table.Column<DateTime>(nullable: false),
-                    user_name = table.Column<string>(nullable: true),
-                    name = table.Column<string>(maxLength: 50, nullable: false),
-                    surname = table.Column<string>(maxLength: 50, nullable: false),
-                    mobile = table.Column<string>(maxLength: 20, nullable: false),
-                    email = table.Column<string>(maxLength: 100, nullable: false),
-                    family_id = table.Column<Guid>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("pk_users", x => x.id);
-                    table.ForeignKey(
-                        name: "fk_users_families_family_id",
-                        column: x => x.family_id,
-                        principalSchema: "ims",
-                        principalTable: "families",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "investment_tools",
                 schema: "ims",
                 columns: table => new
@@ -174,6 +144,7 @@ namespace Ims.Infrastructure.Migrations
                     modified_on = table.Column<DateTime>(nullable: false),
                     code = table.Column<string>(maxLength: 20, nullable: false),
                     name = table.Column<string>(maxLength: 200, nullable: false),
+                    symbol = table.Column<string>(maxLength: 200, nullable: false),
                     investment_tool_type_id = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -215,6 +186,33 @@ namespace Ims.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "countries",
+                schema: "ims",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(nullable: false),
+                    creator = table.Column<string>(nullable: false),
+                    modifier = table.Column<string>(nullable: false),
+                    is_deleted = table.Column<bool>(nullable: false),
+                    created_on = table.Column<DateTime>(nullable: false),
+                    modified_on = table.Column<DateTime>(nullable: false),
+                    code = table.Column<string>(maxLength: 50, nullable: false),
+                    name = table.Column<string>(maxLength: 255, nullable: false),
+                    investment_tool_id = table.Column<Guid>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_countries", x => x.id);
+                    table.ForeignKey(
+                        name: "fk_countries_investment_tools_investment_tool_id",
+                        column: x => x.investment_tool_id,
+                        principalSchema: "ims",
+                        principalTable: "investment_tools",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "investment_tool_prices",
                 schema: "ims",
                 columns: table => new
@@ -225,10 +223,10 @@ namespace Ims.Infrastructure.Migrations
                     is_deleted = table.Column<bool>(nullable: false),
                     created_on = table.Column<DateTime>(nullable: false),
                     modified_on = table.Column<DateTime>(nullable: false),
-                    investment_tool_id = table.Column<Guid>(nullable: false),
-                    buying_price = table.Column<decimal>(type: "decimal(18, 6)", maxLength: 25, nullable: false),
                     price_date = table.Column<DateTime>(maxLength: 25, nullable: false),
-                    sales_price = table.Column<decimal>(type: "decimal(18, 6)", nullable: false)
+                    investment_tool_id = table.Column<Guid>(nullable: false),
+                    sales_price = table.Column<decimal>(type: "decimal(18, 6)", nullable: false),
+                    buying_price = table.Column<decimal>(type: "decimal(18, 6)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -266,6 +264,52 @@ namespace Ims.Infrastructure.Migrations
                         principalTable: "stores",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "users",
+                schema: "ims",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(nullable: false),
+                    creator = table.Column<string>(nullable: false),
+                    modifier = table.Column<string>(nullable: false),
+                    is_deleted = table.Column<bool>(nullable: false),
+                    created_on = table.Column<DateTime>(nullable: false),
+                    modified_on = table.Column<DateTime>(nullable: false),
+                    user_name = table.Column<string>(nullable: true),
+                    name = table.Column<string>(maxLength: 50, nullable: false),
+                    surname = table.Column<string>(maxLength: 50, nullable: false),
+                    mobile = table.Column<string>(maxLength: 20, nullable: true),
+                    email = table.Column<string>(maxLength: 100, nullable: false),
+                    family_id = table.Column<Guid>(nullable: true),
+                    local_currency_id = table.Column<Guid>(nullable: true),
+                    country_id = table.Column<Guid>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("pk_users", x => x.id);
+                    table.ForeignKey(
+                        name: "fk_users_countries_country_id",
+                        column: x => x.country_id,
+                        principalSchema: "ims",
+                        principalTable: "countries",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "fk_users_families_family_id",
+                        column: x => x.family_id,
+                        principalSchema: "ims",
+                        principalTable: "families",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "fk_users_investment_tools_local_currency_id",
+                        column: x => x.local_currency_id,
+                        principalSchema: "ims",
+                        principalTable: "investment_tools",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -393,6 +437,12 @@ namespace Ims.Infrastructure.Migrations
                 column: "user_id");
 
             migrationBuilder.CreateIndex(
+                name: "ix_countries_investment_tool_id",
+                schema: "ims",
+                table: "countries",
+                column: "investment_tool_id");
+
+            migrationBuilder.CreateIndex(
                 name: "ix_investment_tool_prices_investment_tool_id",
                 schema: "ims",
                 table: "investment_tool_prices",
@@ -423,10 +473,22 @@ namespace Ims.Infrastructure.Migrations
                 column: "direction_type_id");
 
             migrationBuilder.CreateIndex(
+                name: "ix_users_country_id",
+                schema: "ims",
+                table: "users",
+                column: "country_id");
+
+            migrationBuilder.CreateIndex(
                 name: "ix_users_family_id",
                 schema: "ims",
                 table: "users",
                 column: "family_id");
+
+            migrationBuilder.CreateIndex(
+                name: "ix_users_local_currency_id",
+                schema: "ims",
+                table: "users",
+                column: "local_currency_id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -452,10 +514,6 @@ namespace Ims.Infrastructure.Migrations
                 schema: "ims");
 
             migrationBuilder.DropTable(
-                name: "investment_tools",
-                schema: "ims");
-
-            migrationBuilder.DropTable(
                 name: "store_branches",
                 schema: "ims");
 
@@ -468,11 +526,11 @@ namespace Ims.Infrastructure.Migrations
                 schema: "ims");
 
             migrationBuilder.DropTable(
-                name: "investment_tool_types",
+                name: "stores",
                 schema: "ims");
 
             migrationBuilder.DropTable(
-                name: "stores",
+                name: "countries",
                 schema: "ims");
 
             migrationBuilder.DropTable(
@@ -481,6 +539,14 @@ namespace Ims.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "store_types",
+                schema: "ims");
+
+            migrationBuilder.DropTable(
+                name: "investment_tools",
+                schema: "ims");
+
+            migrationBuilder.DropTable(
+                name: "investment_tool_types",
                 schema: "ims");
         }
     }

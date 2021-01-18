@@ -33,5 +33,6 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
         Task<IEnumerable<DirectionTypeResponseModel>> GetDirectionTypesAsync();
         Task<IEnumerable<AccountResponseModel>> GetAccountsAsync(Guid userId);
         Task<IEnumerable<AccountLookupResponseModel>> FilterAccountsAsync(AccountFilterRequestModel queryString);
+        Task<IEnumerable<CountryResponseModel>> FilterCountriesAsync(string queryString);
     }
 }

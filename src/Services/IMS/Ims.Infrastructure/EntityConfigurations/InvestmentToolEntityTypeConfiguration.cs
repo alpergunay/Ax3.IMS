@@ -44,16 +44,6 @@ namespace Ims.Infrastructure.EntityConfigurations
             builder.HasOne(p => p.InvestmentToolType)
                 .WithMany()
                 .HasForeignKey("InvestmentToolTypeId");
-
-            builder
-                .Property("CountryId")
-                .UsePropertyAccessMode(PropertyAccessMode.Field)
-                .HasColumnName("CountryId")
-                .IsRequired(false);
-
-            builder.HasOne(p => p.Country)
-                .WithMany()
-                .HasForeignKey("CountryId");
         }
     }
 }

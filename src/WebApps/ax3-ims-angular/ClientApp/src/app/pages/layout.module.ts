@@ -21,7 +21,7 @@ import { CoreModule } from '../_metronic/core';
 import { SubheaderModule } from '../_metronic/partials/layout/subheader/subheader.module';
 import { AsideDynamicComponent } from './_layout/components/aside-dynamic/aside-dynamic.component';
 import { HeaderMenuDynamicComponent } from './_layout/components/header/header-menu-dynamic/header-menu-dynamic.component';
-import { UserComponent } from './user/user.component';
+import {DxLookupModule} from "devextreme-angular";
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { UserComponent } from './user/user.component';
     TopbarComponent,
     LanguageSelectorComponent,
     AsideDynamicComponent,
-    HeaderMenuDynamicComponent
+    HeaderMenuDynamicComponent,
   ],
   imports: [
     CommonModule,
@@ -47,6 +47,7 @@ import { UserComponent } from './user/user.component';
     NgbProgressbarModule,
     CoreModule,
     SubheaderModule,
-  ],
+    DxLookupModule,
+  ]
 })
 export class LayoutModule { }

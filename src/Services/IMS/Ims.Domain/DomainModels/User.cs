@@ -30,9 +30,10 @@ namespace Ims.Domain.DomainModels
             CountryId = countryId;
         }
 
-        public void SetLocalCurrencyId(Guid investmentToolId)
+        public void SetUserInformation(Guid investmentToolId, Guid countryId)
         {
             LocalCurrencyId = investmentToolId;
+            CountryId = countryId;
         }
     }
 }

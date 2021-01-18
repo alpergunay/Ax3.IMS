@@ -1,7 +1,7 @@
 ﻿export enum InvestmentToolTypeEnumModel {
-  ForeignExchange=1,
+  Currency=1,
   Stock =2,
-  LocalCurrency=3,
-  Emtia = 4,
-  Fund = 5
+  Emtia = 3,
+  Fund = 4,
+  Gold = 5
 }

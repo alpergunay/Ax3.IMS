@@ -27,21 +27,20 @@ namespace Ims.Api.Controllers
         [Route("{id}")]
         [ProducesResponseType((int) HttpStatusCode.NotFound)]
         [ProducesResponseType((int) HttpStatusCode.BadRequest)]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<ActionResult<T>> GetByIdAsync(string id)
+        [ProducesResponseType((int) HttpStatusCode.OK)]
+        public virtual async Task<ActionResult<T>> GetByIdAsync(string id)
         {
             if (!Guid.TryParse(id, out var entityId))
             {
                 return BadRequest();
             }
 
-            var storeBranch = await _repository.FindOrDefaultAsync(entityId);
-            if (storeBranch != null)
+            var entity = await _repository.FindOrDefaultAsync(entityId);
+            if (entity != null)
             {
-                return _mapper.Map<T>(storeBranch);
+                return _mapper.Map<T>(entity);
             }
             return NotFound();
         }
-        
     }
 }

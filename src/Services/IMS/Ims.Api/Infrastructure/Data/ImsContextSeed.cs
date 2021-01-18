@@ -95,7 +95,7 @@ namespace Ims.Api.Infrastructure.Data
             foreach (var emtia in emtias)
             {
                 var country = context.Set<Country>().FirstOrDefault(c => c.Code == "TR");
-                var investmentTool = new InvestmentTool(emtia.Name, emtia.Title, "", InvestmentToolType.Emtia.EnumId, country?.Id);
+                var investmentTool = new InvestmentTool(emtia.Name, emtia.Title, "", InvestmentToolType.Emtia.EnumId);
                 context.Set<InvestmentTool>().Add(investmentTool);
             }
             context.SaveChanges();
@@ -109,7 +109,7 @@ namespace Ims.Api.Infrastructure.Data
             foreach (var gold in golds)
             {
                 var country = context.Set<Country>().FirstOrDefault(c => c.Code == "TR");
-                var investmentTool = new InvestmentTool(gold.Name, gold.Title, "", InvestmentToolType.Gold.EnumId, country?.Id);
+                var investmentTool = new InvestmentTool(gold.Name, gold.Title, "", InvestmentToolType.Gold.EnumId);
                 context.Set<InvestmentTool>().Add(investmentTool);
             }
             context.SaveChanges();
@@ -123,7 +123,7 @@ namespace Ims.Api.Infrastructure.Data
             foreach (var stock in stocks)
             {
                 var country = context.Set<Country>().FirstOrDefault(c => c.Code == "TR");
-                var investmentTool = new InvestmentTool(stock.Code, stock.Name,"", InvestmentToolType.Stock.EnumId, country?.Id);
+                var investmentTool = new InvestmentTool(stock.Code, stock.Name,"", InvestmentToolType.Stock.EnumId);
                 context.Set<InvestmentTool>().Add(investmentTool);
             }
             context.SaveChanges();
@@ -151,7 +151,7 @@ namespace Ims.Api.Infrastructure.Data
             foreach (var currency in currencies)
             {
                 context.Set<InvestmentTool>().Add(new InvestmentTool(currency.Key, currency.Value, string.Empty,
-                    InvestmentToolType.Currency.EnumId, null));
+                    InvestmentToolType.Currency.EnumId));
 
             }
             context.SaveChanges();

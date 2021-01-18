@@ -9,9 +9,8 @@ namespace Ims.Domain.DomainModels
     {
         public string Code { get; private set; }
         public string Name { get; private set; }
-        public Guid? InvestmentToolId { get; private set; }
+        public Guid? InvestmentToolId { get; set; }
         public InvestmentTool InvestmentTool { get; set; }
-
         public Country(string code, string name, Guid? investmentToolId)
         {
             Code = code;

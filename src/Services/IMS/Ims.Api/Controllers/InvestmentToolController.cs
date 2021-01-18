@@ -44,7 +44,7 @@ namespace Ims.Api.Controllers
         public async Task<ActionResult> CreateInvestmentToolAsync([FromBody] CreateInvestmentToolRequestModel investmentToolModel)
         {
             var investmentTool = new InvestmentTool(investmentToolModel.Code, investmentToolModel.Name, investmentToolModel.Symbol,
-                investmentToolModel.InvestmentToolTypeId, investmentToolModel.CountryId);
+                investmentToolModel.InvestmentToolTypeId);
             _investmentToolRepository.Add(investmentTool);
             await _investmentToolRepository.UnitOfWork.SaveChangesAsync();
             return CreatedAtAction(nameof(GetByIdAsync), new { id = investmentTool.Id }, null);

@@ -71,6 +71,14 @@ export const DynamicAsideMenuConfig = {
         }
       ]
     },
+    {
+      title: 'Kullanıcı Ayarları',
+      root: true,
+      bullet: 'dot',
+      page: '/user',
+      icon: 'flaticon2-digital-marketing',
+      svg: './assets/media/svg/icons/Shopping/Bitcoin.svg',
+    },
     { section: 'Tanımlamalar' },
     {
       title: 'Hesap Tanımlamaları',

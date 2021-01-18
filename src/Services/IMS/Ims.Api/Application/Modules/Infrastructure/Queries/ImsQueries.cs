@@ -227,5 +227,20 @@ namespace Ims.Api.Application.Modules.Infrastructure.Queries
                                                                         WHERE a.creator = @user_id AND a.account_name LIKE @t AND (investment_tool_id=@itid OR @itid=0)", new { user_id = queryString.id, t = "%" + queryString.typed + "%", itid = queryString.InvestmentToolId });
             }
         }
+        public async Task<IEnumerable<CountryResponseModel>> FilterCountriesAsync(string queryString)
+        {
+            await using (var connection = new NpgsqlConnection(_connectionString))
+            {
+                connection.Open();
+                var x = await connection.QueryAsync<CountryResponseModel>(@"SELECT c.id as id, 
+                                                                            c.Code as Code, 
+                                                                            c.name as Name, 
+                                                                            it.id as LocalCurrencyId, 
+                                                                            it.name as LocalCurrencyName 
+                                                                            FROM ims.countries c INNER JOIN ims.investment_tools it on c.investment_tool_id = it.id
+                                                                            WHERE c.name LIKE @t", new { t = "%" + queryString + "%" });
+                return x;
+            }
+        }
     }
 }

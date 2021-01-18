@@ -71,7 +71,10 @@ namespace Identity.Api
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc()
+            services.AddMvc(options =>
+                {
+                    options.SuppressAsyncSuffixInActionNames = false;
+                })
                 .SetCompatibilityVersion(CompatibilityVersion.Latest);
 
             var connectionString = _settings.Persistence.ConnectionString;

@@ -109,7 +109,7 @@ export class BuyInvestmentToolComponent implements OnInit {
   destinationAccountSelectionChanged(data) {
     if (data !== null) {
       this.dataModel.destinationAccountId = data.id;
-      this.hideRateControl = data.investmentToolTypeId !== InvestmentToolTypeEnumModel.LocalCurrency;
+      this.hideRateControl = data.investmentToolTypeId !== InvestmentToolTypeEnumModel.Currency;
     }
   }
 

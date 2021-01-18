@@ -2,12 +2,10 @@ import { Injectable } from '@angular/core';
 import {BaseDataService} from "../../shared/models/base-data-service";
 import {DataService} from "../../shared/services/data.service";
 import {ConfigurationService} from "../../shared/services/configuration.service";
-import {StoreModel} from "../../shared/models/store/store.model";
 import {Observable} from "rxjs";
 import {tap} from "rxjs/operators";
 import CustomStore from "devextreme/data/custom_store";
-import {BaseRequestModel} from "../../shared/models/base-request.model";
-import {LookupRequestModel, LookupResponseModel} from "../../shared/models/lookup.model";
+import {LookupResponseModel} from "../../shared/models/lookup.model";
 import {UserModel} from "../../shared/models/user.model";
 
 @Injectable({
@@ -31,7 +29,10 @@ export class UserService implements BaseDataService {
   }
 
   getById(id: any) {
-
+    const url = this.webApiUrl + '/api/User/' + id;
+    return this.service.get(url).pipe<UserModel>(tap((response: any) => {
+      return response;
+    }));
   }
 
   getList(): Observable<UserModel[]> {
@@ -39,8 +40,10 @@ export class UserService implements BaseDataService {
   }
 
   update(updateModel: UserModel): Observable<boolean> {
-    const url = this.webApiUrl + '/api/Store';
-    return this.service.putWithId(url, updateModel).pipe<boolean>(tap((response: any) => true));
+    const url = this.webApiUrl + '/api/User';
+    return this.service.putWithId(url, updateModel).pipe<boolean>(tap((response: any) => {
+      return true;
+    }));
   }
 
   dxGetList(): CustomStore {

@@ -1,6 +1,6 @@
 --------
 D:\STORAGE\SOURCES\Ax3.IMS\src\Services\IMS\Ims.Infrastructure
-❯ dotnet ef migrations add UserModelUpdate --startup-project ../Ims.Api  -o ./DatabaseMigrations -c ImsContext -v
+dotnet ef migrations add UserModelUpdate --startup-project ../Ims.Api  -o ./DatabaseMigrations -c ImsContext -v
 -------
 
 dotnet ef migrations add Initial_EFStore -p ../../../Infrastructure/EventBus/Ax3.IMS.Infrastructure.EventBus.EFEventStore  -o ../../../Services/IMS/Ims.Api/Infrastructure/DatabaseMigrations/IntegrationEventLog -c IntegrationEventLogContext -v

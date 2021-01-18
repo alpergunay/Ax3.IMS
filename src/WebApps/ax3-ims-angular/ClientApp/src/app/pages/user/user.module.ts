@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserComponent } from './user.component';
 import {RouterModule} from "@angular/router";
-import {AccountsModule} from "../../modules/accounts/accounts.module";
 import {DxButtonModule} from "devextreme-angular";
+import {CountryModule} from "../../shared/components/country/country.module";
+import {CurrencyModule} from "../../shared/components/currency/currency.module";
 
 
 @NgModule({
@@ -16,8 +17,9 @@ import {DxButtonModule} from "devextreme-angular";
         component: UserComponent,
       }
     ]),
-    AccountsModule,
-    DxButtonModule
+    DxButtonModule,
+    CountryModule,
+    CurrencyModule
   ]
 })
 export class UserModule { }

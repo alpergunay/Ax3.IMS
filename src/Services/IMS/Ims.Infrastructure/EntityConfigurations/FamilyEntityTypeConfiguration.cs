@@ -15,7 +15,7 @@ namespace Ims.Infrastructure.EntityConfigurations
             base.ConfigureForEntity(builder);
 
             builder
-                .Property<string>("_name")
+                .Property<string>("Name")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("Name")
                 .HasMaxLength(50)

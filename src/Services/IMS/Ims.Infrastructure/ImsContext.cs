@@ -126,6 +126,7 @@ namespace Ims.Infrastructure
             modelBuilder.ApplyConfiguration(new StoreTypeEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionTypeEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new UserEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new CountryEntityTypeConfiguration());
             modelBuilder.SnakeCaseifyNames();
         }
     }

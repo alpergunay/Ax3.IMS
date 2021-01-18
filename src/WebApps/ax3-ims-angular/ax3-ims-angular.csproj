@@ -1661,6 +1661,8 @@
     <TypeScriptCompile Include="ClientApp\src\app\shared\components\page-template\remote-operations.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\account\account-lookup.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\base-request.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\country.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\currency.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\investment-tool-type-enum.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\investment-tool.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\process-type.ts" />

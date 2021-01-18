@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Ims.Infrastructure.DatabaseMigrations
 {
     [DbContext(typeof(ImsContext))]
-    [Migration("20201226153126_UpdateCountryModel")]
-    partial class UpdateCountryModel
+    [Migration("20210116230006_FamilyNamePropertyChanged")]
+    partial class FamilyNamePropertyChanged
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -217,14 +217,17 @@ namespace Ims.Infrastructure.DatabaseMigrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Code")
+                        .IsRequired()
                         .HasColumnName("code")
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(50)")
+                        .HasMaxLength(50);
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnName("created_on")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Creator")
+                        .IsRequired()
                         .HasColumnName("creator")
                         .HasColumnType("text");
 
@@ -241,20 +244,23 @@ namespace Ims.Infrastructure.DatabaseMigrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Modifier")
+                        .IsRequired()
                         .HasColumnName("modifier")
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnName("name")
-                        .HasColumnType("text");
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id")
-                        .HasName("pk_country");
+                        .HasName("pk_countries");
 
                     b.HasIndex("InvestmentToolId")
-                        .HasName("ix_country_investment_tool_id");
+                        .HasName("ix_countries_investment_tool_id");
 
-                    b.ToTable("country");
+                    b.ToTable("countries","ims");
                 });
 
             modelBuilder.Entity("Ims.Domain.DomainModels.DirectionType", b =>
@@ -331,7 +337,7 @@ namespace Ims.Infrastructure.DatabaseMigrations
                         .HasColumnName("modifier")
                         .HasColumnType("text");
 
-                    b.Property<string>("_name")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnName("name")
                         .HasColumnType("character varying(50)")
@@ -410,6 +416,11 @@ namespace Ims.Infrastructure.DatabaseMigrations
                         .HasColumnName("id")
                         .HasColumnType("uuid");
 
+                    b.Property<decimal>("BuyingPrice")
+                        .HasColumnName("buying_price")
+                        .HasColumnType("decimal(18, 6)")
+                        .HasMaxLength(25);
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnName("created_on")
                         .HasColumnType("timestamp without time zone");
@@ -418,6 +429,10 @@ namespace Ims.Infrastructure.DatabaseMigrations
                         .IsRequired()
                         .HasColumnName("creator")
                         .HasColumnType("text");
+
+                    b.Property<Guid>("InvestmentToolId")
+                        .HasColumnName("investment_tool_id")
+                        .HasColumnType("uuid");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnName("is_deleted")
@@ -432,28 +447,19 @@ namespace Ims.Infrastructure.DatabaseMigrations
                         .HasColumnName("modifier")
                         .HasColumnType("text");
 
-                    b.Property<decimal>("_buyingPrice")
-                        .HasColumnName("buying_price")
-                        .HasColumnType("decimal(18, 6)")
-                        .HasMaxLength(25);
-
-                    b.Property<Guid>("_investmentToolId")
-                        .HasColumnName("investment_tool_id")
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("_priceDate")
+                    b.Property<DateTime>("PriceDate")
                         .HasColumnName("price_date")
                         .HasColumnType("timestamp without time zone")
                         .HasMaxLength(25);
 
-                    b.Property<decimal>("_salesPrice")
+                    b.Property<decimal>("SalesPrice")
                         .HasColumnName("sales_price")
                         .HasColumnType("decimal(18, 6)");
 
                     b.HasKey("Id")
                         .HasName("pk_investment_tool_prices");
 
-                    b.HasIndex("_investmentToolId")
+                    b.HasIndex("InvestmentToolId")
                         .HasName("ix_investment_tool_prices_investment_tool_id");
 
                     b.ToTable("investment_tool_prices","ims");
@@ -833,7 +839,7 @@ namespace Ims.Infrastructure.DatabaseMigrations
                     b.HasOne("Ims.Domain.DomainModels.InvestmentTool", "InvestmentTool")
                         .WithMany()
                         .HasForeignKey("InvestmentToolId")
-                        .HasConstraintName("fk_country_investment_tools_investment_tool_id");
+                        .HasConstraintName("fk_countries_investment_tools_investment_tool_id");
                 });
 
             modelBuilder.Entity("Ims.Domain.DomainModels.InvestmentTool", b =>
@@ -850,7 +856,7 @@ namespace Ims.Infrastructure.DatabaseMigrations
                 {
                     b.HasOne("Ims.Domain.DomainModels.InvestmentTool", "InvestmentTool")
                         .WithMany()
-                        .HasForeignKey("_investmentToolId")
+                        .HasForeignKey("InvestmentToolId")
                         .HasConstraintName("fk_investment_tool_prices_investment_tools_investment_tool_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -891,7 +897,7 @@ namespace Ims.Infrastructure.DatabaseMigrations
                     b.HasOne("Ims.Domain.DomainModels.Country", "Country")
                         .WithMany()
                         .HasForeignKey("CountryId")
-                        .HasConstraintName("fk_users_country_country_id");
+                        .HasConstraintName("fk_users_countries_country_id");
 
                     b.HasOne("Ims.Domain.DomainModels.Family", "Family")
                         .WithMany()

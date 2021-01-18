@@ -2,7 +2,7 @@
 
 namespace Ims.Infrastructure.DatabaseMigrations
 {
-    public partial class AccountTransactionModelUpdate : Migration
+    public partial class FamilyNamePropertyChanged : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

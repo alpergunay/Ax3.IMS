@@ -4,8 +4,8 @@
   surname: string;
   email: string;
   mobile: string;
-  currencyId: string;
-  currencyName: string;
+  localCurrencyId: string;
+  localCurrencyName: string;
   countryId: string;
   countryName: string;
 }

@@ -7,11 +7,11 @@ namespace Ims.Domain.DomainModels
 {
     public class Family : Entity
     {
-        private string _name;
+        public string Name { get; private set; }
 
         public Family(string name)
         {
-            _name = name;
+            Name = name;
         }
     }
 }

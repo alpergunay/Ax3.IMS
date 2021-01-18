@@ -7,8 +7,7 @@ import {tap} from 'rxjs/operators';
 import {AccountModel} from '../../../shared/models/account/account.model';
 import {BaseModel} from "../../../shared/models/base-add.model";
 import {BaseRequestModel} from "../../../shared/models/base-request.model";
-import {AccountLookupRequestModel, LookupRequestModel, LookupResponseModel} from "../../../shared/models/lookup.model";
-import DataSource from "devextreme/data/data_source";
+import {AccountLookupRequestModel} from "../../../shared/models/lookup.model";
 import {AccountLookupModel} from "../../../shared/models/account/account-lookup.model";
 
 @Injectable({
@@ -48,7 +47,9 @@ export class AccountService implements BaseDataService {
 
   update(updateModel: BaseModel) {
     const url = this.webApiUrl + '/api/Account';
-    return this.service.putWithId(url, updateModel).pipe<boolean>(tap((response: any) => true));
+    return this.service.putWithId(url, updateModel).pipe<boolean>(tap((response: any) => {
+      return true
+    }));
   }
 
   dxGetList() {
@@ -68,7 +69,7 @@ export class AccountService implements BaseDataService {
     if(investmentToolId)
       requestModel.investmentToolId = investmentToolId
     else requestModel.investmentToolId = ""
-    
+
     return this.service.get(url, requestModel).pipe<AccountLookupModel[]>(tap((response: any) => {
       return response;
     }));

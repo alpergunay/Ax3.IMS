@@ -87,7 +87,7 @@ export class InvestComponent implements OnInit{
   }
   selectionChanged(data) {
     if(data !== null) {
-      this.hideRateControl = data.investmentToolTypeId !== InvestmentToolTypeEnumModel.LocalCurrency;
+      this.hideRateControl = data.investmentToolTypeId !== InvestmentToolTypeEnumModel.Currency;
       this.dataModel.accountId = data.id;
       this.dataModel.balance = data.balance;
     }

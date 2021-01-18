@@ -7,6 +7,7 @@ using Ims.Api.Application.Modules.Infrastructure.Models.Store;
 using Ims.Api.Application.Modules.Infrastructure.Models.StoreBranch;
 using Ims.Api.Application.Modules.Infrastructure.Models.StoreType;
 using Ims.Api.Application.Modules.Infrastructure.Models.TransactionType;
+using Ims.Api.Application.Modules.Infrastructure.Models.User;
 using Ims.Domain.DomainModels;
 using Ims.Domain.Dto;
 
@@ -23,7 +24,16 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
             CreateMapForInvestmentToolType();
             CreateMapForInvestmentTool();
             CreateMapForAccount();
+            CreateMapForUser();
             CreateMapForAccountDto();
+        }
+
+        private void CreateMapForUser()
+        {
+            CreateMap<User, UserResponseModel>()
+                .ForMember(m => m.FamilyName, d => d.MapFrom(u => u.Family.Name))
+                .ForMember(m => m.LocalCurrencyName, d => d.MapFrom(u => u.LocalCurrency.Name))
+                .ForMember(m => m.CountryName, d => d.MapFrom(u => u.Country.Name));
         }
 
         private void CreateMapForAccountDto()
@@ -73,9 +83,8 @@ namespace Ims.Api.Application.Modules.Infrastructure.Mapper
         {
             CreateMap<InvestmentTool, InvestmentToolResponseModel>()
                 .ForMember(m => m.InvestmentToolTypeName, d => d.MapFrom(s => s.InvestmentToolType.Name))
-                .ForMember(m => m.InvestmentToolTypeId, d => d.MapFrom(s => s.InvestmentToolType.EnumId))
-                .ForMember(m => m.CountryId, d => d.MapFrom(s => s.Country.Id))
-                .ForMember(m => m.CountryName, d => d.MapFrom(s => s.Country.Name));
+                .ForMember(m => m.InvestmentToolTypeId, d => d.MapFrom(s => s.InvestmentToolType.EnumId));
+
         }
 
         private void CreateMapForTransactionType()
