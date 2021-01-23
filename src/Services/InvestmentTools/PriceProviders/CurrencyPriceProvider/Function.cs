@@ -59,7 +59,7 @@ namespace CurrencyPriceProvider
             _serviceCollection.AddSingleton<IConfiguration>(configuration);
             _serviceCollection.AddAWSService<IAmazonDynamoDB>();
             _serviceCollection.AddTransient<IDynamoDBContext, DynamoDBContext>();
-            _serviceCollection.AddTransient<IRepository<ForeignCurrencyPrice>, Repository<ForeignCurrencyPrice>>();
+            _serviceCollection.AddTransient<IRepository<ForeignCurrencyPrice>, PriceRepository<ForeignCurrencyPrice>>();
             _serviceCollection.AddLogging(config =>
             {
                 config.ClearProviders();
@@ -132,7 +132,7 @@ namespace CurrencyPriceProvider
                         currentPrice.LowestPrice);
                     _eventBus.Publish(foreignPriceChangedIntegrationEvent);
                     _logger.LogInformation("Saving price to DynamoDb...");
-                    _repository.SavePriceAsync(currentPrice).GetAwaiter();
+                    _repository.SaveAsync(currentPrice).GetAwaiter();
                 }
                 return "OK";
             }

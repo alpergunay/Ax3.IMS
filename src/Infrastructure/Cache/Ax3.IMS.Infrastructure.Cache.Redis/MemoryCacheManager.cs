@@ -11,7 +11,7 @@ namespace Ax3.IMS.Infrastructure.Cache.Redis
     /// <summary>
     /// Represents a memory cache manager
     /// </summary>
-    public partial class MemoryCacheManager : ILocker, IStaticCacheManager
+    public partial class MemoryCacheManager : ILocker, ICacheManager
     {
         #region Fields
 

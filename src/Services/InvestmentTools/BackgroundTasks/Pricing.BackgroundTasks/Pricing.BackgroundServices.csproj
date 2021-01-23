@@ -27,6 +27,7 @@
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.2" />
     <PackageReference Include="Autofac" Version="6.1.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.101" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.HealthChecks" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
@@ -40,9 +41,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Infrastructure\Cache\Ax3.IMS.Infrastructure.Cache.Redis\Ax3.IMS.Infrastructure.Cache.Redis.csproj" />
     <ProjectReference Include="..\..\..\..\Infrastructure\Configuration\Ax3.IMS.Infrastructure.Core.Configuration\Ax3.IMS.Infrastructure.Configuration.csproj" />
     <ProjectReference Include="..\..\..\..\Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus.EFEventStore\Ax3.IMS.Infrastructure.EventBus.EFEventStore.csproj" />
     <ProjectReference Include="..\..\..\..\Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus.RabbitMQ\Ax3.IMS.Infrastructure.EventBus.RabbitMQ.csproj" />
     <ProjectReference Include="..\..\..\..\Infrastructure\EventBus\Ax3.IMS.Infrastructure.EventBus\Ax3.IMS.Infrastructure.EventBus.csproj" />
+    <ProjectReference Include="..\..\PriceProviders\PriceProviders.Shared\PriceProviders.Shared.csproj" />
   </ItemGroup>
 </Project>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Text;
 using Autofac;
+using Ax3.IMS.Infrastructure.Cache.Redis;
+using Ax3.IMS.Infrastructure.Cache.Redis.Wrapper;
 using Ax3.IMS.Infrastructure.Configuration.Settings;
 using Ax3.IMS.Infrastructure.EventBus;
 using Ax3.IMS.Infrastructure.EventBus.Abstractions;
@@ -26,6 +28,7 @@ namespace Pricing.BackgroundServices.Extensions
             services.AddOptions();
             _settings = new ApplicationSettings();
             configuration.GetSection(typeof(ApplicationSettings).Name).Bind(_settings);
+            services.AddSingleton(_settings);
             return services;
         }
         public static IServiceCollection AddEventBus(this IServiceCollection services)
@@ -124,6 +127,13 @@ namespace Pricing.BackgroundServices.Extensions
                 .ReadFrom.Configuration(configuration)
                 .CreateLogger();
             return builder;
+        }
+
+        public static IServiceCollection AddRedisCache(this IServiceCollection services)
+        {
+            services.AddSingleton<IRedisConnectionWrapper, RedisConnectionWrapper>();
+            services.AddTransient<ICacheManager, RedisCacheManager>();
+            return services;
         }
     }
 }

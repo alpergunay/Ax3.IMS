@@ -17,6 +17,6 @@
         /// {0} : Entity type name
         /// {1} : Entity id
         /// </remarks>
-        public static string EntityCacheKey => "Nop.{0}.id-{1}";
+        public static string EntityCacheKey => "Ax3.{0}.id-{1}";
     }
 }

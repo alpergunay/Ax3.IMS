@@ -1,0 +1,7102 @@
+﻿[
+  {
+    "id": "bd9fc75b-9df6-4e86-9bec-73907bb18735",
+    "code": "AED",
+    "name": "United Arab Emirates Dirham",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "de303bc2-6a03-45a6-b105-fb7b4f2f01eb",
+    "code": "NPR",
+    "name": "Nepalese Rupee",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "3ee41f45-739f-4b03-8fab-6f2279528869",
+    "code": "NZD",
+    "name": "New Zealand Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "b5fe03ac-250c-4dc1-9917-81209958d9f0",
+    "code": "OMR",
+    "name": "Omani Rial",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "e08622d6-7230-466d-8284-939a6181390f",
+    "code": "PAB",
+    "name": "Panamanian Balboa",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "adad0b41-5f00-4ea0-84e9-fe8f829d2d0c",
+    "code": "PEN",
+    "name": "Peruvian Nuevo Sol",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "b21ed076-e157-43de-8f02-d9873f2cc24c",
+    "code": "PGK",
+    "name": "Papua New Guinean Kina",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "f0a55b55-fe2d-4f7f-97c3-64ab61b3fe1e",
+    "code": "PHP",
+    "name": "Philippine Peso",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "8e5fbea3-8fe2-4180-8e8f-d83dd5320d24",
+    "code": "PKR",
+    "name": "Pakistani Rupee",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "13e063f5-cc55-41ff-a573-2abe37281091",
+    "code": "PLN",
+    "name": "Polish Zloty",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "054be387-0ddb-44ec-82fe-bea0c1f2280c",
+    "code": "PYG",
+    "name": "Paraguayan Guarani",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "138c22d8-ab64-4d2f-a451-a11b1e051ed5",
+    "code": "QAR",
+    "name": "Qatari Rial",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "3d556ba5-b863-4ecf-817b-2308311bd9a6",
+    "code": "RON",
+    "name": "Romanian Leu",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "d2016d70-32f5-428e-9706-8cb10d2510be",
+    "code": "RSD",
+    "name": "Serbian Dinar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "02b448f8-6ac0-4a4d-8866-5c3f0a9cd2ab",
+    "code": "RUB",
+    "name": "Russian Ruble",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "3253c77f-4bf4-4f46-a26e-606ff5a1cb7e",
+    "code": "RWF",
+    "name": "Rwandan Franc",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "55d7a931-39c2-4d5d-b5fd-f8c8f21a7a93",
+    "code": "SAR",
+    "name": "Saudi Riyal",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "ec4018d5-8f78-4df2-93a5-fd47da691431",
+    "code": "SBD",
+    "name": "Solomon Islands Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "e87f3ee3-4004-4d6b-a56d-aa3af542b9ad",
+    "code": "NOK",
+    "name": "Norwegian Krone",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "1c4734e2-7c60-4424-99f5-960fb7cc6470",
+    "code": "SCR",
+    "name": "Seychellois Rupee",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "ef2360cc-c251-4de5-bad0-43823d21cc44",
+    "code": "NIO",
+    "name": "Nicaraguan Córdoba",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "fc544401-15d6-4e44-a4fc-b5f3daf22ebc",
+    "code": "NAD",
+    "name": "Namibian Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "8512768e-f871-4707-8bd0-1fb689e04a3e",
+    "code": "LSL",
+    "name": "Lesotho Loti",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "d92da80c-dca5-4047-9de9-584b04f72062",
+    "code": "LYD",
+    "name": "Libyan Dinar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "e3a65ccb-85e9-4cbd-891f-ce10c2957a87",
+    "code": "MAD",
+    "name": "Moroccan Dirham",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "9487f9c4-a56b-4d55-9877-5436c5225b7c",
+    "code": "MDL",
+    "name": "Moldovan Leu",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "8e47b7b0-cce2-4358-a54a-6e2f241d6e52",
+    "code": "MGA",
+    "name": "Malagasy Ariary",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "77b270a5-3a97-4bda-8f74-9e0097d2d0ee",
+    "code": "MKD",
+    "name": "Macedonian Denar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "a8ffe105-0114-4685-bc36-3a60e63fa5fd",
+    "code": "MMK",
+    "name": "Myanma Kyat",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "44a1c325-3d7f-4377-9324-6fff274db074",
+    "code": "MNT",
+    "name": "Mongolian Tugrik",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "e091ba34-0f84-47a9-8848-37110206ba3d",
+    "code": "MOP",
+    "name": "Macanese Pataca",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "b3264bbd-194f-4fce-939e-9b29278ccad1",
+    "code": "MRO",
+    "name": "Mauritanian Ouguiya (pre-2018)",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "aae08054-faea-481a-85a0-1da7a0c4c029",
+    "code": "MRU",
+    "name": "Mauritanian Ouguiya",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "50d1ee8c-002c-407c-8627-6211ea70d629",
+    "code": "MUR",
+    "name": "Mauritian Rupee",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "39d6ef93-3792-4272-bd94-b2ad9d855f81",
+    "code": "MVR",
+    "name": "Maldivian Rufiyaa",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "8430b446-4b93-4cbc-a6fc-f7385b48f782",
+    "code": "MWK",
+    "name": "Malawian Kwacha",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "c9ca1dd3-5201-4c8b-a4ac-6e1fc798cdeb",
+    "code": "MXN",
+    "name": "Mexican Peso",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "a3f4b740-9fe6-4036-907c-4dd43d18e698",
+    "code": "MYR",
+    "name": "Malaysian Ringgit",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "fa5bfd1b-cf90-42ed-ac66-d1429df2cac3",
+    "code": "MZN",
+    "name": "Mozambican Metical",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "4b79721e-1405-4b82-bf79-691a6494fdfb",
+    "code": "NGN",
+    "name": "Nigerian Naira",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "4b31ca15-c421-4702-8160-33f0e9afb6d1",
+    "code": "SDG",
+    "name": "Sudanese Pound",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "133f9971-ec5f-48e2-9480-b88ba2bdc9e7",
+    "code": "SEK",
+    "name": "Swedish Krona",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "a917479f-86c7-499e-9120-dafc1902599f",
+    "code": "SGD",
+    "name": "Singapore Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "2ab7b871-9fb5-49c0-89ad-8e56c48b0707",
+    "code": "UYU",
+    "name": "Uruguayan Peso",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "3c5be93a-e9b1-4ec2-8744-c6da573768ba",
+    "code": "UZS",
+    "name": "Uzbekistan Som",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "cfa3e0fe-aa51-4338-b002-4b114b2eb77b",
+    "code": "VEF",
+    "name": "Venezuelan Bolívar Fuerte",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "b40dbb72-8345-4718-bbdc-16acacf2cdc3",
+    "code": "VND",
+    "name": "Vietnamese Dong",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "48a85276-6dc5-4088-8b58-6543f50ebe54",
+    "code": "VUV",
+    "name": "Vanuatu Vatu",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "6f7b8c69-713b-4b69-a4cc-e4844c576cd3",
+    "code": "WST",
+    "name": "Samoan Tala",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "d394d6de-3aae-46c3-9241-b77d58ab79df",
+    "code": "XAF",
+    "name": "CFA Franc BEAC",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "38b18cad-8ed1-4ef6-a940-d30502a0624f",
+    "code": "XAG",
+    "name": "Silver Ounce",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "6bfff5f5-7e07-4c36-9031-77f85e5c12e4",
+    "code": "XAU",
+    "name": "Gold Ounce",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "ac893287-458e-42dd-b7f9-240aa668b248",
+    "code": "XCD",
+    "name": "East Caribbean Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "9fdbbd5a-8687-4196-be1f-22df37767f5b",
+    "code": "XDR",
+    "name": "Special Drawing Rights",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "99d8631b-d411-4066-9b8e-d0b0f5c60ac8",
+    "code": "XOF",
+    "name": "CFA Franc BCEAO",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "ed76ccf6-a60d-4f3e-a44d-34e05e1eccfb",
+    "code": "XPD",
+    "name": "Palladium Ounce",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "d9d4113e-f128-456e-9d53-15f80517358f",
+    "code": "XPF",
+    "name": "CFP Franc",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "e1a62599-a1c7-4a59-8a25-a91a0a893b2a",
+    "code": "XPT",
+    "name": "Platinum Ounce",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "88cc185a-332b-480d-81dc-f3dc4692a4f8",
+    "code": "YER",
+    "name": "Yemeni Rial",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "21e5252e-c76c-40f0-b7dd-abba8af1fbd3",
+    "code": "ZAR",
+    "name": "South African Rand",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "0c3f93d4-62c3-49ee-9edb-6ba180bff38d",
+    "code": "USD",
+    "name": "United States Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "6e91b99a-8c46-4275-9cba-e667ff7a0795",
+    "code": "UGX",
+    "name": "Ugandan Shilling",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "6f0c1b2d-42d7-432c-b0aa-6e098fb8f393",
+    "code": "UAH",
+    "name": "Ukrainian Hryvnia",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "4f56c14d-d91f-4798-9582-d59a2aeef6a2",
+    "code": "TZS",
+    "name": "Tanzanian Shilling",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "94a5aa28-5062-4bcb-a88f-47028a8c4e96",
+    "code": "SHP",
+    "name": "Saint Helena Pound",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "772d5a65-e840-4d5f-8e7e-b4cb220ebe1d",
+    "code": "SLL",
+    "name": "Sierra Leonean Leone",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "4833df6b-f45c-456d-a1b2-fd9cb7700cd1",
+    "code": "SOS",
+    "name": "Somali Shilling",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "42dee1d5-04b9-40a4-ab14-7468eeabd3ed",
+    "code": "SRD",
+    "name": "Surinamese Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "3b87183e-15d5-46b6-a034-bdb26910ccb6",
+    "code": "SSP",
+    "name": "South Sudanese Pound",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "aebb50a0-80aa-41ef-a12b-0145f8ed654f",
+    "code": "STD",
+    "name": "São Tomé and Príncipe Dobra (pre-2018)",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "f24e2b2e-2edb-42dd-91ab-e976dc53a40b",
+    "code": "STN",
+    "name": "São Tomé and Príncipe Dobra",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "0689c176-2435-46fd-b068-96546d92199b",
+    "code": "SVC",
+    "name": "Salvadoran Colón",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "82685a27-ab90-40f2-8bb4-0985a0d8069b",
+    "code": "LRD",
+    "name": "Liberian Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "a5c9aca7-ecc0-4fdf-b04d-91fd1707b4d7",
+    "code": "SYP",
+    "name": "Syrian Pound",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "748d05cb-a9ee-459f-909a-d80b624f812a",
+    "code": "THB",
+    "name": "Thai Baht",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "82d7cc49-fcab-4896-85a4-56f2f828b1ba",
+    "code": "TJS",
+    "name": "Tajikistani Somoni",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "0a41eeee-3f4d-421f-b727-6c04a8fc0a5b",
+    "code": "TMT",
+    "name": "Turkmenistani Manat",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "7ef82b2f-e4f4-435a-880e-5a371bf8fb3b",
+    "code": "TND",
+    "name": "Tunisian Dinar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "eb66666d-c1d6-4da4-aac3-beecea1d6648",
+    "code": "TOP",
+    "name": "Tongan Pa'anga",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "32b40a2b-b39f-4079-8842-7f9a39b80167",
+    "code": "TRY",
+    "name": "Turkish Lira",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "a27bfa09-2698-4964-b826-19cf3694fada",
+    "code": "TTD",
+    "name": "Trinidad and Tobago Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "1687528b-7df5-406a-9b92-1071c08bb78f",
+    "code": "TWD",
+    "name": "New Taiwan Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "9841db9f-08e8-428e-a032-7a8bcae529d6",
+    "code": "SZL",
+    "name": "Swazi Lilangeni",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "fa1412b5-923e-4913-be9a-c87e9ddd8540",
+    "code": "LKR",
+    "name": "Sri Lankan Rupee",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "4e6444d6-1041-41f2-bcba-6b7c89b25bfa",
+    "code": "LBP",
+    "name": "Lebanese Pound",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "076d47a6-915b-4a3a-8bd2-4439e5dc165e",
+    "code": "LAK",
+    "name": "Laotian Kip",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "f0c015d6-51ce-431f-8f04-b8744008a452",
+    "code": "BWP",
+    "name": "Botswanan Pula",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "97496a36-c601-48d2-a25e-505059434cc2",
+    "code": "BYN",
+    "name": "Belarusian Ruble",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "c1a5aebc-2a1b-441e-a485-65c6c38199f7",
+    "code": "BZD",
+    "name": "Belize Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "88e3df2e-d29c-4b9e-8031-18db10f43445",
+    "code": "CAD",
+    "name": "Canadian Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "1b85307e-a490-4440-8319-47db7a7c91c9",
+    "code": "CDF",
+    "name": "Congolese Franc",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "0341a8d5-452c-45ab-83a1-47251085a0d0",
+    "code": "CHF",
+    "name": "Swiss Franc",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "00e77657-257f-401d-a0a0-907c4e5cb5c6",
+    "code": "CLF",
+    "name": "Chilean Unit of Account (UF)",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "3c59a3d7-b174-404d-b1a6-6db3c1b11fd8",
+    "code": "CLP",
+    "name": "Chilean Peso",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "46c2a897-af92-4f6c-8b43-88dc29569deb",
+    "code": "CNH",
+    "name": "Chinese Yuan (Offshore)",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "3bfbad35-96ab-45ed-aba9-967ee39f77eb",
+    "code": "CNY",
+    "name": "Chinese Yuan",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "7764f433-1b0c-4cda-aa66-d4f0846069ee",
+    "code": "COP",
+    "name": "Colombian Peso",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "767c5c72-1d05-44c9-a327-bc6c35822013",
+    "code": "CRC",
+    "name": "Costa Rican Colón",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "3c376f7a-d2f7-4393-854a-2ecd2e3dd132",
+    "code": "CUC",
+    "name": "Cuban Convertible Peso",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "71579e08-15a1-4f97-9503-558e04b2c05d",
+    "code": "CUP",
+    "name": "Cuban Peso",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "c4f3f4f0-c78b-4557-9c90-71b041a560f3",
+    "code": "CVE",
+    "name": "Cape Verdean Escudo",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "89cf3828-be4e-4fcc-94a3-0d38855f13fc",
+    "code": "CZK",
+    "name": "Czech Republic Koruna",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "988965f2-ec7b-4928-8fdc-4c01b2d13b0b",
+    "code": "DJF",
+    "name": "Djiboutian Franc",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "fab7d9eb-b806-41e1-afbc-e70ee4d88ba3",
+    "code": "BTN",
+    "name": "Bhutanese Ngultrum",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "af48b52b-1622-4033-95b1-6dfb74c627cd",
+    "code": "BTC",
+    "name": "Bitcoin",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "42a195aa-eb2f-4f3f-8a09-e9c23a4d8ff7",
+    "code": "BSD",
+    "name": "Bahamian Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "e91ef435-a9d9-4f13-b993-46e5a7058f28",
+    "code": "BRL",
+    "name": "Brazilian Real",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "eca1f7b0-1032-4781-9d7f-71f9b5baa287",
+    "code": "AFN",
+    "name": "Afghan Afghani",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "bc3bea39-b235-49d2-93b0-b8821ee9aa8c",
+    "code": "ALL",
+    "name": "Albanian Lek",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "9d74f62a-9506-4752-bfd7-4d71663ecdaf",
+    "code": "AMD",
+    "name": "Armenian Dram",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "39dd665a-5ada-48e7-a82d-3f822bffcd7f",
+    "code": "ANG",
+    "name": "Netherlands Antillean Guilder",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "8778e4c1-6b9a-49d0-8bab-c59c8b50da69",
+    "code": "AOA",
+    "name": "Angolan Kwanza",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "d8362f4d-e6c0-48c4-9cd7-951ae45ea0f3",
+    "code": "ARS",
+    "name": "Argentine Peso",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "b9e7119d-1912-4118-b835-8afd2e82c97c",
+    "code": "AUD",
+    "name": "Australian Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "905ee39f-ff50-4b76-8ce7-63755eee688d",
+    "code": "AWG",
+    "name": "Aruban Florin",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "d49846b0-38b6-4724-9b72-c897893c566e",
+    "code": "DKK",
+    "name": "Danish Krone",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "678f35aa-87b2-47ff-825b-5faa37e6a4be",
+    "code": "AZN",
+    "name": "Azerbaijani Manat",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "f58f7108-b985-45c8-bd37-4735699169a5",
+    "code": "BBD",
+    "name": "Barbadian Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "d768932f-50b6-4d51-982a-5a72efe08626",
+    "code": "BDT",
+    "name": "Bangladeshi Taka",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "f6f8ec94-3356-4269-aff0-4f8a68d32478",
+    "code": "BGN",
+    "name": "Bulgarian Lev",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "18cfe6f1-840d-49c1-ac2d-bee77f129d08",
+    "code": "BHD",
+    "name": "Bahraini Dinar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "06de3f28-39ad-4fc2-a8ee-9371543fbade",
+    "code": "BIF",
+    "name": "Burundian Franc",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "8a62e28c-37b9-4696-8ef2-2c2154f03427",
+    "code": "BMD",
+    "name": "Bermudan Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "f2786274-cdf9-4c52-9c75-d4a8ddf76ebe",
+    "code": "BND",
+    "name": "Brunei Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "42da9f8b-022a-4509-b10b-74173a02319d",
+    "code": "BOB",
+    "name": "Bolivian Boliviano",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "385dccd5-d17a-4d33-b977-91efb9df0f9d",
+    "code": "BAM",
+    "name": "Bosnia-Herzegovina Convertible Mark",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "e1ca9d84-2cf5-44b0-8bb5-cb4fb27d4805",
+    "code": "ZMW",
+    "name": "Zambian Kwacha",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "8dd9e7d6-fe11-4569-919d-b3905b40f10b",
+    "code": "DOP",
+    "name": "Dominican Peso",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "6cb896ec-2af4-44ea-a7b3-508c224bec1b",
+    "code": "EGP",
+    "name": "Egyptian Pound",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "134c8c57-6e64-44cd-80f7-d7535e6558f6",
+    "code": "INR",
+    "name": "Indian Rupee",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "c8cd59bf-cd5a-4d74-8fb8-cf8a5a195cbe",
+    "code": "IQD",
+    "name": "Iraqi Dinar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "cf33fbbe-296f-44e9-b29b-c81fcc0a46bd",
+    "code": "IRR",
+    "name": "Iranian Rial",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "47dd29bf-c5e3-4c0f-9ac8-4e7c15fa1fa5",
+    "code": "ISK",
+    "name": "Icelandic Króna",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "9dd61890-4904-43e6-8ae8-c92bda4bf7cd",
+    "code": "JEP",
+    "name": "Jersey Pound",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "63250b6b-9ae4-4d89-ad7d-3b7fdd24e433",
+    "code": "JMD",
+    "name": "Jamaican Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "c5d2374a-b2fa-442e-9d8a-4665d838245e",
+    "code": "JOD",
+    "name": "Jordanian Dinar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "0e716dd6-6cd1-4a77-91fd-9724dbc37bfb",
+    "code": "JPY",
+    "name": "Japanese Yen",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "1501ffa5-7e76-4708-adc1-e80257b8f05c",
+    "code": "KES",
+    "name": "Kenyan Shilling",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "d7f7225a-fafb-4506-9cbb-95cd84d21ce3",
+    "code": "KGS",
+    "name": "Kyrgystani Som",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "54801da9-5222-48ea-a6cd-16d44dfc8cf6",
+    "code": "KHR",
+    "name": "Cambodian Riel",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "fb60587b-6d61-47e1-a058-526335694702",
+    "code": "KMF",
+    "name": "Comorian Franc",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "fe8145f1-8815-48bd-aa6d-3574f57b0a46",
+    "code": "KPW",
+    "name": "North Korean Won",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "dfb5c9b6-e954-42b6-9f99-ecadd2b9c19c",
+    "code": "KRW",
+    "name": "South Korean Won",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "7cec4afe-0963-4005-93f6-0aafa2e2a461",
+    "code": "KWD",
+    "name": "Kuwaiti Dinar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "85a768a2-9435-4c63-8b12-e4304e4efb08",
+    "code": "KYD",
+    "name": "Cayman Islands Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "5c05c21f-bfff-4760-9c55-7039ffb1f3bc",
+    "code": "KZT",
+    "name": "Kazakhstani Tenge",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "8f5db335-2af6-4d62-8103-2c60cafb04b7",
+    "code": "IMP",
+    "name": "Manx pound",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "9b7df795-66a4-448c-8b55-6e1f305ae335",
+    "code": "ILS",
+    "name": "Israeli New Sheqel",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "67d93ef3-05dc-4569-8e3e-b29dc9fecf61",
+    "code": "IDR",
+    "name": "Indonesian Rupiah",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "f1b5d915-371e-4150-9753-b8d88e31c3bc",
+    "code": "HUF",
+    "name": "Hungarian Forint",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "317df70f-3004-40af-94f8-4700ba748389",
+    "code": "ERN",
+    "name": "Eritrean Nakfa",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "96a13c8d-2eb4-4416-a302-b1bd23d5ccf8",
+    "code": "ETB",
+    "name": "Ethiopian Birr",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "dc6a804c-2c21-46fd-864c-36af509a1b82",
+    "code": "EUR",
+    "name": "Euro",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "fcd3bd7c-d84d-4d2d-bda2-a51cc09330a2",
+    "code": "FJD",
+    "name": "Fijian Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "71781e53-44b5-4036-947d-951a075465b6",
+    "code": "FKP",
+    "name": "Falkland Islands Pound",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "82678411-fcdc-43ea-a936-752415334732",
+    "code": "GBP",
+    "name": "British Pound Sterling",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "b9e6eb8e-cd13-40ec-a90c-3914e52069d7",
+    "code": "GEL",
+    "name": "Georgian Lari",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "cb6ee956-4294-49cb-87aa-91678f98da72",
+    "code": "GGP",
+    "name": "Guernsey Pound",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "67fc89ea-74d1-463b-8360-927641c5f16d",
+    "code": "DZD",
+    "name": "Algerian Dinar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "7a3542d6-90e8-484d-94a7-661fba8e68bf",
+    "code": "GHS",
+    "name": "Ghanaian Cedi",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "a028d192-a667-4037-80ed-2ff60659a6d0",
+    "code": "GMD",
+    "name": "Gambian Dalasi",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "ee1241c1-3ffd-49bb-9ed2-576c79c229db",
+    "code": "GNF",
+    "name": "Guinean Franc",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "084a00f2-da90-41a3-9073-0515f6ef5062",
+    "code": "GTQ",
+    "name": "Guatemalan Quetzal",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "34687068-8587-4193-9a7c-1a5dfc095b5f",
+    "code": "GYD",
+    "name": "Guyanaese Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "f4cc0976-36b9-4fb1-ae4a-c44d35436b67",
+    "code": "HKD",
+    "name": "Hong Kong Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "8be06240-9f35-4c33-967c-b267030f7c35",
+    "code": "HNL",
+    "name": "Honduran Lempira",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "e8fc7c24-05a2-4abc-b088-74362bd63baf",
+    "code": "HRK",
+    "name": "Croatian Kuna",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "fb62c560-f96f-4179-83ae-659d9bba3127",
+    "code": "HTG",
+    "name": "Haitian Gourde",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "e8e7ab22-5870-46ce-83f6-143d6038ddc1",
+    "code": "GIP",
+    "name": "Gibraltar Pound",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "12d9a96d-6d16-4813-a244-403e224999fd",
+    "code": "ZWL",
+    "name": "Zimbabwean Dollar",
+    "investmentToolType": {
+      "id": 1,
+      "code": "CU",
+      "name": "Currency"
+    }
+  },
+  {
+    "id": "737209cd-add6-4652-afa5-488db6dd4c34",
+    "code": "KRDMD",
+    "name": "KARDEMİR KARABÜK DEMİR ÇELİK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "71b57938-1529-42d2-9049-1e7a86385d1d",
+    "code": "PKENT",
+    "name": "PETROKENT TURİZM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "bf036d4d-948f-40e4-a19d-5987d4f7fc64",
+    "code": "PETKM",
+    "name": "PETKİM PETROKİMYA HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "217b2f4f-a92f-4535-9a05-34cd450eb581",
+    "code": "PSDTC",
+    "name": "PERGAMON STATUS DIŞ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6fa289ab-fa56-45ff-8f05-f46b19f51768",
+    "code": "PEGYO",
+    "name": "PERA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e4cc763a-f973-46c0-9811-bdc1111878ef",
+    "code": "PENGD",
+    "name": "PENGUEN GIDA SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6f5b3771-7b70-449b-bec1-6920b338fe82",
+    "code": "PEKGY",
+    "name": "PEKER GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "458b3d52-2606-4142-82c7-677907aa8391",
+    "code": "PGSUS",
+    "name": "PEGASUS HAVA TAŞIMACILIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f6c80ced-b892-4a2f-a581-ea8dfeedc77f",
+    "code": "PBTR",
+    "name": "PASHA YATIRIM BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "92e6f47a-379a-4409-b333-553aa8cd0729",
+    "code": "PBT",
+    "name": "PASHA YATIRIM BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "eea0b6da-a488-4611-a6e9-fbc33e341d6a",
+    "code": "PARSN",
+    "name": "PARSAN MAKİNA PARÇALARI SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c9e4b100-032a-4ac9-ad4b-f78a2cbb45a7",
+    "code": "PRKME",
+    "name": "PARK ELEKTRİK ÜRETİM MADENCİLİK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7d59e8c0-bd9e-4051-af60-9e43bc91d984",
+    "code": "PAPIL",
+    "name": "PAPİLON SAVUNMA-GÜVENLİK SİSTEMLERİ BİLİŞİM MÜHENDİSLİK HİZMETLERİ İTHALAT İHRACAT SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f7af2dac-d88f-4b39-8065-411e02be23bb",
+    "code": "PAGYO",
+    "name": "PANORA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e784c272-18f1-4f7f-bfed-84a4d2c37397",
+    "code": "PHC",
+    "name": "PHİLLİPCAPİTAL MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1ec86d4a-f94a-4621-b039-29cf495f4de4",
+    "code": "PAMEL",
+    "name": "PAMUKOVA YENİLENEBİLİR ELEKTRİK ÜRETİM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1d89a75e-214f-48d4-a897-9a41a9297f36",
+    "code": "OZGYO",
+    "name": "ÖZDERİCİ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c8aa0067-3027-4ccb-a6ca-683cdde9087a",
+    "code": "OZBAL",
+    "name": "ÖZBAL ÇELİK BORU SANAYİ TİCARET VE TAAHHÜT A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4835ea2d-147f-47ec-9b57-b16c52758ead",
+    "code": "OZKGY",
+    "name": "ÖZAK GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5bf478f8-8f2c-4372-b767-a97ce577548b",
+    "code": "OYLUM",
+    "name": "OYLUM SINAİ YATIRIMLAR A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "fd8b2106-96d2-434d-aa52-459c6eab8129",
+    "code": "OYAYO",
+    "name": "OYAK YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f90a7682-539a-427e-8b1d-3316902e0ad8",
+    "code": "OYYAT",
+    "name": "OYAK YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9ce433b2-9548-4cd1-a2b4-8117de627e26",
+    "code": "OYA",
+    "name": "OYAK YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1ce2d411-314e-47f1-ac4d-a2c8e34e0420",
+    "code": "OYAKC",
+    "name": "OYAK ÇİMENTO FABRİKALARI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4b747787-c3c0-46e6-8448-25845b5c4fa3",
+    "code": "OTOKC",
+    "name": "OTOKOÇ OTOMOTİV TİCARET VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7d521f4b-886f-409d-9c4c-80436870101b",
+    "code": "OTKAR",
+    "name": "OTOKAR OTOMOTİV VE SAVUNMA SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1e11ac7e-63da-4cd1-b11f-63e43522d71d",
+    "code": "OSTIM",
+    "name": "OSTİM ENDÜSTRİYEL YATIRIMLAR VE İŞLETME A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "37ad4f9d-ee20-426b-96d1-08edfa90a921",
+    "code": "OSMEN",
+    "name": "OSMANLI YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1ff6a351-342b-42d9-8fda-c15f8c980e6d",
+    "code": "OMD",
+    "name": "OSMANLI YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e0697c59-b3d2-4a9c-b658-fb826759a0ce",
+    "code": "OZRDN",
+    "name": "ÖZERDEN PLASTİK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "cadfa91b-0e87-4189-a29d-23bbc77baf44",
+    "code": "ORMA",
+    "name": "ORMA ORMAN MAHSULLERİ İNTEGRE SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "14364450-0b75-450a-8804-05e99367fafd",
+    "code": "PHLLP",
+    "name": "PHİLLİPCAPİTAL MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "60085f2e-1bb7-4553-8cbf-b20ce6a7ce7a",
+    "code": "PINSU",
+    "name": "PINAR SU VE İÇECEK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4e9673c7-b5f6-4495-9a21-c530ff97f5e5",
+    "code": "SASA",
+    "name": "SASA POLYESTER SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "97ee0467-2f39-4b24-85c7-0650cf4b5222",
+    "code": "SARTN",
+    "name": "SARTEN AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "01e4e116-754a-4979-bf79-a960f0d3167b",
+    "code": "SARKY",
+    "name": "SARKUYSAN ELEKTROLİTİK BAKIR SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "217bb0e8-d92c-4f78-a5de-e9cd04f93ac7",
+    "code": "SAMAT",
+    "name": "SARAY MATBAACILIK KAĞITÇILIK KIRTASİYECİLİK TİCARET VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b25eccbb-835c-4878-ac68-36c3ba5ed18f",
+    "code": "SANKO",
+    "name": "SANKO PAZARLAMA İTHALAT İHRACAT A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c9649507-d169-45e4-a04f-e92d661ff249",
+    "code": "SANFM",
+    "name": "SANİFOAM SÜNGER SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "387d6510-1757-4bcf-a1cd-206976869a64",
+    "code": "SANEL",
+    "name": "SAN-EL MÜHENDİSLİK ELEKTRİK TAAHHÜT SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "351818e4-f6a1-405e-b047-a5fdec8befdf",
+    "code": "SAFKR",
+    "name": "SAFKAR EGE SOĞUTMACILIK KLİMA SOĞUK HAVA TESİSLERİ İHRACAT İTHALAT SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c944f6cc-239a-4ddd-824d-32f151b9c2dc",
+    "code": "RTALB",
+    "name": "RTA LABORATUVARLARI BİYOLOJİK ÜRÜNLER İLAÇ VE MAKİNE SANAYİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c357d404-e6a7-46d4-9be4-fdee0eccc911",
+    "code": "ROYAL",
+    "name": "ROYAL HALI İPLİK TEKSTİL MOBİLYA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "2d2aa115-a5fd-4be4-b541-be7257b6375e",
+    "code": "RODRG",
+    "name": "RODRİGO TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5c938355-16c0-4774-9462-26550859e90e",
+    "code": "RHEAG",
+    "name": "RHEA GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b22bc598-2866-430b-8e4e-2b3816511f0d",
+    "code": "RYSAS",
+    "name": "REYSAŞ TAŞIMACILIK VE LOJİSTİK TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f58b52c8-c979-4169-a985-26ce7c8746ce",
+    "code": "PETUN",
+    "name": "PINAR ENTEGRE ET VE UN SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ac387e09-0e16-45c0-88da-4f3419c54d97",
+    "code": "RYGYO",
+    "name": "REYSAŞ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1e25ab15-a632-4386-ae3f-67f53710b20c",
+    "code": "RALYH",
+    "name": "RAL YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "59838ef7-2dc5-45ee-bf39-ef6a2bd84699",
+    "code": "QNBFB",
+    "name": "QNB FİNANSBANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c7b0b529-617b-41b4-bcb7-8e92bac80386",
+    "code": "FIN",
+    "name": "QNB FİNANSBANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a3bb7fcd-2187-4230-be69-ff71d109c401",
+    "code": "QNBFI",
+    "name": "QNB FİNANS YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0367f2da-8ee6-4119-a49e-fce821433671",
+    "code": "FNY",
+    "name": " QNBFI",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d0b6a017-e330-47f3-b55a-847bc0d8195c",
+    "code": "QNBVK",
+    "name": "QNB FİNANS VARLIK KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "22da788e-7b79-4c09-abee-2d9fd216ddc8",
+    "code": "QNBFL",
+    "name": "QNB FİNANS FİNANSAL KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6c625802-739f-47dd-a730-33a10c029e9f",
+    "code": "QNBFF",
+    "name": "QNB FİNANS FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ebce931b-a7d8-45d8-8a26-e7b29d947886",
+    "code": "PRZMA",
+    "name": "PRİZMA PRES MATBAACILIK YAYINCILIK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9df3bd4c-7115-4f35-8dc4-89cbb1b68ced",
+    "code": "POLTK",
+    "name": "POLİTEKNİK METAL SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "38bfa7a6-1fcb-4223-b6cb-e68c1506f61a",
+    "code": "POLHO",
+    "name": "POLİSAN HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6caba069-7322-4111-b882-f3945a8677cc",
+    "code": "PKART",
+    "name": "PLASTİKKART AKILLI KART İLETİŞİM SİSTEMLERİ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "81c04301-edd5-4ea3-ae21-1bf98044ee64",
+    "code": "PNSUT",
+    "name": "PINAR SÜT MAMULLERİ SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "784b104c-d94d-415a-b3d4-ab8d0f80a16f",
+    "code": "RAYSG",
+    "name": "RAY SİGORTA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f05fef9b-4d0b-487d-bbfb-30931f99e7b7",
+    "code": "ORGE",
+    "name": "ORGE ENERJİ ELEKTRİK TAAHHÜT A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a716148b-4623-418e-85a9-a2f3d76cd695",
+    "code": "ORFIN",
+    "name": "ORFİN FİNANSMAN A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0b46092c-db9f-478f-aac1-4b0ab3d3d7c8",
+    "code": "OPET",
+    "name": "OPET PETROLCÜLÜK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d53b0ec6-2e96-4d8b-8fb9-2c00d5127ecc",
+    "code": "MRSHL",
+    "name": "MARSHALL BOYA VE VERNİK SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "40b129de-fa93-455d-b093-af484cc8aa52",
+    "code": "MAALT",
+    "name": "MARMARİS ALTINYUNUS TURİSTİK TESİSLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c65643dd-57a6-4021-b90b-cadfcdd59acf",
+    "code": "MARKA",
+    "name": "MARKA YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "fafda321-9d52-4d63-955f-5b505fa5a5f8",
+    "code": "MAKTK",
+    "name": "MAKİNA TAKIM ENDÜSTRİSİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "482d3e77-068d-48f4-8163-fe9f59dfa2e7",
+    "code": "LUKSK",
+    "name": "LÜKS KADİFE TİCARET VE SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5dac3b67-2687-4dfa-aaa5-4ce7fe430b85",
+    "code": "LKMNH",
+    "name": "LOKMAN HEKİM ENGÜRÜSAĞ SAĞLIK",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "01b14ded-d07e-4d79-b26c-3bb9390128f2",
+    "code": "LOGO",
+    "name": "LOGO YAZILIM SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "15daed25-94c0-46ae-aecb-c0682382750e",
+    "code": "LINK",
+    "name": "LİNK BİLGİSAYAR SİSTEMLERİ YAZILIMI VE DONANIMI SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6a72578b-23c9-4374-8556-7cd7a783760d",
+    "code": "LIDFA",
+    "name": "LİDER FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "dfd50dfd-5e0e-4223-82f3-060783465bdb",
+    "code": "KUTPO",
+    "name": "KÜTAHYA PORSELEN SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7aa58c14-79b3-4696-9c0d-b5c7ee7bd5f2",
+    "code": "KUYAS",
+    "name": "KUYUMCUKENT GAYRİMENKUL YATIRIMLARI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "50a7783b-f17e-4e37-99d8-2734b10928a6",
+    "code": "KSTUR",
+    "name": "KUŞTUR KUŞADASI TURİZM ENDÜSTRİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "df0767a7-e9dd-4941-ac38-d5cba40af0de",
+    "code": "KTKVK",
+    "name": "KT KİRA SERTİFİKALARI VARLIK KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a9cf84de-d5be-4d6a-a2b0-206803f723e2",
+    "code": "MRGYO",
+    "name": "MARTI GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "688ed44d-7d86-4856-bf25-2a719b461df6",
+    "code": "KRONT",
+    "name": "KRON TELEKOMÜNİKASYON HİZMETLERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "06238d10-6363-44a3-918b-22c68da6d34c",
+    "code": "KRGYO",
+    "name": "KÖRFEZ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9b7337e4-d224-4419-bb43-efa2cd8835a1",
+    "code": "KOZAA",
+    "name": "KOZA ANADOLU METAL MADENCİLİK İŞLETMELERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "52178e5d-e912-4a9d-b097-cddedbd004b9",
+    "code": "KOZAL",
+    "name": "KOZA ALTIN İŞLETMELERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "69374267-8c25-47d1-8810-cac53e53ca56",
+    "code": "KORTS",
+    "name": "KORTEKS MENSUCAT SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "3705c296-379a-4702-a0f1-03d077b23d93",
+    "code": "KORDS",
+    "name": "KORDSA TEKNİK TEKSTİL A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b185dda4-3256-4c38-a391-fb6ac91657ce",
+    "code": "KONYA",
+    "name": "KONYA ÇİMENTO SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "777213f6-62c7-4718-a6c0-159a7a2f7203",
+    "code": "KONTR",
+    "name": "KONTROLMATİK TEKNOLOJİ ENERJİ VE MÜHENDİSLİK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d5ac5a5e-0400-4754-9d17-4d73816fa1c8",
+    "code": "KNFRT",
+    "name": "KONFRUT GIDA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6084dd04-162d-4366-bb72-d5012fa1d1ca",
+    "code": "KCHOL",
+    "name": "KOÇ HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "58f9b66b-b384-4aad-8e4d-fe9674dca466",
+    "code": "KOCFN",
+    "name": "KOÇ FİNANSMAN A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "016096a1-a829-45b8-872a-c5bf1b8d346f",
+    "code": "KFKTF",
+    "name": "KOÇ FIAT KREDİ FİNANSMAN A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5538dde7-b8a5-4303-8b1a-82abf7c7d5c2",
+    "code": "KLMSN",
+    "name": "KLİMASAN KLİMA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "cc8f0fca-77a5-411b-8cc2-b3190488450b",
+    "code": "KLGYO",
+    "name": "KİLER GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "269257b4-a676-4cf1-883a-9d7ada9411bd",
+    "code": "KRSTL",
+    "name": "KRİSTAL KOLA VE MEŞRUBAT SANAYİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "dc65f507-e260-4085-b7a7-3ecd5b81b3d2",
+    "code": "MARTI",
+    "name": "MARTI OTEL İŞLETMELERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "3159c045-d54e-4af6-bd66-b115127fd6c9",
+    "code": "MAVI",
+    "name": "MAVİ GİYİM SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f661d02a-4297-47a1-906d-1139d6ecfda9",
+    "code": "MZHLD",
+    "name": "MAZHAR ZORLU HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "05a28955-d615-424d-b676-f24c05c42966",
+    "code": "OLMIP",
+    "name": "OLMUKSAN INTERNATIONAL PAPER AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d26fedbe-cca0-49b9-9775-43ff0549d87e",
+    "code": "ODEA",
+    "name": "ODEA BANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "944c40e2-ea66-4277-a6d7-4ddec93e7199",
+    "code": "ODB",
+    "name": "ODEA BANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d16bd82b-a912-41da-824f-2938b96316f4",
+    "code": "ODAS",
+    "name": "ODAŞ ELEKTRİK ÜRETİM SANAYİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "81ffb7fe-0cdb-4e88-8a3d-241af7122ebe",
+    "code": "NYB",
+    "name": "NUROL YATIRIM BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8b6152ae-6902-436d-9d08-89f90f39af81",
+    "code": "NRBNK",
+    "name": "NUROL YATIRIM BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b2c3e773-c82c-4f62-9df4-652330bff150",
+    "code": "NURVK",
+    "name": "NUROL VARLIK KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d7c73b7a-96f1-4f75-a8f5-cecf36c251f1",
+    "code": "NRHOL",
+    "name": "NUROL HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6843980b-e98e-4991-ae20-8c0160838bf8",
+    "code": "NUGYO",
+    "name": "NUROL GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d4b6bc73-df2a-40a9-a6fd-f942e8cf4686",
+    "code": "NUHCM",
+    "name": "NUH ÇİMENTO SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b30a9e13-7348-4434-927c-4e732f7a2470",
+    "code": "NIBAS",
+    "name": "NİĞBAŞ NİĞDE BETON SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4a9ed37b-350e-4e44-8082-087089d458f4",
+    "code": "NETAS",
+    "name": "NETAŞ TELEKOMÜNİKASYON A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "022f6d7c-f9e2-4de3-91bd-ea4cd65858a0",
+    "code": "NTHOL",
+    "name": "NET HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "44a1de35-88b5-4a53-a8ff-78005e37a809",
+    "code": "NATEN",
+    "name": "NATUREL YENİLENEBİLİR ENERJİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "94b23c35-dfe5-4caa-829a-ba31093b95a0",
+    "code": "TIRE",
+    "name": "MONDİ TİRE KUTSAN KAĞIT VE AMBALAJ SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a5759799-1c32-4b98-8ce5-7e446d6e4169",
+    "code": "MMCAS",
+    "name": "MMC SANAYİ VE TİCARİ YATIRIMLAR A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "80eaf1a2-f66f-400e-8ec7-8a61c7a6bf6c",
+    "code": "MPARK",
+    "name": "MLP SAĞLIK HİZMETLERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4c522ba2-ae1d-4a2f-96f2-9df69e704859",
+    "code": "MSGYO",
+    "name": "MİSTRAL GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "37a4aeeb-57a1-4f1e-bbc9-86c33b954839",
+    "code": "MIPAZ",
+    "name": "MİLPA TİCARİ VE SINAİ ÜRÜNLER PAZARLAMA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a2963c38-0859-4006-a80c-445b54867285",
+    "code": "MGROS",
+    "name": "MİGROS TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "be8cdcde-7c11-413c-80ec-64c85b6c8345",
+    "code": "MTRYO",
+    "name": "METRO YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1198465a-3aee-4c5f-b5e7-0f5437ec5d78",
+    "code": "METRO",
+    "name": "METRO TİCARİ VE MALİ YATIRIMLAR HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8debc745-7f98-40bf-aff7-298edb351616",
+    "code": "METUR",
+    "name": "METEMTUR OTELCİLİK VE TURİZM İŞLETMELERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e13687f0-77a0-49b3-a371-e516a788aa84",
+    "code": "MERKO",
+    "name": "MERKO GIDA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4cf8d32d-58dc-436a-a77f-5fa5a3201bdc",
+    "code": "MERIT",
+    "name": "MERİT TURİZM YATIRIM VE İŞLETME A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "dbbba8eb-585d-4019-a2e9-7ea9cddbba28",
+    "code": "MBFTR",
+    "name": "MERCEDES-BENZ FİNANSMAN TÜRK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8296369b-b307-4089-a139-78666d800ef2",
+    "code": "MEPET",
+    "name": "MEPET METRO PETROL VE TESİSLERİ SANAYİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7eda9a43-ea4d-41c1-9654-570849d7626b",
+    "code": "MNDRS",
+    "name": "MENDERES TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "90f50eaa-4004-48da-88b5-c017f352396a",
+    "code": "MEGAP",
+    "name": "MEGA POLİETİLEN KÖPÜK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "17e8753c-e743-4aa2-9b6a-2c48b54393ba",
+    "code": "SAYAS",
+    "name": "SAY YENİLENEBİLİR ENERJİ EKİPMANLARI SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "eeb6236a-e1af-4822-b166-7dd97b4de132",
+    "code": "KERVN",
+    "name": "KERVANSARAY YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5d24c3f8-5b44-4721-90d2-50432b5a3595",
+    "code": "SEKUR",
+    "name": "SEKURO PLASTİK AMBALAJ SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d58cd7cd-0468-4a09-9aa5-49c6197e99f5",
+    "code": "SELGD",
+    "name": "SELÇUK GIDA ENDÜSTRİ İHRACAT İTHALAT A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "592daee1-3163-4910-8908-c54540ca7841",
+    "code": "VAKFN",
+    "name": "VAKIF FİNANSAL KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6a697cb3-e34c-4e84-948e-a644eb133778",
+    "code": "VAKFA",
+    "name": "VAKIF FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0645e314-8987-40be-8436-1e217b32ecea",
+    "code": "UNS",
+    "name": "ÜNLÜ MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "97a61393-b94b-454d-bdb3-099168ff543c",
+    "code": "UNLUS",
+    "name": "ÜNLÜ MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "455c793e-623f-4146-b92a-442b0df2a278",
+    "code": "ULKER",
+    "name": "ÜLKER BİSKÜVİ SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "25398ff0-1d08-4601-a424-f3b1a693e81f",
+    "code": "UZERB",
+    "name": "UZERTAŞ BOYA SANAYİ TİCARET VE YATIRIM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b356dfca-02e1-417e-98ff-0ddedab1942b",
+    "code": "UTPYA",
+    "name": "UTOPYA TURİZM İNŞAAT İŞLETMECİLİK TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a38790da-04ed-4544-8d84-4820f1f49998",
+    "code": "USAK",
+    "name": "UŞAK SERAMİK SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "cc18425f-f0cb-4180-94f1-a0a83589f16e",
+    "code": "UMPAS",
+    "name": "UMPAŞ HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "32516909-31eb-4662-99b0-8deb98508582",
+    "code": "ULUUN",
+    "name": "ULUSOY UN SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7aa0b153-165e-4154-80f5-712b9eecad7e",
+    "code": "ULUSE",
+    "name": "ULUSOY ELEKTRİK İMALAT TAAHHÜT VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a7fb9095-edd6-4c7a-a865-766b16465090",
+    "code": "ULSFA",
+    "name": "ULUSAL FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d3b48ec8-afe6-41d6-9ce8-4ebeb2cbe163",
+    "code": "ULAS",
+    "name": "ULAŞLAR TURİZM YATIRIMLARI VE DAYANIKLI TÜKETİM MALLARI TİCARET PAZARLAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "2965299a-9744-4141-9233-29489f25ad7a",
+    "code": "VKGYO",
+    "name": "VAKIF GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c48c16a1-8ef1-425b-9685-fa63de45ddf8",
+    "code": "UFUK",
+    "name": "UFUK YATIRIM YÖNETİM VE GAYRİMENKUL A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8fe7bba6-4118-42af-a8e7-fc20a99b00ba",
+    "code": "TVB",
+    "name": "TÜRKİYE VAKIFLAR BANKASI T.A.O.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6659359a-360d-46ef-b47d-321bc8adce3d",
+    "code": "SISE",
+    "name": "TÜRKİYE ŞİŞE VE CAM FABRİKALARI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1800ac5a-b4cb-4356-8eb5-c4e03fc461ce",
+    "code": "TURSG",
+    "name": "TÜRKİYE SİGORTA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "2668d698-b783-4389-bbdc-cd004de22db9",
+    "code": "TSKB",
+    "name": "TÜRKİYE SINAİ KALKINMA BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "886c9a52-3a0f-4418-b48d-313fb7df2288",
+    "code": "TSK",
+    "name": "TÜRKİYE SINAİ KALKINMA BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ffb8471b-8cc2-4d39-a025-0bc4e815c8bc",
+    "code": "KLNMA",
+    "name": "TÜRKİYE KALKINMA VE YATIRIM BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "00e47827-7c88-4ba3-ac15-065b0d6b6f81",
+    "code": "KLN",
+    "name": "TÜRKİYE KALKINMA VE YATIRIM BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f446590f-9d7b-41c1-8dde-52c390d6c41e",
+    "code": "TIB",
+    "name": "TÜRKİYE İŞ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b22c4613-1343-45b5-8473-db700008af11",
+    "code": "ISKUR",
+    "name": "TÜRKİYE İŞ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b2edbfed-18ec-4efb-bf61-0f7d16b5a6fc",
+    "code": "ISCTR",
+    "name": "TÜRKİYE İŞ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7ed9ca96-392e-49aa-ab31-5c93a0087438",
+    "code": "ISBTR",
+    "name": "TÜRKİYE İŞ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "191a17b6-2f2a-476d-a4b5-d268d8e3fb03",
+    "code": "ISATR",
+    "name": "TÜRKİYE İŞ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "721d2c76-171d-46d2-a27f-c205f510567c",
+    "code": "EXIMB",
+    "name": "TÜRKİYE İHRACAT KREDİ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "3fa99031-462b-4ee6-8cac-7f6f1b62a1be",
+    "code": "VAKBN",
+    "name": "TÜRKİYE VAKIFLAR BANKASI T.A.O.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "66a2f1c6-58a7-471b-b762-f4e690423678",
+    "code": "HALKB",
+    "name": "TÜRKİYE HALK BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "733c0cb6-4d62-4e64-848b-1034da0b2c0d",
+    "code": "VKFYO",
+    "name": "VAKIF MENKUL KIYMET YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a8899fb5-95a7-4af5-8ffd-df60c2f53ab5",
+    "code": "VAKKO",
+    "name": "VAKKO TEKSTİL VE HAZIR GİYİM SANAYİ İŞLETMELERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "392ebbd3-a953-441c-9fb3-35b5b1e98333",
+    "code": "ZKBVK",
+    "name": "ZİRAAT KATILIM VARLIK KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "785b0465-4347-43ce-acb6-ab6da05c04b0",
+    "code": "YUNSA",
+    "name": "YÜNSA YÜNLÜ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "792eaaea-3ac1-4e93-a12d-78351c4775d8",
+    "code": "YKSLN",
+    "name": "YÜKSELEN ÇELİK A.Ş. ",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "84a099c8-9929-4992-857f-557e4026d5dd",
+    "code": "YONGA",
+    "name": "YONGA MOBİLYA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f80f38b7-2e22-4257-945b-be86063dcb25",
+    "code": "YBTAS",
+    "name": "YİBİTAŞ YOZGAT İŞÇİ BİRLİĞİ İNŞAAT MALZEMELERİ TİCARET VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9c69ee23-cb0a-4987-a26e-39cefc470ae6",
+    "code": "YESIL",
+    "name": "YEŞİL YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e57b0483-d2d3-4f96-8c98-fce28581a6db",
+    "code": "YYAPI",
+    "name": "YEŞİL YAPI ENDÜSTRİSİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5f037af6-8841-4371-94be-901db2229939",
+    "code": "YGYO",
+    "name": "YEŞİL GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6a8cf3fe-5b8f-4457-8aad-1d3f1b23cb25",
+    "code": "YGGYO",
+    "name": "YENİ GİMAT GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b061dd5b-ddc2-4d7a-bca7-213565ec3736",
+    "code": "YDATH",
+    "name": "YDA İNŞAAT SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e5129778-4f61-4016-888f-400584312dd4",
+    "code": "YAYLA",
+    "name": "YAYLA ENERJİ ÜRETİM TURİZM VE İNŞAAT TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ac52a91a-c95a-4a4f-958c-a529b527734a",
+    "code": "YATVK",
+    "name": "YATIRIM VARLIK KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "73b14ddc-33a7-418c-99bf-e32ad82a4c1c",
+    "code": "YFMEN",
+    "name": "YATIRIM FİNANSMAN MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "020da9e0-c010-4881-9123-23cd96332935",
+    "code": "VAKVK",
+    "name": "VAKIF VARLIK KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ad29ece5-eeb3-479d-8c21-278746199c0b",
+    "code": "YAT",
+    "name": "YATIRIM FİNANSMAN MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f268d949-b29b-4e8b-9708-f078471d5365",
+    "code": "YAPRK",
+    "name": "YAPRAK SÜT VE BESİ ÇİFTLİKLERİ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6bb9cc5d-c8d0-43eb-9ec5-2a96132b1277",
+    "code": "YKBNK",
+    "name": "YAPI VE KREDİ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f20757ad-0320-4134-8557-e62508f33d16",
+    "code": "YKB",
+    "name": "YAPI VE KREDİ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "09699b81-9ffb-43f2-a111-9820f2926cec",
+    "code": "YKYAT",
+    "name": "YAPI KREDİ YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9bff6785-b65f-4581-89ab-90a307573888",
+    "code": "YKR",
+    "name": "YAPI KREDİ YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "68126293-32c8-446c-91ca-12e7de65c4fe",
+    "code": "YKGYO",
+    "name": "YAPI KREDİ KORAY GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "60cb513f-9eda-485c-af74-36313c7fc3e8",
+    "code": "YKFKT",
+    "name": "YAPI KREDİ FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6b40b113-48ec-485b-af4a-4334ead5c954",
+    "code": "VKING",
+    "name": "VİKİNG KAĞIT VE SELÜLOZ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8b295688-dca0-4863-a8af-b084017de5ac",
+    "code": "VESTL",
+    "name": "VESTEL ELEKTRONİK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "52ded00d-3066-4c5a-a165-d607ad59b6a9",
+    "code": "VESBE",
+    "name": "VESTEL BEYAZ EŞYA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "59719e90-e05d-498a-9147-7c3699a0b283",
+    "code": "VERTU",
+    "name": "VERUSATURK GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a9904dd0-2c5a-4b21-958e-756ccc01472b",
+    "code": "VERUS",
+    "name": "VERUSA HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0ad3e10c-4c4f-40a4-8328-fbac925e81fb",
+    "code": "VANGD",
+    "name": "VANET GIDA SANAYİ İÇ VE DIŞ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f6077240-3346-4925-b455-e4414abefb48",
+    "code": "YATAS",
+    "name": "YATAŞ YATAK VE YORGAN SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "346757c5-4c30-422e-a141-b914f6853dca",
+    "code": "TGB",
+    "name": "TÜRKİYE GARANTİ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "777ab1bb-d4c5-4ce3-9c53-2b049aca80a1",
+    "code": "GARAN",
+    "name": "TÜRKİYE GARANTİ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "312c6a67-bce6-470e-963b-26db3d28048f",
+    "code": "TURGG",
+    "name": "TÜRKER PROJE GAYRİMENKUL VE YATIRIM GELİŞTİRME A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "bd774db3-e1bb-48f9-a3b9-87b6547d078d",
+    "code": "TAMFA",
+    "name": "TAM FİNANS FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7146a411-5eb5-4ef6-9e82-819a19ce502f",
+    "code": "TACTR",
+    "name": "TAÇ TARIM ÜRÜNLERİ HAYVANCILIK GIDA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "82253fdd-44df-47bf-ad3e-3ccddde8c684",
+    "code": "TCRYT",
+    "name": "TACİRLER YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f321a4cf-b16b-41c8-b1a9-cd228a9fccf2",
+    "code": "TAC",
+    "name": "TACİRLER YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e6213007-4e8a-4573-b041-533a6a1a5500",
+    "code": "TCZB",
+    "name": "T.C. ZİRAAT BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0d9974e2-a133-456e-89e2-c95ae2ca897c",
+    "code": "TCZ",
+    "name": "T.C. ZİRAAT BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "3e193f80-e270-4b70-8f6e-51164a803e52",
+    "code": "TOKI",
+    "name": "T.C. TOPLU KONUT İDARESİ BAŞKANLIĞI",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "fe4bcc62-8a6a-43ca-b46a-48dec09bd3bd",
+    "code": "SOKM",
+    "name": "ŞOK MARKETLER TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1657a4bb-1448-4b01-a3bf-f7f86a4b9da4",
+    "code": "SKBNK",
+    "name": "ŞEKERBANK T.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ea664f64-0780-4d69-8f18-4355cde2ab14",
+    "code": "SEK",
+    "name": "ŞEKERBANK T.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7711045b-90cd-4fdd-819b-aa888fed435c",
+    "code": "SKYMD",
+    "name": "ŞEKER YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8b90c7bd-ae4f-4907-a34e-71897fd0b56a",
+    "code": "SKY",
+    "name": "ŞEKER YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7d7c46d7-410d-440f-88e2-5e3023d727ad",
+    "code": "SEKFK",
+    "name": "ŞEKER FİNANSAL KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9ea68609-287a-483f-bdb3-e869c6ed2c22",
+    "code": "TATGD",
+    "name": "TAT GIDA SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a0dc9213-16cc-4578-b4b1-e0031a22e511",
+    "code": "SEKFA",
+    "name": "ŞEKER FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "78520e1d-96b9-4614-a910-1c1de21f7033",
+    "code": "SMRFA",
+    "name": "SÜMER FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "11eec33e-c9ce-4229-8bcd-b98af3cfea52",
+    "code": "SUMAS",
+    "name": "SUMAŞ SUNİ TAHTA VE MOBİLYA SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "acef4821-e634-48c6-a279-a4757ffda1da",
+    "code": "SNPAM",
+    "name": "SÖNMEZ PAMUKLU SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "30c06d04-ece3-4a3d-844b-8cb60307a297",
+    "code": "SONME",
+    "name": "SÖNMEZ FİLAMENT SENTETİK İPLİK VE ELYAF SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "93bb34a3-3a70-4246-b9e8-73e11ec810df",
+    "code": "SKTAS",
+    "name": "SÖKTAŞ TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "3205aad2-a64f-4f6a-acee-8533fe9ce680",
+    "code": "SODSN",
+    "name": "SODAŞ SODYUM SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5ebdb763-51ae-49af-a560-334cfc408932",
+    "code": "SMART",
+    "name": "SMARTİKS YAZILIM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "3f85ed74-1baf-4b4e-914a-5ea52104f0d1",
+    "code": "SNGYO",
+    "name": "SİNPAŞ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "00d6d057-fc8e-4777-b1f9-40ae59af304a",
+    "code": "SILVR",
+    "name": "SİLVERLİNE ENDÜSTRİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ca96549f-10c9-4936-9a62-6a51cf53600a",
+    "code": "SEYKM",
+    "name": "SEYİTLER KİMYA SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "acc36ee2-2104-4fc4-8c7f-9628e6f2a0c4",
+    "code": "SRVGY",
+    "name": "SERVET GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "93ca0652-0ef0-4d5b-a89e-03c8e09754b5",
+    "code": "SERVE",
+    "name": "SERVE FİLM PRODÜKSİYON EĞLENCE A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "baa5268b-49f7-44df-97a5-15a9b28a66a8",
+    "code": "SNKRN",
+    "name": "SENKRON GÜVENLİK VE İLETİŞİM SİSTEMLERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b7eb69a4-9098-4afc-8358-b5242424e7b9",
+    "code": "SMRVA",
+    "name": "SÜMER VARLIK YÖNETİM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6652718d-7dd0-417e-a47a-76565595b42f",
+    "code": "TAVHL",
+    "name": "TAV HAVALİMANLARI HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8ee85270-6647-43f8-b607-92dd3a3cae47",
+    "code": "TKURU",
+    "name": "TAZE KURU GIDA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "452153f1-39df-4267-8c8f-662de9eaa5d2",
+    "code": "TEBCE",
+    "name": "TEB FİNANSMAN A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "2d8bef37-a232-4710-b82c-6d2b205b6cc7",
+    "code": "TBORG",
+    "name": "TÜRK TUBORG BİRA VE MALT SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b8cc9a04-8c41-43bb-b12d-f52e1fe97cb8",
+    "code": "TTRAK",
+    "name": "TÜRK TRAKTÖR VE ZİRAAT MAKİNELERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "317d402e-6f23-4b10-8985-7cc748bb43e1",
+    "code": "TTKOM",
+    "name": "TÜRK TELEKOMÜNİKASYON A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d0d408a0-07b4-4fce-bdab-16e038133b19",
+    "code": "PRKAB",
+    "name": "TÜRK PRYSMİAN KABLO VE SİSTEMLERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "97203a4b-ec8c-4c33-b119-5d95315f8fda",
+    "code": "THYAO",
+    "name": "TÜRK HAVA YOLLARI A.O.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "05604285-4b14-47d2-a609-35774a19e905",
+    "code": "TEBNK",
+    "name": "TÜRK EKONOMİ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "2ce24f5d-ef6d-4fce-a393-77eb9c6a5401",
+    "code": "TEB",
+    "name": "TÜRK EKONOMİ BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d066e630-e709-431b-b662-f6dabdfa095d",
+    "code": "TUPRS",
+    "name": "TÜPRAŞ-TÜRKİYE PETROL RAFİNERİLERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "143dca73-0e82-4b6d-936d-41033691787e",
+    "code": "TMSN",
+    "name": "TÜMOSAN MOTOR VE TRAKTÖR SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "30a4fbe2-6b16-403c-8d01-9240174644b4",
+    "code": "TRKSH",
+    "name": "TURKISH BANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "756e9bc2-79ad-416b-b35b-3bcbbbb54ee3",
+    "code": "TBA",
+    "name": "TURKISH BANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ec2888e7-ae00-4680-a567-fff8de2ecef9",
+    "code": "TCELL",
+    "name": "TURKCELL İLETİŞİM HİZMETLERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "74107d8d-4ee6-4a1e-80e3-80ed09af7f4e",
+    "code": "TRCAS",
+    "name": "TURCAS PETROL A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4621b2e4-31f2-4953-a5cf-21442f32fc20",
+    "code": "TUKAS",
+    "name": "TUKAŞ GIDA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "80c38759-0e21-4273-902e-9403236174ad",
+    "code": "TUCLK",
+    "name": "TUĞÇELİK ALÜMİNYUM VE METAL MAMÜLLERİ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "80e5b589-d02d-4cd4-8a41-bcdb76b8b0e8",
+    "code": "TSGYO",
+    "name": "TSKB GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "aff03088-6671-4da5-ac12-abd10a9159f8",
+    "code": "TDGYO",
+    "name": "TREND GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c9ff4fe3-c2d5-42ba-9e92-9f8bd60971de",
+    "code": "TSPOR",
+    "name": "TRABZONSPOR SPORTİF YATIRIM VE FUTBOL İŞLETMECİLİĞİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e60590a7-1501-463b-983b-b3ecd2cc97c8",
+    "code": "TLMAN",
+    "name": "TRABZON LİMAN İŞLETMECİLİĞİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "2eba478c-379f-403e-82f6-9e4ac2abfa42",
+    "code": "TRGYO",
+    "name": "TORUNLAR GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "3195566b-3c72-44bb-9faf-d36cc7aa91a2",
+    "code": "TOASO",
+    "name": "TOFAŞ TÜRK OTOMOBİL FABRİKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "144064c7-ba33-4b80-9d62-a89d5c7ee7f0",
+    "code": "TGSAS",
+    "name": "TGS DIŞ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c1991c24-f856-4bfb-b3b9-f9ee30c70721",
+    "code": "TFNVK",
+    "name": "TF VARLIK KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "dcba6b1b-6fc1-43da-9e72-fcbab0aadbb5",
+    "code": "TRMNK",
+    "name": "TERA YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5db0e9b1-e946-44fc-85e3-810b44d89f43",
+    "code": "STK",
+    "name": "TERA YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "629e893d-989a-4d89-a148-2816a6540860",
+    "code": "TMPOL",
+    "name": "TEMAPOL POLİMER PLASTİK VE İNŞAAT SANAYİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "794f6e0e-3714-4d25-93fb-10151b108baf",
+    "code": "TKNSA",
+    "name": "TEKNOSA İÇ VE DIŞ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b2729625-2e55-4d45-b964-c5f280ed246b",
+    "code": "TKFEN",
+    "name": "TEKFEN HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6c6a8c95-5912-4291-8f91-91cca66fd0c7",
+    "code": "TEKTU",
+    "name": "TEK-ART İNŞAAT TİCARET TURİZM SANAYİ VE YATIRIMLAR A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "66587df4-e8fe-43fc-ba0e-a1773d29b6a1",
+    "code": "SELEC",
+    "name": "SELÇUK ECZA DEPOSU TİCARET VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5e7d5bde-a4cf-4585-9477-508fe9131972",
+    "code": "KRVGD",
+    "name": "KERVAN GIDA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a0f89136-4ffe-4c02-a397-5c0bdabb40ca",
+    "code": "KERVT",
+    "name": "KEREVİTAŞ GIDA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "33bba3b2-e764-48f7-9ea1-5c4b9679baac",
+    "code": "KENT",
+    "name": "KENT GIDA MADDELERİ SANAYİİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "63eaf797-f6d9-4049-8616-a7031ce289fd",
+    "code": "EMKEL",
+    "name": "EMEK ELEKTRİK ENDÜSTRİSİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "661a5e63-7266-451f-95cf-83a0d600ad0f",
+    "code": "EMNIS",
+    "name": "EMİNİŞ AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "eecef9e2-e127-410a-8100-e5d1daa8a334",
+    "code": "EKTVK",
+    "name": "EMLAK KATILIM VARLIK KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f74fde2e-5895-454d-acc4-319fcfdba8ec",
+    "code": "EKGYO",
+    "name": "EMLAK KONUT GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f76131fc-b2be-41f0-b321-936e2c856774",
+    "code": "ENJSA",
+    "name": "ENERJİSA ENERJİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d3377296-ccd9-4389-b5cd-3546a2f30613",
+    "code": "ENKAI",
+    "name": "ENKA İNŞAAT VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7622beb7-f2e6-4bee-a0ef-22c2724a0c40",
+    "code": "ERBOS",
+    "name": "ERBOSAN ERCİYAS BORU SANAYİİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "fa85b753-9aaf-494a-a0e7-9da907d4a581",
+    "code": "EREGL",
+    "name": "EREĞLİ DEMİR VE ÇELİK FABRİKALARI T.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c0bb2dc3-56af-4cf4-8e67-cd5471914667",
+    "code": "ERGLI",
+    "name": "EREĞLİ TEKSTİL TURİZM SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "790dd9fb-ac9b-4f3e-a314-db4cbe21d02e",
+    "code": "EROGL",
+    "name": "EROĞLU YAPI İNŞAAT GAYRİMENKUL VE GELİŞTİRME SAN VE TİC.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b1dec5de-1d68-4505-af7e-d590e6cf0082",
+    "code": "ERSU",
+    "name": "ERSU MEYVE VE GIDA SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a6519091-b641-44a3-a77a-d4ef135ca6f4",
+    "code": "ESCOM",
+    "name": "ESCORT TEKNOLOJİ YATIRIM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c296d4f4-3a75-4d92-a925-c9c51f68790c",
+    "code": "ESEN",
+    "name": "ESENBOĞA ELEKTRİK ÜRETİM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "cc26cb37-3eb5-4446-ad63-b24184d7f04d",
+    "code": "EKOFA",
+    "name": "EKO FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c1787ffd-be73-4e0b-9c9d-ed19414b4d59",
+    "code": "ETILR",
+    "name": "ETİLER GIDA VE TİCARİ YATIRIMLAR SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c6a0bd56-ac9c-4524-b86c-b2ec2c8171f1",
+    "code": "EUYO",
+    "name": "EURO MENKUL KIYMET YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1b978dbc-1722-4188-a4c3-b2bfc2b5adbf",
+    "code": "ETYAT",
+    "name": "EURO TREND YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e84b4b9f-94bd-4830-a47b-61dec9e3f8b8",
+    "code": "EUHOL",
+    "name": "EURO YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9ca8f384-3fac-4eda-a3f7-7742c5133738",
+    "code": "FADE",
+    "name": "FADE GIDA YATIRIM SANAYİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c62ded1b-bd75-4193-b725-a75eeb497607",
+    "code": "FMIZP",
+    "name": "FEDERAL-MOGUL İZMİT PİSTON VE PİM ÜRETİM TESİSLERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6ed3a455-86f2-409e-87ae-438018fd8272",
+    "code": "FENER",
+    "name": "FENERBAHÇE FUTBOL A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a0c4166c-4e20-40b8-bec5-cd5af7b285b7",
+    "code": "FBB",
+    "name": "FİBABANKA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "83aeff85-dc1b-415e-a2cf-1aa127527859",
+    "code": "FBBNK",
+    "name": "FİBABANKA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c0a93353-d1c3-4d0c-8808-c452dcb0f965",
+    "code": "FLAP",
+    "name": "FLAP KONGRE TOPLANTI HİZMETLERİ OTOMOTİV VE TURİZM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "32f4c670-7f5f-4828-882d-7563bb4a1415",
+    "code": "FONET",
+    "name": "FONET BİLGİ TEKNOLOJİLERİ A.Ş. ",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "fee11813-a027-4008-8db9-4ed390053c8f",
+    "code": "FROTO",
+    "name": "FORD OTOMOTİV SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9508ae3f-0be2-4105-8116-f8714d27f84f",
+    "code": "FORMT",
+    "name": "FORMET ÇELİK KAPI SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "930a0fd8-b580-4cdb-a876-3ce0c16510a2",
+    "code": "FRIGO",
+    "name": "FRİGO-PAK GIDA MADDELERİ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d4ac7355-1191-40f1-92a7-94c05d8bf4a7",
+    "code": "EUKYO",
+    "name": "EURO KAPİTAL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "95b7e839-57e9-4db3-bc48-cb7a4aa68cf4",
+    "code": "GSRAY",
+    "name": "GALATASARAY SPORTİF SINAİ VE TİCARİ YATIRIMLAR A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0ab31cbd-f14f-4e64-87b7-5cb28a98e94d",
+    "code": "EKIZ",
+    "name": "EKİZ KİMYA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8d06ed73-7b36-4447-8b29-8e7e18a7b550",
+    "code": "EPLAS",
+    "name": "EGEPLAST EGE PLASTİK TİCARET VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "64835053-6ed1-496b-b15a-528f6f07738d",
+    "code": "DERAS",
+    "name": "DERLÜKS DERİ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a4f8c76f-140c-4e10-8770-6447f8bd5159",
+    "code": "DESA",
+    "name": "DESA DERİ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7b4b5ad6-fd55-42d9-b36f-08c03dcf74c9",
+    "code": "DESPC",
+    "name": "DESPEC BİLGİSAYAR PAZARLAMA VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c3bc20b7-8694-4cb5-9b1a-a30d5c0b7374",
+    "code": "DSTKF",
+    "name": "DESTEK FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a2b060ce-4dfc-4e8c-a856-59a8d2d22a9d",
+    "code": "DEVA",
+    "name": "DEVA HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "125cf001-5dad-4e23-a667-e58b0f20f4ed",
+    "code": "DEVIR",
+    "name": "DEVİR FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6909cbf0-26ac-4230-94a6-a81d512e62e8",
+    "code": "DNISI",
+    "name": "DİNAMİK ISI MAKİNA YALITIM MALZEMELERİ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a9a1f6fb-13f0-4264-8df9-4ebadf20284a",
+    "code": "DIRIT",
+    "name": "DİRİTEKS DİRİLİŞ TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "bf7b58cf-7c32-46b4-baf2-ac4e34de3884",
+    "code": "GLYHO",
+    "name": "GLOBAL YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c89fcc61-0625-4dd9-8e10-d8dec90c5b29",
+    "code": "DITAS",
+    "name": "DİTAŞ DOĞAN YEDEK PARÇA İMALAT VE TEKNİK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8caa0fd2-419d-4e29-ad62-09252f2f0db6",
+    "code": "DOCO",
+    "name": "DO & CO AKTIENGESELLSCHAFT",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c62ca8e4-3995-45fe-b300-e527772da997",
+    "code": "DOBUR",
+    "name": "DOĞAN BURDA DERGİ YAYINCILIK VE PAZARLAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "59f1816b-325d-4a68-ae21-2ddbd1357417",
+    "code": "DOHOL",
+    "name": "DOĞAN ŞİRKETLER GRUBU HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "baebd53f-f1b2-42a1-bece-f70812e5cee5",
+    "code": "DGKLB",
+    "name": "DOĞTAŞ KELEBEK MOBİLYA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d512277e-cc1e-4281-b9fe-5f07ef53432e",
+    "code": "ECILC",
+    "name": "EİS ECZACIBAŞI İLAÇ",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "78187560-fff5-4041-8ac4-701c65ee37d6",
+    "code": "DOGUB",
+    "name": "DOĞUSAN BORU SANAYİİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "61b21e3c-a299-4503-9d6b-b11d3121fec0",
+    "code": "DGHOL",
+    "name": "DOĞUŞ HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d828a403-24b2-4ae8-b37d-aeb715aa344c",
+    "code": "DOAS",
+    "name": "DOĞUŞ OTOMOTİV SERVİS VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "99228563-80de-4809-a469-bd49eb47e192",
+    "code": "DFKTR",
+    "name": "DORUK FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "473679a3-9dcb-4d13-9019-8a724f33ea65",
+    "code": "DOKTA",
+    "name": "DÖKTAŞ DÖKÜMCÜLÜK TİCARET VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d3b8ba0c-e10f-4bc4-b664-8f86dba89edc",
+    "code": "DURDO",
+    "name": "DURAN DOĞAN BASIM VE AMBALAJ SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "400e1b32-e760-466c-b37d-2d32a4171b0d",
+    "code": "DNYVA",
+    "name": "DÜNYA VARLIK YÖNETİM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "71c76690-30b3-4e7e-a433-ae92ea9e88dc",
+    "code": "DYOBY",
+    "name": "DYO BOYA FABRİKALARI SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4774dd4d-cbe8-4619-8bf3-690916cee1ad",
+    "code": "ECZYT",
+    "name": "ECZACIBAŞI YATIRIM HOLDİNG ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "23255cd0-dc6e-4cc7-85a5-a78cdfc05f46",
+    "code": "EDIP",
+    "name": "EDİP GAYRİMENKUL YATIRIM SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "55da4ddd-2f04-4f1d-bc2d-431ad4066427",
+    "code": "EGEEN",
+    "name": "EGE ENDÜSTRİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "2641d363-b515-477f-a56d-4c197dbe37f7",
+    "code": "EGGUB",
+    "name": "EGE GÜBRE SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5f515609-050a-4b0e-9e83-8ab91224cbac",
+    "code": "EGPRO",
+    "name": "EGE PROFİL TİCARET VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9d605338-91ce-4ebb-8c98-eff020d2fc8d",
+    "code": "EGSER",
+    "name": "EGE SERAMİK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a4b7ae00-496c-4fa4-8bb0-f13ac773621b",
+    "code": "DGGYO",
+    "name": "DOĞUŞ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "cdbd8515-00a4-4224-bf3a-b5ec19902fc9",
+    "code": "GARFA",
+    "name": "GARANTİ FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9221cd3a-c5b7-4a4d-a2ab-6a0202faab62",
+    "code": "GRFIN",
+    "name": "GARANTİ FİNANSAL KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "405e7c5a-b3dd-4d1e-bed0-920c3355ab5a",
+    "code": "GRNYO",
+    "name": "GARANTİ YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9407e23b-55d0-458e-a360-c66b96bc5817",
+    "code": "IHLGM",
+    "name": "İHLAS GAYRİMENKUL PROJE GELİŞTİRME VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9ebc7701-5573-4d2c-af5f-3ad778573d33",
+    "code": "IHGZT",
+    "name": "İHLAS GAZETECİLİK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c6a0dbc9-53f8-47ac-ab82-78a7c3fe582c",
+    "code": "IHLAS",
+    "name": "İHLAS HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "caa6abb4-c093-4408-a85c-35fea58204df",
+    "code": "IHYAY",
+    "name": "İHLAS YAYIN HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "bd06817a-4294-4b8b-9bf8-f1ad70a22518",
+    "code": "INDES",
+    "name": "İNDEKS BİLGİSAYAR SİSTEMLERİ MÜHENDİSLİK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "93f5a442-9e83-4262-a0c4-5cfde75f260d",
+    "code": "INFO",
+    "name": "İNFO YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "cfa4c1dd-58ff-4dcd-a202-d3ae9bdeada1",
+    "code": "IYF",
+    "name": "İNFO YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4b69e8ec-f4f4-4939-b2cc-7d44c734d6ad",
+    "code": "INTEM",
+    "name": "İNTEMA İNŞAAT VE TESİSAT MALZEMELERİ YATIRIM VE PAZARLAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8529d773-cd31-46ec-bcb4-7a02e4886404",
+    "code": "IPEKE",
+    "name": "İPEK DOĞAL ENERJİ KAYNAKLARI ARAŞTIRMA VE ÜRETİM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "216c9642-b6c4-42e2-90c9-11d8d7357956",
+    "code": "ISDMR",
+    "name": "İSKENDERUN DEMİR VE ÇELİK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "75b402e3-72b0-403b-bb2b-3fa46456550d",
+    "code": "ISFAK",
+    "name": "İŞ FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f7f78280-d87c-4fab-b31e-9de7d6802896",
+    "code": "ISFIN",
+    "name": "İŞ FİNANSAL KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5397637f-0041-41f4-b199-673954cff953",
+    "code": "ISGYO",
+    "name": "İŞ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f77b7682-b7a7-4f31-9783-b67514828c0e",
+    "code": "IHEVA",
+    "name": "İHLAS EV ALETLERİ İMALAT SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1b81e1a2-ec65-479a-9d2f-063adcc7e4a0",
+    "code": "ISGSY",
+    "name": "İŞ GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6f875004-ac79-4934-a17a-5374486c563e",
+    "code": "IYM",
+    "name": "İŞ YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "401076d3-2760-4353-9545-9e4d449b856d",
+    "code": "ISYAT",
+    "name": "İŞ YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ce1e1cdc-be7a-4f5e-bc67-911333f91ac6",
+    "code": "ISBIR",
+    "name": "İŞBİR HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "609c6756-b2ac-469c-b3f4-c944b451d3fe",
+    "code": "ITTFH",
+    "name": "İTTİFAK HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a111af67-54a9-4726-ab1c-932fafea034f",
+    "code": "IZTAR",
+    "name": "İZ HAYVANCILIK TARIM VE GIDA SANAYİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9705515f-fb0b-4849-847f-6037b7a08aa8",
+    "code": "IZMDC",
+    "name": "İZMİR DEMİR ÇELİK SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8979de3b-6841-41b3-b73e-b66bfe66379c",
+    "code": "IZFAS",
+    "name": "İZMİR FIRÇA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f59d3a17-3059-4c5a-8c47-716868cae003",
+    "code": "JANTS",
+    "name": "JANTSA JANT SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0e0e8a54-54ad-4ea7-a119-3b1475c26df7",
+    "code": "KFEIN",
+    "name": "KAFEİN YAZILIM HİZMETLERİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6383d07d-8f3f-45d7-abb4-ac3500c7e2a7",
+    "code": "KALES",
+    "name": "KALESERAMİK ÇANAKKALE KALEBODUR SERAMİK SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "22b5d220-1b42-4954-bc97-557205b3c7be",
+    "code": "KAPLM",
+    "name": "KAPLAMİN AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0bd6f3ca-9c6e-4cf0-a3f7-422ba2c6d06d",
+    "code": "KRDMA",
+    "name": "KARDEMİR KARABÜK DEMİR ÇELİK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5e460ccb-2324-4864-b59b-854b0c4bf682",
+    "code": "KRDMB",
+    "name": "KARDEMİR KARABÜK DEMİR ÇELİK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4ea8ce6d-45c7-4125-b1b2-6772cb214ebc",
+    "code": "ISMEN",
+    "name": "İŞ YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "65abafcb-c191-4294-bc65-44590d3b9834",
+    "code": "IDGYO",
+    "name": "İDEALİST GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "cce94732-5c9e-45cb-8aa4-254ce5af959d",
+    "code": "IDEAS",
+    "name": "İDEALİST DANIŞMANLIK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "281ec517-0fe0-4e86-afa3-ed7416c09838",
+    "code": "IEYHO",
+    "name": "IŞIKLAR ENERJİ VE YAPI HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c36e9e9b-9970-430a-b9e0-a1ebb39cd52b",
+    "code": "GEDIK",
+    "name": "GEDİK YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a18dae32-5a15-4e71-9f79-99afe728b5d2",
+    "code": "GEDZA",
+    "name": "GEDİZ AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e587b39f-a87b-4089-a045-40b28151c546",
+    "code": "GENTS",
+    "name": "GENTAŞ DEKORATİF YÜZEYLER SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c39fefd9-be56-44c2-bb72-a575a98965a9",
+    "code": "GEREL",
+    "name": "GERSAN ELEKTRİK TİCARET VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9e7e10d7-07f9-48cb-ae1b-7d2188360916",
+    "code": "GLB",
+    "name": "GLOBAL MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4a246e22-3779-42ee-82ac-42ee08ecbc9a",
+    "code": "GLBMD",
+    "name": "GLOBAL MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "30437926-7dcd-4f5e-93f1-e986c290fa72",
+    "code": "GOODY",
+    "name": "GOODYEAR LASTİKLERİ T.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f0cea3d1-92c7-4310-a5ad-ea9f61bf7f86",
+    "code": "GOLTS",
+    "name": "GÖLTAŞ GÖLLER BÖLGESİ ÇİMENTO SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "24b1cfd0-3663-4f1c-ac3c-5f02ed4b5e6b",
+    "code": "GOZDE",
+    "name": "GÖZDE GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6257a0a5-e2fd-438e-b270-da73b478351d",
+    "code": "GSDDE",
+    "name": "GSD DENİZCİLİK GAYRİMENKUL İNŞAAT SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "24c314fe-b678-40d0-a804-dee5d20279da",
+    "code": "GSDHO",
+    "name": "GSD HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "407057f9-73ce-4425-a1d0-d9ab18303f87",
+    "code": "GUBRF",
+    "name": "GÜBRE FABRİKALARI T.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b6c88edc-3ac7-475c-a006-f48cf9bcf37a",
+    "code": "GLRYH",
+    "name": "GÜLER YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6238a5a8-c2e7-4fc6-8c91-0b30b09fb2d4",
+    "code": "SAHOL",
+    "name": "HACI ÖMER SABANCI HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f4597492-cc89-47e2-8038-2a9c69440339",
+    "code": "HALKF",
+    "name": "HALK FİNANSAL KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b090953f-bc36-49ef-91e4-3f09130f3c64",
+    "code": "HLGYO",
+    "name": "HALK GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b0934f27-7091-44e9-99c1-1baa8ba228a8",
+    "code": "HLVKS",
+    "name": "HALK VARLIK KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d659e8d2-dd33-43f7-8c53-a5d56785f41c",
+    "code": "HATEK",
+    "name": "HATEKS HATAY TEKSTİL İŞLETMELERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "2033cf28-ef6f-45d2-8d7f-76f9021c2d25",
+    "code": "HDFGS",
+    "name": "HEDEF GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "99870182-71e5-486a-8d99-2100ce401b5f",
+    "code": "HEKTS",
+    "name": "HEKTAŞ TİCARET T.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9482dce4-e7cf-4a49-8c36-77862d463d98",
+    "code": "HSB",
+    "name": "HSBC BANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "54b61bdf-8d0d-4757-a73a-741915f139cb",
+    "code": "HSBCB",
+    "name": "HSBC BANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f38a4359-db80-4451-a1f0-f5d4e327f323",
+    "code": "HUBVC",
+    "name": "HUB GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "2943e965-2758-489f-9501-641e996397a5",
+    "code": "HUZFA",
+    "name": "HUZUR FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "83f6f6e9-fc27-4ab9-9cb6-78c56d122be5",
+    "code": "HURGZ",
+    "name": "HÜRRİYET GAZETECİLİK VE MATBAACILIK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a44f09df-4686-4bd7-ab5f-6c2c96efc8d2",
+    "code": "ICB",
+    "name": "ICBC TURKEY BANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "30893988-f2d5-4a7d-a5f6-f5cfc11c87bb",
+    "code": "ICBCT",
+    "name": "ICBC TURKEY BANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "64d75254-476c-47df-ad74-c532da309aad",
+    "code": "INVEO",
+    "name": "INVEO YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f1d1bb3b-2ce8-4c42-8102-508122da2241",
+    "code": "DERIM",
+    "name": "DERİMOD KONFEKSİYON AYAKKABI DERİ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0e0926a4-71ff-43d8-a5f4-ea8922c2c2e1",
+    "code": "DNZ",
+    "name": "DENİZBANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f1341dc4-42fe-4d86-8fcc-4fd25a396969",
+    "code": "DENIZ",
+    "name": "DENİZBANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "dcebc7b1-5248-483a-9143-e6bef70c2910",
+    "code": "DZYMK",
+    "name": "DENİZ YATIRIM MENKUL KIYMETLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ccaa6239-0b7b-488c-8f50-827e58b029ff",
+    "code": "ALCAR",
+    "name": "ALARKO CARRIER SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "efa8ddf6-a5b3-48d4-9e9e-ef55ab730aad",
+    "code": "ALGYO",
+    "name": "ALARKO GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ec5045ce-4be3-48bf-8648-d1ff02e8881d",
+    "code": "ALARK",
+    "name": "ALARKO HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0db09aad-6160-4c7a-9ad5-79ef2a47e6ad",
+    "code": "ALBRK",
+    "name": "ALBARAKA TÜRK KATILIM BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ce3d5a58-1172-4533-98f2-5efef53c3500",
+    "code": "ALK",
+    "name": "ALBARAKA TÜRK KATILIM BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f1cba63c-b57a-4820-9fb6-f4aa07e0fbbc",
+    "code": "ALCTL",
+    "name": "ALCATEL LUCENT TELETAŞ TELEKOMÜNİKASYON A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7d738de2-8709-4688-a2d9-283bb8fe9590",
+    "code": "ALKIM",
+    "name": "ALKİM ALKALİ KİMYA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8a6b107f-b719-497a-aadd-95670e29da08",
+    "code": "ALKA",
+    "name": "ALKİM KAĞIT SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "914af0a0-2226-45bf-bbbf-c68e01bf1241",
+    "code": "ALNTF",
+    "name": "ALTERNATİFBANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7b2de79d-e93d-4409-9389-4003b6c3dc97",
+    "code": "ANF",
+    "name": "ALTERNATİFBANK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "05d64e42-3b44-461a-8a67-7f4768294601",
+    "code": "AYCES",
+    "name": "ALTIN YUNUS ÇEŞME TURİSTİK TESİSLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0834a2a5-8028-4960-82f9-8a8469a90cf7",
+    "code": "ALMAD",
+    "name": "ALTINYAĞ MADENCİLİK VE ENERJİ YATIRIMLARI SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "fc4dc8cc-df1f-4efa-966f-b2fde08f023b",
+    "code": "ANSGR",
+    "name": "ANADOLU ANONİM TÜRK SİGORTA ŞİRKETİ",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1d986e74-9841-4dc3-a8a3-9597ab580497",
+    "code": "AKTIF",
+    "name": "AKTİF YATIRIM BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4be8312f-90a6-420b-82e2-263507d5afe1",
+    "code": "AEFES",
+    "name": "ANADOLU EFES BİRACILIK VE MALT SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1b40ea37-f7df-47ea-b823-0ffdc097b703",
+    "code": "ASUZU",
+    "name": "ANADOLU ISUZU OTOMOTİV SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a4840bdb-fa98-4439-8b60-012f1a93e531",
+    "code": "ANELE",
+    "name": "ANEL ELEKTRİK PROJE TAAHHÜT VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8021fe49-4468-4771-be44-7f962c49611d",
+    "code": "ARCLK",
+    "name": "ARÇELİK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "19008f3a-2a43-4bed-8a83-20fe0b4365b7",
+    "code": "ARDYZ",
+    "name": "ARD GRUP BİLİŞİM TEKNOLOJİLERİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "3b2be59b-c805-4c70-be0b-e5677a179ad5",
+    "code": "ARENA",
+    "name": "ARENA BİLGİSAYAR SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b9c3cdf2-874a-41e9-873c-c822ef0b8f1f",
+    "code": "ARNFK",
+    "name": "ARENA FAKTORİNG A.Ş",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "97c7632b-fa34-4a2f-ae0c-684dc481a1fc",
+    "code": "ARMDA",
+    "name": "ARMADA BİLGİSAYAR SİSTEMLERİ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "2c60525f-319f-4440-9fa7-2297cbd0f667",
+    "code": "ARSAN",
+    "name": "ARSAN TEKSTİL TİCARET VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d99e9c1c-2f0f-4a31-9e53-3f6fcac5c69d",
+    "code": "ARTI",
+    "name": "ARTI YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0246f4f5-5571-421e-a321-90fdfe08400b",
+    "code": "ARZUM",
+    "name": "ARZUM ELEKTRİKLİ EV ALETLERİ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "490a6a4f-82b9-42ed-bbda-f28a7ce5ee63",
+    "code": "ASELS",
+    "name": "ASELSAN ELEKTRONİK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7ec4c063-f22a-4ef9-9ce6-c373dbcb5390",
+    "code": "ATAGY",
+    "name": "ATA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "dbece470-970f-4624-bc19-3627a5969ab2",
+    "code": "AGYO",
+    "name": "ATAKULE GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8744ed2f-2117-4497-996a-191258b523ea",
+    "code": "ANHYT",
+    "name": "ANADOLU HAYAT EMEKLİLİK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7c723404-a420-4228-a281-ab80155246d9",
+    "code": "AFB",
+    "name": "AKTİF YATIRIM BANKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c7ef1bd0-c91e-4162-a165-52b3a063f3fa",
+    "code": "AKTVK",
+    "name": "AKTİF BANK SUKUK VARLIK KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ab929607-2d03-4617-b3e6-367ee139adbb",
+    "code": "AKSUE",
+    "name": "AKSU ENERJİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f8e09bda-f76d-40b4-8767-f60553a7f92f",
+    "code": "KNTFA",
+    "name": "KENT FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "290c3fbe-7cf3-4886-ad1f-3c0f7066cc85",
+    "code": "KATMR",
+    "name": "KATMERCİLER ARAÇ ÜSTÜ EKİPMAN SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e1bb15fe-00c1-4a24-8048-6c2c65a8bfca",
+    "code": "KARTN",
+    "name": "KARTONSAN KARTON SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "45f69b82-993a-4ccb-a2d4-cb181e7dc1ec",
+    "code": "KRTEK",
+    "name": "KARSU TEKSTİL SANAYİİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ec6219ff-3e1c-4672-8808-abbaab5de606",
+    "code": "KARSN",
+    "name": "KARSAN OTOMOTİV SANAYİİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1145dc6c-b6ab-4f33-80df-630ca6f4ed5b",
+    "code": "KAREL",
+    "name": "KAREL ELEKTRONİK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7f53706b-613e-4e45-99d4-3e7ea01f1392",
+    "code": "AVOD",
+    "name": "A.V.O.D. KURUTULMUŞ GIDA VE TARIM ÜRÜNLERİ SANAYİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "84732775-5847-4ae4-8d57-2af2718338c9",
+    "code": "A1CAP",
+    "name": " ACP",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "df68c952-fa73-47d0-b197-0fd8b20a6f4a",
+    "code": "ACSEL",
+    "name": "ACISELSAN ACIPAYAM SELÜLOZ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0ab2a250-d111-40b9-826c-e5edeef144d2",
+    "code": "ADEL",
+    "name": "ADEL KALEMCİLİK TİCARET VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "53fa6040-1485-4ec4-9855-b6d8330de2f6",
+    "code": "ADESE",
+    "name": "ADESE ALIŞVERİŞ MERKEZLERİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "04ac0395-4953-433b-a904-5bae2601df77",
+    "code": "AFYON",
+    "name": "AFYON ÇİMENTO SANAYİ T.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6e63d750-e986-42c3-a5e4-2ff90695cd27",
+    "code": "AGHOL",
+    "name": "AG ANADOLU GRUBU HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "94a85192-0597-4f15-bfbd-d4acc6d2f180",
+    "code": "AKSFA",
+    "name": "AK FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a8198b71-b9be-4424-8f0c-30de495040ff",
+    "code": "AKM",
+    "name": "AK YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a5f8e1c8-fd42-44fe-8142-552f3db173ac",
+    "code": "AKMEN",
+    "name": "AK YATIRIM MENKUL DEĞERLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "69758f19-a542-4f73-9bb8-f32657158122",
+    "code": "AKBNK",
+    "name": "AKBANK T.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c865dd63-9a04-4a88-a19d-03067455a994",
+    "code": "AKCNS",
+    "name": "AKÇANSA ÇİMENTO SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9622c7ee-a543-45ac-9d34-c57e2d1c362e",
+    "code": "AKDFA",
+    "name": "AKDENİZ FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7c4e8ef3-8175-47d6-83d5-87e1abaa31ca",
+    "code": "AKYHO",
+    "name": "AKDENİZ YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ba85a1c3-8e45-459b-bd6f-99938b2ed2af",
+    "code": "AKENR",
+    "name": "AKENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "97308ff9-1364-4f78-b11e-71c5e36d68ae",
+    "code": "AKFGY",
+    "name": "AKFEN GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b7b238a2-89ba-47c6-8798-a7aaad271814",
+    "code": "AKFEN",
+    "name": "AKFEN HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e7206a60-299b-4c0e-a408-8fe5e040dca4",
+    "code": "ATEKS",
+    "name": "AKIN TEKSTİL A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "da7f20a7-c894-4016-a7a2-b25a9342ef1a",
+    "code": "AKSGY",
+    "name": "AKİŞ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "99815561-2e59-4efc-b6ba-80df860340a5",
+    "code": "AKMGY",
+    "name": "AKMERKEZ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "283394ad-a6a8-44b0-a836-a73bd98081f2",
+    "code": "AKSA",
+    "name": "AKSA AKRİLİK KİMYA SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5b9a763e-77d6-473e-a1ab-2e5d5ac840da",
+    "code": "AKSEN",
+    "name": "AKSA ENERJİ ÜRETİM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a79b118d-b372-4d3d-8e60-99e553a776f1",
+    "code": "AKGRT",
+    "name": "AKSİGORTA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d570316a-d7b3-441f-b134-359204f761bb",
+    "code": "ATLFA",
+    "name": "ATILIM FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4d72acfa-fd6e-4115-8f19-c48011e4a9c0",
+    "code": "ZOREN",
+    "name": "ZORLU ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "64f4624e-8a80-4f32-ba7c-0bcb44d4dc19",
+    "code": "ATSYH",
+    "name": "ATLANTİS YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c31a9db7-dfb2-4855-a27f-6ace9bc045e2",
+    "code": "AVISA",
+    "name": "AVİVASA EMEKLİLİK VE HAYAT A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "d9be950b-2c6a-4a85-8d23-70cf7ab9d353",
+    "code": "BURCE",
+    "name": "BURÇELİK BURSA ÇELİK DÖKÜM SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "89f641cf-5004-47be-8e5e-9e5787cbe4a1",
+    "code": "BURVA",
+    "name": "BURÇELİK VANA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a6134c72-6387-460a-b3e4-1d27f65bd80b",
+    "code": "BUCIM",
+    "name": "BURSA ÇİMENTO FABRİKASI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6872d5b3-4071-45b5-bef5-b3ab976d8fda",
+    "code": "CRFSA",
+    "name": "CARREFOURSA CARREFOUR SABANCI TİCARET MERKEZİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "bc547164-ec62-4109-8340-c300be792666",
+    "code": "CASA",
+    "name": "CASA EMTİA PETROL KİMYEVİ VE TÜREVLERİ SANAYİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "40ca78a8-ca93-41e4-9358-7764b311c36d",
+    "code": "CEOEM",
+    "name": "CEO EVENT MEDYA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f2d7f625-120e-4813-a2cf-a339f32689db",
+    "code": "CCOLA",
+    "name": "COCA-COLA İÇECEK A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "877d19ea-818d-4803-a3ec-0bdd3412596c",
+    "code": "COSMO",
+    "name": "COSMOS YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ebe6d05f-9b77-4f9f-8058-1ff925cfd4b2",
+    "code": "CRDFA",
+    "name": "CREDITWEST FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b6917955-249c-47f8-a269-96ea75d3ef4d",
+    "code": "CLEBI",
+    "name": "ÇELEBİ HAVA SERVİSİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "13e25836-4186-451f-8477-182c29a30d33",
+    "code": "CELHA",
+    "name": "ÇELİK HALAT VE TEL SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f67a35d9-a991-49e6-b7d7-d384d51b1ccb",
+    "code": "CEMAS",
+    "name": "ÇEMAŞ DÖKÜM SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "40dc03d5-155a-4ce8-a832-058448da85ec",
+    "code": "CEMTS",
+    "name": "ÇEMTAŞ ÇELİK MAKİNA SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "9a2ff4d3-9457-4f7c-9fbb-2e046d047c83",
+    "code": "BRISA",
+    "name": "BRİSA BRIDGESTONE SABANCI LASTİK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5c9facc2-dcee-4d38-aaa5-a14321cfd10e",
+    "code": "CMBTN",
+    "name": "ÇİMBETON HAZIRBETON VE PREFABRİK YAPI ELEMANLARI SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "e3dd12ed-2e96-4188-aac3-34e5a7cec6f4",
+    "code": "CIMSA",
+    "name": "ÇİMSA ÇİMENTO SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "129630df-e744-4a0d-8f13-b41f08a9a5d5",
+    "code": "CUSAN",
+    "name": "ÇUHADAROĞLU METAL SANAYİ VE PAZARLAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "876242d0-46ad-443b-8050-a95b6caa54bb",
+    "code": "DAGI",
+    "name": "DAGİ GİYİM SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "36321743-67b5-40b7-9a96-8664314745f2",
+    "code": "DAGHL",
+    "name": "DAGİ YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "fcd3ba0e-0010-464c-a7fe-23e17b89b8a2",
+    "code": "DARDL",
+    "name": "DARDANEL ÖNENTAŞ GIDA SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f0c73166-d2b4-4a1b-970f-9ff2058e5549",
+    "code": "DGATE",
+    "name": "DATAGATE BİLGİSAYAR MALZEMELERİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "1a2e3b3f-fbc3-444f-97e7-a6722f1755c8",
+    "code": "DMSAS",
+    "name": "DEMİSAŞ DÖKÜM EMAYE MAMÜLLERİ SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7e045259-07f7-474b-b8e7-2ff26d1faf03",
+    "code": "DENVA",
+    "name": "DENGE VARLIK YÖNETİM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "92f5d851-6cf2-49be-8607-f7fc97aa7433",
+    "code": "DENGE",
+    "name": "DENGE YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "3ea7634f-8e54-4ffa-8312-18fc7648e644",
+    "code": "DENFA",
+    "name": "DENİZ FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8017bbd3-9739-4ff2-b840-62468daaf546",
+    "code": "DNFIN",
+    "name": "DENİZ FİNANSAL KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "74d055b8-cd57-4a7c-990d-81cbdacfc1db",
+    "code": "DZGYO",
+    "name": "DENİZ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "13e986fa-ae64-488a-ad4a-1aac58d8c250",
+    "code": "DZY",
+    "name": "DENİZ YATIRIM MENKUL KIYMETLER A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "0cee4ee9-50a8-4fec-b9db-0ff76957cbe9",
+    "code": "CMENT",
+    "name": "ÇİMENTAŞ İZMİR ÇİMENTO FABRİKASI T.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "30659a09-7242-448b-9020-afb76134be18",
+    "code": "BOSSA",
+    "name": "BOSSA TİCARET VE SANAYİ İŞLETMELERİ T.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "eb864791-92b3-412c-be81-a6bd8b184fd9",
+    "code": "BFREN",
+    "name": "BOSCH FREN SİSTEMLERİ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "af44f6e7-52f5-441a-ab86-8a565ed45ead",
+    "code": "BRYAT",
+    "name": "BORUSAN YATIRIM VE PAZARLAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "6173291c-776d-46b5-8f2a-57c3ab594b3f",
+    "code": "AVGYO",
+    "name": "AVRASYA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "da971f72-7c17-40ff-a61f-26cc31b18683",
+    "code": "AVTUR",
+    "name": "AVRASYA PETROL VE TURİSTİK TESİSLER YATIRIMLAR A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5a7c4834-e654-4cc8-964b-e5d10375bb7e",
+    "code": "AVHOL",
+    "name": "AVRUPA YATIRIM HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b0642e61-4c4f-4728-aee4-93b11a8b8895",
+    "code": "AYEN",
+    "name": "AYEN ENERJİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f23dab95-a755-4ecb-a6cd-10d7cfb8e22c",
+    "code": "AYES",
+    "name": "AYES ÇELİK HASIR VE ÇİT SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "4c19ef7a-d1f9-49a9-84c8-50c20a89a54a",
+    "code": "AYGAZ",
+    "name": "AYGAZ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "aa831e7e-86cd-4133-b801-0bc8720cb266",
+    "code": "BAGFS",
+    "name": "BAGFAŞ BANDIRMA GÜBRE FABRİKALARI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f948d7ef-11c3-40d7-a89d-5e10572c9e76",
+    "code": "BAKAB",
+    "name": "BAK AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "468744d5-5eb4-4dee-9f04-4132c62c97b0",
+    "code": "BALAT",
+    "name": "BALATACILAR BALATACILIK SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "006edb56-bfa1-4f11-ab55-bb9a5e6618d4",
+    "code": "BNTAS",
+    "name": "BANTAŞ BANDIRMA AMBALAJ SANAYİ TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ba5193b9-a4cf-4125-862c-b0d0fbd72c73",
+    "code": "BANVT",
+    "name": "BANVİT BANDIRMA VİTAMİNLİ YEM SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7019d1be-a9e6-4539-8cd5-7e3805644c01",
+    "code": "BSRFK",
+    "name": "BAŞER FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "437485d1-7dfe-4cf1-8554-116620da3f92",
+    "code": "BASCM",
+    "name": "BAŞTAŞ BAŞKENT ÇİMENTO SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "fb9c7ca7-d0b9-480a-bfd0-84eae518dc07",
+    "code": "BTCIM",
+    "name": "BATIÇİM BATI ANADOLU ÇİMENTO SANAYİİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7207e4d6-4071-4c6b-a35d-0c8aabd06475",
+    "code": "BSOKE",
+    "name": "BATISÖKE SÖKE ÇİMENTO SANAYİİ T.A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "3b9690d4-6e25-4d8a-b5e7-74ab545af404",
+    "code": "BAYRK",
+    "name": "BAYRAK EBT TABAN SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "f1e74f5f-7c0c-4b08-ad26-b89a6f97bda7",
+    "code": "BERA",
+    "name": "BERA HOLDİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "ecd73e2d-4fad-4b2c-a064-a7fbd72fcfee",
+    "code": "BRKT",
+    "name": "BEREKET VARLIK KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "a5451d62-028a-4cd9-ae65-1af1d7636735",
+    "code": "BRKSN",
+    "name": "BERKOSAN YALITIM VE TECRİT MADDELERİ ÜRETİM VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "cfc9085e-873c-4a0d-9a2f-e10e8093dedf",
+    "code": "BJKAS",
+    "name": "BEŞİKTAŞ FUTBOL YATIRIMLARI SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "2d0f9d93-47fa-435b-b832-6c1468cd0284",
+    "code": "BEYAZ",
+    "name": "BEYAZ FİLO OTO KİRALAMA A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "5b2a08ad-c11d-4b77-ab37-a2250b18fc0e",
+    "code": "BLCYT",
+    "name": "BİLİCİ YATIRIM SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "04ba38e9-4037-4a9c-99ba-978f32e85229",
+    "code": "BIMAS",
+    "name": "BİM BİRLEŞİK MAĞAZALAR A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "217d5278-fb89-403c-ba48-9e1a266c3c17",
+    "code": "BRKVY",
+    "name": "BİRİKİM VARLIK YÖNETİM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "7cb2cc37-bd22-441a-8f29-4cd2c01f83b6",
+    "code": "BRKO",
+    "name": "BİRKO BİRLEŞİK KOYUNLULULAR MENSUCAT TİCARET VE SANAYİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "20c2a225-ffe4-42a5-aca4-10e4bfe31e18",
+    "code": "BRMEN",
+    "name": "BİRLİK MENSUCAT TİCARET VE SANAYİ İŞLETMESİ A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "da43e491-b9a3-4bbc-bdc8-0dffbe2e61e3",
+    "code": "BIZIM",
+    "name": "BİZİM TOPTAN SATIŞ MAĞAZALARI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "25604625-e777-4f9f-8025-c8fce82eddaa",
+    "code": "BOGVY",
+    "name": "BOĞAZİÇİ VARLIK YÖNETİM A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "8aac07b3-deff-4627-9d17-f4f6c812cec5",
+    "code": "BRSAN",
+    "name": "BORUSAN MANNESMANN BORU SANAYİ VE TİCARET A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "c74accbe-ff4e-4c36-bb47-dc4141abcdaf",
+    "code": "ATLAS",
+    "name": "ATLAS MENKUL KIYMETLER YATIRIM ORTAKLIĞI A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "81097386-66ed-4c36-8922-1a684c3be166",
+    "code": "ZORLF",
+    "name": "ZORLU FAKTORİNG A.Ş.",
+    "investmentToolType": {
+      "id": 2,
+      "code": "ST",
+      "name": "Stock"
+    }
+  },
+  {
+    "id": "b8a4a786-9551-41e2-8515-8e0cdd4c63a6",
+    "code": "YARIM",
+    "name": "Yarım Altın",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "87f7b65b-693d-493a-b0e6-06d3302bbb4d",
+    "code": "XAU/USD",
+    "name": "Altın (ONS/USD)",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "5399c204-9ddd-4b6a-afc1-9f18f71711fa",
+    "code": "USGLDKG",
+    "name": "Altın (KG/USD)",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "34288cf2-7e11-4c40-86b0-57120b41516e",
+    "code": "USGLD",
+    "name": "Külçe Altın (USD)",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "b06989a9-7943-4b1e-8d75-7d9958800f97",
+    "code": "TAM",
+    "name": "Cumhuriyet Altını",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "9ec6d430-8f19-4daf-bdb9-68f5bc46b9d2",
+    "code": "SGZIYNET",
+    "name": "Ziynet Altın",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "b8170b53-ba1a-460c-b7bf-4b5a9e5f3ed5",
+    "code": "SGBESLI",
+    "name": "Beşli Altın",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "93b048cf-fe0b-47b1-b73e-09135705d020",
+    "code": "SGATA",
+    "name": "Ata Tam Altın",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "73f3ff78-ad23-4395-8484-31b6460ac443",
+    "code": "GRAM/USD",
+    "name": "Gram Altın (USD)",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "f2f4b890-55e8-4744-9922-b0ee11a6c587",
+    "code": "GRAM",
+    "name": "Gram Altın (TL)",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "c9af4fe8-96d5-41ae-ad13-1f4ef2dd5950",
+    "code": "CEYREK",
+    "name": "Çeyrek Altın",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "db3a8b08-ab46-4f10-a77e-2893f9609820",
+    "code": "ALT22BIL",
+    "name": "22 Ayar Bilezik Gram Altın",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "66f97e5e-a40b-441d-98d4-71e0e6bb4da5",
+    "code": "ALT18BIL",
+    "name": "18 Ayar Bilezik Gram Altın",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "e5cc4a83-da3c-4304-955f-58721bd18f54",
+    "code": "ALT14BIL",
+    "name": "14 Ayar Bilezik Gram Altın",
+    "investmentToolType": {
+      "id": 5,
+      "code": "AU",
+      "name": "Gold"
+    }
+  },
+  {
+    "id": "8a32570f-4481-4694-b56b-81ca1afe6892",
+    "code": "WTI",
+    "name": "Ham Petrol (NY NYMEX)",
+    "investmentToolType": {
+      "id": 3,
+      "code": "EM",
+      "name": "Emtia"
+    }
+  },
+  {
+    "id": "ce628af5-8576-454c-83d4-5a218040b779",
+    "code": "WHEAT",
+    "name": "Buğday (Chicago CBOT)",
+    "investmentToolType": {
+      "id": 3,
+      "code": "EM",
+      "name": "Emtia"
+    }
+  },
+  {
+    "id": "a1b1c6d5-b105-40e8-baa1-464dcc00dbad",
+    "code": "TT1",
+    "name": "Pamuk (NY NYMEX)",
+    "investmentToolType": {
+      "id": 3,
+      "code": "EM",
+      "name": "Emtia"
+    }
+  },
+  {
+    "id": "9e91eda6-8d2c-4855-a20c-fd1157d979b9",
+    "code": "SILVER",
+    "name": "Gümüş (COMEX Emtia Borsası)",
+    "investmentToolType": {
+      "id": 3,
+      "code": "EM",
+      "name": "Emtia"
+    }
+  },
+  {
+    "id": "e6dcacef-8846-4867-90ba-75dc50551d26",
+    "code": "PL1",
+    "name": "Platin (NY NYMEX)",
+    "investmentToolType": {
+      "id": 3,
+      "code": "EM",
+      "name": "Emtia"
+    }
+  },
+  {
+    "id": "7aaa4055-f2d9-46a8-86b8-988225d3a59b",
+    "code": "HHBGAS",
+    "name": "Doğal Gaz (NY NYMEX)",
+    "investmentToolType": {
+      "id": 3,
+      "code": "EM",
+      "name": "Emtia"
+    }
+  },
+  {
+    "id": "34b03ff3-d34b-4585-90e0-25100eadb9f9",
+    "code": "GOLD",
+    "name": "Altın (COMEX Emtia Borsası)",
+    "investmentToolType": {
+      "id": 3,
+      "code": "EM",
+      "name": "Emtia"
+    }
+  },
+  {
+    "id": "6451af63-22bb-471b-b225-378ca1e89991",
+    "code": "CORN",
+    "name": "Mısır (Chicago CBOT)",
+    "investmentToolType": {
+      "id": 3,
+      "code": "EM",
+      "name": "Emtia"
+    }
+  },
+  {
+    "id": "41095df5-2115-4834-ac35-8eac8e9c85f6",
+    "code": "COPPER",
+    "name": "Bakır (COMEX Emtia Borsası)",
+    "investmentToolType": {
+      "id": 3,
+      "code": "EM",
+      "name": "Emtia"
+    }
+  },
+  {
+    "id": "08ed490d-4b7b-4062-b629-c85022d42e84",
+    "code": "BRENT",
+    "name": "Brent Petrol Spot",
+    "investmentToolType": {
+      "id": 3,
+      "code": "EM",
+      "name": "Emtia"
+    }
+  }
+]

@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Amazon.DynamoDBv2.Model;
-using PriceProviders.Shared.Models;
 
 namespace PriceProviders.Shared.Abstractions
 {
-    public interface IRepository<T> where T:InvestmentToolPrice
+    public interface IRepository<T> where T: IEntity
     {
-        Task SavePriceAsync(T price);
-        void Get();
+        Task SaveAsync(T entity);
+        Task<T> GetAsync(string entityId);
+        Task<List<T>> GetAllAsync();
+        Task<T> ScanWithKey(string nameOfKey, string key);
     }
 }

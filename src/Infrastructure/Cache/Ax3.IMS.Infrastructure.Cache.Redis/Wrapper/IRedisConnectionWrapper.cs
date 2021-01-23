@@ -2,7 +2,7 @@
 using System;
 using System.Net;
 
-namespace Nop.Core.Redis
+namespace Ax3.IMS.Infrastructure.Cache.Redis.Wrapper
 {
     /// <summary>
     /// Represents Redis connection wrapper

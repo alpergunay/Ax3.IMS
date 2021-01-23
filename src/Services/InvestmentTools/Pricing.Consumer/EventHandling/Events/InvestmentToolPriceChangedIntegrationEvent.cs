@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Ax3.IMS.Infrastructure.EventBus.Events;
+﻿using Ax3.IMS.Infrastructure.EventBus.Events;
 using PriceProviders.Shared.Models;
 
-namespace Pricing.BackgroundServices.Events
+namespace Pricing.Consumer.EventHandling.Events
 {
     public class InvestmentToolPriceChangedIntegrationEvent : IntegrationEvent
     {
@@ -12,7 +9,8 @@ namespace Pricing.BackgroundServices.Events
         public double BuyingPrice { get; set; }
         public double SellingPrice { get; set; }
 
-        public InvestmentToolPriceChangedIntegrationEvent(InvestmentTool investmentTool, double buyingPrice, double sellingPrice)
+        public InvestmentToolPriceChangedIntegrationEvent(InvestmentTool investmentTool, double buyingPrice,
+            double sellingPrice)
         {
             InvestmentTool = investmentTool;
             BuyingPrice = buyingPrice;

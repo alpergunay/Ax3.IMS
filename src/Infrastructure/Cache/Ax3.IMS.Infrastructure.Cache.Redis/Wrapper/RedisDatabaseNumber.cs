@@ -1,4 +1,4 @@
-﻿namespace Nop.Core.Redis
+﻿namespace Ax3.IMS.Infrastructure.Cache.Redis.Wrapper
 {
     /// <summary>
     /// Represents redis database number enumeration

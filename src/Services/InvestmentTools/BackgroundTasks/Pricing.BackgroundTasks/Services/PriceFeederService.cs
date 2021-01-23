@@ -8,9 +8,12 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
+using Ax3.IMS.Infrastructure.Cache.Redis;
 using Ax3.IMS.Infrastructure.EventBus.Abstractions;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using PriceProviders.Shared.Abstractions;
+using PriceProviders.Shared.Models;
 using Pricing.BackgroundServices.Events;
 using Timer = System.Timers.Timer;
 
@@ -22,20 +25,24 @@ namespace Pricing.BackgroundServices.Services
         private readonly IEventBus _eventBus;
         private readonly ClientWebSocket _socket;
         private const string PING_MESSAGE = "X";
-        private readonly Dictionary<string, string> _investmentTools;
-        public PriceFeederService(ILogger<PriceFeederService> logger, IEventBus eventBus, ClientWebSocket socket)
+        private readonly IRepository<InvestmentTool> _repository;
+        private readonly ICacheManager _cacheManager;
+        public PriceFeederService(ILogger<PriceFeederService> logger, IEventBus eventBus, ClientWebSocket socket,
+            IRepository<InvestmentTool> repository, ICacheManager cacheManager)
         {
             _eventBus = eventBus;
             _logger = logger;
             _socket = socket;
-            var timer = new Timer 
+            _repository = repository;
+            _cacheManager = cacheManager;
+
+            var timer = new Timer
             {
-                Interval = 20000, 
-                AutoReset = true, 
+                Interval = 20000,
+                AutoReset = true,
                 Enabled = true
             };
             timer.Elapsed += SendPingMessage;
-            _investmentTools = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText("investmentToolConfig.json"));
         }
 
         private async void SendPingMessage(object sender, System.Timers.ElapsedEventArgs e)
@@ -55,7 +62,7 @@ namespace Pricing.BackgroundServices.Services
                 {
                     if (_socket.State == WebSocketState.CloseReceived)
                         await _socket.CloseAsync(WebSocketCloseStatus.InvalidMessageType, "Connection closed", CancellationToken.None);
-                        
+
                     if (_socket.State != WebSocketState.Open)
                     {
                         await _socket.ConnectAsync(
@@ -65,7 +72,7 @@ namespace Pricing.BackgroundServices.Services
                         await Task.Delay(5000, stoppingToken);
                         await Send(File.ReadAllLines("subscribe.txt")[0]);
                         await Receive();
-                        
+
                     }
                 }
                 catch (Exception ex)
@@ -112,21 +119,26 @@ namespace Pricing.BackgroundServices.Services
                             if (priceDictionary.Count > 0)
                             {
                                 var priceElement = priceDictionary.ElementAt(0);
-                                var investmentToolCode = _investmentTools.GetValueOrDefault(priceElement.Key);
-
-                                if (!string.IsNullOrEmpty(investmentToolCode))
+                                //Redis
+                                var investmentTool = await _cacheManager.GetAsync<InvestmentTool>(new CacheKey(priceElement.Key),
+                                    () => _repository.ScanWithKey("Key", priceElement.Key));
+                                if (investmentTool != null)
                                 {
-                                    
-                                        var investmentToolPriceChangedEvent =
-                                            new InvestmentToolPriceChangedIntegrationEvent(investmentToolCode,
-                                                priceElement.Value.ask, priceElement.Value.bid);
-                                        _eventBus.Publish(investmentToolPriceChangedEvent);
+                                    var investmentToolPriceChangedEvent =
+                                        new InvestmentToolPriceChangedIntegrationEvent(investmentTool,
+                                            priceElement.Value.ask, priceElement.Value.bid);
+
+                                    _eventBus.Publish(investmentToolPriceChangedEvent);
+                                }
+                                else
+                                {
+                                    _logger.LogError("Investment tool could not be found in Redis Cache");
                                 }
                             }
                         }
                         catch (Exception e)
                         {
-                            _logger.LogError("Exception occured while converting price line...");
+                            _logger.LogError($"Exception occured while converting price line...{e.Message}");
                         }
                         _logger.LogInformation(priceLine);
                     }
