@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Ax3.IMS.Infrastructure.EventBus.Events;
+﻿using Ax3.IMS.Infrastructure.EventBus.Events;
 using PriceProviders.Shared.Models;
 
 namespace Pricing.BackgroundServices.Events

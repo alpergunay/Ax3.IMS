@@ -24,6 +24,8 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using PriceProviders.Shared.Abstractions;
 using PriceProviders.Shared.Data;
+using Pricing.Consumer.AutofacModules;
+using Pricing.Consumer.EventHandling.Events;
 
 namespace Pricing.Consumer
 {
@@ -50,7 +52,7 @@ namespace Pricing.Consumer
             services.AddAWSService<IAmazonDynamoDB>();
             services.AddTransient<IDynamoDBContext, DynamoDBContext>();
             services.AddTransient<IRepository<InvestmentTool>, InvestmentToolRepository>();
-
+            services.AddTransient<IRepository<InvestmentToolPrice>, PriceRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,6 +73,16 @@ namespace Pricing.Consumer
             {
                 endpoints.MapControllers();
             });
+            ConfigureEventBus(app);
+        }
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule(new ApplicationModule(Configuration["ApplicationSettings:Persistence:ConnectionString"]));
+        }
+        private static void ConfigureEventBus(IApplicationBuilder app)
+        {
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+            eventBus.Subscribe<InvestmentToolPriceChangedIntegrationEvent, IIntegrationEventHandler<InvestmentToolPriceChangedIntegrationEvent>>();
         }
     }
     internal static class CustomExtensionsMethods

@@ -21,6 +21,16 @@ namespace PriceProviders.Shared.Models
         [DynamoDBProperty("buyingPrice")]
         public double BuyingPrice { get; set; }
 
+        public InvestmentToolPrice(DateTime priceDate, InvestmentTool investmentTool, double salesPrice, double buyingPrice)
+        {
+            PriceDate = priceDate;
+            Hour = PriceDate.Hour;
+            Minute = PriceDate.Minute;
+            InvestmentTool = investmentTool;
+            SalesPrice = salesPrice;
+            BuyingPrice = buyingPrice;
+        }
+
         public InvestmentToolPrice()
         {
             

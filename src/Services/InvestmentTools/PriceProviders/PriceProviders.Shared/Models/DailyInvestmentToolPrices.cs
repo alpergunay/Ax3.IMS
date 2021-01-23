@@ -6,7 +6,7 @@ using System.Globalization;
 namespace PriceProviders.Shared.Models
 {
     [DynamoDBTable("DailyInvestmentToolPrices")]
-    public class DailyInvestmentToolPrices<T> where T:InvestmentToolPrice
+    public class DailyInvestmentToolPrices
     {
         [DynamoDBHashKey("id")]
         public string Id { get; set; }
@@ -27,7 +27,7 @@ namespace PriceProviders.Shared.Models
         [DynamoDBProperty("lastUpdateTime")]
         public string LastUpdateTime { get; set; }
         [DynamoDBProperty("price")]
-        public T Price { get; set; }
+        public InvestmentToolPrice Price { get; set; }
 
         public DailyInvestmentToolPrices()
         {

@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace PriceProviders.Shared.Data
 {
-    public class PriceRepository<T> : Repository<T> where T: InvestmentToolPrice
+    public class PriceRepository : Repository<InvestmentToolPrice> 
     {
-        public PriceRepository(IAmazonDynamoDB dynamoDb, IDynamoDBContext context, ILogger<T> logger)
+        public PriceRepository(IAmazonDynamoDB dynamoDb, IDynamoDBContext context, ILogger<InvestmentToolPrice> logger)
         :base(dynamoDb, context, logger)
         {
             
         }
-        public override async Task SaveAsync(T currentPrice)
+        public override async Task SaveAsync(InvestmentToolPrice currentPrice)
         {
             try
             {
@@ -29,11 +29,11 @@ namespace PriceProviders.Shared.Data
                  */
                 var priceId = currentPrice.ToDynamoDbDateId();
                 _logger.LogInformation("priceID = " + priceId);
-                var dailyPrice = _context.LoadAsync<DailyInvestmentToolPrices<T>>(priceId).Result;
+                var dailyPrice = _context.LoadAsync<DailyInvestmentToolPrices>(priceId).Result;
                 if (dailyPrice == null)
                 {
                     _logger.LogInformation("Could not find the price. Adding first time for the new day...");
-                    dailyPrice = new DailyInvestmentToolPrices<T>
+                    dailyPrice = new DailyInvestmentToolPrices
                     {
                         PriceDate = currentPrice.PriceDate.ToDynamoDbDate(),
                         InvestmentToolCode = currentPrice.InvestmentTool.Code,
@@ -52,12 +52,20 @@ namespace PriceProviders.Shared.Data
                 else
                 {
                     _logger.LogInformation("Found daily price. Updating the item...");
-                    dailyPrice.Price = currentPrice;
+                    if (currentPrice.BuyingPrice > 0)
+                        dailyPrice.Price.BuyingPrice = currentPrice.BuyingPrice;
+
+                    if (currentPrice.SalesPrice > 0)
+                        dailyPrice.Price.SalesPrice = currentPrice.SalesPrice;
+
+                    dailyPrice.Price.Hour = currentPrice.Hour;
+                    dailyPrice.Price.Minute = currentPrice.Minute;
+                    dailyPrice.Price.PriceDate = currentPrice.PriceDate;
                     dailyPrice.LastUpdateTime = DateTime.Now.ToDynamoDbDateTime();
                     _context.SaveAsync(dailyPrice).GetAwaiter();
-                    _logger.LogInformation("New date is successfully saved.");
+                    _logger.LogInformation("New date is successfully updated.");
                 }
-                var priceTimeSeries = new PriceTimeSeries<T>
+                var priceTimeSeries = new PriceTimeSeries
                 {
                     DailyPriceId = priceId,
                     Id = currentPrice.ToDynamoDbTimeId(),

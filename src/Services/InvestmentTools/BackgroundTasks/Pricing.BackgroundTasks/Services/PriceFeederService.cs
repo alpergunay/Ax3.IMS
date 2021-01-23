@@ -25,6 +25,7 @@ namespace Pricing.BackgroundServices.Services
         private readonly IEventBus _eventBus;
         private readonly ClientWebSocket _socket;
         private const string PING_MESSAGE = "X";
+        private const string PONG_MESSAGE = "1|H";
         private readonly IRepository<InvestmentTool> _repository;
         private readonly ICacheManager _cacheManager;
         public PriceFeederService(ILogger<PriceFeederService> logger, IEventBus eventBus, ClientWebSocket socket,
@@ -111,11 +112,15 @@ namespace Pricing.BackgroundServices.Services
                     using (var reader = new StreamReader(ms, Encoding.UTF8))
                     {
                         var priceLine = await reader.ReadToEndAsync();
-
-                        var priceLineTest = File.ReadAllLines("message.txt")[0];
                         try
                         {
-                            var priceDictionary = JsonConvert.DeserializeObject<Dictionary<string, Price>>(priceLineTest);
+                            if (priceLine == PONG_MESSAGE)
+                            {
+                                _logger.LogInformation(priceLine);
+                                continue;
+                            }
+
+                            var priceDictionary = JsonConvert.DeserializeObject<Dictionary<string, Price>>(priceLine.Substring(priceLine.IndexOf('|') + 1));
                             if (priceDictionary.Count > 0)
                             {
                                 var priceElement = priceDictionary.ElementAt(0);
@@ -128,6 +133,7 @@ namespace Pricing.BackgroundServices.Services
                                         new InvestmentToolPriceChangedIntegrationEvent(investmentTool,
                                             priceElement.Value.ask, priceElement.Value.bid);
 
+                                    _logger.LogInformation($"Publishing event {nameof(InvestmentToolPriceChangedIntegrationEvent)} for {investmentTool.Code}...");
                                     _eventBus.Publish(investmentToolPriceChangedEvent);
                                 }
                                 else
