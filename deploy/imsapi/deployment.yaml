@@ -17,11 +17,18 @@ spec:
     spec:
       containers:
         - name: ims-api
-          image: 974597802872.dkr.ecr.eu-central-1.amazonaws.com/imsapi:8          
+          image: 974597802872.dkr.ecr.eu-central-1.amazonaws.com/imsapi:${BUILD_NUMBER}          
           ports:
             - containerPort: 5005
           env:
             - name: ASPNETCORE_ENVIRONMENT
-              value: "Production"  
+              value: "Production"
+          volumeMounts:
+        - name: config-volume
+          mountPath: /app/config     
       imagePullSecrets:
         - name: ax3-app
+      volumes:
+      - name: config-volume
+        configMap:
+          name: ims-appsettings.production

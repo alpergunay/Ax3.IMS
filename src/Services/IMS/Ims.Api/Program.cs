@@ -95,9 +95,16 @@ namespace Ims.Api
         private static IConfiguration GetConfiguration()
         {
             var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true)
-                .AddEnvironmentVariables();
+                .SetBasePath(Directory.GetCurrentDirectory());
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Production")
+                builder.AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",
+                    optional: true);
+            else
+            {
+                builder.AddJsonFile("config/appsettings.Production.json", optional: true, reloadOnChange: true);
+            }
+
+            builder.AddEnvironmentVariables();
             return builder.Build();
         }
         private static Serilog.ILogger CreateSerilogLogger(IConfiguration configuration)
