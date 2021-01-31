@@ -22,7 +22,7 @@ namespace Pricing.Consumer.EventHandling.EventHandlers
         public Task Handle(InvestmentToolPriceChangedIntegrationEvent @event)
         {
             _logger.LogInformation($"Handling {nameof(InvestmentToolPriceChangedIntegrationEvent)} for {@event.InvestmentTool.Code}...");
-            var investmentToolPrice = new InvestmentToolPrice(DateTime.Now, @event.InvestmentTool, @event.SellingPrice, @event.BuyingPrice);
+            var investmentToolPrice = new InvestmentToolPrice(@event.InvestmentTool.Key, @event.PriceDate, @event.InvestmentTool, @event.SalesPrice, @event.BuyingPrice);
             return _repository.SaveAsync(investmentToolPrice);
         }
     }

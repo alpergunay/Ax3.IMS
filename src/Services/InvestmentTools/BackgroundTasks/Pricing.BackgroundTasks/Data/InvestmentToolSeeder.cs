@@ -34,7 +34,7 @@ namespace Pricing.BackgroundServices.Data
                             it.Key = $"{it.Code}.GOLD.GARAN";
                             break;
                     }
-
+                    it.InvestmentToolTypeName = it.InvestmentToolType.Name;
                     await repository.SaveAsync(it);
                 }
                 PutInvestmentToolsToCache(cacheManager, investmentTools);

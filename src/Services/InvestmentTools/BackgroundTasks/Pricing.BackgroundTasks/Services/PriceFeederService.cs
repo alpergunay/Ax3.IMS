@@ -130,8 +130,8 @@ namespace Pricing.BackgroundServices.Services
                                 if (investmentTool != null)
                                 {
                                     var investmentToolPriceChangedEvent =
-                                        new InvestmentToolPriceChangedIntegrationEvent(investmentTool,
-                                            priceElement.Value.ask, priceElement.Value.bid);
+                                        new InvestmentToolPriceChangedIntegrationEvent(investmentTool, DateTime.Now, 
+                                            priceElement.Value.bid, priceElement.Value.ask);
 
                                     _logger.LogInformation($"Publishing event {nameof(InvestmentToolPriceChangedIntegrationEvent)} for {investmentTool.Code}...");
                                     _eventBus.Publish(investmentToolPriceChangedEvent);

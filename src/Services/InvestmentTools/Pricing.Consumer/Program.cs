@@ -3,15 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using System;
 using System.IO;
 using System.Net;
-using Autofac;
-using PriceProviders.Shared.Abstractions;
-using PriceProviders.Shared.Models;
-using Pricing.Consumer.Data;
 
 namespace Pricing.Consumer
 {
@@ -28,13 +23,6 @@ namespace Pricing.Consumer
                 Log.Information("Configuring web host ({ApplicationContext})...", AppName);
                 IHost host = CreateHostBuilder(args, configuration)
                     .Build();
-
-                ////Apply Migrations
-                //var lifetimeScope = host.Services.GetAutofacRoot();
-                //var repository = lifetimeScope.Resolve<IRepository<InvestmentTool>>();
-                //new InvestmentToolSeeder()
-                //    .SeedAsync(repository)
-                //    .Wait();
 
                 Log.Information("Starting web host ({ApplicationContext})...", AppName);
                 host.Run();

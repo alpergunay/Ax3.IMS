@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ims-api
+  namespace: default
+  labels:
+    app: ims-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ims-api
+  template:
+    metadata:
+      labels:
+        app: ims-api
+    spec:
+      containers:
+        - name: ims-api
+          image: 974597802872.dkr.ecr.eu-central-1.amazonaws.com/imsapi:8          
+          ports:
+            - containerPort: 5005
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: "Production"  
+      imagePullSecrets:
+        - name: ax3-app
