@@ -24,8 +24,8 @@ spec:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Production"
           volumeMounts:
-        - name: config-volume
-          mountPath: /app/config     
+            - name: config-volume
+              mountPath: /app/config     
       imagePullSecrets:
         - name: ax3-app
       volumes:
